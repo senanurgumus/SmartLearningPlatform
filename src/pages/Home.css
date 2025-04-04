@@ -1,0 +1,38 @@
+.home-container {
+    text-align: center;
+    background-color: #f0f8ff;
+    padding: 50px;
+  }
+  
+  .home-title {
+    font-size: 3rem;
+    color: #333;
+  }
+  
+  .home-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+  
+  .home-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .home-btn {
+    background-color: #6c63ff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+  
+  .home-btn:hover {
+    background-color: #5a54d4;
+  }
+  

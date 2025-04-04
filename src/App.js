@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login.js";
+import Register from "./pages/Register.js";
+import Dashboard from "./pages/Dashboard.js";
+import ParentDashboard from "./pages/ParentDashboard.js";
+import ModulePage from "./pages/ModulePage.js";
+import Home from "./pages/Home.js";
+import ExercisesPage from './pages/ExercisesPage.js';
+import QuizPage from './pages/QuizPage.js';
+import ActivitiesPage from './pages/ActivitiesPage.js';
+import AchievementsPage from './pages/AchievementsPage.js';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/parent-dashboard" element={<ParentDashboard />} />
+        <Route path="/module/:moduleId" element={<ModulePage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/module/:moduleId/exercises" element={<ExercisesPage />} />
+        <Route path="/module/:moduleId/quiz" element={<QuizPage />} />
+        <Route path="/module/:moduleId/activities" element={<ActivitiesPage />} />
+        <Route path="/achievements" element={<AchievementsPage />} />
+
+      </Routes>
+    </Router>
   );
 }
 

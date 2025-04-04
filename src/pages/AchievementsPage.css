@@ -1,0 +1,37 @@
+/* src/pages/AchievementsPage.css */
+.achievements-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #f9f9ff;
+    border-radius: 8px;
+  }
+  
+  .chart-wrapper {
+    max-width: 600px;
+    margin-top: 10px;
+  }
+  
+
+
+  .badge-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .badge-item {
+    font-size: 1.5rem;
+    background: #f0f0f0;
+    padding: 10px 16px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px #ccc;
+  }
+  

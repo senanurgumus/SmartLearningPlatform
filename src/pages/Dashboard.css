@@ -1,0 +1,60 @@
+/* src/pages/Dashboard.css */
+.dashboard-container {
+    padding: 40px;
+    text-align: center;
+    background-color: #f5f7fb;
+    min-height: 100vh;
+  }
+  
+  .dashboard-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .module-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .module-card {
+    width: 180px;
+    height: 150px;
+    border-radius: 15px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .module-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .achievements-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .achievements-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #6C63FF;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .achievements-button:hover {
+    background-color: #574fd6;
+  }
+  
