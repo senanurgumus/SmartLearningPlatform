@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import quizData from '../english_quiz.json';
 import './QuizPage.css';
 import { db } from '../firebase.js';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { useLocation } from 'react-router-dom'; // ✅ yönlendirmeden kategori alma
 
 function QuizPage() {
   const [questions, setQuestions] = useState([]);
@@ -12,7 +13,10 @@ function QuizPage() {
   const [showPopup, setShowPopup] = useState(false);
   const [emoji, setEmoji] = useState('');
   const [message, setMessage] = useState('');
-  const [showWarningPopup, setShowWarningPopup] = useState(false); // ❗️ Yeni pop-up durumu
+  const [showWarningPopup, setShowWarningPopup] = useState(false);
+
+  const location = useLocation();
+  const category = location.state?.category || "english"; // ✅ default olarak english
 
   const emojis = ['🌟', '🎉', '👏', '🍭', '😊', '🧁', '🐥', '🍩'];
   const messages = [
@@ -27,13 +31,22 @@ function QuizPage() {
   ];
 
   useEffect(() => {
-    const shuffled = quizData.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 10);
-    setQuestions(selected);
-    setAnswers({});
-    setSubmitted(false);
-    setScore(0);
-  }, []);
+    const loadQuizData = async () => {
+      try {
+        const data = await import(`../${category}_quiz.json`);
+        const shuffled = data.default.sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, 10);
+        setQuestions(selected);
+        setAnswers({});
+        setSubmitted(false);
+        setScore(0);
+      } catch (error) {
+        console.error("Quiz verisi yüklenemedi:", error);
+      }
+    };
+
+    loadQuizData();
+  }, [category]);
 
   const handleOptionClick = (qIndex, option) => {
     if (!submitted) {
@@ -44,7 +57,7 @@ function QuizPage() {
   const handleSubmit = async () => {
     const unanswered = questions.findIndex((_, i) => answers[i] === undefined);
     if (unanswered !== -1) {
-      setShowWarningPopup(true); // ❗️ Özel pop-up göster
+      setShowWarningPopup(true);
       return;
     }
 
@@ -60,13 +73,22 @@ function QuizPage() {
     setShowPopup(true);
 
     try {
+      const auth = getAuth();
+      const user = auth.currentUser;
+
+      if (!user) {
+        console.error("No user is logged in.");
+        return;
+      }
+
       await addDoc(collection(db, "quizResults"), {
-        userId: "testUser",
+        userId: user.uid,
         score: count,
         total: questions.length,
-        module: "english",
+        module: category,
         timestamp: Timestamp.now()
       });
+
       console.log("Quiz sonucu Firestore'a kaydedildi.");
     } catch (error) {
       console.error("Firestore'a yazarken hata oluştu:", error);
@@ -74,9 +96,8 @@ function QuizPage() {
   };
 
   const restartQuiz = () => {
-    const shuffled = quizData.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 10);
-    setQuestions(selected);
+    const reshuffled = [...questions].sort(() => 0.5 - Math.random()).slice(0, 10);
+    setQuestions(reshuffled);
     setAnswers({});
     setSubmitted(false);
     setScore(0);
@@ -89,7 +110,7 @@ function QuizPage() {
         <div className="fixed-score">Score: {score} / {questions.length}</div>
       )}
 
-      <h2>Quiz Time!</h2>
+      <h2>Quiz Time! ({category.toUpperCase()})</h2>
 
       {questions.map((q, i) => {
         const isCorrect = answers[i] === q.answer;
@@ -128,7 +149,6 @@ function QuizPage() {
         <button className="submit-btn" onClick={restartQuiz}>Try Again</button>
       )}
 
-      {/* 🎉 Quiz sonucu pop-up */}
       {showPopup && (
         <div className="popup">
           <div className="popup-inner">
@@ -140,7 +160,6 @@ function QuizPage() {
         </div>
       )}
 
-      {/* ❗️ Eksik soru uyarısı için özel pop-up */}
       {showWarningPopup && (
         <div className="popup warning-popup">
           <div className="popup-inner">

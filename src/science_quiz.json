@@ -1,0 +1,302 @@
+[
+  {
+    "question": "What planet is known as the Red Planet?",
+    "options": [
+      "Earth",
+      "Mars",
+      "Jupiter",
+      "Venus"
+    ],
+    "answer": "Mars"
+  },
+  {
+    "question": "What do plants need to make food?",
+    "options": [
+      "Oxygen",
+      "Sunlight",
+      "Moonlight",
+      "Salt"
+    ],
+    "answer": "Sunlight"
+  },
+  {
+    "question": "What gas do humans need to breathe?",
+    "options": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Helium"
+    ],
+    "answer": "Oxygen"
+  },
+  {
+    "question": "How many legs does an insect have?",
+    "options": [
+      "4",
+      "6",
+      "8",
+      "10"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "What part of the body helps you to see?",
+    "options": [
+      "Ears",
+      "Eyes",
+      "Nose",
+      "Mouth"
+    ],
+    "answer": "Eyes"
+  },
+  {
+    "question": "Which one is a liquid?",
+    "options": [
+      "Ice",
+      "Steam",
+      "Water",
+      "Rock"
+    ],
+    "answer": "Water"
+  },
+  {
+    "question": "What do bees make?",
+    "options": [
+      "Milk",
+      "Honey",
+      "Wax",
+      "Bread"
+    ],
+    "answer": "Honey"
+  },
+  {
+    "question": "What force pulls things to the ground?",
+    "options": [
+      "Gravity",
+      "Friction",
+      "Electricity",
+      "Wind"
+    ],
+    "answer": "Gravity"
+  },
+  {
+    "question": "Which organ pumps blood in our body?",
+    "options": [
+      "Lungs",
+      "Brain",
+      "Heart",
+      "Stomach"
+    ],
+    "answer": "Heart"
+  },
+  {
+    "question": "Which one is not a planet?",
+    "options": [
+      "Earth",
+      "Mars",
+      "Sun",
+      "Venus"
+    ],
+    "answer": "Sun"
+  },
+  {
+    "question": "What is H2O?",
+    "options": [
+      "Oxygen",
+      "Hydrogen",
+      "Water",
+      "Salt"
+    ],
+    "answer": "Water"
+  },
+  {
+    "question": "What do humans use to hear?",
+    "options": [
+      "Eyes",
+      "Ears",
+      "Nose",
+      "Skin"
+    ],
+    "answer": "Ears"
+  },
+  {
+    "question": "Which animal is known for jumping?",
+    "options": [
+      "Elephant",
+      "Rabbit",
+      "Turtle",
+      "Fish"
+    ],
+    "answer": "Rabbit"
+  },
+  {
+    "question": "What do we breathe out?",
+    "options": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Hydrogen"
+    ],
+    "answer": "Carbon Dioxide"
+  },
+  {
+    "question": "What helps us to taste food?",
+    "options": [
+      "Tongue",
+      "Teeth",
+      "Nose",
+      "Ears"
+    ],
+    "answer": "Tongue"
+  },
+  {
+    "question": "What do roots do for a plant?",
+    "options": [
+      "Make food",
+      "Absorb water",
+      "Attract bees",
+      "Smell"
+    ],
+    "answer": "Absorb water"
+  },
+  {
+    "question": "Where does the Sun rise?",
+    "options": [
+      "North",
+      "South",
+      "East",
+      "West"
+    ],
+    "answer": "East"
+  },
+  {
+    "question": "What is a baby dog called?",
+    "options": [
+      "Kitten",
+      "Puppy",
+      "Cub",
+      "Foal"
+    ],
+    "answer": "Puppy"
+  },
+  {
+    "question": "Which part of the plant is colorful?",
+    "options": [
+      "Leaf",
+      "Stem",
+      "Flower",
+      "Root"
+    ],
+    "answer": "Flower"
+  },
+  {
+    "question": "What do we use to see tiny things?",
+    "options": [
+      "Telescope",
+      "Microscope",
+      "Binoculars",
+      "Periscope"
+    ],
+    "answer": "Microscope"
+  },
+  {
+    "question": "What is the largest organ in our body?",
+    "options": [
+      "Brain",
+      "Liver",
+      "Skin",
+      "Heart"
+    ],
+    "answer": "Skin"
+  },
+  {
+    "question": "What is the boiling point of water?",
+    "options": [
+      "100\u00b0C",
+      "90\u00b0C",
+      "80\u00b0C",
+      "120\u00b0C"
+    ],
+    "answer": "100\u00b0C"
+  },
+  {
+    "question": "Which animal gives us wool?",
+    "options": [
+      "Cow",
+      "Goat",
+      "Sheep",
+      "Pig"
+    ],
+    "answer": "Sheep"
+  },
+  {
+    "question": "What do birds use to fly?",
+    "options": [
+      "Beaks",
+      "Feet",
+      "Wings",
+      "Tails"
+    ],
+    "answer": "Wings"
+  },
+  {
+    "question": "What is the color of chlorophyll?",
+    "options": [
+      "Red",
+      "Green",
+      "Yellow",
+      "Blue"
+    ],
+    "answer": "Green"
+  },
+  {
+    "question": "What is freezing point of water?",
+    "options": [
+      "0\u00b0C",
+      "10\u00b0C",
+      "5\u00b0C",
+      "-10\u00b0C"
+    ],
+    "answer": "0\u00b0C"
+  },
+  {
+    "question": "What do we drink to stay healthy?",
+    "options": [
+      "Juice",
+      "Milk",
+      "Water",
+      "Soda"
+    ],
+    "answer": "Water"
+  },
+  {
+    "question": "What type of energy is from the sun?",
+    "options": [
+      "Wind",
+      "Hydro",
+      "Solar",
+      "Chemical"
+    ],
+    "answer": "Solar"
+  },
+  {
+    "question": "What sense organ is used to smell?",
+    "options": [
+      "Tongue",
+      "Nose",
+      "Ear",
+      "Skin"
+    ],
+    "answer": "Nose"
+  },
+  {
+    "question": "How many bones in adult human?",
+    "options": [
+      "206",
+      "210",
+      "180",
+      "190"
+    ],
+    "answer": "206"
+  }
+]

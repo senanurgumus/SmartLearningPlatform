@@ -1,7 +1,13 @@
 // src/pages/AchievementsPage.js
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase.js';
-import { collection, getDocs } from 'firebase/firestore';
+import {
+  collection,
+  getDocs,
+  query,
+  where
+} from 'firebase/firestore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -15,7 +21,7 @@ import './AchievementsPage.css';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-// Rozet açıklamaları
+// 🏅 Rozet açıklamaları
 const badgeDescriptions = {
   "🐣 Beginner": "Complete at least 1 quiz.",
   "🧠 Quiz Master": "Complete 10 quizzes.",
@@ -24,22 +30,16 @@ const badgeDescriptions = {
   "🔥 Streak Champion": "Complete quizzes for 5 consecutive days."
 };
 
-// Rozet kontrol fonksiyonu
+// 🏅 Rozet kontrol fonksiyonu
 function getEarnedBadges(quizResults) {
   const badges = [];
   const totalQuizzes = quizResults.length;
   const perfectScores = quizResults.filter(q => q.score === q.total).length;
 
-  // 🐣 Beginner
   if (totalQuizzes >= 1) badges.push('🐣 Beginner');
-
-  // 🧠 Quiz Master
   if (totalQuizzes >= 10) badges.push('🧠 Quiz Master');
-
-  // 💯 Perfect Score
   if (perfectScores >= 1) badges.push('💯 Perfect Score');
 
-  // 📚 Consistent Learner (3 gün üst üste quiz)
   const uniqueDays = new Set(
     quizResults.map(q => q.timestamp.toDate().toDateString())
   );
@@ -55,11 +55,24 @@ function getEarnedBadges(quizResults) {
       streak = 1;
     }
   }
-
-  // 🔥 Streak Champion (5 gün üst üste quiz)
   if (streak >= 5) badges.push('🔥 Streak Champion');
-
   return badges;
+}
+
+// 📅 Haftanın başlangıç ve bitiş tarihini hesapla
+function getWeekRange() {
+  const today = new Date();
+  const day = today.getDay(); // 0 (Pazar) - 6 (Cumartesi)
+  const monday = new Date(today);
+  const sunday = new Date(today);
+
+  monday.setDate(today.getDate() - ((day + 6) % 7)); // Pazartesi
+  monday.setHours(0, 0, 0, 0);
+
+  sunday.setDate(monday.getDate() + 6);
+  sunday.setHours(23, 59, 59, 999);
+
+  return { monday, sunday };
 }
 
 function AchievementsPage() {
@@ -71,19 +84,23 @@ function AchievementsPage() {
   const [popupGif, setPopupGif] = useState('');
 
   useEffect(() => {
-    const fetchData = async () => {
-      const snapshot = await getDocs(collection(db, 'quizResults'));
+    const fetchData = async (userId) => {
+      const q = query(
+        collection(db, 'quizResults'),
+        where('userId', '==', userId)
+      );
+
+      const snapshot = await getDocs(q);
       const rawData = snapshot.docs.map(doc => doc.data());
 
-      // Rozetleri hesapla
-      const badges = getEarnedBadges(rawData);
-      setEarnedBadges(badges);
+      // ✅ Haftalık verileri filtrele
+      const { monday, sunday } = getWeekRange();
+      const weeklyData = rawData.filter(entry => {
+        const date = entry.timestamp.toDate();
+        return date >= monday && date <= sunday;
+      });
 
-      // Kazanılmayan rozetler
-      const allBadges = ['🐣 Beginner', '🧠 Quiz Master', '💯 Perfect Score', '📚 Consistent Learner', '🔥 Streak Champion'];
-      const unearned = allBadges.filter(badge => !badges.includes(badge));
-      setUnearnedBadges(unearned);
-
+      // 🔢 Günlük doğru/yanlışları gruplama
       const dayMap = {
         0: 'Sunday',
         1: 'Monday',
@@ -104,7 +121,7 @@ function AchievementsPage() {
         Sunday: { correct: 0, incorrect: 0 }
       };
 
-      rawData.forEach(entry => {
+      weeklyData.forEach(entry => {
         const date = entry.timestamp.toDate();
         const day = dayMap[date.getDay()];
         grouped[day].correct += entry.score;
@@ -112,9 +129,28 @@ function AchievementsPage() {
       });
 
       setQuizData(grouped);
+
+      // 🎖 Rozetler için tüm verilerden ilerle
+      const badges = getEarnedBadges(rawData);
+      setEarnedBadges(badges);
+
+      const allBadges = [
+        '🐣 Beginner',
+        '🧠 Quiz Master',
+        '💯 Perfect Score',
+        '📚 Consistent Learner',
+        '🔥 Streak Champion'
+      ];
+      const unearned = allBadges.filter(badge => !badges.includes(badge));
+      setUnearnedBadges(unearned);
     };
 
-    fetchData();
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        fetchData(user.uid);
+      }
+    });
   }, []);
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -151,14 +187,13 @@ function AchievementsPage() {
     }
   };
 
-  // Rozet tıklandığında pop-up göster
   const handleBadgeClick = (badge) => {
     if (earnedBadges.includes(badge)) {
       setPopupMessage(`Congratulations! You've earned the ${badge} badge!`);
-      setPopupGif('🎉');  // Konfeti GIF
+      setPopupGif('🎉');
     } else {
       setPopupMessage(`Keep going! You need to complete more quizzes to earn the ${badge} badge.`);
-      setPopupGif('😞');  // Üzgün surat GIF
+      setPopupGif('😞');
     }
     setShowPopup(true);
   };
@@ -217,11 +252,9 @@ function AchievementsPage() {
         <h3>📘 Completed Modules</h3>
         <ul>
           <li>English</li>
-          {/* Dinamik hale getirilebilir */}
         </ul>
       </div>
 
-      {/* Pop-up */}
       {showPopup && (
         <div className="popup">
           <div className="popup-inner">

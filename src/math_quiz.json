@@ -1,0 +1,302 @@
+[
+  {
+    "question": "What is 5 + 3?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": "8"
+  },
+  {
+    "question": "What is 9 - 4?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What is 6 x 2?",
+    "options": [
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "answer": "12"
+  },
+  {
+    "question": "What is the square of 3?",
+    "options": [
+      "6",
+      "8",
+      "9",
+      "12"
+    ],
+    "answer": "9"
+  },
+  {
+    "question": "What is 12 \u00f7 3?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What is 7 + 6?",
+    "options": [
+      "11",
+      "12",
+      "13",
+      "14"
+    ],
+    "answer": "13"
+  },
+  {
+    "question": "What is 10 x 10?",
+    "options": [
+      "100",
+      "90",
+      "110",
+      "120"
+    ],
+    "answer": "100"
+  },
+  {
+    "question": "What is 100 - 25?",
+    "options": [
+      "65",
+      "75",
+      "85",
+      "95"
+    ],
+    "answer": "75"
+  },
+  {
+    "question": "What is 4 squared?",
+    "options": [
+      "8",
+      "12",
+      "16",
+      "20"
+    ],
+    "answer": "16"
+  },
+  {
+    "question": "What is 20 \u00f7 5?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "How many sides does a triangle have?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "3"
+  },
+  {
+    "question": "What is 15 - 7?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": "8"
+  },
+  {
+    "question": "What is 3 + 4 + 5?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "answer": "12"
+  },
+  {
+    "question": "Which is greater: 45 or 54?",
+    "options": [
+      "45",
+      "54",
+      "Both same",
+      "None"
+    ],
+    "answer": "54"
+  },
+  {
+    "question": "What comes after 99?",
+    "options": [
+      "98",
+      "100",
+      "101",
+      "102"
+    ],
+    "answer": "100"
+  },
+  {
+    "question": "What is half of 20?",
+    "options": [
+      "5",
+      "10",
+      "15",
+      "20"
+    ],
+    "answer": "10"
+  },
+  {
+    "question": "What is 3 x 3?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": "9"
+  },
+  {
+    "question": "What is 4 + 4?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": "8"
+  },
+  {
+    "question": "What is 40 + 60?",
+    "options": [
+      "90",
+      "100",
+      "110",
+      "120"
+    ],
+    "answer": "100"
+  },
+  {
+    "question": "What is 50 \u00f7 10?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": "5"
+  },
+  {
+    "question": "What is 2 + 2 x 2?",
+    "options": [
+      "6",
+      "8",
+      "4",
+      "10"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "How many sides does a square have?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "What is 11 - 3?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": "8"
+  },
+  {
+    "question": "What is the smallest 2-digit number?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "answer": "10"
+  },
+  {
+    "question": "What is 25 + 25?",
+    "options": [
+      "40",
+      "45",
+      "50",
+      "55"
+    ],
+    "answer": "50"
+  },
+  {
+    "question": "What is the missing number: 3, 6, __, 12?",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "answer": "9"
+  },
+  {
+    "question": "What is 14 - 6?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": "8"
+  },
+  {
+    "question": "What is 7 x 0?",
+    "options": [
+      "0",
+      "1",
+      "7",
+      "10"
+    ],
+    "answer": "0"
+  },
+  {
+    "question": "How many hours in a day?",
+    "options": [
+      "24",
+      "12",
+      "10",
+      "30"
+    ],
+    "answer": "24"
+  },
+  {
+    "question": "What is 60 \u00f7 6?",
+    "options": [
+      "10",
+      "9",
+      "8",
+      "7"
+    ],
+    "answer": "10"
+  }
+]

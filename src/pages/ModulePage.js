@@ -52,9 +52,10 @@ function ModulePage() {
   
       <div className="module-links">
         <Link to={`/module/${moduleId}/exercises`} className="lesson-link">Exercises</Link>
-        <Link to={`/module/${moduleId}/quiz`} className="lesson-link">Quiz</Link>
+        <Link to={`/module/${moduleId}/quiz`} state={{ category: moduleId }} className="lesson-link">Quiz</Link>
         <Link to={`/module/${moduleId}/activities`} className="lesson-link">Activities</Link>
       </div>
+
     </div>
   );
 }
