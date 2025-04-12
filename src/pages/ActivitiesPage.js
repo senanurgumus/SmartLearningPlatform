@@ -6,12 +6,24 @@ import './ActivitiesPage.css';
 function ActivitiesPage() {
   const { moduleId } = useParams();
 
-  return (
-    <div className="activities-page">
-      <h2>{moduleId.toUpperCase()} - Activities</h2>
-      <p>This is where fun activities will appear for the {moduleId} module.</p>
+  const activityOptions = {
+    math: ['🧩 Puzzle', '📐 Şekil Sürükle', '➕ Eşleştirme'],
+    science: ['🌋 Deney Simülasyonu', '🌱 Bitki Gelişimi Oyunu', '🔬 Mikroskop Kartları'],
+    english: ['🔤 Harf Eşleştirme', '🎧 Dinle ve Bul', '📚 Kelime Kartları']
+  };
 
-      {/* Aktiviteler burada listelenecek */}
+  const activities = activityOptions[moduleId] || [];
+
+  return (
+    <div className="activities-container">
+      <h2>{moduleId.toUpperCase()} Activities</h2>
+      <div className="activity-list">
+        {activities.map((activity, index) => (
+          <div key={index} className="activity-card">
+            {activity}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
