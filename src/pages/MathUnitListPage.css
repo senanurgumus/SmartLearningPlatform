@@ -1,0 +1,51 @@
+/* Sayfa arka planı ve ortalama */
+body {
+    background-color: #f9fbfc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .math-unit-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Başlık */
+  .math-unit-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  /* Buton grid alanı */
+  .unit-buttons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  /* Butonlar */
+  .unit-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 240px;
+    text-transform: capitalize;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .unit-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
