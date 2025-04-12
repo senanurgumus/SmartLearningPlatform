@@ -1,0 +1,249 @@
+{
+    "Addition and Subtraction Operations": {
+      "questions": [
+        {
+          "question": "What is 5 + 9?",
+          "options": ["12", "13", "14", "15"],
+          "answer": "14"
+        },
+        {
+          "question": "What is 18 - 7?",
+          "options": ["10", "11", "12", "13"],
+          "answer": "11"
+        },
+        {
+          "question": "What is 7 + 8?",
+          "options": ["13", "14", "15", "16"],
+          "answer": "15"
+        },
+        {
+          "question": "What is 6 - 2?",
+          "options": ["3", "4", "5", "6"],
+          "answer": "4"
+        },
+        {
+          "question": "What is 5 + 7?",
+          "options": ["10", "11", "12", "13"],
+          "answer": "12"
+        }
+
+    ]
+    },
+    "Multiples and Factors": {
+      "questions": [
+        {
+          "question": "What is the smallest multiple of 3?",
+          "options": ["3", "6", "9", "12"],
+          "answer": "3"
+        },
+        {
+          "question": "What are the factors of 12?",
+          "options": ["2, 3, 4, 6, 12", "1, 2, 3, 4", "1, 2, 5, 6", "3, 6, 9, 12"],
+          "answer": "2, 3, 4, 6, 12"
+        },
+        {
+          "question": "Which number is divisible by 5?",
+          "options": ["10", "12", "15", "20"],
+          "answer": "10"
+        },
+        {
+          "question": "What is the next multiple of 4 after 16?",
+          "options": ["18", "20", "22", "24"],
+          "answer": "20"
+        }
+      ]
+    },
+    "Fractions (Basic)": {
+      "questions": [
+        {
+          "question": "What is 1/2 of 8?",
+          "options": ["3", "4", "5", "6"],
+          "answer": "4"
+        },
+        {
+          "question": "What is 3/4 of 12?",
+          "options": ["7", "8", "9", "10"],
+          "answer": "9"
+        },
+        {
+          "question": "What is 1/3 of 9?",
+          "options": ["3", "4", "5", "6"],
+          "answer": "3"
+        },
+        {
+          "question": "What is 2/5 of 20?",
+          "options": ["6", "7", "8", "9"],
+          "answer": "8"
+        }
+      ]
+    },
+    "Time and Clocks": {
+      "questions": [
+        {
+          "question": "If the time is 3:00 PM, what time will it be in 2 hours?",
+          "options": ["5:00 PM", "4:00 PM", "6:00 PM", "7:00 PM"],
+          "answer": "5:00 PM"
+        },
+        {
+          "question": "What is the time duration between 9:00 AM and 11:30 AM?",
+          "options": ["1 hour", "2 hours", "2 hours 30 minutes", "3 hours"],
+          "answer": "2 hours 30 minutes"
+        },
+        {
+          "question": "What time will it be 45 minutes after 12:30 PM?",
+          "options": ["1:15 PM", "1:00 PM", "12:45 PM", "12:30 PM"],
+          "answer": "1:15 PM"
+        },
+        {
+          "question": "How many minutes are there in 3 hours?",
+          "options": ["120", "180", "240", "300"],
+          "answer": "180"
+        }
+      ]
+    },
+    "Length and Weight Measurements": {
+      "questions": [
+        {
+          "question": "How many centimeters are in 1 meter?",
+          "options": ["100", "150", "200", "250"],
+          "answer": "100"
+        },
+        {
+          "question": "What is the weight of 5 kilograms in grams?",
+          "options": ["500", "1000", "2000", "5000"],
+          "answer": "5000"
+        },
+        {
+          "question": "How many meters are in 3 kilometers?",
+          "options": ["1000", "3000", "4000", "5000"],
+          "answer": "3000"
+        },
+        {
+          "question": "If you have 3 liters of water, how many milliliters do you have?",
+          "options": ["300", "3000", "30000", "300000"],
+          "answer": "3000"
+        }
+      ]
+    },
+    "Geometric Shapes (Basic)": {
+      "questions": [
+        {
+          "question": "Which of these is a triangle?",
+          "options": ["Square", "Rectangle", "Circle", "Triangle"],
+          "answer": "Triangle"
+        },
+        {
+          "question": "How many sides does a rectangle have?",
+          "options": ["2", "3", "4", "5"],
+          "answer": "4"
+        },
+        {
+          "question": "Which shape has no straight sides?",
+          "options": ["Triangle", "Rectangle", "Circle", "Square"],
+          "answer": "Circle"
+        },
+        {
+          "question": "How many corners does a square have?",
+          "options": ["2", "4", "6", "8"],
+          "answer": "4"
+        }
+      ]
+    },
+    "Even and Odd Numbers": {
+      "questions": [
+        {
+          "question": "Is 8 an even number?",
+          "options": ["Yes", "No"],
+          "answer": "Yes"
+        },
+        {
+          "question": "Is 7 an odd number?",
+          "options": ["Yes", "No"],
+          "answer": "Yes"
+        },
+        {
+          "question": "Is 10 an even number?",
+          "options": ["Yes", "No"],
+          "answer": "Yes"
+        },
+        {
+          "question": "Is 13 an odd number?",
+          "options": ["Yes", "No"],
+          "answer": "Yes"
+        }
+      ]
+    },
+    "Simple Word Problems and Story Problems": {
+      "questions": [
+        {
+          "question": "If I have 3 apples and buy 4 more, how many apples do I have?",
+          "options": ["6", "7", "8", "9"],
+          "answer": "7"
+        },
+        {
+          "question": "You have 5 dollars, and you spend 2 dollars. How much money do you have left?",
+          "options": ["2", "3", "4", "5"],
+          "answer": "3"
+        },
+        {
+          "question": "There are 6 birds in a tree. 2 fly away. How many birds are left?",
+          "options": ["3", "4", "5", "6"],
+          "answer": "4"
+        },
+        {
+          "question": "If you have 4 pencils and your friend gives you 3 more, how many pencils do you have?",
+          "options": ["5", "6", "7", "8"],
+          "answer": "7"
+        }
+      ]
+    },
+    "Division Operations": {
+      "questions": [
+        {
+          "question": "What is 6 divided by 3?",
+          "options": ["1", "2", "3", "4"],
+          "answer": "2"
+        },
+        {
+          "question": "What is 12 divided by 4?",
+          "options": ["2", "3", "4", "5"],
+          "answer": "3"
+        },
+        {
+          "question": "What is 15 divided by 5?",
+          "options": ["2", "3", "4", "5"],
+          "answer": "3"
+        },
+        {
+          "question": "What is 20 divided by 2?",
+          "options": ["8", "9", "10", "11"],
+          "answer": "10"
+        }
+      ]
+    },
+    "Money Calculations": {
+      "questions": [
+        {
+          "question": "If you have 5 coins of 1 dollar, how much money do you have?",
+          "options": ["4 dollars", "5 dollars", "6 dollars", "7 dollars"],
+          "answer": "5 dollars"
+        },
+        {
+          "question": "You buy an item for 3 dollars. How much money will you have if you give 5 dollars?",
+          "options": ["2 dollars", "3 dollars", "4 dollars", "5 dollars"],
+          "answer": "2 dollars"
+        },
+        {
+          "question": "If you have 2 dollars and buy something that costs 1 dollar, how much money do you have left?",
+          "options": ["1 dollar", "2 dollars", "3 dollars", "4 dollars"],
+          "answer": "1 dollar"
+        },
+        {
+          "question": "If you have 10 coins of 2 dollars, how much money do you have?",
+          "options": ["18 dollars", "20 dollars", "22 dollars", "24 dollars"],
+          "answer": "20 dollars"
+        }
+      ]
+    }
+  }
+  

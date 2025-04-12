@@ -12,7 +12,8 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [userType, setUserType] = useState("child");
   const [errorMessage, setErrorMessage] = useState("");
-
+  
+  
   const auth = getAuth(app);
   const db = getFirestore(app);
   const navigate = useNavigate(); // Yönlendirme için

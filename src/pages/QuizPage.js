@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import quizData from '../english_quiz.json';
 import './QuizPage.css';
-import { db } from '../firebase.js';
+import { db, app } from '../firebase.js';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useParams } from 'react-router-dom'; // 🟢 URL'den moduleId al
 
 function QuizPage() {
+  const { moduleId } = useParams(); // 🟢 /module/:moduleId/quiz
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -12,7 +14,9 @@ function QuizPage() {
   const [showPopup, setShowPopup] = useState(false);
   const [emoji, setEmoji] = useState('');
   const [message, setMessage] = useState('');
-  const [showWarningPopup, setShowWarningPopup] = useState(false); // ❗️ Yeni pop-up durumu
+  const [showWarningPopup, setShowWarningPopup] = useState(false);
+  const [userId, setUserId] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const emojis = ['🌟', '🎉', '👏', '🍭', '😊', '🧁', '🐥', '🍩'];
   const messages = [
@@ -27,13 +31,30 @@ function QuizPage() {
   ];
 
   useEffect(() => {
-    const shuffled = quizData.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 10);
-    setQuestions(selected);
-    setAnswers({});
-    setSubmitted(false);
-    setScore(0);
-  }, []);
+    const loadQuiz = async () => {
+      try {
+        const data = await import(`../data/${moduleId}_quiz.json`);
+        const quizList = data.default;
+        const shuffled = quizList.sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, 10);
+        setQuestions(selected);
+      } catch (error) {
+        console.error('Quiz data could not be loaded:', error);
+      }
+
+      const auth = getAuth(app);
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setUserId(user.uid);
+        }
+        setLoading(false);
+      });
+
+      return () => unsubscribe();
+    };
+
+    loadQuiz();
+  }, [moduleId]);
 
   const handleOptionClick = (qIndex, option) => {
     if (!submitted) {
@@ -42,9 +63,14 @@ function QuizPage() {
   };
 
   const handleSubmit = async () => {
+    if (loading || !userId) {
+      alert('User not logged in.');
+      return;
+    }
+
     const unanswered = questions.findIndex((_, i) => answers[i] === undefined);
     if (unanswered !== -1) {
-      setShowWarningPopup(true); // ❗️ Özel pop-up göster
+      setShowWarningPopup(true);
       return;
     }
 
@@ -60,21 +86,20 @@ function QuizPage() {
     setShowPopup(true);
 
     try {
-      await addDoc(collection(db, "quizResults"), {
-        userId: "testUser",
+      await addDoc(collection(db, 'quizResults'), {
+        userId,
         score: count,
         total: questions.length,
-        module: "english",
+        module: moduleId, // ✅ dinamik modül adı
         timestamp: Timestamp.now()
       });
-      console.log("Quiz sonucu Firestore'a kaydedildi.");
     } catch (error) {
-      console.error("Firestore'a yazarken hata oluştu:", error);
+      console.error('Error saving result to Firestore:', error);
     }
   };
 
   const restartQuiz = () => {
-    const shuffled = quizData.sort(() => 0.5 - Math.random());
+    const shuffled = [...questions].sort(() => 0.5 - Math.random());
     const selected = shuffled.slice(0, 10);
     setQuestions(selected);
     setAnswers({});
@@ -83,13 +108,15 @@ function QuizPage() {
     setShowPopup(false);
   };
 
+  if (loading) return <p>Loading...</p>;
+
   return (
     <div className="quiz-container">
       {submitted && (
         <div className="fixed-score">Score: {score} / {questions.length}</div>
       )}
 
-      <h2>Quiz Time!</h2>
+      <h2>{moduleId.toUpperCase()} Quiz</h2>
 
       {questions.map((q, i) => {
         const isCorrect = answers[i] === q.answer;
@@ -140,7 +167,7 @@ function QuizPage() {
         </div>
       )}
 
-      {/* ❗️ Eksik soru uyarısı için özel pop-up */}
+      {/* ❗️ Eksik soru uyarısı */}
       {showWarningPopup && (
         <div className="popup warning-popup">
           <div className="popup-inner">

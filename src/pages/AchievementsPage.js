@@ -1,7 +1,7 @@
-// src/pages/AchievementsPage.js
 import React, { useEffect, useState } from 'react';
-import { db } from '../firebase.js';
-import { collection, getDocs } from 'firebase/firestore';
+import { db, app } from '../firebase.js';
+import { collection, onSnapshot } from 'firebase/firestore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -15,7 +15,6 @@ import './AchievementsPage.css';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-// Rozet açıklamaları
 const badgeDescriptions = {
   "🐣 Beginner": "Complete at least 1 quiz.",
   "🧠 Quiz Master": "Complete 10 quizzes.",
@@ -24,22 +23,15 @@ const badgeDescriptions = {
   "🔥 Streak Champion": "Complete quizzes for 5 consecutive days."
 };
 
-// Rozet kontrol fonksiyonu
 function getEarnedBadges(quizResults) {
   const badges = [];
   const totalQuizzes = quizResults.length;
   const perfectScores = quizResults.filter(q => q.score === q.total).length;
 
-  // 🐣 Beginner
   if (totalQuizzes >= 1) badges.push('🐣 Beginner');
-
-  // 🧠 Quiz Master
   if (totalQuizzes >= 10) badges.push('🧠 Quiz Master');
-
-  // 💯 Perfect Score
   if (perfectScores >= 1) badges.push('💯 Perfect Score');
 
-  // 📚 Consistent Learner (3 gün üst üste quiz)
   const uniqueDays = new Set(
     quizResults.map(q => q.timestamp.toDate().toDateString())
   );
@@ -50,13 +42,14 @@ function getEarnedBadges(quizResults) {
     const curr = new Date(sortedDays[i]);
     if ((curr - prev) / (1000 * 60 * 60 * 24) === 1) {
       streak++;
-      if (streak >= 3) badges.push('📚 Consistent Learner');
+      if (streak >= 3 && !badges.includes('📚 Consistent Learner')) {
+        badges.push('📚 Consistent Learner');
+      }
     } else {
       streak = 1;
     }
   }
 
-  // 🔥 Streak Champion (5 gün üst üste quiz)
   if (streak >= 5) badges.push('🔥 Streak Champion');
 
   return badges;
@@ -69,52 +62,59 @@ function AchievementsPage() {
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
   const [popupGif, setPopupGif] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const snapshot = await getDocs(collection(db, 'quizResults'));
-      const rawData = snapshot.docs.map(doc => doc.data());
+    const auth = getAuth(app);
+    const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        setLoading(false);
+        return;
+      }
 
-      // Rozetleri hesapla
-      const badges = getEarnedBadges(rawData);
-      setEarnedBadges(badges);
+      const userId = user.uid;
 
-      // Kazanılmayan rozetler
-      const allBadges = ['🐣 Beginner', '🧠 Quiz Master', '💯 Perfect Score', '📚 Consistent Learner', '🔥 Streak Champion'];
-      const unearned = allBadges.filter(badge => !badges.includes(badge));
-      setUnearnedBadges(unearned);
+      const unsubscribeData = onSnapshot(collection(db, 'quizResults'), (snapshot) => {
+        const allResults = snapshot.docs.map(doc => doc.data());
+        const userResults = allResults.filter(data => data.userId === userId);
 
-      const dayMap = {
-        0: 'Sunday',
-        1: 'Monday',
-        2: 'Tuesday',
-        3: 'Wednesday',
-        4: 'Thursday',
-        5: 'Friday',
-        6: 'Saturday'
-      };
+        const badges = getEarnedBadges(userResults);
+        setEarnedBadges(badges);
 
-      const grouped = {
-        Monday: { correct: 0, incorrect: 0 },
-        Tuesday: { correct: 0, incorrect: 0 },
-        Wednesday: { correct: 0, incorrect: 0 },
-        Thursday: { correct: 0, incorrect: 0 },
-        Friday: { correct: 0, incorrect: 0 },
-        Saturday: { correct: 0, incorrect: 0 },
-        Sunday: { correct: 0, incorrect: 0 }
-      };
+        const allBadges = ['🐣 Beginner', '🧠 Quiz Master', '💯 Perfect Score', '📚 Consistent Learner', '🔥 Streak Champion'];
+        const unearned = allBadges.filter(b => !badges.includes(b));
+        setUnearnedBadges(unearned);
 
-      rawData.forEach(entry => {
-        const date = entry.timestamp.toDate();
-        const day = dayMap[date.getDay()];
-        grouped[day].correct += entry.score;
-        grouped[day].incorrect += (entry.total - entry.score);
+        const dayMap = {
+          0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday',
+          4: 'Thursday', 5: 'Friday', 6: 'Saturday'
+        };
+
+        const grouped = {
+          Monday: { correct: 0, incorrect: 0 },
+          Tuesday: { correct: 0, incorrect: 0 },
+          Wednesday: { correct: 0, incorrect: 0 },
+          Thursday: { correct: 0, incorrect: 0 },
+          Friday: { correct: 0, incorrect: 0 },
+          Saturday: { correct: 0, incorrect: 0 },
+          Sunday: { correct: 0, incorrect: 0 }
+        };
+
+        userResults.forEach(entry => {
+          const date = entry.timestamp.toDate();
+          const day = dayMap[date.getDay()];
+          grouped[day].correct += entry.score;
+          grouped[day].incorrect += (entry.total - entry.score);
+        });
+
+        setQuizData(grouped);
+        setLoading(false);
       });
 
-      setQuizData(grouped);
-    };
+      return () => unsubscribeData();
+    });
 
-    fetchData();
+    return () => unsubscribeAuth();
   }, []);
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -140,28 +140,25 @@ function AchievementsPage() {
   const chartOptions = {
     responsive: true,
     plugins: {
-      legend: {
-        position: 'top'
-      }
+      legend: { position: 'top' }
     },
     scales: {
-      y: {
-        beginAtZero: true
-      }
+      y: { beginAtZero: true }
     }
   };
 
-  // Rozet tıklandığında pop-up göster
   const handleBadgeClick = (badge) => {
     if (earnedBadges.includes(badge)) {
       setPopupMessage(`Congratulations! You've earned the ${badge} badge!`);
-      setPopupGif('🎉');  // Konfeti GIF
+      setPopupGif('🎉');
     } else {
       setPopupMessage(`Keep going! You need to complete more quizzes to earn the ${badge} badge.`);
-      setPopupGif('😞');  // Üzgün surat GIF
+      setPopupGif('😞');
     }
     setShowPopup(true);
   };
+
+  if (loading) return <p>Loading your achievements...</p>;
 
   return (
     <div className="achievements-container">
@@ -217,11 +214,9 @@ function AchievementsPage() {
         <h3>📘 Completed Modules</h3>
         <ul>
           <li>English</li>
-          {/* Dinamik hale getirilebilir */}
         </ul>
       </div>
 
-      {/* Pop-up */}
       {showPopup && (
         <div className="popup">
           <div className="popup-inner">

@@ -1,0 +1,13 @@
+[
+    {
+      "question": "What planet do we live on?",
+      "options": ["Mars", "Earth", "Venus", "Jupiter"],
+      "answer": "Earth"
+    },
+    {
+      "question": "What do plants need to grow?",
+      "options": ["Milk", "Sunlight", "Cheese", "Plastic"],
+      "answer": "Sunlight"
+    }
+  ]
+  

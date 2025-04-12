@@ -10,6 +10,8 @@ import ExercisesPage from './pages/ExercisesPage.js';
 import QuizPage from './pages/QuizPage.js';
 import ActivitiesPage from './pages/ActivitiesPage.js';
 import AchievementsPage from './pages/AchievementsPage.js';
+import MathUnitListPage from './pages/MathUnitListPage.js';
+import MathUnitQuizPage from './pages/MathUnitQuizPage.js';
 
 
 function App() {
@@ -26,6 +28,9 @@ function App() {
         <Route path="/module/:moduleId/quiz" element={<QuizPage />} />
         <Route path="/module/:moduleId/activities" element={<ActivitiesPage />} />
         <Route path="/achievements" element={<AchievementsPage />} />
+        <Route path="/module/math/quiz" element={<MathUnitListPage />} />
+        <Route path="/module/math/quiz/:unitId" element={<MathUnitQuizPage />} />
+
 
       </Routes>
     </Router>

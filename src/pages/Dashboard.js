@@ -4,12 +4,29 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase.js';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 function Dashboard() {
   const [modules, setModules] = useState([]);
   const [showContent, setShowContent] = useState(false);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
+    const auth = getAuth();
+
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser); // Kullanıcı varsa, user state'ini güncelle
+      } else {
+        setUser(null); // Kullanıcı yoksa, user state'ini null yap
+      }
+    });
+
+    const currentUser = auth.currentUser;
+    if(currentUser) {
+      setUser(currentUser);
+    }
+
     const fetchModules = async () => {
       const querySnapshot = await getDocs(collection(db, 'modules'));
       const modulesData = querySnapshot.docs.map(doc => ({
@@ -26,7 +43,10 @@ function Dashboard() {
       setShowContent(true);
     }, 800);
 
-    return () => clearTimeout(timer);
+    return () => {
+      unsubscribe(); // Oturum durumu dinleyicisini temizle
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
@@ -56,6 +76,12 @@ function Dashboard() {
             <Link to="/achievements" className="achievements-button">
               My Achievements
             </Link>
+          </div>
+
+          <div>
+            <p>
+              Hello {user.email}
+            </p>
           </div>
         </>
       )}
