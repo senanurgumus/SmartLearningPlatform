@@ -7,11 +7,14 @@ import ParentDashboard from "./pages/ParentDashboard.js";
 import ModulePage from "./pages/ModulePage.js";
 import Home from "./pages/Home.js";
 import ExercisesPage from './pages/ExercisesPage.js';
-import QuizPage from './pages/QuizPage.js';
 import ActivitiesPage from './pages/ActivitiesPage.js';
 import AchievementsPage from './pages/AchievementsPage.js';
 import MathUnitListPage from './pages/MathUnitListPage.js';
 import MathUnitQuizPage from './pages/MathUnitQuizPage.js';
+import ScienceUnitListPage from "./pages/ScienceUnitListPage.js";
+import ScienceUnitQuizPage from "./pages/ScienceUnitQuizPage.js";
+import EnglishUnitListPage from "./pages/EnglishUnitListPage.js";
+import EnglishUnitQuizPage from "./pages/EnglishUnitQuizPage.js";
 
 
 function App() {
@@ -25,13 +28,16 @@ function App() {
         <Route path="/module/:moduleId" element={<ModulePage />} />
         <Route path="/" element={<Home />} />
         <Route path="/module/:moduleId/exercises" element={<ExercisesPage />} />
-        <Route path="/module/:moduleId/quiz" element={<QuizPage />} />
         <Route path="/module/:moduleId/activities" element={<ActivitiesPage />} />
         <Route path="/achievements" element={<AchievementsPage />} />
         <Route path="/module/math/quiz" element={<MathUnitListPage />} />
         <Route path="/module/math/quiz/:unitId" element={<MathUnitQuizPage />} />
-
-
+        <Route path="/achievements/:moduleId" element={<AchievementsPage />} />
+        <Route path="/module/science/quiz" element={<ScienceUnitListPage />} />
+        <Route path="/module/science/quiz/:unitId" element={<ScienceUnitQuizPage />} />
+        <Route path="/module/english/quiz" element={<EnglishUnitListPage />} />
+        <Route path="/module/english/quiz/:unitId" element={<EnglishUnitQuizPage />} />
+        
       </Routes>
     </Router>
   );

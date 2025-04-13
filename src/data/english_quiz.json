@@ -1,36 +1,1409 @@
-[
+{
+  "alphabet_and_phonics": [
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Tuh",
+        "Mmm",
+        "Sss",
+        "Buh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "G",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Dog",
+        "Cat",
+        "Apple",
+        "Ball"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "C",
+        "D",
+        "F",
+        "B"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "G",
+        "B",
+        "E",
+        "T"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "Fish",
+        "Bear",
+        "House",
+        "Goat"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Lion",
+        "Giraffe",
+        "Elephant",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Lion",
+        "Tiger",
+        "Giraffe"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Hat",
+        "Run",
+        "Sun",
+        "Dog"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "C",
+        "D",
+        "F",
+        "B"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "G",
+        "T",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "A",
+        "P",
+        "E",
+        "L"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which letter comes after 'C'?",
+      "options": [
+        "E",
+        "D",
+        "A",
+        "B"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "Which letter comes after 'C'?",
+      "options": [
+        "E",
+        "D",
+        "A",
+        "B"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "E",
+        "B",
+        "G"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "G",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Tuh",
+        "Sss",
+        "Buh",
+        "Mmm"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Tiger",
+        "Giraffe",
+        "Lion"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Dog",
+        "Hat",
+        "Sun",
+        "Run"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Giraffe",
+        "Lion",
+        "Tiger",
+        "Elephant"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Apple",
+        "Cat",
+        "Ball",
+        "Dog"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Sss",
+        "Tuh",
+        "Mmm",
+        "Buh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "L",
+        "P",
+        "E",
+        "A"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Giraffe",
+        "Elephant",
+        "Lion",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which letter comes after 'C'?",
+      "options": [
+        "E",
+        "D",
+        "A",
+        "B"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Mmm",
+        "Buh",
+        "Sss",
+        "Tuh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "G",
+        "T",
+        "B",
+        "E"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "F",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Mmm",
+        "Tuh",
+        "Buh",
+        "Sss"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which letter comes before 'M'?",
+      "options": [
+        "N",
+        "K",
+        "L",
+        "O"
+      ],
+      "answer": "L"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "F",
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Giraffe",
+        "Tiger",
+        "Lion",
+        "Elephant"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Tiger",
+        "Lion",
+        "Elephant",
+        "Giraffe"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "Bear",
+        "Fish",
+        "House",
+        "Goat"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Sun",
+        "Dog",
+        "Run",
+        "Hat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Tiger",
+        "Lion",
+        "Giraffe",
+        "Elephant"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Mmm",
+        "Tuh",
+        "Sss",
+        "Buh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "E",
+        "A",
+        "P",
+        "L"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Tiger",
+        "Elephant",
+        "Giraffe",
+        "Lion"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "E",
+        "G",
+        "B",
+        "T"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Dog",
+        "Ball",
+        "Cat",
+        "Apple"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Sun",
+        "Run",
+        "Dog",
+        "Hat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Dog",
+        "Run",
+        "Sun",
+        "Hat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which letter comes before 'M'?",
+      "options": [
+        "O",
+        "N",
+        "K",
+        "L"
+      ],
+      "answer": "L"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Sun",
+        "Run",
+        "Hat",
+        "Dog"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "G",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "F",
+        "D",
+        "B",
+        "C"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Buh",
+        "Sss",
+        "Mmm",
+        "Tuh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "P",
+        "A",
+        "E",
+        "L"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Sss",
+        "Mmm",
+        "Buh",
+        "Tuh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "D",
+        "B",
+        "F",
+        "C"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which letter comes before 'M'?",
+      "options": [
+        "N",
+        "O",
+        "K",
+        "L"
+      ],
+      "answer": "L"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "F",
+        "D",
+        "B",
+        "C"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "B",
+        "F",
+        "D",
+        "C"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Dog",
+        "Hat",
+        "Run",
+        "Sun"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Giraffe",
+        "Tiger",
+        "Lion",
+        "Elephant"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Dog",
+        "Run",
+        "Sun",
+        "Hat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Dog",
+        "Apple",
+        "Ball",
+        "Cat"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Cat",
+        "Ball",
+        "Apple",
+        "Dog"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "B",
+        "G",
+        "E"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Cat",
+        "Dog",
+        "Ball",
+        "Apple"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Lion",
+        "Tiger",
+        "Giraffe"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "G",
+        "E",
+        "T",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Run",
+        "Hat",
+        "Sun",
+        "Dog"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "E",
+        "G",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "G",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which letter comes after 'C'?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "D"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Lion",
+        "Giraffe",
+        "Elephant",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "House",
+        "Bear",
+        "Goat",
+        "Fish"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Hat",
+        "Sun",
+        "Run",
+        "Dog"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "House",
+        "Bear",
+        "Fish",
+        "Goat"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which letter comes after 'C'?",
+      "options": [
+        "D",
+        "B",
+        "E",
+        "A"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Sun",
+        "Dog",
+        "Run",
+        "Hat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "L",
+        "E",
+        "A",
+        "P"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Dog",
+        "Hat",
+        "Run",
+        "Sun"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Mmm",
+        "Buh",
+        "Sss",
+        "Tuh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Dog",
+        "Ball",
+        "Cat",
+        "Apple"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Tiger",
+        "Giraffe",
+        "Lion"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "G",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Apple",
+        "Ball",
+        "Dog",
+        "Cat"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Giraffe",
+        "Lion",
+        "Elephant",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "B",
+        "G",
+        "E"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which letter comes before 'M'?",
+      "options": [
+        "N",
+        "L",
+        "O",
+        "K"
+      ],
+      "answer": "L"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "L",
+        "A",
+        "E",
+        "P"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Apple",
+        "Cat",
+        "Ball",
+        "Dog"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "A",
+        "E",
+        "P",
+        "L"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "B",
+        "D",
+        "C",
+        "F"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Sss",
+        "Tuh",
+        "Buh",
+        "Mmm"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which letter comes before 'M'?",
+      "options": [
+        "O",
+        "N",
+        "K",
+        "L"
+      ],
+      "answer": "L"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "House",
+        "Bear",
+        "Goat",
+        "Fish"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Lion",
+        "Giraffe",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Ball",
+        "Cat",
+        "Apple",
+        "Dog"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Cat",
+        "Apple",
+        "Ball",
+        "Dog"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "L",
+        "E",
+        "P",
+        "A"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Buh",
+        "Sss",
+        "Mmm",
+        "Tuh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Giraffe",
+        "Lion",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "Fish",
+        "Bear",
+        "House",
+        "Goat"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "House",
+        "Fish",
+        "Bear",
+        "Goat"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Run",
+        "Dog",
+        "Hat",
+        "Sun"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Cat",
+        "Apple",
+        "Dog",
+        "Ball"
+      ],
+      "answer": "Ball"
+    }
+  ],
+  "colors_and_shapes": [
     {
       "question": "What color is the sun?",
       "options": [
-        "Blue",
+        "Green",
         "Red",
         "Yellow",
-        "Green"
+        "Blue"
       ],
       "answer": "Yellow"
     },
     {
-      "question": "Which one is red?",
+      "question": "What color are bananas?",
       "options": [
-        "Banana",
-        "Apple",
-        "Grapes",
-        "Pear"
+        "Green",
+        "Red",
+        "Yellow",
+        "Blue"
       ],
-      "answer": "Apple"
+      "answer": "Yellow"
     },
     {
-      "question": "What color is the sky on a clear day?",
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Square",
+        "Triangle",
+        "Rectangle",
+        "Oval"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Pink",
+        "Black",
+        "Green",
+        "Brown"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Blue",
+        "Purple",
+        "Green",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "What color are bananas?",
+      "options": [
+        "Green",
+        "Blue",
+        "Red",
+        "Yellow"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Triangle",
+        "Circle",
+        "Hexagon",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Yellow",
+        "Green",
+        "Blue",
+        "Red"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Circle",
+        "Rectangle",
+        "Star",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Purple",
+        "Blue",
+        "Green",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Black",
+        "Brown",
+        "Pink",
+        "Green"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Green",
+        "Orange",
+        "Purple",
+        "Blue"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "What color are bananas?",
       "options": [
         "Blue",
         "Green",
-        "Black",
-        "Orange"
+        "Red",
+        "Yellow"
       ],
-      "answer": "Blue"
+      "answer": "Yellow"
     },
     {
-      "question": "Which shape has three sides?",
+      "question": "What color is the sun?",
+      "options": [
+        "Blue",
+        "Yellow",
+        "Green",
+        "Red"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Blue",
+        "Green",
+        "Yellow",
+        "Red"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Square",
+        "Oval",
+        "Rectangle",
+        "Triangle"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Rectangle",
+        "Oval",
+        "Triangle",
+        "Square"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "What color are bananas?",
+      "options": [
+        "Blue",
+        "Red",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Purple",
+        "Orange",
+        "Blue",
+        "Red"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Purple",
+        "Blue",
+        "Red",
+        "Orange"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Square",
+        "Rectangle",
+        "Star",
+        "Circle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Rectangle",
+        "Circle",
+        "Square",
+        "Star"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Red",
+        "Purple",
+        "Blue",
+        "Orange"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Square",
+        "Circle",
+        "Triangle",
+        "Hexagon"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Square",
+        "Rectangle",
+        "Triangle",
+        "Circle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Circle",
+        "Square",
+        "Star",
+        "Rectangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Blue",
+        "Green",
+        "Orange",
+        "Purple"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Black",
+        "Pink",
+        "Brown",
+        "Green"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Circle",
+        "Rectangle",
+        "Square",
+        "Triangle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Circle",
+        "Square",
+        "Triangle",
+        "Rectangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Circle",
+        "Triangle",
+        "Rectangle",
+        "Square"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Purple",
+        "Green",
+        "Blue",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Triangle",
+        "Rectangle",
+        "Oval",
+        "Square"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Square",
+        "Circle",
+        "Hexagon",
+        "Triangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Pink",
+        "Green",
+        "Brown",
+        "Black"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Orange",
+        "Blue",
+        "Green",
+        "Purple"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Rectangle",
+        "Star",
+        "Square",
+        "Circle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Orange",
+        "Green",
+        "Blue",
+        "Purple"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Orange",
+        "Blue",
+        "Purple",
+        "Green"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Square",
+        "Rectangle",
+        "Triangle",
+        "Oval"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape has 3 sides?",
       "options": [
         "Circle",
         "Square",
@@ -40,463 +1413,594 @@
       "answer": "Triangle"
     },
     {
-      "question": "What shape is a coin?",
+      "question": "Which color is made by mixing red and yellow?",
       "options": [
-        "Triangle",
+        "Green",
+        "Blue",
+        "Purple",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Black",
+        "Brown",
+        "Green",
+        "Pink"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Rectangle",
+        "Star",
         "Circle",
-        "Square",
-        "Rectangle"
+        "Square"
       ],
       "answer": "Circle"
     },
     {
-      "question": "Which one is green?",
+      "question": "What color is grass?",
       "options": [
-        "Strawberry",
-        "Lemon",
-        "Carrot",
-        "Leaf"
-      ],
-      "answer": "Leaf"
-    },
-    {
-      "question": "What color are clouds?",
-      "options": [
-        "Yellow",
+        "Pink",
         "Black",
-        "White",
-        "Red"
+        "Green",
+        "Brown"
       ],
-      "answer": "White"
+      "answer": "Green"
     },
     {
-      "question": "Which shape has four equal sides?",
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Square",
+        "Triangle",
+        "Oval",
+        "Rectangle"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Triangle",
+        "Rectangle",
+        "Oval",
+        "Square"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Circle",
+        "Triangle",
+        "Rectangle",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Blue",
+        "Green",
+        "Orange",
+        "Purple"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Rectangle",
+        "Square",
+        "Circle",
+        "Triangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Purple",
+        "Red",
+        "Orange",
+        "Blue"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "Which shape is round?",
       "options": [
         "Rectangle",
         "Square",
         "Triangle",
         "Circle"
       ],
-      "answer": "Square"
+      "answer": "Circle"
     },
     {
-      "question": "Which one is a farm animal?",
-      "options": [
-        "Tiger",
-        "Dog",
-        "Cow",
-        "Lion"
-      ],
-      "answer": "Cow"
-    },
-    {
-      "question": "Which animal can fly?",
-      "options": [
-        "Dog",
-        "Elephant",
-        "Bird",
-        "Horse"
-      ],
-      "answer": "Bird"
-    },
-    {
-      "question": "Which animal says 'meow'?",
-      "options": [
-        "Dog",
-        "Cow",
-        "Cat",
-        "Duck"
-      ],
-      "answer": "Cat"
-    },
-    {
-      "question": "Which animal lives in water?",
-      "options": [
-        "Monkey",
-        "Frog",
-        "Zebra",
-        "Fish"
-      ],
-      "answer": "Fish"
-    },
-    {
-      "question": "Which one is the biggest animal?",
-      "options": [
-        "Dog",
-        "Elephant",
-        "Goat",
-        "Pig"
-      ],
-      "answer": "Elephant"
-    },
-    {
-      "question": "Which one has wings?",
-      "options": [
-        "Cat",
-        "Bird",
-        "Snake",
-        "Mouse"
-      ],
-      "answer": "Bird"
-    },
-    {
-      "question": "Where does a bird live?",
-      "options": [
-        "Nest",
-        "Hole",
-        "House",
-        "Cave"
-      ],
-      "answer": "Nest"
-    },
-    {
-      "question": "Which animal is known as the king of the jungle?",
-      "options": [
-        "Lion",
-        "Giraffe",
-        "Dog",
-        "Bear"
-      ],
-      "answer": "Lion"
-    },
-    {
-      "question": "Which one is a fruit?",
-      "options": [
-        "Carrot",
-        "Potato",
-        "Banana",
-        "Broccoli"
-      ],
-      "answer": "Banana"
-    },
-    {
-      "question": "Which drink is white?",
-      "options": [
-        "Juice",
-        "Milk",
-        "Tea",
-        "Water"
-      ],
-      "answer": "Milk"
-    },
-    {
-      "question": "Which food is sweet?",
-      "options": [
-        "Cake",
-        "Rice",
-        "Bread",
-        "Soup"
-      ],
-      "answer": "Cake"
-    },
-    {
-      "question": "Which one is a vegetable?",
-      "options": [
-        "Apple",
-        "Carrot",
-        "Orange",
-        "Strawberry"
-      ],
-      "answer": "Carrot"
-    },
-    {
-      "question": "Which one is used in salad?",
-      "options": [
-        "Cucumber",
-        "Cake",
-        "Ice cream",
-        "Rice"
-      ],
-      "answer": "Cucumber"
-    },
-    {
-      "question": "Which one is not a drink?",
-      "options": [
-        "Juice",
-        "Milk",
-        "Apple",
-        "Tea"
-      ],
-      "answer": "Apple"
-    },
-    {
-      "question": "Which food is round and cheesy?",
-      "options": [
-        "Pizza",
-        "Burger",
-        "Pasta",
-        "Sandwich"
-      ],
-      "answer": "Pizza"
-    },
-    {
-      "question": "Which one is cold and sweet?",
-      "options": [
-        "Ice Cream",
-        "Soup",
-        "Bread",
-        "Rice"
-      ],
-      "answer": "Ice Cream"
-    },
-    {
-      "question": "Which one do you use to write?",
-      "options": [
-        "Pen",
-        "Spoon",
-        "Phone",
-        "Brush"
-      ],
-      "answer": "Pen"
-    },
-    {
-      "question": "Which one is used to brush your teeth?",
-      "options": [
-        "Comb",
-        "Toothbrush",
-        "Spoon",
-        "Pencil"
-      ],
-      "answer": "Toothbrush"
-    },
-    {
-      "question": "What do you wear on your feet?",
-      "options": [
-        "Gloves",
-        "Socks",
-        "Hat",
-        "Shirt"
-      ],
-      "answer": "Socks"
-    },
-    {
-      "question": "Which one do we use to eat soup?",
-      "options": [
-        "Fork",
-        "Spoon",
-        "Knife",
-        "Hand"
-      ],
-      "answer": "Spoon"
-    },
-    {
-      "question": "What do we use to call someone?",
-      "options": [
-        "TV",
-        "Phone",
-        "Fridge",
-        "Book"
-      ],
-      "answer": "Phone"
-    },
-    {
-      "question": "Which one is for reading?",
-      "options": [
-        "Book",
-        "Plate",
-        "Hat",
-        "Ball"
-      ],
-      "answer": "Book"
-    },
-    {
-      "question": "What do you do with a ball?",
-      "options": [
-        "Read",
-        "Kick",
-        "Eat",
-        "Sleep"
-      ],
-      "answer": "Kick"
-    },
-    {
-      "question": "What do you wear on your head?",
-      "options": [
-        "Hat",
-        "Socks",
-        "Shoes",
-        "Scarf"
-      ],
-      "answer": "Hat"
-    },
-    {
-      "question": "___ apple a day keeps the doctor away.",
-      "options": [
-        "An",
-        "A",
-        "The",
-        "One"
-      ],
-      "answer": "An"
-    },
-    {
-      "question": "She ___ playing with her toy.",
-      "options": [
-        "is",
-        "are",
-        "am",
-        "was"
-      ],
-      "answer": "is"
-    },
-    {
-      "question": "They ___ happy today.",
-      "options": [
-        "is",
-        "are",
-        "am",
-        "was"
-      ],
-      "answer": "are"
-    },
-    {
-      "question": "He ___ a cat.",
-      "options": [
-        "have",
-        "has",
-        "is",
-        "are"
-      ],
-      "answer": "has"
-    },
-    {
-      "question": "I ___ a student.",
-      "options": [
-        "is",
-        "am",
-        "are",
-        "be"
-      ],
-      "answer": "am"
-    },
-    {
-      "question": "___ you like ice cream?",
-      "options": [
-        "Do",
-        "Does",
-        "Is",
-        "Did"
-      ],
-      "answer": "Do"
-    },
-    {
-      "question": "Where ___ you from?",
-      "options": [
-        "is",
-        "are",
-        "am",
-        "do"
-      ],
-      "answer": "are"
-    },
-    {
-      "question": "She ___ not here.",
-      "options": [
-        "is",
-        "are",
-        "am",
-        "do"
-      ],
-      "answer": "is"
-    },
-    {
-      "question": "The cat is ___ the table.",
-      "options": [
-        "on",
-        "in",
-        "under",
-        "next"
-      ],
-      "answer": "on"
-    },
-    {
-      "question": "The ball is ___ the box.",
-      "options": [
-        "in",
-        "on",
-        "under",
-        "at"
-      ],
-      "answer": "in"
-    },
-    {
-      "question": "The dog is ___ the sofa.",
-      "options": [
-        "under",
-        "over",
-        "above",
-        "behind"
-      ],
-      "answer": "under"
-    },
-    {
-      "question": "The book is ___ the bag.",
-      "options": [
-        "inside",
-        "on",
-        "above",
-        "next to"
-      ],
-      "answer": "inside"
-    },
-    {
-      "question": "The chair is ___ the desk.",
-      "options": [
-        "beside",
-        "between",
-        "on",
-        "in"
-      ],
-      "answer": "beside"
-    },
-    {
-      "question": "Tom has a red ball. He plays with it every day. What color is Tom\u2019s ball?",
+      "question": "What color is the sun?",
       "options": [
         "Blue",
-        "Red",
+        "Yellow",
         "Green",
-        "Yellow"
+        "Red"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Circle",
+        "Triangle",
+        "Rectangle",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Square",
+        "Rectangle",
+        "Circle",
+        "Star"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Rectangle",
+        "Square",
+        "Triangle",
+        "Circle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Square",
+        "Circle",
+        "Rectangle",
+        "Triangle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Blue",
+        "Purple",
+        "Red",
+        "Orange"
       ],
       "answer": "Red"
     },
     {
-      "question": "Anna has a dog. It likes to bark. What pet does Anna have?",
+      "question": "Which shape has no corners?",
       "options": [
-        "Cat",
-        "Rabbit",
-        "Dog",
-        "Fish"
+        "Circle",
+        "Star",
+        "Rectangle",
+        "Square"
       ],
-      "answer": "Dog"
+      "answer": "Circle"
     },
     {
-      "question": "Lisa eats an apple every morning. What does she eat?",
+      "question": "What color is grass?",
       "options": [
-        "Banana",
-        "Cake",
-        "Apple",
-        "Pizza"
-      ],
-      "answer": "Apple"
-    },
-    {
-      "question": "Ben is reading a book in his bed. Where is Ben?",
-      "options": [
-        "School",
-        "Kitchen",
-        "Garden",
-        "Bed"
-      ],
-      "answer": "Bed"
-    },
-    {
-      "question": "Mia has a blue bag. What color is her bag?",
-      "options": [
-        "Pink",
-        "Blue",
+        "Brown",
         "Black",
+        "Green",
+        "Pink"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Yellow",
+        "Green",
+        "Blue",
         "Red"
       ],
-      "answer": "Blue"
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Black",
+        "Green",
+        "Pink",
+        "Brown"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Blue",
+        "Green",
+        "Red",
+        "Yellow"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Pink",
+        "Black",
+        "Brown",
+        "Green"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Circle",
+        "Square",
+        "Triangle",
+        "Rectangle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Square",
+        "Triangle",
+        "Oval",
+        "Rectangle"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Rectangle",
+        "Circle",
+        "Star",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Red",
+        "Orange",
+        "Purple",
+        "Blue"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Square",
+        "Triangle",
+        "Circle",
+        "Rectangle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Purple",
+        "Orange",
+        "Blue",
+        "Green"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Rectangle",
+        "Square",
+        "Oval",
+        "Triangle"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Triangle",
+        "Square",
+        "Hexagon",
+        "Circle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Circle",
+        "Triangle",
+        "Square",
+        "Rectangle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Orange",
+        "Green",
+        "Blue",
+        "Purple"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Purple",
+        "Green",
+        "Orange",
+        "Blue"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Rectangle",
+        "Star",
+        "Square",
+        "Circle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Triangle",
+        "Square",
+        "Circle",
+        "Hexagon"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Star",
+        "Circle",
+        "Rectangle",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Pink",
+        "Green",
+        "Black",
+        "Brown"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Circle",
+        "Square",
+        "Rectangle",
+        "Triangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Rectangle",
+        "Triangle",
+        "Square",
+        "Oval"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Purple",
+        "Green",
+        "Blue",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Square",
+        "Triangle",
+        "Circle",
+        "Rectangle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Yellow",
+        "Blue",
+        "Red",
+        "Green"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Square",
+        "Hexagon",
+        "Circle",
+        "Triangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Oval",
+        "Rectangle",
+        "Triangle",
+        "Square"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Orange",
+        "Purple",
+        "Blue",
+        "Red"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Blue",
+        "Green",
+        "Yellow",
+        "Red"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color are bananas?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Triangle",
+        "Circle",
+        "Hexagon",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Blue",
+        "Green",
+        "Purple",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Triangle",
+        "Rectangle",
+        "Square",
+        "Oval"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Square",
+        "Circle",
+        "Triangle",
+        "Rectangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Red",
+        "Blue",
+        "Orange",
+        "Purple"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Black",
+        "Pink",
+        "Green",
+        "Brown"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Yellow",
+        "Blue",
+        "Red",
+        "Green"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Circle",
+        "Square",
+        "Star",
+        "Rectangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color are bananas?",
+      "options": [
+        "Blue",
+        "Red",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color are bananas?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Triangle",
+        "Hexagon",
+        "Square",
+        "Circle"
+      ],
+      "answer": "Circle"
     }
   ]
+}

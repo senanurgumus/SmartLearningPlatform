@@ -1,60 +1,58 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import mathQuiz from '../data/math_quiz.json';
+import scienceQuiz from '../data/science_quiz.json';
 import './QuizPage.css';
 import { db, app } from '../firebase.js';
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-function MathUnitQuizPage() {
+function ScienceUnitQuizPage() {
   const { unitId: unit } = useParams();
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
   const [userId, setUserId] = useState(null);
-
-  const emojis = ['🌟', '🎉', '👏', '🍭', '😊', '🧁', '🐥', '🍩'];
-  const messages = [
-    'Great job, superstar!',
-    'Keep up the amazing work!',
-    'You’re on the right path!',
-    'Practice makes perfect!',
-    'You did awesome!',
-    'You’re getting better every day!',
-    'Believe in yourself!',
-    'Well done, learner!'
-  ];
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
   const [popupEmoji, setPopupEmoji] = useState('');
   const [showWarningPopup, setShowWarningPopup] = useState(false);
 
+  const emojis = ['🎉', '🌟', '👏', '😊', '🍭', '🧁', '🐞'];
+
+  const messages = [
+    'Great job!',
+    'You are a star!',
+    'Keep it up!',
+    'Amazing effort!',
+    'Super smart!',
+    'Fantastic work!',
+    'Bravo!'
+  ];
+
   useEffect(() => {
     if (!unit) return;
-    const data = mathQuiz[unit];
+    const data = scienceQuiz[unit];
 
     if (Array.isArray(data)) {
       const shuffled = [...data].sort(() => 0.5 - Math.random());
       setQuestions(shuffled.slice(0, 10));
     } else {
-      console.error('Invalid or missing unit in math_quiz.json:', unit);
+      console.error('Invalid or missing unit in science_quiz.json:', unit);
     }
   }, [unit]);
 
   useEffect(() => {
     const auth = getAuth(app);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUserId(user.uid);
-      }
+      if (user) setUserId(user.uid);
     });
     return () => unsubscribe();
   }, []);
 
   const handleOptionClick = (i, option) => {
     if (!submitted) {
-      setAnswers(prev => ({ ...prev, [i]: option }));
+      setAnswers({ ...answers, [i]: option });
     }
   };
 
@@ -69,10 +67,11 @@ function MathUnitQuizPage() {
     questions.forEach((q, i) => {
       if (answers[i] === q.answer) correct++;
     });
+
     setScore(correct);
     setSubmitted(true);
-    setPopupEmoji(emojis[Math.floor(Math.random() * emojis.length)]);
     setPopupMessage(messages[Math.floor(Math.random() * messages.length)]);
+    setPopupEmoji(emojis[Math.floor(Math.random() * emojis.length)]);
     setShowPopup(true);
 
     if (userId) {
@@ -81,7 +80,7 @@ function MathUnitQuizPage() {
           userId,
           score: correct,
           total: questions.length,
-          module: 'math',
+          module: 'science',
           unitId: unit,
           timestamp: Timestamp.now()
         });
@@ -92,7 +91,7 @@ function MathUnitQuizPage() {
   };
 
   const restartQuiz = () => {
-    const shuffled = [...mathQuiz[unit]].sort(() => 0.5 - Math.random());
+    const shuffled = [...scienceQuiz[unit]].sort(() => 0.5 - Math.random());
     setQuestions(shuffled.slice(0, 10));
     setAnswers({});
     setSubmitted(false);
@@ -114,6 +113,7 @@ function MathUnitQuizPage() {
         const isCorrect = answers[i] === q.answer;
         const isAnswered = answers[i] !== undefined;
         let questionClass = '';
+
         if (submitted && isAnswered) {
           questionClass = isCorrect ? 'correct' : 'incorrect';
         }
@@ -146,7 +146,6 @@ function MathUnitQuizPage() {
         <button className="submit-btn" onClick={restartQuiz}>Try Again</button>
       )}
 
-      {/* 🎉 Quiz sonucu pop-up */}
       {showPopup && (
         <div className="popup">
           <div className="popup-inner">
@@ -158,7 +157,6 @@ function MathUnitQuizPage() {
         </div>
       )}
 
-      {/* ❗️ Eksik soru uyarısı */}
       {showWarningPopup && (
         <div className="popup warning-popup">
           <div className="popup-inner">
@@ -172,4 +170,4 @@ function MathUnitQuizPage() {
   );
 }
 
-export default MathUnitQuizPage;
+export default ScienceUnitQuizPage;

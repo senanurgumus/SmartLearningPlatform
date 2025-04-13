@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { db, app } from '../firebase.js';
-import { collection, onSnapshot } from 'firebase/firestore';
+import { collection, onSnapshot, query, where } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Bar } from 'react-chartjs-2';
 import {
@@ -63,6 +63,7 @@ function AchievementsPage() {
   const [popupMessage, setPopupMessage] = useState('');
   const [popupGif, setPopupGif] = useState('');
   const [loading, setLoading] = useState(true);
+  const [moduleFilter, setModuleFilter] = useState('english');
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -73,10 +74,10 @@ function AchievementsPage() {
       }
 
       const userId = user.uid;
+      const q = query(collection(db, 'quizResults'), where('userId', '==', userId), where('module', '==', moduleFilter));
 
-      const unsubscribeData = onSnapshot(collection(db, 'quizResults'), (snapshot) => {
-        const allResults = snapshot.docs.map(doc => doc.data());
-        const userResults = allResults.filter(data => data.userId === userId);
+      const unsubscribeData = onSnapshot(q, (snapshot) => {
+        const userResults = snapshot.docs.map(doc => doc.data());
 
         const badges = getEarnedBadges(userResults);
         setEarnedBadges(badges);
@@ -115,7 +116,7 @@ function AchievementsPage() {
     });
 
     return () => unsubscribeAuth();
-  }, []);
+  }, [moduleFilter]);
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   const correctCounts = days.map(day => quizData[day]?.correct || 0);
@@ -164,8 +165,17 @@ function AchievementsPage() {
     <div className="achievements-container">
       <h2>🎓 Your Achievements</h2>
 
+      <div className="module-filter">
+        <label>Select Module:</label>
+        <select value={moduleFilter} onChange={(e) => setModuleFilter(e.target.value)}>
+          <option value="english">English</option>
+          <option value="math">Math</option>
+          <option value="science">Science</option>
+        </select>
+      </div>
+
       <div className="section">
-        <h3>📈 Weekly Quiz Progress</h3>
+        <h3>📈 Weekly Quiz Progress ({moduleFilter.toUpperCase()})</h3>
         <div className="chart-area">
           <Bar data={chartData} options={chartOptions} />
         </div>
@@ -200,7 +210,7 @@ function AchievementsPage() {
               ))}
             </ul>
           ) : (
-            <p>You're close to earning all the badges! Keep it up!</p>
+            <p>You’re close to earning all the badges!</p>
           )}
         </div>
       </div>
@@ -208,13 +218,6 @@ function AchievementsPage() {
       <div className="section">
         <h3>🧩 Your Level</h3>
         <p>Level 1 - Beginner</p>
-      </div>
-
-      <div className="section">
-        <h3>📘 Completed Modules</h3>
-        <ul>
-          <li>English</li>
-        </ul>
       </div>
 
       {showPopup && (
