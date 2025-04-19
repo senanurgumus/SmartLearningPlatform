@@ -12,6 +12,18 @@ import ActivitiesPage from './pages/ActivitiesPage.js';
 import AchievementsPage from './pages/AchievementsPage.js';
 import MathUnitListPage from './pages/MathUnitListPage.js';
 import MathUnitQuizPage from './pages/MathUnitQuizPage.js';
+import ShapeDragActivity from './pages/activities/ShapeDragActivity.js';
+import PuzzleActivity from './pages/activities/PuzzleActivity.js';
+import MatchSumActivity from './pages/activities/MatchSumActivity.js';
+import ShakeTest from './pages/ShakeTest.js';
+
+
+
+
+
+
+
+
 
 
 function App() {
@@ -30,7 +42,10 @@ function App() {
         <Route path="/achievements" element={<AchievementsPage />} />
         <Route path="/module/math/quiz" element={<MathUnitListPage />} />
         <Route path="/module/math/quiz/:unitId" element={<MathUnitQuizPage />} />
-
+        <Route path="/activities/math/shape-drag" element={<ShapeDragActivity />} />
+        <Route path="/activities/math/puzzle" element={<PuzzleActivity />} />
+        <Route path="/activities/math/match" element={<MatchSumActivity />} />
+        <Route path="/test-shake" element={<ShakeTest />} />
 
       </Routes>
     </Router>

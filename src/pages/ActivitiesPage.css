@@ -12,16 +12,20 @@
 }
 
 .activity-card {
-  background: #f0f8ff;
-  padding: 1rem 2rem;
+  background-color: #ffecb3;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 10px;
+  font-size: 18px;
+  text-align: center;
   cursor: pointer;
-  font-size: 1.2rem;
-  transition: transform 0.2s ease;
+  text-decoration: none;
+  color: black;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease-in-out;
 }
 
 .activity-card:hover {
   transform: scale(1.05);
-  background: #d6eaff;
+  background-color: #ffe082;
 }

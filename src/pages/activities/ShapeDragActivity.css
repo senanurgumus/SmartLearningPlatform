@@ -1,0 +1,199 @@
+.shape-drag-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.dropdown {
+  margin-bottom: 20px;
+}
+
+.shapes {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.targets {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.shape {
+  width: 80px;
+  height: 80px;
+  cursor: grab;
+}
+
+/* Şekiller */
+.shape.square {
+  background-color: #f44336;
+}
+
+.shape.circle {
+  background-color: #2196f3;
+  border-radius: 50%;
+}
+
+.shape.triangle {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 80px solid #4caf50;
+}
+
+.shape.rectangle {
+  width: 100px;
+  height: 50px;
+  background-color: #ff9800;
+}
+
+.shape.star::before {
+  content: '⭐';
+  font-size: 60px;
+  display: block;
+}
+
+.shape.pentagon {
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  background-color: #673ab7;
+  width: 80px;
+  height: 80px;
+}
+
+.shape.hexagon {
+  clip-path: polygon(
+    25% 0%, 75% 0%,
+    100% 50%,
+    75% 100%, 25% 100%,
+    0% 50%
+  );
+  background-color: #009688;
+  width: 80px;
+  height: 80px;
+}
+
+/* Drop zone */
+.drop-zone {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  transform: none !important;
+}
+
+.drop-zone.incorrect {
+  border-color: #f44336;
+  animation: shake 0.3s ease-in-out;
+}
+
+.drop-zone.correct {
+  border-color: #4caf50;
+  /* animation: pulse 0.3s ease-in-out; */
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Skor ve Süre */
+.score-time-container {
+  margin-bottom: 15px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-weight: bold;
+}
+
+/* Mesajlar */
+.congrats-message {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #2e7d32;
+  background-color: #e8f5e9;
+  border: 2px solid #2e7d32;
+  padding: 15px;
+  border-radius: 8px;
+  display: inline-block;
+  animation: pop 0.4s ease-in-out;
+}
+
+.time-up-message {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #b71c1c;
+  background-color: #ffebee;
+  border: 2px solid #b71c1c;
+  padding: 15px;
+  border-radius: 8px;
+  display: inline-block;
+  animation: pop 0.4s ease-in-out;
+}
+
+/* Buton */
+.restart-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restart-button:hover {
+  background-color: #1976d2;
+}
+
+/* Animasyon */
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Bu şekilde sadece html, body seviyesinde animasyonları kapatmış oluruz */
+html, body {
+  /* eğer sayfa genelinde konfeti gibi şeyler sarsıyorsa onları engeller ama kutu shake için gerek yok */
+  /* BUNLARI SİL veya YORUMA AL */
+  /* transform: none !important; */
+  /* animation: none !important; */
+}
+
+
