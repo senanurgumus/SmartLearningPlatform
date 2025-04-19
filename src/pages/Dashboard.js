@@ -68,6 +68,9 @@ function Dashboard() {
                 >
                   {mod.name}
                 </div>
+
+                
+
               </Link>
             ))}
           </div>
@@ -78,9 +81,11 @@ function Dashboard() {
             </Link>
           </div>
 
+
+
           <div>
             <p>
-              Hello {user.email}
+              Hello {user.email.split("@")[0]}
             </p>
           </div>
         </>

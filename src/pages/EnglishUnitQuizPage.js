@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import mathQuiz from '../data/math_quiz.json';
+import englishQuiz from '../data/english_quiz.json';
 import './QuizPage.css';
 import { db, app } from '../firebase.js';
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-function MathUnitQuizPage() {
+function EnglishUnitQuizPage() {
   const { unitId: unit } = useParams();
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
@@ -32,13 +32,13 @@ function MathUnitQuizPage() {
 
   useEffect(() => {
     if (!unit) return;
-    const data = mathQuiz[unit];
+    const data = englishQuiz[unit];
 
     if (Array.isArray(data)) {
       const shuffled = [...data].sort(() => 0.5 - Math.random());
       setQuestions(shuffled.slice(0, 10));
     } else {
-      console.error('Invalid or missing unit in math_quiz.json:', unit);
+      console.error('Invalid or missing unit in english_quiz.json:', unit);
     }
   }, [unit]);
 
@@ -81,7 +81,7 @@ function MathUnitQuizPage() {
           userId,
           score: correct,
           total: questions.length,
-          module: 'math',
+          module: 'english',
           unitId: unit,
           timestamp: Timestamp.now()
         });
@@ -92,7 +92,7 @@ function MathUnitQuizPage() {
   };
 
   const restartQuiz = () => {
-    const shuffled = [...mathQuiz[unit]].sort(() => 0.5 - Math.random());
+    const shuffled = [...englishQuiz[unit]].sort(() => 0.5 - Math.random());
     setQuestions(shuffled.slice(0, 10));
     setAnswers({});
     setSubmitted(false);
@@ -172,4 +172,4 @@ function MathUnitQuizPage() {
   );
 }
 
-export default MathUnitQuizPage;
+export default EnglishUnitQuizPage;

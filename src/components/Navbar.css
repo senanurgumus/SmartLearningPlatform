@@ -1,0 +1,115 @@
+/* General navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 1rem 2rem;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo or app name on the left */
+  .navbar-left .navbar-logo {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Navbar menu items in the center */
+  .navbar-center .navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-center .navbar-menu .navbar-item {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .navbar-center .navbar-menu .navbar-item:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Right side of the navbar */
+  .navbar-right .navbar-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .navbar-right .navbar-btn:hover {
+    background-color: #e57373;
+  }
+  
+  /* Mobile Menu Toggle Button */
+  .navbar-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Menu items are hidden on mobile by default */
+  .navbar-center .navbar-menu {
+    display: flex;
+  }
+  
+  .navbar-menu.active {
+    display: block;
+    position: absolute;
+    top: 70px; /* To make the dropdown appear below navbar */
+    left: 0;
+    background-color: #4CAF50;
+    width: 100%;
+    padding: 1rem;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive for mobile devices */
+  @media (max-width: 768px) {
+    .navbar-center .navbar-menu {
+      display: none; /* Hide the menu items by default on mobile */
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .navbar-right {
+      display: none;
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+  
+    .navbar-left .navbar-logo {
+      font-size: 1.2rem;
+    }
+  
+    .navbar-center .navbar-menu .navbar-item {
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 10px;
+    }
+  
+    .navbar-menu.active {
+      display: block;
+    }
+  }
+  
+  

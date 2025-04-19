@@ -1,36 +1,1409 @@
-[
+{
+  "alphabet_and_phonics": [
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Tuh",
+        "Mmm",
+        "Sss",
+        "Buh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "G",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Dog",
+        "Cat",
+        "Apple",
+        "Ball"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "C",
+        "D",
+        "F",
+        "B"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "G",
+        "B",
+        "E",
+        "T"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "Fish",
+        "Bear",
+        "House",
+        "Goat"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Lion",
+        "Giraffe",
+        "Elephant",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Lion",
+        "Tiger",
+        "Giraffe"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Hat",
+        "Run",
+        "Sun",
+        "Dog"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "C",
+        "D",
+        "F",
+        "B"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "G",
+        "T",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "A",
+        "P",
+        "E",
+        "L"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which letter comes after 'C'?",
+      "options": [
+        "E",
+        "D",
+        "A",
+        "B"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "Which letter comes after 'C'?",
+      "options": [
+        "E",
+        "D",
+        "A",
+        "B"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "E",
+        "B",
+        "G"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "G",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Tuh",
+        "Sss",
+        "Buh",
+        "Mmm"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Tiger",
+        "Giraffe",
+        "Lion"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Dog",
+        "Hat",
+        "Sun",
+        "Run"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Giraffe",
+        "Lion",
+        "Tiger",
+        "Elephant"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Apple",
+        "Cat",
+        "Ball",
+        "Dog"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Sss",
+        "Tuh",
+        "Mmm",
+        "Buh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "L",
+        "P",
+        "E",
+        "A"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Giraffe",
+        "Elephant",
+        "Lion",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which letter comes after 'C'?",
+      "options": [
+        "E",
+        "D",
+        "A",
+        "B"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Mmm",
+        "Buh",
+        "Sss",
+        "Tuh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "G",
+        "T",
+        "B",
+        "E"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "F",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Mmm",
+        "Tuh",
+        "Buh",
+        "Sss"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which letter comes before 'M'?",
+      "options": [
+        "N",
+        "K",
+        "L",
+        "O"
+      ],
+      "answer": "L"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "F",
+        "C",
+        "B",
+        "D"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Giraffe",
+        "Tiger",
+        "Lion",
+        "Elephant"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Tiger",
+        "Lion",
+        "Elephant",
+        "Giraffe"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "Bear",
+        "Fish",
+        "House",
+        "Goat"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Sun",
+        "Dog",
+        "Run",
+        "Hat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Tiger",
+        "Lion",
+        "Giraffe",
+        "Elephant"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Mmm",
+        "Tuh",
+        "Sss",
+        "Buh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "E",
+        "A",
+        "P",
+        "L"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Tiger",
+        "Elephant",
+        "Giraffe",
+        "Lion"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "E",
+        "G",
+        "B",
+        "T"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Dog",
+        "Ball",
+        "Cat",
+        "Apple"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Sun",
+        "Run",
+        "Dog",
+        "Hat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Dog",
+        "Run",
+        "Sun",
+        "Hat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which letter comes before 'M'?",
+      "options": [
+        "O",
+        "N",
+        "K",
+        "L"
+      ],
+      "answer": "L"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Sun",
+        "Run",
+        "Hat",
+        "Dog"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "G",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "F",
+        "D",
+        "B",
+        "C"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Buh",
+        "Sss",
+        "Mmm",
+        "Tuh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "P",
+        "A",
+        "E",
+        "L"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Sss",
+        "Mmm",
+        "Buh",
+        "Tuh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "D",
+        "B",
+        "F",
+        "C"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which letter comes before 'M'?",
+      "options": [
+        "N",
+        "O",
+        "K",
+        "L"
+      ],
+      "answer": "L"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "F",
+        "D",
+        "B",
+        "C"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "B",
+        "F",
+        "D",
+        "C"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Dog",
+        "Hat",
+        "Run",
+        "Sun"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Giraffe",
+        "Tiger",
+        "Lion",
+        "Elephant"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Dog",
+        "Run",
+        "Sun",
+        "Hat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Dog",
+        "Apple",
+        "Ball",
+        "Cat"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Cat",
+        "Ball",
+        "Apple",
+        "Dog"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "B",
+        "G",
+        "E"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Cat",
+        "Dog",
+        "Ball",
+        "Apple"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Lion",
+        "Tiger",
+        "Giraffe"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "G",
+        "E",
+        "T",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Run",
+        "Hat",
+        "Sun",
+        "Dog"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "E",
+        "G",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "G",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which letter comes after 'C'?",
+      "options": [
+        "A",
+        "E",
+        "B",
+        "D"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Lion",
+        "Giraffe",
+        "Elephant",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "House",
+        "Bear",
+        "Goat",
+        "Fish"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Hat",
+        "Sun",
+        "Run",
+        "Dog"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "House",
+        "Bear",
+        "Fish",
+        "Goat"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which letter comes after 'C'?",
+      "options": [
+        "D",
+        "B",
+        "E",
+        "A"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Sun",
+        "Dog",
+        "Run",
+        "Hat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "L",
+        "E",
+        "A",
+        "P"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Dog",
+        "Hat",
+        "Run",
+        "Sun"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Mmm",
+        "Buh",
+        "Sss",
+        "Tuh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Dog",
+        "Ball",
+        "Cat",
+        "Apple"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Tiger",
+        "Giraffe",
+        "Lion"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "G",
+        "E",
+        "B"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Apple",
+        "Ball",
+        "Dog",
+        "Cat"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Giraffe",
+        "Lion",
+        "Elephant",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which letter is a vowel?",
+      "options": [
+        "T",
+        "B",
+        "G",
+        "E"
+      ],
+      "answer": "E"
+    },
+    {
+      "question": "Which letter comes before 'M'?",
+      "options": [
+        "N",
+        "L",
+        "O",
+        "K"
+      ],
+      "answer": "L"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "L",
+        "A",
+        "E",
+        "P"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Apple",
+        "Cat",
+        "Ball",
+        "Dog"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "A",
+        "E",
+        "P",
+        "L"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What letter makes the sound 'buh'?",
+      "options": [
+        "B",
+        "D",
+        "C",
+        "F"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Sss",
+        "Tuh",
+        "Buh",
+        "Mmm"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which letter comes before 'M'?",
+      "options": [
+        "O",
+        "N",
+        "K",
+        "L"
+      ],
+      "answer": "L"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "House",
+        "Bear",
+        "Goat",
+        "Fish"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Lion",
+        "Giraffe",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Ball",
+        "Cat",
+        "Apple",
+        "Dog"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Cat",
+        "Apple",
+        "Ball",
+        "Dog"
+      ],
+      "answer": "Ball"
+    },
+    {
+      "question": "What is the first letter of the word 'apple'?",
+      "options": [
+        "L",
+        "E",
+        "P",
+        "A"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What sound does the letter 'S' make?",
+      "options": [
+        "Buh",
+        "Sss",
+        "Mmm",
+        "Tuh"
+      ],
+      "answer": "Sss"
+    },
+    {
+      "question": "Which word starts with the letter 'T'?",
+      "options": [
+        "Elephant",
+        "Giraffe",
+        "Lion",
+        "Tiger"
+      ],
+      "answer": "Tiger"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "Fish",
+        "Bear",
+        "House",
+        "Goat"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word starts with the letter 'G'?",
+      "options": [
+        "House",
+        "Fish",
+        "Bear",
+        "Goat"
+      ],
+      "answer": "Goat"
+    },
+    {
+      "question": "Which word rhymes with 'cat'?",
+      "options": [
+        "Run",
+        "Dog",
+        "Hat",
+        "Sun"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which word starts with the letter 'B'?",
+      "options": [
+        "Cat",
+        "Apple",
+        "Dog",
+        "Ball"
+      ],
+      "answer": "Ball"
+    }
+  ],
+  "colors_and_shapes": [
     {
       "question": "What color is the sun?",
       "options": [
-        "Blue",
+        "Green",
         "Red",
         "Yellow",
-        "Green"
+        "Blue"
       ],
       "answer": "Yellow"
     },
     {
-      "question": "Which one is red?",
+      "question": "What color are bananas?",
       "options": [
-        "Banana",
-        "Apple",
-        "Grapes",
-        "Pear"
+        "Green",
+        "Red",
+        "Yellow",
+        "Blue"
       ],
-      "answer": "Apple"
+      "answer": "Yellow"
     },
     {
-      "question": "What color is the sky on a clear day?",
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Square",
+        "Triangle",
+        "Rectangle",
+        "Oval"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Pink",
+        "Black",
+        "Green",
+        "Brown"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Blue",
+        "Purple",
+        "Green",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "What color are bananas?",
+      "options": [
+        "Green",
+        "Blue",
+        "Red",
+        "Yellow"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Triangle",
+        "Circle",
+        "Hexagon",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Yellow",
+        "Green",
+        "Blue",
+        "Red"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Circle",
+        "Rectangle",
+        "Star",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Purple",
+        "Blue",
+        "Green",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Black",
+        "Brown",
+        "Pink",
+        "Green"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Green",
+        "Orange",
+        "Purple",
+        "Blue"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "What color are bananas?",
       "options": [
         "Blue",
         "Green",
-        "Black",
-        "Orange"
+        "Red",
+        "Yellow"
       ],
-      "answer": "Blue"
+      "answer": "Yellow"
     },
     {
-      "question": "Which shape has three sides?",
+      "question": "What color is the sun?",
+      "options": [
+        "Blue",
+        "Yellow",
+        "Green",
+        "Red"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Blue",
+        "Green",
+        "Yellow",
+        "Red"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Square",
+        "Oval",
+        "Rectangle",
+        "Triangle"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Rectangle",
+        "Oval",
+        "Triangle",
+        "Square"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "What color are bananas?",
+      "options": [
+        "Blue",
+        "Red",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Purple",
+        "Orange",
+        "Blue",
+        "Red"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Purple",
+        "Blue",
+        "Red",
+        "Orange"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Square",
+        "Rectangle",
+        "Star",
+        "Circle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Rectangle",
+        "Circle",
+        "Square",
+        "Star"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Red",
+        "Purple",
+        "Blue",
+        "Orange"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Square",
+        "Circle",
+        "Triangle",
+        "Hexagon"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Square",
+        "Rectangle",
+        "Triangle",
+        "Circle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Circle",
+        "Square",
+        "Star",
+        "Rectangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Blue",
+        "Green",
+        "Orange",
+        "Purple"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Black",
+        "Pink",
+        "Brown",
+        "Green"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Circle",
+        "Rectangle",
+        "Square",
+        "Triangle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Circle",
+        "Square",
+        "Triangle",
+        "Rectangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Circle",
+        "Triangle",
+        "Rectangle",
+        "Square"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Purple",
+        "Green",
+        "Blue",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Triangle",
+        "Rectangle",
+        "Oval",
+        "Square"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Square",
+        "Circle",
+        "Hexagon",
+        "Triangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Pink",
+        "Green",
+        "Brown",
+        "Black"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Orange",
+        "Blue",
+        "Green",
+        "Purple"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Rectangle",
+        "Star",
+        "Square",
+        "Circle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Orange",
+        "Green",
+        "Blue",
+        "Purple"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Orange",
+        "Blue",
+        "Purple",
+        "Green"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Square",
+        "Rectangle",
+        "Triangle",
+        "Oval"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape has 3 sides?",
       "options": [
         "Circle",
         "Square",
@@ -40,463 +1413,7615 @@
       "answer": "Triangle"
     },
     {
-      "question": "What shape is a coin?",
+      "question": "Which color is made by mixing red and yellow?",
       "options": [
-        "Triangle",
+        "Green",
+        "Blue",
+        "Purple",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Black",
+        "Brown",
+        "Green",
+        "Pink"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Rectangle",
+        "Star",
         "Circle",
-        "Square",
-        "Rectangle"
+        "Square"
       ],
       "answer": "Circle"
     },
     {
-      "question": "Which one is green?",
+      "question": "What color is grass?",
       "options": [
-        "Strawberry",
-        "Lemon",
-        "Carrot",
-        "Leaf"
-      ],
-      "answer": "Leaf"
-    },
-    {
-      "question": "What color are clouds?",
-      "options": [
-        "Yellow",
+        "Pink",
         "Black",
-        "White",
-        "Red"
+        "Green",
+        "Brown"
       ],
-      "answer": "White"
+      "answer": "Green"
     },
     {
-      "question": "Which shape has four equal sides?",
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Square",
+        "Triangle",
+        "Oval",
+        "Rectangle"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Triangle",
+        "Rectangle",
+        "Oval",
+        "Square"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Circle",
+        "Triangle",
+        "Rectangle",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Blue",
+        "Green",
+        "Orange",
+        "Purple"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Rectangle",
+        "Square",
+        "Circle",
+        "Triangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Purple",
+        "Red",
+        "Orange",
+        "Blue"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "Which shape is round?",
       "options": [
         "Rectangle",
         "Square",
         "Triangle",
         "Circle"
       ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Blue",
+        "Yellow",
+        "Green",
+        "Red"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Circle",
+        "Triangle",
+        "Rectangle",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Square",
+        "Rectangle",
+        "Circle",
+        "Star"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Rectangle",
+        "Square",
+        "Triangle",
+        "Circle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Square",
+        "Circle",
+        "Rectangle",
+        "Triangle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Blue",
+        "Purple",
+        "Red",
+        "Orange"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Circle",
+        "Star",
+        "Rectangle",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Brown",
+        "Black",
+        "Green",
+        "Pink"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Yellow",
+        "Green",
+        "Blue",
+        "Red"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Black",
+        "Green",
+        "Pink",
+        "Brown"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Blue",
+        "Green",
+        "Red",
+        "Yellow"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Pink",
+        "Black",
+        "Brown",
+        "Green"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Circle",
+        "Square",
+        "Triangle",
+        "Rectangle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Square",
+        "Triangle",
+        "Oval",
+        "Rectangle"
+      ],
       "answer": "Square"
     },
     {
-      "question": "Which one is a farm animal?",
+      "question": "Which shape has no corners?",
       "options": [
-        "Tiger",
-        "Dog",
-        "Cow",
-        "Lion"
+        "Rectangle",
+        "Circle",
+        "Star",
+        "Square"
       ],
-      "answer": "Cow"
+      "answer": "Circle"
     },
     {
-      "question": "Which animal can fly?",
+      "question": "What color are apples usually?",
       "options": [
-        "Dog",
-        "Elephant",
-        "Bird",
-        "Horse"
+        "Red",
+        "Orange",
+        "Purple",
+        "Blue"
       ],
-      "answer": "Bird"
+      "answer": "Red"
     },
     {
-      "question": "Which animal says 'meow'?",
+      "question": "Which shape has 3 sides?",
       "options": [
-        "Dog",
-        "Cow",
-        "Cat",
-        "Duck"
+        "Square",
+        "Triangle",
+        "Circle",
+        "Rectangle"
       ],
-      "answer": "Cat"
+      "answer": "Triangle"
     },
     {
-      "question": "Which animal lives in water?",
+      "question": "Which color is made by mixing red and yellow?",
       "options": [
-        "Monkey",
-        "Frog",
-        "Zebra",
-        "Fish"
+        "Purple",
+        "Orange",
+        "Blue",
+        "Green"
       ],
-      "answer": "Fish"
+      "answer": "Orange"
     },
     {
-      "question": "Which one is the biggest animal?",
+      "question": "Which shape has 4 equal sides?",
       "options": [
-        "Dog",
-        "Elephant",
-        "Goat",
-        "Pig"
+        "Rectangle",
+        "Square",
+        "Oval",
+        "Triangle"
       ],
-      "answer": "Elephant"
+      "answer": "Square"
     },
     {
-      "question": "Which one has wings?",
+      "question": "Which shape looks like a ball?",
       "options": [
-        "Cat",
-        "Bird",
-        "Snake",
-        "Mouse"
+        "Triangle",
+        "Square",
+        "Hexagon",
+        "Circle"
       ],
-      "answer": "Bird"
+      "answer": "Circle"
     },
     {
-      "question": "Where does a bird live?",
+      "question": "Which shape has 3 sides?",
       "options": [
-        "Nest",
-        "Hole",
-        "House",
-        "Cave"
+        "Circle",
+        "Triangle",
+        "Square",
+        "Rectangle"
       ],
-      "answer": "Nest"
+      "answer": "Triangle"
     },
     {
-      "question": "Which animal is known as the king of the jungle?",
+      "question": "Which color is made by mixing red and yellow?",
       "options": [
-        "Lion",
-        "Giraffe",
-        "Dog",
-        "Bear"
+        "Orange",
+        "Green",
+        "Blue",
+        "Purple"
       ],
-      "answer": "Lion"
+      "answer": "Orange"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Purple",
+        "Green",
+        "Orange",
+        "Blue"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Rectangle",
+        "Star",
+        "Square",
+        "Circle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Triangle",
+        "Square",
+        "Circle",
+        "Hexagon"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Star",
+        "Circle",
+        "Rectangle",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Pink",
+        "Green",
+        "Black",
+        "Brown"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Circle",
+        "Square",
+        "Rectangle",
+        "Triangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Rectangle",
+        "Triangle",
+        "Square",
+        "Oval"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Purple",
+        "Green",
+        "Blue",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has 3 sides?",
+      "options": [
+        "Square",
+        "Triangle",
+        "Circle",
+        "Rectangle"
+      ],
+      "answer": "Triangle"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Yellow",
+        "Blue",
+        "Red",
+        "Green"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Square",
+        "Hexagon",
+        "Circle",
+        "Triangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Oval",
+        "Rectangle",
+        "Triangle",
+        "Square"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Orange",
+        "Purple",
+        "Blue",
+        "Red"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Blue",
+        "Green",
+        "Yellow",
+        "Red"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color are bananas?",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Triangle",
+        "Circle",
+        "Hexagon",
+        "Square"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "Which color is made by mixing red and yellow?",
+      "options": [
+        "Blue",
+        "Green",
+        "Purple",
+        "Orange"
+      ],
+      "answer": "Orange"
+    },
+    {
+      "question": "Which shape has 4 equal sides?",
+      "options": [
+        "Triangle",
+        "Rectangle",
+        "Square",
+        "Oval"
+      ],
+      "answer": "Square"
+    },
+    {
+      "question": "Which shape is round?",
+      "options": [
+        "Square",
+        "Circle",
+        "Triangle",
+        "Rectangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color are apples usually?",
+      "options": [
+        "Red",
+        "Blue",
+        "Orange",
+        "Purple"
+      ],
+      "answer": "Red"
+    },
+    {
+      "question": "What color is grass?",
+      "options": [
+        "Black",
+        "Pink",
+        "Green",
+        "Brown"
+      ],
+      "answer": "Green"
+    },
+    {
+      "question": "What color is the sun?",
+      "options": [
+        "Yellow",
+        "Blue",
+        "Red",
+        "Green"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape has no corners?",
+      "options": [
+        "Circle",
+        "Square",
+        "Star",
+        "Rectangle"
+      ],
+      "answer": "Circle"
+    },
+    {
+      "question": "What color are bananas?",
+      "options": [
+        "Blue",
+        "Red",
+        "Yellow",
+        "Green"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "What color are bananas?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": "Yellow"
+    },
+    {
+      "question": "Which shape looks like a ball?",
+      "options": [
+        "Triangle",
+        "Hexagon",
+        "Square",
+        "Circle"
+      ],
+      "answer": "Circle"
+    }
+  ],
+
+  "numbers_and_counting": [
+    {
+      "question": "Which is the biggest number?",
+      "options": [
+        "20",
+        "100",
+        "50",
+        "10"
+      ],
+      "answer": "100"
+    },
+    {
+      "question": "How many sides does a triangle have?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "9",
+        "8",
+        "7",
+        "6"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "6",
+        "5",
+        "3",
+        "4"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What is 10 - 4?",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "7"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "What is 10 - 4?",
+      "options": [
+        "7",
+        "4",
+        "6",
+        "5"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "6",
+        "5",
+        "4",
+        "3"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What is 10 - 4?",
+      "options": [
+        "4",
+        "7",
+        "6",
+        "5"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "4",
+        "3",
+        "2",
+        "5"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What is 10 - 4?",
+      "options": [
+        "7",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "3"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "How many sides does a triangle have?",
+      "options": [
+        "4",
+        "6",
+        "5",
+        "3"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "Which is the biggest number?",
+      "options": [
+        "10",
+        "50",
+        "20",
+        "100"
+      ],
+      "answer": "100"
+    },
+    {
+      "question": "How many fingers are on one hand?",
+      "options": [
+        "6",
+        "7",
+        "5",
+        "4"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "How many fingers are on one hand?",
+      "options": [
+        "4",
+        "5",
+        "7",
+        "6"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "6",
+        "7",
+        "9",
+        "8"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "2"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "How many legs does a spider have?",
+      "options": [
+        "12",
+        "6",
+        "8",
+        "10"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "5",
+        "4",
+        "2",
+        "3"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What is 3 + 2?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What number comes before 10?",
+      "options": [
+        "10",
+        "11",
+        "8",
+        "9"
+      ],
+      "answer": "9"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "5",
+        "4",
+        "2",
+        "3"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "How many fingers are on one hand?",
+      "options": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "2"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What is 10 - 4?",
+      "options": [
+        "4",
+        "5",
+        "7",
+        "6"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "What number comes before 10?",
+      "options": [
+        "8",
+        "10",
+        "11",
+        "9"
+      ],
+      "answer": "9"
+    },
+    {
+      "question": "What number comes before 10?",
+      "options": [
+        "9",
+        "11",
+        "8",
+        "10"
+      ],
+      "answer": "9"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "2"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "4",
+        "6",
+        "3",
+        "5"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "How many fingers are on one hand?",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "7"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "8",
+        "9",
+        "7",
+        "6"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number comes before 10?",
+      "options": [
+        "10",
+        "11",
+        "9",
+        "8"
+      ],
+      "answer": "9"
+    },
+    {
+      "question": "How many sides does a triangle have?",
+      "options": [
+        "4",
+        "6",
+        "3",
+        "5"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "8",
+        "9",
+        "7",
+        "6"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "How many sides does a triangle have?",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "5"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "How many fingers are on one hand?",
+      "options": [
+        "5",
+        "4",
+        "7",
+        "6"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "5",
+        "3",
+        "2",
+        "4"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "2",
+        "4",
+        "3",
+        "5"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What is 10 - 4?",
+      "options": [
+        "6",
+        "5",
+        "4",
+        "7"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "How many legs does a spider have?",
+      "options": [
+        "8",
+        "10",
+        "6",
+        "12"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "2"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What is 3 + 2?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "4"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "Which is the biggest number?",
+      "options": [
+        "100",
+        "20",
+        "50",
+        "10"
+      ],
+      "answer": "100"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "6",
+        "9",
+        "8",
+        "7"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "9",
+        "7",
+        "8",
+        "6"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number comes before 10?",
+      "options": [
+        "9",
+        "11",
+        "8",
+        "10"
+      ],
+      "answer": "9"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "6",
+        "3",
+        "4",
+        "5"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "How many fingers are on one hand?",
+      "options": [
+        "4",
+        "5",
+        "7",
+        "6"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "How many sides does a triangle have?",
+      "options": [
+        "6",
+        "3",
+        "5",
+        "4"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What is 10 - 4?",
+      "options": [
+        "7",
+        "6",
+        "4",
+        "5"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "What is 3 + 2?",
+      "options": [
+        "4",
+        "7",
+        "5",
+        "6"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "8",
+        "9",
+        "7",
+        "6"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "5",
+        "4",
+        "3",
+        "6"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What is 3 + 2?",
+      "options": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What is 3 + 2?",
+      "options": [
+        "7",
+        "6",
+        "4",
+        "5"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "5",
+        "3",
+        "4",
+        "6"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "How many fingers are on one hand?",
+      "options": [
+        "4",
+        "7",
+        "6",
+        "5"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What is 10 - 4?",
+      "options": [
+        "4",
+        "7",
+        "6",
+        "5"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "What is 10 - 4?",
+      "options": [
+        "7",
+        "6",
+        "5",
+        "4"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "8",
+        "6",
+        "7",
+        "9"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number comes before 10?",
+      "options": [
+        "9",
+        "8",
+        "10",
+        "11"
+      ],
+      "answer": "9"
+    },
+    {
+      "question": "How many legs does a spider have?",
+      "options": [
+        "8",
+        "6",
+        "10",
+        "12"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What is 10 - 4?",
+      "options": [
+        "4",
+        "6",
+        "7",
+        "5"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "What is 3 + 2?",
+      "options": [
+        "7",
+        "4",
+        "6",
+        "5"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "6"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "8",
+        "7",
+        "6",
+        "9"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "4"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "6",
+        "8",
+        "7",
+        "9"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "How many fingers are on one hand?",
+      "options": [
+        "5",
+        "7",
+        "4",
+        "6"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What number comes before 10?",
+      "options": [
+        "10",
+        "8",
+        "11",
+        "9"
+      ],
+      "answer": "9"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "9",
+        "8",
+        "6",
+        "7"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "5",
+        "4",
+        "3",
+        "6"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "What number comes before 10?",
+      "options": [
+        "9",
+        "10",
+        "8",
+        "11"
+      ],
+      "answer": "9"
+    },
+    {
+      "question": "Which is the biggest number?",
+      "options": [
+        "10",
+        "100",
+        "20",
+        "50"
+      ],
+      "answer": "100"
+    },
+    {
+      "question": "What is 10 - 4?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "2",
+        "4",
+        "3",
+        "5"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "9",
+        "8",
+        "7",
+        "6"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number comes before 10?",
+      "options": [
+        "8",
+        "10",
+        "9",
+        "11"
+      ],
+      "answer": "9"
+    },
+    {
+      "question": "Which is the biggest number?",
+      "options": [
+        "100",
+        "50",
+        "10",
+        "20"
+      ],
+      "answer": "100"
+    },
+    {
+      "question": "How many legs does a spider have?",
+      "options": [
+        "10",
+        "8",
+        "12",
+        "6"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "How many fingers are on one hand?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "4"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "How many sides does a triangle have?",
+      "options": [
+        "5",
+        "4",
+        "3",
+        "6"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "How many legs does a spider have?",
+      "options": [
+        "12",
+        "6",
+        "10",
+        "8"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "How many legs does a spider have?",
+      "options": [
+        "12",
+        "10",
+        "6",
+        "8"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "How many legs does a spider have?",
+      "options": [
+        "12",
+        "10",
+        "8",
+        "6"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "9",
+        "6",
+        "8",
+        "7"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "What number is missing? 1, 2, __, 4",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "4"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "How many sides does a triangle have?",
+      "options": [
+        "3",
+        "6",
+        "5",
+        "4"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "Which is the biggest number?",
+      "options": [
+        "100",
+        "20",
+        "50",
+        "10"
+      ],
+      "answer": "100"
+    },
+    {
+      "question": "How many sides does a triangle have?",
+      "options": [
+        "4",
+        "5",
+        "3",
+        "6"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "Which is the biggest number?",
+      "options": [
+        "100",
+        "10",
+        "50",
+        "20"
+      ],
+      "answer": "100"
+    },
+    {
+      "question": "What number comes after 7?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "6"
+      ],
+      "answer": "8"
+    },
+    {
+      "question": "How many fingers are on one hand?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "How many fingers are on one hand?",
+      "options": [
+        "5",
+        "7",
+        "4",
+        "6"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "If you have 2 apples and get 3 more, how many apples do you have?",
+      "options": [
+        "3",
+        "6",
+        "5",
+        "4"
+      ],
+      "answer": "5"
+    }
+  ],
+
+  "fruits_and_vegetables": [
+    {
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        "Apple",
+        "Pear",
+        "Banana",
+        "Cherry"
+      ],
+      "answer": "Banana"
+    },
+    {
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        "Pear",
+        "Banana",
+        "Cherry",
+        "Apple"
+      ],
+      "answer": "Banana"
+    },
+    {
+      "question": "Which one is red and has seeds on the outside?",
+      "options": [
+        "Broccoli",
+        "Potato",
+        "Strawberry",
+        "Coconut"
+      ],
+      "answer": "Strawberry"
+    },
+    {
+      "question": "Which one is red and has seeds on the outside?",
+      "options": [
+        "Broccoli",
+        "Coconut",
+        "Strawberry",
+        "Potato"
+      ],
+      "answer": "Strawberry"
+    },
+    {
+      "question": "Which one is both a fruit and used in ketchup?",
+      "options": [
+        "Onion",
+        "Cucumber",
+        "Tomato",
+        "Apple"
+      ],
+      "answer": "Tomato"
+    },
+    {
+      "question": "Which fruit is green on the outside and red inside?",
+      "options": [
+        "Peach",
+        "Orange",
+        "Pineapple",
+        "Watermelon"
+      ],
+      "answer": "Watermelon"
+    },
+    {
+      "question": "Which one is both a fruit and used in ketchup?",
+      "options": [
+        "Onion",
+        "Cucumber",
+        "Apple",
+        "Tomato"
+      ],
+      "answer": "Tomato"
+    },
+    {
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        "Pear",
+        "Cherry",
+        "Apple",
+        "Banana"
+      ],
+      "answer": "Banana"
+    },
+    {
+      "question": "Which one is a fruit?",
+      "options": [
+        "Apple",
+        "Carrot",
+        "Potato",
+        "Cabbage"
+      ],
+      "answer": "Apple"
+    },
+    {
+      "question": "Which fruit is small and purple?",
+      "options": [
+        "Mango",
+        "Carrot",
+        "Grapes",
+        "Apple"
+      ],
+      "answer": "Grapes"
+    },
+    {
+      "question": "Which fruit is small and purple?",
+      "options": [
+        "Apple",
+        "Mango",
+        "Carrot",
+        "Grapes"
+      ],
+      "answer": "Grapes"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Lettuce",
+        "Pear",
+        "Orange",
+        "Apple"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which one is both a fruit and used in ketchup?",
+      "options": [
+        "Cucumber",
+        "Tomato",
+        "Apple",
+        "Onion"
+      ],
+      "answer": "Tomato"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Pear",
+        "Orange",
+        "Apple",
+        "Lettuce"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which one is a vegetable?",
+      "options": [
+        "Banana",
+        "Carrot",
+        "Strawberry",
+        "Grapes"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which one is red and has seeds on the outside?",
+      "options": [
+        "Broccoli",
+        "Strawberry",
+        "Coconut",
+        "Potato"
+      ],
+      "answer": "Strawberry"
+    },
+    {
+      "question": "Which fruit is small and purple?",
+      "options": [
+        "Carrot",
+        "Mango",
+        "Apple",
+        "Grapes"
+      ],
+      "answer": "Grapes"
+    },
+    {
+      "question": "Which one is a green vegetable?",
+      "options": [
+        "Broccoli",
+        "Peach",
+        "Banana",
+        "Tomato"
+      ],
+      "answer": "Broccoli"
+    },
+    {
+      "question": "Which vegetable is orange and grows underground?",
+      "options": [
+        "Cucumber",
+        "Pumpkin",
+        "Tomato",
+        "Carrot"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Lettuce",
+        "Orange",
+        "Pear",
+        "Apple"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which fruit is small and purple?",
+      "options": [
+        "Carrot",
+        "Mango",
+        "Apple",
+        "Grapes"
+      ],
+      "answer": "Grapes"
+    },
+    {
+      "question": "Which one is a vegetable?",
+      "options": [
+        "Strawberry",
+        "Grapes",
+        "Banana",
+        "Carrot"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which fruit is green on the outside and red inside?",
+      "options": [
+        "Orange",
+        "Peach",
+        "Watermelon",
+        "Pineapple"
+      ],
+      "answer": "Watermelon"
+    },
+    {
+      "question": "Which one is a vegetable?",
+      "options": [
+        "Strawberry",
+        "Carrot",
+        "Grapes",
+        "Banana"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which one is a green vegetable?",
+      "options": [
+        "Tomato",
+        "Banana",
+        "Broccoli",
+        "Peach"
+      ],
+      "answer": "Broccoli"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Lettuce",
+        "Pear",
+        "Orange",
+        "Apple"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which one is both a fruit and used in ketchup?",
+      "options": [
+        "Apple",
+        "Onion",
+        "Cucumber",
+        "Tomato"
+      ],
+      "answer": "Tomato"
+    },
+    {
+      "question": "Which fruit is green on the outside and red inside?",
+      "options": [
+        "Watermelon",
+        "Peach",
+        "Pineapple",
+        "Orange"
+      ],
+      "answer": "Watermelon"
+    },
+    {
+      "question": "Which one is both a fruit and used in ketchup?",
+      "options": [
+        "Onion",
+        "Cucumber",
+        "Tomato",
+        "Apple"
+      ],
+      "answer": "Tomato"
+    },
+    {
+      "question": "Which one is red and has seeds on the outside?",
+      "options": [
+        "Strawberry",
+        "Broccoli",
+        "Coconut",
+        "Potato"
+      ],
+      "answer": "Strawberry"
+    },
+    {
+      "question": "Which one is a green vegetable?",
+      "options": [
+        "Tomato",
+        "Broccoli",
+        "Peach",
+        "Banana"
+      ],
+      "answer": "Broccoli"
+    },
+    {
+      "question": "Which vegetable is orange and grows underground?",
+      "options": [
+        "Cucumber",
+        "Pumpkin",
+        "Tomato",
+        "Carrot"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Apple",
+        "Lettuce",
+        "Orange",
+        "Pear"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which fruit is small and purple?",
+      "options": [
+        "Grapes",
+        "Carrot",
+        "Apple",
+        "Mango"
+      ],
+      "answer": "Grapes"
+    },
+    {
+      "question": "Which one is red and has seeds on the outside?",
+      "options": [
+        "Strawberry",
+        "Broccoli",
+        "Potato",
+        "Coconut"
+      ],
+      "answer": "Strawberry"
+    },
+    {
+      "question": "Which one is red and has seeds on the outside?",
+      "options": [
+        "Strawberry",
+        "Coconut",
+        "Broccoli",
+        "Potato"
+      ],
+      "answer": "Strawberry"
     },
     {
       "question": "Which one is a fruit?",
       "options": [
         "Carrot",
-        "Potato",
+        "Cabbage",
+        "Apple",
+        "Potato"
+      ],
+      "answer": "Apple"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Pear",
+        "Lettuce",
+        "Apple",
+        "Orange"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which fruit is small and purple?",
+      "options": [
+        "Mango",
+        "Grapes",
+        "Carrot",
+        "Apple"
+      ],
+      "answer": "Grapes"
+    },
+    {
+      "question": "Which vegetable is orange and grows underground?",
+      "options": [
+        "Pumpkin",
+        "Cucumber",
+        "Carrot",
+        "Tomato"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Apple",
+        "Pear",
+        "Orange",
+        "Lettuce"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which vegetable is orange and grows underground?",
+      "options": [
+        "Pumpkin",
+        "Cucumber",
+        "Carrot",
+        "Tomato"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Lettuce",
+        "Orange",
+        "Apple",
+        "Pear"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which fruit is green on the outside and red inside?",
+      "options": [
+        "Peach",
+        "Orange",
+        "Watermelon",
+        "Pineapple"
+      ],
+      "answer": "Watermelon"
+    },
+    {
+      "question": "Which fruit is green on the outside and red inside?",
+      "options": [
+        "Pineapple",
+        "Watermelon",
+        "Peach",
+        "Orange"
+      ],
+      "answer": "Watermelon"
+    },
+    {
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        "Pear",
         "Banana",
-        "Broccoli"
+        "Apple",
+        "Cherry"
       ],
       "answer": "Banana"
     },
     {
-      "question": "Which drink is white?",
+      "question": "Which one is a fruit?",
       "options": [
-        "Juice",
-        "Milk",
-        "Tea",
-        "Water"
+        "Potato",
+        "Cabbage",
+        "Carrot",
+        "Apple"
       ],
-      "answer": "Milk"
+      "answer": "Apple"
     },
     {
-      "question": "Which food is sweet?",
+      "question": "Which one is both a fruit and used in ketchup?",
       "options": [
-        "Cake",
-        "Rice",
-        "Bread",
-        "Soup"
+        "Cucumber",
+        "Tomato",
+        "Onion",
+        "Apple"
       ],
-      "answer": "Cake"
+      "answer": "Tomato"
+    },
+    {
+      "question": "Which vegetable is orange and grows underground?",
+      "options": [
+        "Tomato",
+        "Carrot",
+        "Pumpkin",
+        "Cucumber"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which vegetable is orange and grows underground?",
+      "options": [
+        "Tomato",
+        "Carrot",
+        "Pumpkin",
+        "Cucumber"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which one is red and has seeds on the outside?",
+      "options": [
+        "Broccoli",
+        "Potato",
+        "Coconut",
+        "Strawberry"
+      ],
+      "answer": "Strawberry"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Orange",
+        "Pear",
+        "Apple",
+        "Lettuce"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Apple",
+        "Orange",
+        "Pear",
+        "Lettuce"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which one is red and has seeds on the outside?",
+      "options": [
+        "Potato",
+        "Strawberry",
+        "Broccoli",
+        "Coconut"
+      ],
+      "answer": "Strawberry"
+    },
+    {
+      "question": "Which vegetable is orange and grows underground?",
+      "options": [
+        "Tomato",
+        "Cucumber",
+        "Carrot",
+        "Pumpkin"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which fruit is small and purple?",
+      "options": [
+        "Grapes",
+        "Apple",
+        "Carrot",
+        "Mango"
+      ],
+      "answer": "Grapes"
+    },
+    {
+      "question": "Which fruit is green on the outside and red inside?",
+      "options": [
+        "Pineapple",
+        "Peach",
+        "Orange",
+        "Watermelon"
+      ],
+      "answer": "Watermelon"
+    },
+    {
+      "question": "Which fruit is small and purple?",
+      "options": [
+        "Mango",
+        "Grapes",
+        "Apple",
+        "Carrot"
+      ],
+      "answer": "Grapes"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Pear",
+        "Lettuce",
+        "Orange",
+        "Apple"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which fruit is green on the outside and red inside?",
+      "options": [
+        "Pineapple",
+        "Watermelon",
+        "Peach",
+        "Orange"
+      ],
+      "answer": "Watermelon"
+    },
+    {
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        "Cherry",
+        "Apple",
+        "Pear",
+        "Banana"
+      ],
+      "answer": "Banana"
+    },
+    {
+      "question": "Which one is red and has seeds on the outside?",
+      "options": [
+        "Broccoli",
+        "Strawberry",
+        "Coconut",
+        "Potato"
+      ],
+      "answer": "Strawberry"
+    },
+    {
+      "question": "Which fruit is green on the outside and red inside?",
+      "options": [
+        "Pineapple",
+        "Watermelon",
+        "Orange",
+        "Peach"
+      ],
+      "answer": "Watermelon"
+    },
+    {
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        "Banana",
+        "Pear",
+        "Apple",
+        "Cherry"
+      ],
+      "answer": "Banana"
+    },
+    {
+      "question": "Which vegetable is orange and grows underground?",
+      "options": [
+        "Tomato",
+        "Pumpkin",
+        "Carrot",
+        "Cucumber"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which one is red and has seeds on the outside?",
+      "options": [
+        "Coconut",
+        "Strawberry",
+        "Potato",
+        "Broccoli"
+      ],
+      "answer": "Strawberry"
+    },
+    {
+      "question": "Which one is both a fruit and used in ketchup?",
+      "options": [
+        "Tomato",
+        "Apple",
+        "Onion",
+        "Cucumber"
+      ],
+      "answer": "Tomato"
+    },
+    {
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        "Banana",
+        "Cherry",
+        "Pear",
+        "Apple"
+      ],
+      "answer": "Banana"
+    },
+    {
+      "question": "Which vegetable is orange and grows underground?",
+      "options": [
+        "Pumpkin",
+        "Tomato",
+        "Cucumber",
+        "Carrot"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which one is red and has seeds on the outside?",
+      "options": [
+        "Broccoli",
+        "Potato",
+        "Coconut",
+        "Strawberry"
+      ],
+      "answer": "Strawberry"
+    },
+    {
+      "question": "Which vegetable can be used in a salad?",
+      "options": [
+        "Lettuce",
+        "Pear",
+        "Orange",
+        "Apple"
+      ],
+      "answer": "Lettuce"
+    },
+    {
+      "question": "Which one is both a fruit and used in ketchup?",
+      "options": [
+        "Onion",
+        "Apple",
+        "Cucumber",
+        "Tomato"
+      ],
+      "answer": "Tomato"
     },
     {
       "question": "Which one is a vegetable?",
       "options": [
-        "Apple",
+        "Banana",
+        "Grapes",
         "Carrot",
-        "Orange",
         "Strawberry"
       ],
       "answer": "Carrot"
     },
     {
-      "question": "Which one is used in salad?",
+      "question": "Which vegetable is orange and grows underground?",
       "options": [
+        "Carrot",
+        "Tomato",
         "Cucumber",
-        "Cake",
-        "Ice cream",
-        "Rice"
+        "Pumpkin"
       ],
-      "answer": "Cucumber"
+      "answer": "Carrot"
     },
     {
-      "question": "Which one is not a drink?",
+      "question": "Which fruit is green on the outside and red inside?",
       "options": [
-        "Juice",
-        "Milk",
+        "Pineapple",
+        "Watermelon",
+        "Orange",
+        "Peach"
+      ],
+      "answer": "Watermelon"
+    },
+    {
+      "question": "Which vegetable is orange and grows underground?",
+      "options": [
+        "Cucumber",
+        "Pumpkin",
+        "Tomato",
+        "Carrot"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which one is a green vegetable?",
+      "options": [
+        "Peach",
+        "Broccoli",
+        "Tomato",
+        "Banana"
+      ],
+      "answer": "Broccoli"
+    },
+    {
+      "question": "Which one is a vegetable?",
+      "options": [
+        "Strawberry",
+        "Banana",
+        "Carrot",
+        "Grapes"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which one is a green vegetable?",
+      "options": [
+        "Peach",
+        "Broccoli",
+        "Tomato",
+        "Banana"
+      ],
+      "answer": "Broccoli"
+    },
+    {
+      "question": "Which one is a fruit?",
+      "options": [
         "Apple",
-        "Tea"
+        "Carrot",
+        "Potato",
+        "Cabbage"
       ],
       "answer": "Apple"
     },
     {
-      "question": "Which food is round and cheesy?",
+      "question": "Which one is a vegetable?",
       "options": [
-        "Pizza",
-        "Burger",
-        "Pasta",
-        "Sandwich"
+        "Carrot",
+        "Strawberry",
+        "Grapes",
+        "Banana"
       ],
-      "answer": "Pizza"
+      "answer": "Carrot"
     },
     {
-      "question": "Which one is cold and sweet?",
+      "question": "Which fruit is green on the outside and red inside?",
       "options": [
-        "Ice Cream",
-        "Soup",
-        "Bread",
-        "Rice"
+        "Orange",
+        "Watermelon",
+        "Pineapple",
+        "Peach"
       ],
-      "answer": "Ice Cream"
+      "answer": "Watermelon"
     },
     {
-      "question": "Which one do you use to write?",
+      "question": "Which one is a fruit?",
       "options": [
-        "Pen",
-        "Spoon",
-        "Phone",
-        "Brush"
+        "Potato",
+        "Carrot",
+        "Cabbage",
+        "Apple"
       ],
-      "answer": "Pen"
+      "answer": "Apple"
     },
     {
-      "question": "Which one is used to brush your teeth?",
+      "question": "Which one is red and has seeds on the outside?",
       "options": [
-        "Comb",
-        "Toothbrush",
-        "Spoon",
-        "Pencil"
+        "Coconut",
+        "Broccoli",
+        "Strawberry",
+        "Potato"
       ],
-      "answer": "Toothbrush"
+      "answer": "Strawberry"
     },
     {
-      "question": "What do you wear on your feet?",
+      "question": "Which vegetable can be used in a salad?",
       "options": [
-        "Gloves",
-        "Socks",
-        "Hat",
-        "Shirt"
+        "Lettuce",
+        "Apple",
+        "Orange",
+        "Pear"
       ],
-      "answer": "Socks"
+      "answer": "Lettuce"
     },
     {
-      "question": "Which one do we use to eat soup?",
+      "question": "Which vegetable is orange and grows underground?",
       "options": [
-        "Fork",
-        "Spoon",
-        "Knife",
-        "Hand"
+        "Cucumber",
+        "Pumpkin",
+        "Carrot",
+        "Tomato"
       ],
-      "answer": "Spoon"
+      "answer": "Carrot"
     },
     {
-      "question": "What do we use to call someone?",
+      "question": "Which one is a green vegetable?",
       "options": [
-        "TV",
-        "Phone",
-        "Fridge",
-        "Book"
+        "Tomato",
+        "Banana",
+        "Peach",
+        "Broccoli"
       ],
-      "answer": "Phone"
+      "answer": "Broccoli"
     },
     {
-      "question": "Which one is for reading?",
+      "question": "Which one is a green vegetable?",
       "options": [
-        "Book",
-        "Plate",
-        "Hat",
-        "Ball"
+        "Tomato",
+        "Broccoli",
+        "Banana",
+        "Peach"
       ],
-      "answer": "Book"
+      "answer": "Broccoli"
     },
     {
-      "question": "What do you do with a ball?",
+      "question": "Which one is red and has seeds on the outside?",
       "options": [
-        "Read",
-        "Kick",
-        "Eat",
-        "Sleep"
+        "Broccoli",
+        "Potato",
+        "Strawberry",
+        "Coconut"
       ],
-      "answer": "Kick"
+      "answer": "Strawberry"
     },
     {
-      "question": "What do you wear on your head?",
+      "question": "Which one is a green vegetable?",
       "options": [
-        "Hat",
-        "Socks",
+        "Broccoli",
+        "Tomato",
+        "Banana",
+        "Peach"
+      ],
+      "answer": "Broccoli"
+    },
+    {
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        "Pear",
+        "Banana",
+        "Apple",
+        "Cherry"
+      ],
+      "answer": "Banana"
+    },
+    {
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        "Cherry",
+        "Banana",
+        "Pear",
+        "Apple"
+      ],
+      "answer": "Banana"
+    },
+    {
+      "question": "Which fruit is green on the outside and red inside?",
+      "options": [
+        "Watermelon",
+        "Orange",
+        "Peach",
+        "Pineapple"
+      ],
+      "answer": "Watermelon"
+    },
+    {
+      "question": "Which one is a fruit?",
+      "options": [
+        "Carrot",
+        "Cabbage",
+        "Apple",
+        "Potato"
+      ],
+      "answer": "Apple"
+    },
+    {
+      "question": "Which one is a vegetable?",
+      "options": [
+        "Banana",
+        "Grapes",
+        "Strawberry",
+        "Carrot"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which one is a vegetable?",
+      "options": [
+        "Banana",
+        "Grapes",
+        "Carrot",
+        "Strawberry"
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "question": "Which one is both a fruit and used in ketchup?",
+      "options": [
+        "Onion",
+        "Apple",
+        "Cucumber",
+        "Tomato"
+      ],
+      "answer": "Tomato"
+    },
+    {
+      "question": "Which one is a fruit?",
+      "options": [
+        "Apple",
+        "Carrot",
+        "Cabbage",
+        "Potato"
+      ],
+      "answer": "Apple"
+    },
+    {
+      "question": "Which fruit is small and purple?",
+      "options": [
+        "Mango",
+        "Carrot",
+        "Grapes",
+        "Apple"
+      ],
+      "answer": "Grapes"
+    },
+    {
+      "question": "Which fruit is yellow and curved?",
+      "options": [
+        "Cherry",
+        "Apple",
+        "Banana",
+        "Pear"
+      ],
+      "answer": "Banana"
+    }
+  ],
+
+  "my_family_and_friends": [
+    {
+      "question": "What do you call your father's brother?",
+      "options": [
+        "Aunt",
+        "Cousin",
+        "Friend",
+        "Uncle"
+      ],
+      "answer": "Uncle"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Family",
+        "Classmates",
+        "Friends",
+        "Pets"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "Who is your father's son?",
+      "options": [
+        "Uncle",
+        "Brother",
+        "Grandfather",
+        "Cousin"
+      ],
+      "answer": "Brother"
+    },
+    {
+      "question": "What do you call your father's brother?",
+      "options": [
+        "Friend",
+        "Cousin",
+        "Uncle",
+        "Aunt"
+      ],
+      "answer": "Uncle"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Friend",
+        "Cousin",
+        "Teacher",
+        "You"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Who takes care of you at home?",
+      "options": [
+        "Parents",
+        "Neighbors",
+        "Friends",
+        "Teachers"
+      ],
+      "answer": "Parents"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Brother",
+        "Grandfather",
+        "Cousin",
+        "Uncle"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "What do you call your mom's sister?",
+      "options": [
+        "Friend",
+        "Sister",
+        "Aunt",
+        "Uncle"
+      ],
+      "answer": "Aunt"
+    },
+    {
+      "question": "What do you call a person who plays with you?",
+      "options": [
+        "Cousin",
+        "Grandpa",
+        "Friend",
+        "Teacher"
+      ],
+      "answer": "Friend"
+    },
+    {
+      "question": "What do you call a person who plays with you?",
+      "options": [
+        "Teacher",
+        "Cousin",
+        "Grandpa",
+        "Friend"
+      ],
+      "answer": "Friend"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Cousin",
+        "You",
+        "Teacher",
+        "Friend"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Cousin",
+        "Friend",
+        "You",
+        "Teacher"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Grandfather",
+        "Cousin",
+        "Uncle",
+        "Brother"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "What do you call your father's brother?",
+      "options": [
+        "Friend",
+        "Uncle",
+        "Cousin",
+        "Aunt"
+      ],
+      "answer": "Uncle"
+    },
+    {
+      "question": "Who is your mother's mother?",
+      "options": [
+        "Cousin",
+        "Aunt",
+        "Grandmother",
+        "Sister"
+      ],
+      "answer": "Grandmother"
+    },
+    {
+      "question": "Who is your mother's mother?",
+      "options": [
+        "Grandmother",
+        "Sister",
+        "Aunt",
+        "Cousin"
+      ],
+      "answer": "Grandmother"
+    },
+    {
+      "question": "What do you call your mom's sister?",
+      "options": [
+        "Sister",
+        "Uncle",
+        "Aunt",
+        "Friend"
+      ],
+      "answer": "Aunt"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Classmates",
+        "Pets",
+        "Family",
+        "Friends"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "What do you call your father's brother?",
+      "options": [
+        "Aunt",
+        "Friend",
+        "Uncle",
+        "Cousin"
+      ],
+      "answer": "Uncle"
+    },
+    {
+      "question": "What do you call a person who plays with you?",
+      "options": [
+        "Friend",
+        "Cousin",
+        "Grandpa",
+        "Teacher"
+      ],
+      "answer": "Friend"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Grandfather",
+        "Brother",
+        "Uncle",
+        "Cousin"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "Which one is not a family member?",
+      "options": [
+        "Sister",
+        "Father",
+        "Doctor",
+        "Brother"
+      ],
+      "answer": "Doctor"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Pets",
+        "Classmates",
+        "Friends",
+        "Family"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "Who is your mother's mother?",
+      "options": [
+        "Grandmother",
+        "Aunt",
+        "Cousin",
+        "Sister"
+      ],
+      "answer": "Grandmother"
+    },
+    {
+      "question": "Who is your mother's mother?",
+      "options": [
+        "Cousin",
+        "Aunt",
+        "Grandmother",
+        "Sister"
+      ],
+      "answer": "Grandmother"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "You",
+        "Cousin",
+        "Friend",
+        "Teacher"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Who is your father's son?",
+      "options": [
+        "Grandfather",
+        "Brother",
+        "Cousin",
+        "Uncle"
+      ],
+      "answer": "Brother"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Brother",
+        "Grandfather",
+        "Uncle",
+        "Cousin"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "What do you call a person who plays with you?",
+      "options": [
+        "Teacher",
+        "Grandpa",
+        "Cousin",
+        "Friend"
+      ],
+      "answer": "Friend"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Cousin",
+        "Uncle",
+        "Grandfather",
+        "Brother"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Cousin",
+        "You",
+        "Friend",
+        "Teacher"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Teacher",
+        "Friend",
+        "Cousin",
+        "You"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "What do you call your father's brother?",
+      "options": [
+        "Friend",
+        "Aunt",
+        "Uncle",
+        "Cousin"
+      ],
+      "answer": "Uncle"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Cousin",
+        "Friend",
+        "You",
+        "Teacher"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Who is your mother's mother?",
+      "options": [
+        "Aunt",
+        "Cousin",
+        "Sister",
+        "Grandmother"
+      ],
+      "answer": "Grandmother"
+    },
+    {
+      "question": "Who is your mother's mother?",
+      "options": [
+        "Grandmother",
+        "Aunt",
+        "Cousin",
+        "Sister"
+      ],
+      "answer": "Grandmother"
+    },
+    {
+      "question": "Who is your mother's mother?",
+      "options": [
+        "Aunt",
+        "Grandmother",
+        "Cousin",
+        "Sister"
+      ],
+      "answer": "Grandmother"
+    },
+    {
+      "question": "Who is your father's son?",
+      "options": [
+        "Uncle",
+        "Brother",
+        "Cousin",
+        "Grandfather"
+      ],
+      "answer": "Brother"
+    },
+    {
+      "question": "Who takes care of you at home?",
+      "options": [
+        "Parents",
+        "Teachers",
+        "Friends",
+        "Neighbors"
+      ],
+      "answer": "Parents"
+    },
+    {
+      "question": "What do you call your mom's sister?",
+      "options": [
+        "Friend",
+        "Aunt",
+        "Uncle",
+        "Sister"
+      ],
+      "answer": "Aunt"
+    },
+    {
+      "question": "Who is your father's son?",
+      "options": [
+        "Brother",
+        "Uncle",
+        "Grandfather",
+        "Cousin"
+      ],
+      "answer": "Brother"
+    },
+    {
+      "question": "Who is your father's son?",
+      "options": [
+        "Cousin",
+        "Brother",
+        "Uncle",
+        "Grandfather"
+      ],
+      "answer": "Brother"
+    },
+    {
+      "question": "What do you call a person who plays with you?",
+      "options": [
+        "Grandpa",
+        "Teacher",
+        "Friend",
+        "Cousin"
+      ],
+      "answer": "Friend"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Grandfather",
+        "Brother",
+        "Uncle",
+        "Cousin"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Classmates",
+        "Pets",
+        "Friends",
+        "Family"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Family",
+        "Pets",
+        "Classmates",
+        "Friends"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "What do you call your mom's sister?",
+      "options": [
+        "Aunt",
+        "Uncle",
+        "Friend",
+        "Sister"
+      ],
+      "answer": "Aunt"
+    },
+    {
+      "question": "What do you call a person who plays with you?",
+      "options": [
+        "Friend",
+        "Cousin",
+        "Grandpa",
+        "Teacher"
+      ],
+      "answer": "Friend"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Classmates",
+        "Pets",
+        "Family",
+        "Friends"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "Who takes care of you at home?",
+      "options": [
+        "Neighbors",
+        "Teachers",
+        "Parents",
+        "Friends"
+      ],
+      "answer": "Parents"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "You",
+        "Cousin",
+        "Teacher",
+        "Friend"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Who takes care of you at home?",
+      "options": [
+        "Teachers",
+        "Friends",
+        "Neighbors",
+        "Parents"
+      ],
+      "answer": "Parents"
+    },
+    {
+      "question": "Who is your mother's mother?",
+      "options": [
+        "Grandmother",
+        "Aunt",
+        "Sister",
+        "Cousin"
+      ],
+      "answer": "Grandmother"
+    },
+    {
+      "question": "Which one is not a family member?",
+      "options": [
+        "Doctor",
+        "Sister",
+        "Brother",
+        "Father"
+      ],
+      "answer": "Doctor"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Friends",
+        "Pets",
+        "Classmates",
+        "Family"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "Who is your father's son?",
+      "options": [
+        "Brother",
+        "Grandfather",
+        "Cousin",
+        "Uncle"
+      ],
+      "answer": "Brother"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Cousin",
+        "Friend",
+        "You",
+        "Teacher"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Which one is not a family member?",
+      "options": [
+        "Father",
+        "Brother",
+        "Doctor",
+        "Sister"
+      ],
+      "answer": "Doctor"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Pets",
+        "Friends",
+        "Family",
+        "Classmates"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "What do you call a person who plays with you?",
+      "options": [
+        "Grandpa",
+        "Cousin",
+        "Teacher",
+        "Friend"
+      ],
+      "answer": "Friend"
+    },
+    {
+      "question": "Which one is not a family member?",
+      "options": [
+        "Brother",
+        "Father",
+        "Doctor",
+        "Sister"
+      ],
+      "answer": "Doctor"
+    },
+    {
+      "question": "Who takes care of you at home?",
+      "options": [
+        "Neighbors",
+        "Teachers",
+        "Friends",
+        "Parents"
+      ],
+      "answer": "Parents"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Teacher",
+        "Friend",
+        "You",
+        "Cousin"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "What do you call your mom's sister?",
+      "options": [
+        "Aunt",
+        "Friend",
+        "Sister",
+        "Uncle"
+      ],
+      "answer": "Aunt"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Cousin",
+        "Uncle",
+        "Grandfather",
+        "Brother"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "You",
+        "Friend",
+        "Cousin",
+        "Teacher"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "You",
+        "Friend",
+        "Teacher",
+        "Cousin"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Who is your father's son?",
+      "options": [
+        "Uncle",
+        "Brother",
+        "Grandfather",
+        "Cousin"
+      ],
+      "answer": "Brother"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Grandfather",
+        "Brother",
+        "Cousin",
+        "Uncle"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "Who takes care of you at home?",
+      "options": [
+        "Parents",
+        "Teachers",
+        "Friends",
+        "Neighbors"
+      ],
+      "answer": "Parents"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Cousin",
+        "Grandfather",
+        "Brother",
+        "Uncle"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Uncle",
+        "Grandfather",
+        "Brother",
+        "Cousin"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "Which one is not a family member?",
+      "options": [
+        "Brother",
+        "Sister",
+        "Father",
+        "Doctor"
+      ],
+      "answer": "Doctor"
+    },
+    {
+      "question": "What do you call your mom's sister?",
+      "options": [
+        "Friend",
+        "Sister",
+        "Aunt",
+        "Uncle"
+      ],
+      "answer": "Aunt"
+    },
+    {
+      "question": "What do you call your father's brother?",
+      "options": [
+        "Cousin",
+        "Friend",
+        "Aunt",
+        "Uncle"
+      ],
+      "answer": "Uncle"
+    },
+    {
+      "question": "Who is your father's son?",
+      "options": [
+        "Grandfather",
+        "Brother",
+        "Cousin",
+        "Uncle"
+      ],
+      "answer": "Brother"
+    },
+    {
+      "question": "Which one is not a family member?",
+      "options": [
+        "Father",
+        "Brother",
+        "Doctor",
+        "Sister"
+      ],
+      "answer": "Doctor"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Family",
+        "Pets",
+        "Friends",
+        "Classmates"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "Who is your father's son?",
+      "options": [
+        "Cousin",
+        "Brother",
+        "Uncle",
+        "Grandfather"
+      ],
+      "answer": "Brother"
+    },
+    {
+      "question": "What do you call a person who plays with you?",
+      "options": [
+        "Teacher",
+        "Grandpa",
+        "Friend",
+        "Cousin"
+      ],
+      "answer": "Friend"
+    },
+    {
+      "question": "Which one is not a family member?",
+      "options": [
+        "Brother",
+        "Doctor",
+        "Father",
+        "Sister"
+      ],
+      "answer": "Doctor"
+    },
+    {
+      "question": "What do you call a person who plays with you?",
+      "options": [
+        "Teacher",
+        "Cousin",
+        "Friend",
+        "Grandpa"
+      ],
+      "answer": "Friend"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Cousin",
+        "You",
+        "Teacher",
+        "Friend"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Friends",
+        "Classmates",
+        "Family",
+        "Pets"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "Who is your mother's mother?",
+      "options": [
+        "Cousin",
+        "Aunt",
+        "Sister",
+        "Grandmother"
+      ],
+      "answer": "Grandmother"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Family",
+        "Friends",
+        "Pets",
+        "Classmates"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "Who do you live with at home?",
+      "options": [
+        "Family",
+        "Classmates",
+        "Friends",
+        "Pets"
+      ],
+      "answer": "Family"
+    },
+    {
+      "question": "Who is your father's son?",
+      "options": [
+        "Cousin",
+        "Grandfather",
+        "Uncle",
+        "Brother"
+      ],
+      "answer": "Brother"
+    },
+    {
+      "question": "What do you call your mom's sister?",
+      "options": [
+        "Friend",
+        "Sister",
+        "Aunt",
+        "Uncle"
+      ],
+      "answer": "Aunt"
+    },
+    {
+      "question": "Who takes care of you at home?",
+      "options": [
+        "Parents",
+        "Friends",
+        "Neighbors",
+        "Teachers"
+      ],
+      "answer": "Parents"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Cousin",
+        "Teacher",
+        "You",
+        "Friend"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Brother",
+        "Uncle",
+        "Grandfather",
+        "Cousin"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Friend",
+        "Teacher",
+        "Cousin",
+        "You"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "What do you call a person who plays with you?",
+      "options": [
+        "Teacher",
+        "Grandpa",
+        "Friend",
+        "Cousin"
+      ],
+      "answer": "Friend"
+    },
+    {
+      "question": "Who is your mom and dad's child?",
+      "options": [
+        "Cousin",
+        "Friend",
+        "You",
+        "Teacher"
+      ],
+      "answer": "You"
+    },
+    {
+      "question": "Which one is not a family member?",
+      "options": [
+        "Father",
+        "Doctor",
+        "Sister",
+        "Brother"
+      ],
+      "answer": "Doctor"
+    },
+    {
+      "question": "Who is your mother's mother?",
+      "options": [
+        "Grandmother",
+        "Sister",
+        "Aunt",
+        "Cousin"
+      ],
+      "answer": "Grandmother"
+    },
+    {
+      "question": "Who is your father's father?",
+      "options": [
+        "Grandfather",
+        "Uncle",
+        "Brother",
+        "Cousin"
+      ],
+      "answer": "Grandfather"
+    },
+    {
+      "question": "Who is your father's son?",
+      "options": [
+        "Uncle",
+        "Cousin",
+        "Brother",
+        "Grandfather"
+      ],
+      "answer": "Brother"
+    },
+    {
+      "question": "What do you call a person who plays with you?",
+      "options": [
+        "Cousin",
+        "Friend",
+        "Grandpa",
+        "Teacher"
+      ],
+      "answer": "Friend"
+    }
+  ],
+
+  "daily_routines": [
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Go to school",
+        "Have dinner",
+        "Sleep again",
+        "Get dressed"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "When do you do your homework?",
+      "options": [
+        "After school",
+        "In the morning",
+        "During lunch",
+        "Before breakfast"
+      ],
+      "answer": "After school"
+    },
+    {
+      "question": "What do you do first in the morning?",
+      "options": [
+        "Go to school",
+        "Eat dinner",
+        "Go to bed",
+        "Wake up"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "What meal do you eat in the morning?",
+      "options": [
+        "Snack",
+        "Breakfast",
+        "Dinner",
+        "Lunch"
+      ],
+      "answer": "Breakfast"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Sleep again",
+        "Get dressed",
+        "Have dinner",
+        "Go to school"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "When do you do your homework?",
+      "options": [
+        "After school",
+        "During lunch",
+        "Before breakfast",
+        "In the morning"
+      ],
+      "answer": "After school"
+    },
+    {
+      "question": "What meal do you eat in the morning?",
+      "options": [
+        "Dinner",
+        "Breakfast",
+        "Lunch",
+        "Snack"
+      ],
+      "answer": "Breakfast"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "Before bed",
+        "After lunch",
+        "Before school",
+        "In the morning"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "Before bed",
+        "In the morning",
+        "Before school",
+        "After lunch"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "When do you do your homework?",
+      "options": [
+        "Before breakfast",
+        "In the morning",
+        "After school",
+        "During lunch"
+      ],
+      "answer": "After school"
+    },
+    {
+      "question": "What meal do you eat in the morning?",
+      "options": [
+        "Dinner",
+        "Snack",
+        "Breakfast",
+        "Lunch"
+      ],
+      "answer": "Breakfast"
+    },
+    {
+      "question": "What do you do first in the morning?",
+      "options": [
+        "Wake up",
+        "Go to school",
+        "Go to bed",
+        "Eat dinner"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Clothes",
+        "Pajamas",
         "Shoes",
-        "Scarf"
+        "Hat"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Have dinner",
+        "Sleep again",
+        "Get dressed",
+        "Go to school"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "What do you do after dinner?",
+      "options": [
+        "Relax",
+        "Go to school",
+        "Run",
+        "Take a shower"
+      ],
+      "answer": "Relax"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Clothes",
+        "Pajamas",
+        "Shoes",
+        "Hat"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you do before brushing your teeth?",
+      "options": [
+        "Wake up",
+        "Have lunch",
+        "Do homework",
+        "Go to sleep"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Brush your teeth",
+        "Go to school",
+        "Have lunch",
+        "Wake up"
+      ],
+      "answer": "Brush your teeth"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Pajamas",
+        "Hat",
+        "Clothes",
+        "Shoes"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you do after dinner?",
+      "options": [
+        "Run",
+        "Take a shower",
+        "Go to school",
+        "Relax"
+      ],
+      "answer": "Relax"
+    },
+    {
+      "question": "What do you do before brushing your teeth?",
+      "options": [
+        "Wake up",
+        "Go to sleep",
+        "Do homework",
+        "Have lunch"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "In the morning",
+        "Before school",
+        "After lunch",
+        "Before bed"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Pajamas",
+        "Shoes",
+        "Clothes",
+        "Hat"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "After lunch",
+        "Before school",
+        "In the morning",
+        "Before bed"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "What do you do after dinner?",
+      "options": [
+        "Take a shower",
+        "Run",
+        "Relax",
+        "Go to school"
+      ],
+      "answer": "Relax"
+    },
+    {
+      "question": "What do you do first in the morning?",
+      "options": [
+        "Wake up",
+        "Eat dinner",
+        "Go to bed",
+        "Go to school"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Go to school",
+        "Have dinner",
+        "Get dressed",
+        "Sleep again"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Have lunch",
+        "Wake up",
+        "Go to school",
+        "Brush your teeth"
+      ],
+      "answer": "Brush your teeth"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "In the morning",
+        "Before bed",
+        "After lunch",
+        "Before school"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "Before school",
+        "Before bed",
+        "In the morning",
+        "After lunch"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Pajamas",
+        "Hat",
+        "Clothes",
+        "Shoes"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Have lunch",
+        "Go to school",
+        "Brush your teeth",
+        "Wake up"
+      ],
+      "answer": "Brush your teeth"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "Before school",
+        "After lunch",
+        "Before bed",
+        "In the morning"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Shoes",
+        "Clothes",
+        "Hat",
+        "Pajamas"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "Before school",
+        "In the morning",
+        "After lunch",
+        "Before bed"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Sleep again",
+        "Go to school",
+        "Have dinner",
+        "Get dressed"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Pajamas",
+        "Clothes",
+        "Hat",
+        "Shoes"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Have dinner",
+        "Sleep again",
+        "Get dressed",
+        "Go to school"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "Before bed",
+        "Before school",
+        "After lunch",
+        "In the morning"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "What do you do first in the morning?",
+      "options": [
+        "Go to bed",
+        "Wake up",
+        "Go to school",
+        "Eat dinner"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "When do you do your homework?",
+      "options": [
+        "Before breakfast",
+        "During lunch",
+        "After school",
+        "In the morning"
+      ],
+      "answer": "After school"
+    },
+    {
+      "question": "What do you do before brushing your teeth?",
+      "options": [
+        "Wake up",
+        "Go to sleep",
+        "Have lunch",
+        "Do homework"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Brush your teeth",
+        "Wake up",
+        "Have lunch",
+        "Go to school"
+      ],
+      "answer": "Brush your teeth"
+    },
+    {
+      "question": "When do you do your homework?",
+      "options": [
+        "During lunch",
+        "In the morning",
+        "After school",
+        "Before breakfast"
+      ],
+      "answer": "After school"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Go to school",
+        "Have lunch",
+        "Brush your teeth",
+        "Wake up"
+      ],
+      "answer": "Brush your teeth"
+    },
+    {
+      "question": "What do you carry to school?",
+      "options": [
+        "Pillow",
+        "Backpack",
+        "Plate",
+        "Slippers"
+      ],
+      "answer": "Backpack"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Hat",
+        "Shoes",
+        "Clothes",
+        "Pajamas"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Shoes",
+        "Hat",
+        "Clothes",
+        "Pajamas"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you do first in the morning?",
+      "options": [
+        "Go to school",
+        "Wake up",
+        "Go to bed",
+        "Eat dinner"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Wake up",
+        "Have lunch",
+        "Brush your teeth",
+        "Go to school"
+      ],
+      "answer": "Brush your teeth"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Brush your teeth",
+        "Go to school",
+        "Have lunch",
+        "Wake up"
+      ],
+      "answer": "Brush your teeth"
+    },
+    {
+      "question": "What do you do after dinner?",
+      "options": [
+        "Relax",
+        "Go to school",
+        "Take a shower",
+        "Run"
+      ],
+      "answer": "Relax"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Have lunch",
+        "Wake up",
+        "Go to school",
+        "Brush your teeth"
+      ],
+      "answer": "Brush your teeth"
+    },
+    {
+      "question": "What meal do you eat in the morning?",
+      "options": [
+        "Lunch",
+        "Breakfast",
+        "Dinner",
+        "Snack"
+      ],
+      "answer": "Breakfast"
+    },
+    {
+      "question": "What do you do first in the morning?",
+      "options": [
+        "Wake up",
+        "Go to school",
+        "Eat dinner",
+        "Go to bed"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Get dressed",
+        "Have dinner",
+        "Sleep again",
+        "Go to school"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Shoes",
+        "Clothes",
+        "Hat",
+        "Pajamas"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you do before brushing your teeth?",
+      "options": [
+        "Do homework",
+        "Wake up",
+        "Go to sleep",
+        "Have lunch"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "In the morning",
+        "After lunch",
+        "Before school",
+        "Before bed"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "When do you do your homework?",
+      "options": [
+        "After school",
+        "In the morning",
+        "Before breakfast",
+        "During lunch"
+      ],
+      "answer": "After school"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Get dressed",
+        "Go to school",
+        "Sleep again",
+        "Have dinner"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Shoes",
+        "Pajamas",
+        "Clothes",
+        "Hat"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Wake up",
+        "Brush your teeth",
+        "Have lunch",
+        "Go to school"
+      ],
+      "answer": "Brush your teeth"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Have lunch",
+        "Wake up",
+        "Brush your teeth",
+        "Go to school"
+      ],
+      "answer": "Brush your teeth"
+    },
+    {
+      "question": "What meal do you eat in the morning?",
+      "options": [
+        "Breakfast",
+        "Snack",
+        "Lunch",
+        "Dinner"
+      ],
+      "answer": "Breakfast"
+    },
+    {
+      "question": "What do you do first in the morning?",
+      "options": [
+        "Eat dinner",
+        "Go to school",
+        "Wake up",
+        "Go to bed"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "What do you carry to school?",
+      "options": [
+        "Pillow",
+        "Plate",
+        "Slippers",
+        "Backpack"
+      ],
+      "answer": "Backpack"
+    },
+    {
+      "question": "When do you do your homework?",
+      "options": [
+        "After school",
+        "Before breakfast",
+        "In the morning",
+        "During lunch"
+      ],
+      "answer": "After school"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Sleep again",
+        "Get dressed",
+        "Have dinner",
+        "Go to school"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "What do you do first in the morning?",
+      "options": [
+        "Go to school",
+        "Wake up",
+        "Eat dinner",
+        "Go to bed"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Go to school",
+        "Get dressed",
+        "Have dinner",
+        "Sleep again"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Go to school",
+        "Have dinner",
+        "Sleep again",
+        "Get dressed"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Pajamas",
+        "Clothes",
+        "Shoes",
+        "Hat"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you do after dinner?",
+      "options": [
+        "Take a shower",
+        "Go to school",
+        "Relax",
+        "Run"
+      ],
+      "answer": "Relax"
+    },
+    {
+      "question": "When do you do your homework?",
+      "options": [
+        "In the morning",
+        "After school",
+        "During lunch",
+        "Before breakfast"
+      ],
+      "answer": "After school"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Sleep again",
+        "Get dressed",
+        "Have dinner",
+        "Go to school"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "When do you do your homework?",
+      "options": [
+        "Before breakfast",
+        "During lunch",
+        "After school",
+        "In the morning"
+      ],
+      "answer": "After school"
+    },
+    {
+      "question": "What do you do after dinner?",
+      "options": [
+        "Take a shower",
+        "Run",
+        "Relax",
+        "Go to school"
+      ],
+      "answer": "Relax"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Go to school",
+        "Brush your teeth",
+        "Have lunch",
+        "Wake up"
+      ],
+      "answer": "Brush your teeth"
+    },
+    {
+      "question": "What do you do after dinner?",
+      "options": [
+        "Run",
+        "Go to school",
+        "Relax",
+        "Take a shower"
+      ],
+      "answer": "Relax"
+    },
+    {
+      "question": "What do you do before brushing your teeth?",
+      "options": [
+        "Go to sleep",
+        "Do homework",
+        "Wake up",
+        "Have lunch"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Shoes",
+        "Pajamas",
+        "Clothes",
+        "Hat"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "In the morning",
+        "After lunch",
+        "Before bed",
+        "Before school"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Pajamas",
+        "Hat",
+        "Shoes",
+        "Clothes"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you carry to school?",
+      "options": [
+        "Slippers",
+        "Backpack",
+        "Plate",
+        "Pillow"
+      ],
+      "answer": "Backpack"
+    },
+    {
+      "question": "When do you do your homework?",
+      "options": [
+        "During lunch",
+        "Before breakfast",
+        "In the morning",
+        "After school"
+      ],
+      "answer": "After school"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Hat",
+        "Pajamas",
+        "Shoes",
+        "Clothes"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What meal do you eat in the morning?",
+      "options": [
+        "Breakfast",
+        "Lunch",
+        "Snack",
+        "Dinner"
+      ],
+      "answer": "Breakfast"
+    },
+    {
+      "question": "What do you carry to school?",
+      "options": [
+        "Backpack",
+        "Pillow",
+        "Plate",
+        "Slippers"
+      ],
+      "answer": "Backpack"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Have dinner",
+        "Go to school",
+        "Sleep again",
+        "Get dressed"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "After lunch",
+        "In the morning",
+        "Before bed",
+        "Before school"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "When do you do your homework?",
+      "options": [
+        "After school",
+        "During lunch",
+        "Before breakfast",
+        "In the morning"
+      ],
+      "answer": "After school"
+    },
+    {
+      "question": "What do you do before brushing your teeth?",
+      "options": [
+        "Do homework",
+        "Wake up",
+        "Have lunch",
+        "Go to sleep"
+      ],
+      "answer": "Wake up"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "After lunch",
+        "Before school",
+        "Before bed",
+        "In the morning"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "What meal do you eat in the morning?",
+      "options": [
+        "Dinner",
+        "Breakfast",
+        "Snack",
+        "Lunch"
+      ],
+      "answer": "Breakfast"
+    },
+    {
+      "question": "What do you wear before going to school?",
+      "options": [
+        "Shoes",
+        "Clothes",
+        "Hat",
+        "Pajamas"
+      ],
+      "answer": "Clothes"
+    },
+    {
+      "question": "What do you do after dinner?",
+      "options": [
+        "Take a shower",
+        "Run",
+        "Go to school",
+        "Relax"
+      ],
+      "answer": "Relax"
+    },
+    {
+      "question": "What do you do after waking up?",
+      "options": [
+        "Go to school",
+        "Have dinner",
+        "Get dressed",
+        "Sleep again"
+      ],
+      "answer": "Get dressed"
+    },
+    {
+      "question": "When do you put on your pajamas?",
+      "options": [
+        "After lunch",
+        "In the morning",
+        "Before bed",
+        "Before school"
+      ],
+      "answer": "Before bed"
+    },
+    {
+      "question": "What do you do before going to bed?",
+      "options": [
+        "Wake up",
+        "Brush your teeth",
+        "Go to school",
+        "Have lunch"
+      ],
+      "answer": "Brush your teeth"
+    }
+  ],
+
+  "weather_and_clothes": [
+    {
+      "question": "What do you wear on your head when it is sunny?",
+      "options": [
+        "Raincoat",
+        "Hat",
+        "Boots",
+        "Jacket"
       ],
       "answer": "Hat"
     },
     {
-      "question": "___ apple a day keeps the doctor away.",
+      "question": "What shines in the sky on sunny days?",
       "options": [
-        "An",
-        "A",
-        "The",
-        "One"
+        "Rain",
+        "Sun",
+        "Snow",
+        "Cloud"
       ],
-      "answer": "An"
+      "answer": "Sun"
     },
     {
-      "question": "She ___ playing with her toy.",
+      "question": "What do people wear in the rain?",
       "options": [
-        "is",
-        "are",
-        "am",
-        "was"
+        "Shorts",
+        "Sweater",
+        "Sunglasses",
+        "Raincoat"
       ],
-      "answer": "is"
+      "answer": "Raincoat"
     },
     {
-      "question": "They ___ happy today.",
+      "question": "What weather do you see lightning and hear thunder?",
       "options": [
-        "is",
-        "are",
-        "am",
-        "was"
+        "Sun",
+        "Storm",
+        "Fog",
+        "Wind"
       ],
-      "answer": "are"
+      "answer": "Storm"
     },
     {
-      "question": "He ___ a cat.",
+      "question": "Which one is worn on your hands in winter?",
       "options": [
-        "have",
-        "has",
-        "is",
-        "are"
+        "Shoes",
+        "Hat",
+        "Gloves",
+        "Scarf"
       ],
-      "answer": "has"
+      "answer": "Gloves"
     },
     {
-      "question": "I ___ a student.",
+      "question": "What do you wear when it\u2019s hot outside?",
       "options": [
-        "is",
-        "am",
-        "are",
-        "be"
+        "Boots",
+        "Sweater",
+        "T-shirt",
+        "Coat"
       ],
-      "answer": "am"
+      "answer": "T-shirt"
     },
     {
-      "question": "___ you like ice cream?",
+      "question": "What do you wear when it\u2019s hot outside?",
       "options": [
-        "Do",
-        "Does",
-        "Is",
-        "Did"
+        "Boots",
+        "T-shirt",
+        "Coat",
+        "Sweater"
       ],
-      "answer": "Do"
+      "answer": "T-shirt"
     },
     {
-      "question": "Where ___ you from?",
+      "question": "Which one is worn on your hands in winter?",
       "options": [
-        "is",
-        "are",
-        "am",
-        "do"
+        "Hat",
+        "Shoes",
+        "Gloves",
+        "Scarf"
       ],
-      "answer": "are"
+      "answer": "Gloves"
     },
     {
-      "question": "She ___ not here.",
+      "question": "What do you wear to keep your neck warm?",
       "options": [
-        "is",
-        "are",
-        "am",
-        "do"
+        "T-shirt",
+        "Hat",
+        "Scarf",
+        "Gloves"
       ],
-      "answer": "is"
+      "answer": "Scarf"
     },
     {
-      "question": "The cat is ___ the table.",
+      "question": "What weather do you see lightning and hear thunder?",
       "options": [
-        "on",
-        "in",
-        "under",
-        "next"
+        "Fog",
+        "Wind",
+        "Sun",
+        "Storm"
       ],
-      "answer": "on"
+      "answer": "Storm"
     },
     {
-      "question": "The ball is ___ the box.",
+      "question": "What weather is described as white and snowy?",
       "options": [
-        "in",
-        "on",
-        "under",
-        "at"
+        "Summer",
+        "Winter",
+        "Spring",
+        "Autumn"
       ],
-      "answer": "in"
+      "answer": "Winter"
     },
     {
-      "question": "The dog is ___ the sofa.",
+      "question": "What weather do you see lightning and hear thunder?",
       "options": [
-        "under",
-        "over",
-        "above",
-        "behind"
+        "Sun",
+        "Storm",
+        "Fog",
+        "Wind"
       ],
-      "answer": "under"
+      "answer": "Storm"
     },
     {
-      "question": "The book is ___ the bag.",
+      "question": "Which one is worn on your hands in winter?",
       "options": [
-        "inside",
-        "on",
-        "above",
-        "next to"
+        "Scarf",
+        "Shoes",
+        "Gloves",
+        "Hat"
       ],
-      "answer": "inside"
+      "answer": "Gloves"
     },
     {
-      "question": "The chair is ___ the desk.",
+      "question": "What do you carry when it rains?",
       "options": [
-        "beside",
-        "between",
-        "on",
-        "in"
+        "Scarf",
+        "Umbrella",
+        "Sunglasses",
+        "Gloves"
       ],
-      "answer": "beside"
+      "answer": "Umbrella"
     },
     {
-      "question": "Tom has a red ball. He plays with it every day. What color is Tom\u2019s ball?",
+      "question": "What do you wear when it's cold?",
       "options": [
-        "Blue",
-        "Red",
-        "Green",
-        "Yellow"
+        "Jacket",
+        "Shorts",
+        "T-shirt",
+        "Swimsuit"
       ],
-      "answer": "Red"
+      "answer": "Jacket"
     },
     {
-      "question": "Anna has a dog. It likes to bark. What pet does Anna have?",
+      "question": "What do people wear in the rain?",
       "options": [
-        "Cat",
-        "Rabbit",
-        "Dog",
-        "Fish"
+        "Sweater",
+        "Shorts",
+        "Raincoat",
+        "Sunglasses"
       ],
-      "answer": "Dog"
+      "answer": "Raincoat"
     },
     {
-      "question": "Lisa eats an apple every morning. What does she eat?",
+      "question": "What shines in the sky on sunny days?",
       "options": [
-        "Banana",
-        "Cake",
-        "Apple",
-        "Pizza"
+        "Snow",
+        "Rain",
+        "Cloud",
+        "Sun"
       ],
-      "answer": "Apple"
+      "answer": "Sun"
     },
     {
-      "question": "Ben is reading a book in his bed. Where is Ben?",
+      "question": "What do you wear on your head when it\u2019s sunny?",
       "options": [
-        "School",
-        "Kitchen",
-        "Garden",
-        "Bed"
+        "Boots",
+        "Raincoat",
+        "Hat",
+        "Jacket"
       ],
-      "answer": "Bed"
+      "answer": "Hat"
     },
     {
-      "question": "Mia has a blue bag. What color is her bag?",
+      "question": "What weather is described as white and snowy?",
       "options": [
-        "Pink",
-        "Blue",
-        "Black",
-        "Red"
+        "Summer",
+        "Spring",
+        "Winter",
+        "Autumn"
       ],
-      "answer": "Blue"
+      "answer": "Winter"
+    },
+    {
+      "question": "What do you wear when it's cold?",
+      "options": [
+        "Jacket",
+        "Shorts",
+        "Swimsuit",
+        "T-shirt"
+      ],
+      "answer": "Jacket"
+    },
+    {
+      "question": "What weather do you see lightning and hear thunder?",
+      "options": [
+        "Storm",
+        "Wind",
+        "Sun",
+        "Fog"
+      ],
+      "answer": "Storm"
+    },
+    {
+      "question": "What shines in the sky on sunny days?",
+      "options": [
+        "Rain",
+        "Cloud",
+        "Sun",
+        "Snow"
+      ],
+      "answer": "Sun"
+    },
+    {
+      "question": "What weather is described as white and snowy?",
+      "options": [
+        "Spring",
+        "Summer",
+        "Autumn",
+        "Winter"
+      ],
+      "answer": "Winter"
+    },
+    {
+      "question": "What weather is described as white and snowy?",
+      "options": [
+        "Autumn",
+        "Winter",
+        "Spring",
+        "Summer"
+      ],
+      "answer": "Winter"
+    },
+    {
+      "question": "What shines in the sky on sunny days?",
+      "options": [
+        "Rain",
+        "Snow",
+        "Sun",
+        "Cloud"
+      ],
+      "answer": "Sun"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "Boots",
+        "Coat",
+        "Sweater",
+        "T-shirt"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "What weather do you see lightning and hear thunder?",
+      "options": [
+        "Storm",
+        "Fog",
+        "Wind",
+        "Sun"
+      ],
+      "answer": "Storm"
+    },
+    {
+      "question": "What do you wear to keep your neck warm?",
+      "options": [
+        "Gloves",
+        "T-shirt",
+        "Scarf",
+        "Hat"
+      ],
+      "answer": "Scarf"
+    },
+    {
+      "question": "What do people wear in the rain?",
+      "options": [
+        "Sunglasses",
+        "Sweater",
+        "Raincoat",
+        "Shorts"
+      ],
+      "answer": "Raincoat"
+    },
+    {
+      "question": "What weather is described as white and snowy?",
+      "options": [
+        "Spring",
+        "Autumn",
+        "Winter",
+        "Summer"
+      ],
+      "answer": "Winter"
+    },
+    {
+      "question": "What weather do you see lightning and hear thunder?",
+      "options": [
+        "Storm",
+        "Wind",
+        "Fog",
+        "Sun"
+      ],
+      "answer": "Storm"
+    },
+    {
+      "question": "What weather is described as white and snowy?",
+      "options": [
+        "Winter",
+        "Summer",
+        "Autumn",
+        "Spring"
+      ],
+      "answer": "Winter"
+    },
+    {
+      "question": "What do you carry when it rains?",
+      "options": [
+        "Scarf",
+        "Gloves",
+        "Sunglasses",
+        "Umbrella"
+      ],
+      "answer": "Umbrella"
+    },
+    {
+      "question": "What weather do you see lightning and hear thunder?",
+      "options": [
+        "Storm",
+        "Wind",
+        "Sun",
+        "Fog"
+      ],
+      "answer": "Storm"
+    },
+    {
+      "question": "What weather do you see lightning and hear thunder?",
+      "options": [
+        "Wind",
+        "Sun",
+        "Fog",
+        "Storm"
+      ],
+      "answer": "Storm"
+    },
+    {
+      "question": "What do you wear to keep your neck warm?",
+      "options": [
+        "T-shirt",
+        "Gloves",
+        "Scarf",
+        "Hat"
+      ],
+      "answer": "Scarf"
+    },
+    {
+      "question": "What do people wear in the rain?",
+      "options": [
+        "Sweater",
+        "Shorts",
+        "Sunglasses",
+        "Raincoat"
+      ],
+      "answer": "Raincoat"
+    },
+    {
+      "question": "What do you carry when it rains?",
+      "options": [
+        "Sunglasses",
+        "Gloves",
+        "Scarf",
+        "Umbrella"
+      ],
+      "answer": "Umbrella"
+    },
+    {
+      "question": "What do you carry when it rains?",
+      "options": [
+        "Umbrella",
+        "Sunglasses",
+        "Scarf",
+        "Gloves"
+      ],
+      "answer": "Umbrella"
+    },
+    {
+      "question": "What do you carry when it rains?",
+      "options": [
+        "Scarf",
+        "Gloves",
+        "Sunglasses",
+        "Umbrella"
+      ],
+      "answer": "Umbrella"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "Boots",
+        "Sweater",
+        "Coat",
+        "T-shirt"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "What weather is described as white and snowy?",
+      "options": [
+        "Autumn",
+        "Winter",
+        "Summer",
+        "Spring"
+      ],
+      "answer": "Winter"
+    },
+    {
+      "question": "What weather is described as white and snowy?",
+      "options": [
+        "Autumn",
+        "Spring",
+        "Winter",
+        "Summer"
+      ],
+      "answer": "Winter"
+    },
+    {
+      "question": "What do you carry when it rains?",
+      "options": [
+        "Sunglasses",
+        "Umbrella",
+        "Gloves",
+        "Scarf"
+      ],
+      "answer": "Umbrella"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "Coat",
+        "Boots",
+        "Sweater",
+        "T-shirt"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "Which one is worn on your hands in winter?",
+      "options": [
+        "Gloves",
+        "Hat",
+        "Shoes",
+        "Scarf"
+      ],
+      "answer": "Gloves"
+    },
+    {
+      "question": "What weather do you see lightning and hear thunder?",
+      "options": [
+        "Storm",
+        "Fog",
+        "Sun",
+        "Wind"
+      ],
+      "answer": "Storm"
+    },
+    {
+      "question": "What do you wear to keep your neck warm?",
+      "options": [
+        "Scarf",
+        "Hat",
+        "Gloves",
+        "T-shirt"
+      ],
+      "answer": "Scarf"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "T-shirt",
+        "Boots",
+        "Coat",
+        "Sweater"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "What weather is described as white and snowy?",
+      "options": [
+        "Spring",
+        "Winter",
+        "Summer",
+        "Autumn"
+      ],
+      "answer": "Winter"
+    },
+    {
+      "question": "What shines in the sky on sunny days?",
+      "options": [
+        "Rain",
+        "Sun",
+        "Cloud",
+        "Snow"
+      ],
+      "answer": "Sun"
+    },
+    {
+      "question": "What do people wear in the rain?",
+      "options": [
+        "Raincoat",
+        "Sunglasses",
+        "Shorts",
+        "Sweater"
+      ],
+      "answer": "Raincoat"
+    },
+    {
+      "question": "What do you wear when it's cold?",
+      "options": [
+        "Jacket",
+        "T-shirt",
+        "Swimsuit",
+        "Shorts"
+      ],
+      "answer": "Jacket"
+    },
+    {
+      "question": "What do you wear when it's cold?",
+      "options": [
+        "T-shirt",
+        "Jacket",
+        "Swimsuit",
+        "Shorts"
+      ],
+      "answer": "Jacket"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "T-shirt",
+        "Coat",
+        "Sweater",
+        "Boots"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "What do you wear to keep your neck warm?",
+      "options": [
+        "Gloves",
+        "Hat",
+        "T-shirt",
+        "Scarf"
+      ],
+      "answer": "Scarf"
+    },
+    {
+      "question": "Which one is worn on your hands in winter?",
+      "options": [
+        "Gloves",
+        "Scarf",
+        "Hat",
+        "Shoes"
+      ],
+      "answer": "Gloves"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "T-shirt",
+        "Boots",
+        "Coat",
+        "Sweater"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "What do you wear on your head when it\u2019s sunny?",
+      "options": [
+        "Boots",
+        "Hat",
+        "Jacket",
+        "Raincoat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "What do you carry when it rains?",
+      "options": [
+        "Sunglasses",
+        "Gloves",
+        "Umbrella",
+        "Scarf"
+      ],
+      "answer": "Umbrella"
+    },
+    {
+      "question": "What do you carry when it rains?",
+      "options": [
+        "Umbrella",
+        "Sunglasses",
+        "Scarf",
+        "Gloves"
+      ],
+      "answer": "Umbrella"
+    },
+    {
+      "question": "What shines in the sky on sunny days?",
+      "options": [
+        "Cloud",
+        "Snow",
+        "Rain",
+        "Sun"
+      ],
+      "answer": "Sun"
+    },
+    {
+      "question": "What do you carry when it rains?",
+      "options": [
+        "Umbrella",
+        "Sunglasses",
+        "Gloves",
+        "Scarf"
+      ],
+      "answer": "Umbrella"
+    },
+    {
+      "question": "What do you carry when it rains?",
+      "options": [
+        "Gloves",
+        "Sunglasses",
+        "Umbrella",
+        "Scarf"
+      ],
+      "answer": "Umbrella"
+    },
+    {
+      "question": "What do you wear when it's cold?",
+      "options": [
+        "Jacket",
+        "Shorts",
+        "Swimsuit",
+        "T-shirt"
+      ],
+      "answer": "Jacket"
+    },
+    {
+      "question": "Which one is worn on your hands in winter?",
+      "options": [
+        "Hat",
+        "Shoes",
+        "Scarf",
+        "Gloves"
+      ],
+      "answer": "Gloves"
+    },
+    {
+      "question": "What do you wear on your head when it\u2019s sunny?",
+      "options": [
+        "Boots",
+        "Jacket",
+        "Raincoat",
+        "Hat"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "What do you wear on your head when it\u2019s sunny?",
+      "options": [
+        "Hat",
+        "Raincoat",
+        "Boots",
+        "Jacket"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "Boots",
+        "Coat",
+        "Sweater",
+        "T-shirt"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "What do you carry when it rains?",
+      "options": [
+        "Scarf",
+        "Umbrella",
+        "Gloves",
+        "Sunglasses"
+      ],
+      "answer": "Umbrella"
+    },
+    {
+      "question": "What shines in the sky on sunny days?",
+      "options": [
+        "Cloud",
+        "Sun",
+        "Snow",
+        "Rain"
+      ],
+      "answer": "Sun"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "Coat",
+        "Boots",
+        "T-shirt",
+        "Sweater"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "Sweater",
+        "Coat",
+        "T-shirt",
+        "Boots"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "Sweater",
+        "Boots",
+        "Coat",
+        "T-shirt"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "What weather do you see lightning and hear thunder?",
+      "options": [
+        "Storm",
+        "Wind",
+        "Fog",
+        "Sun"
+      ],
+      "answer": "Storm"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "Coat",
+        "T-shirt",
+        "Boots",
+        "Sweater"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "What shines in the sky on sunny days?",
+      "options": [
+        "Sun",
+        "Rain",
+        "Cloud",
+        "Snow"
+      ],
+      "answer": "Sun"
+    },
+    {
+      "question": "What do people wear in the rain?",
+      "options": [
+        "Sweater",
+        "Shorts",
+        "Sunglasses",
+        "Raincoat"
+      ],
+      "answer": "Raincoat"
+    },
+    {
+      "question": "What do you wear when it's cold?",
+      "options": [
+        "Shorts",
+        "Jacket",
+        "T-shirt",
+        "Swimsuit"
+      ],
+      "answer": "Jacket"
+    },
+    {
+      "question": "What do you carry when it rains?",
+      "options": [
+        "Gloves",
+        "Umbrella",
+        "Scarf",
+        "Sunglasses"
+      ],
+      "answer": "Umbrella"
+    },
+    {
+      "question": "Which one is worn on your hands in winter?",
+      "options": [
+        "Scarf",
+        "Gloves",
+        "Shoes",
+        "Hat"
+      ],
+      "answer": "Gloves"
+    },
+    {
+      "question": "What do you wear on your head when it\u2019s sunny?",
+      "options": [
+        "Raincoat",
+        "Hat",
+        "Jacket",
+        "Boots"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "What do you wear when it's cold?",
+      "options": [
+        "T-shirt",
+        "Shorts",
+        "Jacket",
+        "Swimsuit"
+      ],
+      "answer": "Jacket"
+    },
+    {
+      "question": "What shines in the sky on sunny days?",
+      "options": [
+        "Cloud",
+        "Rain",
+        "Sun",
+        "Snow"
+      ],
+      "answer": "Sun"
+    },
+    {
+      "question": "What do you wear when it\u2019s hot outside?",
+      "options": [
+        "Coat",
+        "T-shirt",
+        "Sweater",
+        "Boots"
+      ],
+      "answer": "T-shirt"
+    },
+    {
+      "question": "What weather is described as white and snowy?",
+      "options": [
+        "Autumn",
+        "Spring",
+        "Winter",
+        "Summer"
+      ],
+      "answer": "Winter"
+    },
+    {
+      "question": "What do you wear to keep your neck warm?",
+      "options": [
+        "Gloves",
+        "Scarf",
+        "Hat",
+        "T-shirt"
+      ],
+      "answer": "Scarf"
+    },
+    {
+      "question": "What shines in the sky on sunny days?",
+      "options": [
+        "Cloud",
+        "Snow",
+        "Rain",
+        "Sun"
+      ],
+      "answer": "Sun"
+    },
+    {
+      "question": "What do you wear to keep your neck warm?",
+      "options": [
+        "Hat",
+        "Scarf",
+        "Gloves",
+        "T-shirt"
+      ],
+      "answer": "Scarf"
+    },
+    {
+      "question": "What do you wear when it's cold?",
+      "options": [
+        "Jacket",
+        "Shorts",
+        "T-shirt",
+        "Swimsuit"
+      ],
+      "answer": "Jacket"
+    },
+    {
+      "question": "What shines in the sky on sunny days?",
+      "options": [
+        "Sun",
+        "Rain",
+        "Cloud",
+        "Snow"
+      ],
+      "answer": "Sun"
+    },
+    {
+      "question": "What do people wear in the rain?",
+      "options": [
+        "Sunglasses",
+        "Sweater",
+        "Raincoat",
+        "Shorts"
+      ],
+      "answer": "Raincoat"
+    },
+    {
+      "question": "What weather is described as white and snowy?",
+      "options": [
+        "Spring",
+        "Summer",
+        "Winter",
+        "Autumn"
+      ],
+      "answer": "Winter"
+    },
+    {
+      "question": "What do you wear on your head when it\u2019s sunny?",
+      "options": [
+        "Boots",
+        "Raincoat",
+        "Hat",
+        "Jacket"
+      ],
+      "answer": "Hat"
+    },
+    {
+      "question": "Which one is worn on your hands in winter?",
+      "options": [
+        "Scarf",
+        "Shoes",
+        "Gloves",
+        "Hat"
+      ],
+      "answer": "Gloves"
+    },
+    {
+      "question": "What do you wear to keep your neck warm?",
+      "options": [
+        "Hat",
+        "Scarf",
+        "Gloves",
+        "T-shirt"
+      ],
+      "answer": "Scarf"
+    },
+    {
+      "question": "What weather is described as white and snowy?",
+      "options": [
+        "Summer",
+        "Autumn",
+        "Winter",
+        "Spring"
+      ],
+      "answer": "Winter"
+    },
+    {
+      "question": "What weather do you see lightning and hear thunder?",
+      "options": [
+        "Sun",
+        "Storm",
+        "Wind",
+        "Fog"
+      ],
+      "answer": "Storm"
+    },
+    {
+      "question": "What weather is described as white and snowy?",
+      "options": [
+        "Winter",
+        "Autumn",
+        "Summer",
+        "Spring"
+      ],
+      "answer": "Winter"
+    },
+    {
+      "question": "What weather do you see lightning and hear thunder?",
+      "options": [
+        "Storm",
+        "Wind",
+        "Fog",
+        "Sun"
+      ],
+      "answer": "Storm"
+    }
+  ],
+
+  "feelings_and_emotions": [
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Happy",
+        "Tired",
+        "Sad",
+        "Angry"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Excited",
+        "Calm",
+        "Happy",
+        "Nervous"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Excited",
+        "Sad",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Scared",
+        "Bored",
+        "Mad",
+        "Loved"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Happy",
+        "Sad",
+        "Tired",
+        "Angry"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Scared",
+        "Mad",
+        "Loved",
+        "Bored"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Sad",
+        "Happy",
+        "Excited",
+        "Surprised"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Happy",
+        "Surprised",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Funny",
+        "Lonely",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Excited",
+        "Calm",
+        "Happy",
+        "Nervous"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Funny",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Nervous",
+        "Calm",
+        "Happy",
+        "Excited"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Happy",
+        "Funny",
+        "Angry",
+        "Lonely"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Happy",
+        "Angry",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Angry",
+        "Sleepy",
+        "Excited",
+        "Happy"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Excited",
+        "Nervous",
+        "Happy",
+        "Calm"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Scared",
+        "Excited",
+        "Sad",
+        "Tired"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude34",
+        "\ud83d\ude22",
+        "\ud83d\ude0a",
+        "\ud83d\ude20"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Loved",
+        "Bored",
+        "Mad",
+        "Scared"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Happy",
+        "Angry",
+        "Sleepy",
+        "Excited"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Happy",
+        "Surprised",
+        "Sad",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude22",
+        "\ud83d\ude0a",
+        "\ud83d\ude20",
+        "\ud83d\ude34"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude20",
+        "\ud83d\ude0a",
+        "\ud83d\ude22",
+        "\ud83d\ude34"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Sad",
+        "Angry",
+        "Excited",
+        "Happy"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Angry",
+        "Happy",
+        "Sad",
+        "Tired"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "How do you feel when watching a funny cartoon?",
+      "options": [
+        "Crying",
+        "Laughing",
+        "Bored",
+        "Scared"
+      ],
+      "answer": "Laughing"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude20",
+        "\ud83d\ude22",
+        "\ud83d\ude0a",
+        "\ud83d\ude34"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Calm",
+        "Excited",
+        "Nervous",
+        "Happy"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Bored",
+        "Loved",
+        "Scared",
+        "Mad"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude34",
+        "\ud83d\ude20",
+        "\ud83d\ude0a",
+        "\ud83d\ude22"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Sad",
+        "Tired",
+        "Excited",
+        "Scared"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Excited",
+        "Surprised",
+        "Sad",
+        "Happy"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Excited",
+        "Sad",
+        "Happy",
+        "Surprised"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Angry",
+        "Happy",
+        "Funny",
+        "Lonely"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Happy",
+        "Calm",
+        "Nervous",
+        "Excited"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Happy",
+        "Sleepy",
+        "Angry",
+        "Excited"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Tired",
+        "Sad",
+        "Happy",
+        "Angry"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Scared",
+        "Mad",
+        "Bored",
+        "Loved"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Sad",
+        "Tired",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Sad",
+        "Happy",
+        "Tired",
+        "Angry"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Sad",
+        "Angry",
+        "Happy",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Funny",
+        "Happy",
+        "Lonely",
+        "Angry"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Excited",
+        "Happy",
+        "Surprised",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Happy",
+        "Surprised",
+        "Sad",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Happy",
+        "Angry",
+        "Sad",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Happy",
+        "Angry",
+        "Sad",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Nervous",
+        "Happy",
+        "Calm",
+        "Excited"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Excited",
+        "Surprised",
+        "Sad",
+        "Happy"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Happy",
+        "Sad",
+        "Surprised",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Sad",
+        "Scared",
+        "Tired",
+        "Excited"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Sad",
+        "Excited",
+        "Happy",
+        "Angry"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Tired",
+        "Angry",
+        "Happy",
+        "Sad"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Angry",
+        "Happy",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Happy",
+        "Funny",
+        "Lonely",
+        "Angry"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Scared",
+        "Tired",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude22",
+        "\ud83d\ude0a",
+        "\ud83d\ude34",
+        "\ud83d\ude20"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Sad",
+        "Excited",
+        "Happy",
+        "Angry"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Sad",
+        "Happy",
+        "Surprised",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Excited",
+        "Calm",
+        "Nervous",
+        "Happy"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Tired",
+        "Sad",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Happy",
+        "Angry",
+        "Tired",
+        "Sad"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude34",
+        "\ud83d\ude0a",
+        "\ud83d\ude22",
+        "\ud83d\ude20"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "How do you feel when watching a funny cartoon?",
+      "options": [
+        "Bored",
+        "Laughing",
+        "Crying",
+        "Scared"
+      ],
+      "answer": "Laughing"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Excited",
+        "Angry",
+        "Happy",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when watching a funny cartoon?",
+      "options": [
+        "Laughing",
+        "Scared",
+        "Bored",
+        "Crying"
+      ],
+      "answer": "Laughing"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Funny",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Happy",
+        "Angry",
+        "Funny"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Sad",
+        "Surprised",
+        "Excited",
+        "Happy"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude0a",
+        "\ud83d\ude20",
+        "\ud83d\ude22",
+        "\ud83d\ude34"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Calm",
+        "Happy",
+        "Excited",
+        "Nervous"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Sad",
+        "Angry",
+        "Tired",
+        "Happy"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Scared",
+        "Tired",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Happy",
+        "Nervous",
+        "Excited",
+        "Calm"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Happy",
+        "Angry",
+        "Funny"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Excited",
+        "Happy",
+        "Angry",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Happy",
+        "Tired",
+        "Angry",
+        "Sad"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Bored",
+        "Scared",
+        "Loved",
+        "Mad"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Happy",
+        "Calm",
+        "Excited",
+        "Nervous"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Angry",
+        "Tired",
+        "Happy",
+        "Sad"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Angry",
+        "Lonely",
+        "Funny",
+        "Happy"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Angry",
+        "Happy",
+        "Funny"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Excited",
+        "Happy",
+        "Nervous",
+        "Calm"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Tired",
+        "Excited",
+        "Scared",
+        "Sad"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Happy",
+        "Sad",
+        "Angry",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Mad",
+        "Scared",
+        "Loved",
+        "Bored"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "How do you feel when watching a funny cartoon?",
+      "options": [
+        "Bored",
+        "Crying",
+        "Laughing",
+        "Scared"
+      ],
+      "answer": "Laughing"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Angry",
+        "Funny",
+        "Happy",
+        "Lonely"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Angry",
+        "Excited",
+        "Happy",
+        "Sleepy"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Tired",
+        "Angry",
+        "Happy",
+        "Sad"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Loved",
+        "Mad",
+        "Bored",
+        "Scared"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Funny",
+        "Happy",
+        "Angry"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Calm",
+        "Happy",
+        "Excited",
+        "Nervous"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Scared",
+        "Loved",
+        "Mad",
+        "Bored"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Bored",
+        "Mad",
+        "Loved",
+        "Scared"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Surprised",
+        "Happy",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Sad",
+        "Happy",
+        "Tired",
+        "Angry"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Angry",
+        "Excited",
+        "Happy",
+        "Sleepy"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Sleepy",
+        "Excited",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Happy",
+        "Sad",
+        "Angry",
+        "Tired"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Angry",
+        "Happy",
+        "Sleepy",
+        "Excited"
+      ],
+      "answer": "Angry"
+    }
+  ],
+
+  "feelings_and_emotions": [
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Happy",
+        "Tired",
+        "Sad",
+        "Angry"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Excited",
+        "Calm",
+        "Happy",
+        "Nervous"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Excited",
+        "Sad",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Scared",
+        "Bored",
+        "Mad",
+        "Loved"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Happy",
+        "Sad",
+        "Tired",
+        "Angry"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Scared",
+        "Mad",
+        "Loved",
+        "Bored"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Sad",
+        "Happy",
+        "Excited",
+        "Surprised"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Happy",
+        "Surprised",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Funny",
+        "Lonely",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Excited",
+        "Calm",
+        "Happy",
+        "Nervous"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Funny",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Nervous",
+        "Calm",
+        "Happy",
+        "Excited"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Happy",
+        "Funny",
+        "Angry",
+        "Lonely"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Happy",
+        "Angry",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Angry",
+        "Sleepy",
+        "Excited",
+        "Happy"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Excited",
+        "Nervous",
+        "Happy",
+        "Calm"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Scared",
+        "Excited",
+        "Sad",
+        "Tired"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude34",
+        "\ud83d\ude22",
+        "\ud83d\ude0a",
+        "\ud83d\ude20"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Loved",
+        "Bored",
+        "Mad",
+        "Scared"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Happy",
+        "Angry",
+        "Sleepy",
+        "Excited"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Happy",
+        "Surprised",
+        "Sad",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude22",
+        "\ud83d\ude0a",
+        "\ud83d\ude20",
+        "\ud83d\ude34"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude20",
+        "\ud83d\ude0a",
+        "\ud83d\ude22",
+        "\ud83d\ude34"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Sad",
+        "Angry",
+        "Excited",
+        "Happy"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Angry",
+        "Happy",
+        "Sad",
+        "Tired"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "How do you feel when watching a funny cartoon?",
+      "options": [
+        "Crying",
+        "Laughing",
+        "Bored",
+        "Scared"
+      ],
+      "answer": "Laughing"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude20",
+        "\ud83d\ude22",
+        "\ud83d\ude0a",
+        "\ud83d\ude34"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Calm",
+        "Excited",
+        "Nervous",
+        "Happy"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Bored",
+        "Loved",
+        "Scared",
+        "Mad"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude34",
+        "\ud83d\ude20",
+        "\ud83d\ude0a",
+        "\ud83d\ude22"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Sad",
+        "Tired",
+        "Excited",
+        "Scared"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Excited",
+        "Surprised",
+        "Sad",
+        "Happy"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Excited",
+        "Sad",
+        "Happy",
+        "Surprised"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Angry",
+        "Happy",
+        "Funny",
+        "Lonely"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Happy",
+        "Calm",
+        "Nervous",
+        "Excited"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Happy",
+        "Sleepy",
+        "Angry",
+        "Excited"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Tired",
+        "Sad",
+        "Happy",
+        "Angry"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Scared",
+        "Mad",
+        "Bored",
+        "Loved"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Sad",
+        "Tired",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Sad",
+        "Happy",
+        "Tired",
+        "Angry"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Sad",
+        "Angry",
+        "Happy",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Funny",
+        "Happy",
+        "Lonely",
+        "Angry"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Excited",
+        "Happy",
+        "Surprised",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Happy",
+        "Surprised",
+        "Sad",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Happy",
+        "Angry",
+        "Sad",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Happy",
+        "Angry",
+        "Sad",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Nervous",
+        "Happy",
+        "Calm",
+        "Excited"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Excited",
+        "Surprised",
+        "Sad",
+        "Happy"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Happy",
+        "Sad",
+        "Surprised",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Sad",
+        "Scared",
+        "Tired",
+        "Excited"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Sad",
+        "Excited",
+        "Happy",
+        "Angry"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Tired",
+        "Angry",
+        "Happy",
+        "Sad"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Angry",
+        "Happy",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Happy",
+        "Funny",
+        "Lonely",
+        "Angry"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Scared",
+        "Tired",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude22",
+        "\ud83d\ude0a",
+        "\ud83d\ude34",
+        "\ud83d\ude20"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Sad",
+        "Excited",
+        "Happy",
+        "Angry"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Sad",
+        "Happy",
+        "Surprised",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Excited",
+        "Calm",
+        "Nervous",
+        "Happy"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Tired",
+        "Sad",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Happy",
+        "Angry",
+        "Tired",
+        "Sad"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude34",
+        "\ud83d\ude0a",
+        "\ud83d\ude22",
+        "\ud83d\ude20"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "How do you feel when watching a funny cartoon?",
+      "options": [
+        "Bored",
+        "Laughing",
+        "Crying",
+        "Scared"
+      ],
+      "answer": "Laughing"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Excited",
+        "Angry",
+        "Happy",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "How do you feel when watching a funny cartoon?",
+      "options": [
+        "Laughing",
+        "Scared",
+        "Bored",
+        "Crying"
+      ],
+      "answer": "Laughing"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Funny",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Happy",
+        "Angry",
+        "Funny"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Sad",
+        "Surprised",
+        "Excited",
+        "Happy"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "Which face shows happiness?",
+      "options": [
+        "\ud83d\ude0a",
+        "\ud83d\ude20",
+        "\ud83d\ude22",
+        "\ud83d\ude34"
+      ],
+      "answer": "\ud83d\ude0a"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Calm",
+        "Happy",
+        "Excited",
+        "Nervous"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Sad",
+        "Angry",
+        "Tired",
+        "Happy"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Scared",
+        "Tired",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Happy",
+        "Nervous",
+        "Excited",
+        "Calm"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Happy",
+        "Angry",
+        "Funny"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Excited",
+        "Happy",
+        "Angry",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Happy",
+        "Tired",
+        "Angry",
+        "Sad"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Bored",
+        "Scared",
+        "Loved",
+        "Mad"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Happy",
+        "Calm",
+        "Excited",
+        "Nervous"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Angry",
+        "Tired",
+        "Happy",
+        "Sad"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Angry",
+        "Lonely",
+        "Funny",
+        "Happy"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Angry",
+        "Happy",
+        "Funny"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Excited",
+        "Happy",
+        "Nervous",
+        "Calm"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What feeling do you get when it's your birthday?",
+      "options": [
+        "Tired",
+        "Excited",
+        "Scared",
+        "Sad"
+      ],
+      "answer": "Excited"
+    },
+    {
+      "question": "What emotion fits this face: \ud83d\ude22",
+      "options": [
+        "Happy",
+        "Sad",
+        "Angry",
+        "Excited"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Mad",
+        "Scared",
+        "Loved",
+        "Bored"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "How do you feel when watching a funny cartoon?",
+      "options": [
+        "Bored",
+        "Crying",
+        "Laughing",
+        "Scared"
+      ],
+      "answer": "Laughing"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Angry",
+        "Funny",
+        "Happy",
+        "Lonely"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Angry",
+        "Excited",
+        "Happy",
+        "Sleepy"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Tired",
+        "Angry",
+        "Happy",
+        "Sad"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Loved",
+        "Mad",
+        "Bored",
+        "Scared"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "How do you feel when you\u2019re all alone?",
+      "options": [
+        "Lonely",
+        "Funny",
+        "Happy",
+        "Angry"
+      ],
+      "answer": "Lonely"
+    },
+    {
+      "question": "What do you feel before a test?",
+      "options": [
+        "Calm",
+        "Happy",
+        "Excited",
+        "Nervous"
+      ],
+      "answer": "Nervous"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Scared",
+        "Loved",
+        "Mad",
+        "Bored"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "What do you feel when you get a hug?",
+      "options": [
+        "Bored",
+        "Mad",
+        "Loved",
+        "Scared"
+      ],
+      "answer": "Loved"
+    },
+    {
+      "question": "How do you feel when you lose your toy?",
+      "options": [
+        "Surprised",
+        "Happy",
+        "Excited",
+        "Sad"
+      ],
+      "answer": "Sad"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Sad",
+        "Happy",
+        "Tired",
+        "Angry"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Angry",
+        "Excited",
+        "Happy",
+        "Sleepy"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Sleepy",
+        "Excited",
+        "Angry",
+        "Happy"
+      ],
+      "answer": "Angry"
+    },
+    {
+      "question": "What do you feel when someone gives you a gift?",
+      "options": [
+        "Happy",
+        "Sad",
+        "Angry",
+        "Tired"
+      ],
+      "answer": "Happy"
+    },
+    {
+      "question": "What do you feel when someone yells at you?",
+      "options": [
+        "Angry",
+        "Happy",
+        "Sleepy",
+        "Excited"
+      ],
+      "answer": "Angry"
     }
   ]
+}
