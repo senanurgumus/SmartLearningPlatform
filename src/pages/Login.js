@@ -39,7 +39,7 @@ export default function Login() {
   return (
     <div className="login-container">
       <div className="login-box">
-        <h2>Giriş Yap</h2>
+        <h2>Log In</h2>
         <form onSubmit={handleLogin}>
           <div className="input-group">
             <input
@@ -54,7 +54,7 @@ export default function Login() {
           <div className="input-group">
             <input
               type="password"
-              placeholder="Şifre"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -62,7 +62,7 @@ export default function Login() {
             />
           </div>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
-          <button type="submit" className="submit-btn">Giriş Yap</button>
+          <button type="submit" className="submit-btn">Log In</button>
         </form>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import Navbar from './components/Navbar.js';  // Navbar'ı import et
 import Login from "./pages/Login.js";
 import Register from "./pages/Register.js";
 import Dashboard from "./pages/Dashboard.js";
@@ -16,10 +17,17 @@ import ScienceUnitQuizPage from "./pages/ScienceUnitQuizPage.js";
 import EnglishUnitListPage from "./pages/EnglishUnitListPage.js";
 import EnglishUnitQuizPage from "./pages/EnglishUnitQuizPage.js";
 
-
+// Component for rendering Navbar conditionally
 function App() {
+  const location = useLocation(); // useLocation hook to check the current route
+
+  // Conditionally render Navbar, it will not show on /login and /register routes
+  const showNavbar = location.pathname !== "/login" && location.pathname !== "/register" && location.pathname !== "/";
+
   return (
-    <Router>
+    <div>
+      {showNavbar && <Navbar />} {/* Only show the Navbar if we're not on /login or /register */}
+
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -37,10 +45,17 @@ function App() {
         <Route path="/module/science/quiz/:unitId" element={<ScienceUnitQuizPage />} />
         <Route path="/module/english/quiz" element={<EnglishUnitListPage />} />
         <Route path="/module/english/quiz/:unitId" element={<EnglishUnitQuizPage />} />
-        
       </Routes>
+    </div>
+  );
+}
+
+function RootApp() {
+  return (
+    <Router>
+      <App />
     </Router>
   );
 }
 
-export default App;
+export default RootApp;
