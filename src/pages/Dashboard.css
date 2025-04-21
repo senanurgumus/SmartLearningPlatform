@@ -1,60 +1,206 @@
-/* src/pages/Dashboard.css */
+/* Dashboard.css */
 .dashboard-container {
-    padding: 40px;
-    text-align: center;
-    background-color: #f5f7fb;
-    min-height: 100vh;
-  }
-  
-  .dashboard-title {
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: #333;
-  }
-  
-  .module-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-  
-  .module-card {
-    width: 180px;
-    height: 150px;
-    border-radius: 15px;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .module-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  .achievements-button-container {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .achievements-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #6C63FF;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .achievements-button:hover {
-    background-color: #574fd6;
-  }
-  
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.day-mode {
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+  color: #222;
+}
+
+.night-mode {
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: #f1f1f1;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.module-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.module-card {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.module-card:hover {
+  transform: scale(1.05);
+}
+
+.achievements-button-container {
+  margin-top: 2rem;
+}
+
+.achievements-button {
+  background-color: #7c3aed;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.achievements-button:hover {
+  background-color: #6d28d9;
+}
+
+/* 🎯 Today’s Missions */
+.mission-box {
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  width: 280px;
+  background: #ffffffdd;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.mission-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #3b0764;
+  margin-bottom: 1rem;
+}
+
+.mission-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
+  background: #f3f4f6;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.mission-item.completed {
+  text-decoration: line-through;
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.mission-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4b5563;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.mission-checkbox.checked {
+  background-color: #10b981;
+  border-color: #10b981;
+}
+
+.mission-delete {
+  background: transparent;
+  border: none;
+  color: #dc2626;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-left: 8px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.mission-input {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mission-input input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.mission-input button {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.welcome-text {
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 2rem;
+  font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+  color: white;
+}
+
+.day-message {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+
+.fun-fact-box {
+  background: #7c3aed;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  max-width: 320px;
+  font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+  margin-left: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 100px;
+  left: 30px;
+  width: 280px;
+  backdrop-filter: blur(6px);
+}
+
+.fun-fact-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.fun-fact-text {
+  font-size: 1rem;
+}

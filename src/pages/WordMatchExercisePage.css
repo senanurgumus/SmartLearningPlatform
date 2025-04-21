@@ -1,0 +1,184 @@
+.word-match-container {
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #fdf4ff, #e0f2fe);
+    min-height: 100vh;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .word-match-title {
+    font-size: 2rem;
+    color: #6b21a8;
+    margin-bottom: 2rem;
+  }
+  
+  .word-list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .word-draggable {
+    padding: 0.75rem 1.5rem;
+    background-color: #a78bfa;
+    color: white;
+    border-radius: 1rem;
+    font-weight: bold;
+    cursor: grab;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .word-draggable.matched {
+    background-color: #34d399;
+    cursor: default;
+  }
+  
+  .image-drop-area {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .image-target {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #93c5fd;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  
+  .image-target img {
+    max-width: 80px;
+    max-height: 80px;
+  }
+  
+  .score-text {
+    font-size: 1.2rem;
+    color: #1e3a8a;
+  }
+  
+  .congrats-message {
+    background-color: #dcfce7;
+    border: 2px solid #22c55e;
+    color: #166534;
+    padding: 1.2rem 1.5rem;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Poppins', sans-serif;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  
+  .next-level-button {
+    display: block;
+    margin: 1rem auto 2rem auto;
+    background-color: #4ade80;
+    color: white;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease;
+  }
+  
+  .next-level-button:hover {
+    background-color: #22c55e;
+  }
+  
+  
+  .score-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: #f0f9ff;
+    border-radius: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    font-family: 'Poppins', sans-serif;
+    max-width: 500px;  /* ✅ Darlık buradan */
+  }
+  
+  
+  .score-box span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .badge-display {
+    margin-top: 1.2rem;
+    background-color: #facc15;
+    color: #78350f;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 1.5rem;
+    display: inline-block;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    animation: pop-badge 0.5s ease-out;
+  }
+  
+  @keyframes pop-badge {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  
+  .level-selection {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .select-level {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #4c1d95;
+    font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+  }
+  
+  .level-button {
+    margin: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #a78bfa;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .level-button:hover {
+    background-color: #7c3aed;
+    transform: scale(1.05);
+  }
+  
+  .level-button.locked {
+    background-color: #d1d5db;
+    color: #9ca3af;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  

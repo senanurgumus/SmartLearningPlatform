@@ -1,0 +1,177 @@
+/* EvenOrOddPage.css */
+.even-odd-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+    padding: 2rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    position: relative;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d62828;
+    margin-bottom: 2rem;
+  }
+  
+  .level-select h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .level-button {
+    background-color: #f77f00;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .level-button:hover {
+    background-color: #f48c06;
+    transform: scale(1.05);
+  }
+  
+  .game-area {
+    margin-top: 2rem;
+  }
+  
+  .level-label {
+    font-size: 1.3rem;
+    color: #264653;
+    margin-bottom: 1rem;
+  }
+  
+  .number-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #023e8a;
+    margin: 1rem 0;
+  }
+  
+  .choices {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+  }
+  
+  .choice-btn {
+    font-size: 1.5rem;
+    background-color: #06d6a0;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .choice-btn:hover {
+    background-color: #118ab2;
+  }
+  
+  .feedback {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #555;
+  }
+  
+  .score {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: #3a0ca3;
+  }
+  
+  .result-button {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+  }
+  
+  .result-button:hover {
+    background-color: #03a9f4;
+  }
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .popup-content {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    animation: popupFade 0.3s ease-in-out;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s;
+  }
+  
+  .close-button:hover {
+    color: #e53935;
+  }
+  
+  @keyframes popupFade {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .back-button-fixed {
+    margin-top: 2rem;
+  }
+  
+  .help-button {
+    position: fixed;
+    top: 80px; /* Navbar altında dursun */
+    right: 20px;
+    background-color: #ffb703;
+    color: #333;
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .help-button:hover {
+    background-color: #ffd166;
+  }
+  

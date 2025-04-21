@@ -1,0 +1,94 @@
+/* WordSortingPage.css - Eğlenceli sürükle-bırak oyunu için */
+
+.word-sorting-container {
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #f0f4ff, #e7f5ff);
+    font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #475569;
+  }
+  
+  .word-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .draggable-word {
+    background-color: #a5f3fc;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    cursor: grab;
+    border: 2px solid #06b6d4;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  
+  .draggable-word:hover {
+    transform: scale(1.05);
+  }
+  
+  .categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .category-box {
+    background-color: #fef9c3;
+    border: 2px dashed #eab308;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 250px;
+    min-height: 150px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+  }
+  
+  .category-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #92400e;
+  }
+  
+  .dropped-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .word-chip {
+    background-color: #facc15;
+    color: #1f2937;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .score-box {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    color: #059669;
+    font-weight: bold;
+  }

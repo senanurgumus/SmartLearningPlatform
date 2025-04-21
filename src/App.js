@@ -20,6 +20,17 @@ import ScienceUnitListPage from "./pages/ScienceUnitListPage.js";
 import ScienceUnitQuizPage from "./pages/ScienceUnitQuizPage.js";
 import EnglishUnitListPage from "./pages/EnglishUnitListPage.js";
 import EnglishUnitQuizPage from "./pages/EnglishUnitQuizPage.js";
+import EnglishExercisesPage from './pages/EnglishExercisesPage.js'; 
+import AudioExercisePage from "./pages/AudioExercisePage.js";
+import WordMatchExercisePage from './pages/WordMatchExercisePage.js';
+import WordSortingPage from "./pages/WordSortingPage.js";
+import MathDiceGamePage from './pages/MathDiceGamePage.js';
+import MathExercisesPage from './pages/MathExercisesPage.js';
+import BarGraphExercisePage from './pages/BarGraphExercisePage.js';
+import EvenOrOddPage from './pages/EvenOrOddPage.js';
+
+
+
 
 // Component for rendering Navbar conditionally
 function App() {
@@ -53,6 +64,18 @@ function App() {
         <Route path="/module/science/quiz/:unitId" element={<ScienceUnitQuizPage />} />
         <Route path="/module/english/quiz" element={<EnglishUnitListPage />} />
         <Route path="/module/english/quiz/:unitId" element={<EnglishUnitQuizPage />} />
+        <Route path="/module/english/exercises" element={<EnglishExercisesPage />} />
+        <Route path="english/exercises/audio" element={<AudioExercisePage />} />
+        <Route path="/english/exercises/word-match" element={<WordMatchExercisePage />} />
+        <Route path="/english/exercises/word-sorting" element={<WordSortingPage />} />
+        <Route path="/module/math/exercises" element={<MathExercisesPage />} />
+        <Route path="/math/exercises/dice" element={<MathDiceGamePage />} />
+        <Route path="/math/exercises/bar-graph" element={<BarGraphExercisePage />} />
+        <Route path="/math/exercises/even-or-odd" element={<EvenOrOddPage />} />
+
+
+
+
       </Routes>
     </div>
   );

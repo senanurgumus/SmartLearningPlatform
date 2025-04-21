@@ -1,0 +1,141 @@
+/* MathDiceGamePage.css (zar + operatör daha şık arada) */
+.dice-game-container {
+    min-height: 100vh;
+    background: linear-gradient(to right, #fdf6e3, #e0f7fa);
+    padding: 2rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+  }
+  
+  .dice-game-title {
+    font-size: 2.5rem;
+    color: #00796b;
+    margin-bottom: 2rem;
+  }
+  
+  .dice-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .dice-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .dice-operator {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff5722;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .option-button {
+    font-size: 1.5rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .option-button:hover {
+    background-color: #81c784;
+    transform: scale(1.05);
+  }
+  
+  .score-info {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .score-info p {
+    margin: 0.5rem 0;
+  }
+
+  .result-button {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+  }
+  
+  .result-button:hover {
+    background-color: #03a9f4;
+  }
+  
+  /* 🎉 Motivasyon popup */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .popup-content {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    animation: popupFade 0.3s ease-in-out;
+  }
+  
+  .popup-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4caf50;
+    text-align: center;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s;
+  }
+  
+  .close-button:hover {
+    color: #e53935;
+  }
+  
+  @keyframes popupFade {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
