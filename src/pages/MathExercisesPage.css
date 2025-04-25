@@ -1,15 +1,16 @@
 /* MathExercisesPage.css */
 .math-exercises-container {
     min-height: 100vh;
-    background: linear-gradient(to bottom, #e0f7fa, #fff);
+    background-color: rgb(163, 173, 201);
     padding: 2rem;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     text-align: center;
   }
   
-  .math-exercises-title {
+  .exercises-title {
     font-size: 2.5rem;
-    color: #00796b;
+    font-weight: bold;
+    color: #4c1d95;
     margin-bottom: 2rem;
   }
   

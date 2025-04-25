@@ -6,6 +6,7 @@ import { db } from '../firebase.js';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
 
+
 const dayMessages = [
   "Rest and recharge. Happy Sunday! ☕",
   "Have a powerful Monday! 💪",
@@ -122,7 +123,7 @@ function Dashboard() {
           <div className="module-grid">
             {modules.map((mod) => (
               <Link to={`/module/${mod.id}`} key={mod.id} style={{ textDecoration: 'none' }}>
-                <div className="module-card" style={{ backgroundColor: mod.color }}>
+                <div className="module-card-dashboard" style={{ backgroundColor: mod.color }}>
                   {mod.name}
                 </div>
               </Link>

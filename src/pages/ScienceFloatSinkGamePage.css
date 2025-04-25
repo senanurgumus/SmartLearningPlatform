@@ -1,0 +1,185 @@
+.float-sink-game {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom, #cfe9fc, #87ceeb 50%, #00bcd4 50%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+  }
+  
+  .items-area {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .drag-item {
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 12px;
+    cursor: grab;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .item-name {
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+  
+  .sea-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    max-width: 600px;
+    border: 4px dashed #0077b6;
+    border-radius: 16px;
+    background-color: #caf0f8;
+    overflow: hidden;
+  }
+  
+  .sea-zone {
+    width: 100%;
+    min-height: 120px;
+    border-bottom: 2px dashed #0077b6;
+    padding: 1rem;
+    position: relative;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #023e8a;
+  }
+  
+  .sea-zone:last-child {
+    border-bottom: none;
+  }
+  
+  .zone-content {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .dropped-object {
+    font-size: 2.2rem;
+    position: relative;
+  }
+  
+  /* 🎉 Ödül animasyonu */
+  .animate-float {
+    animation: float-bounce 2s infinite ease-in-out;
+  }
+  
+  @keyframes float-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .feedback {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  /* 📌 Pop-up */
+  .popup-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .popup-toggle-box {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #00bcd4;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 5;
+  }
+  
+  .drag-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .animate-float {
+    animation: float-bounce 2s infinite ease-in-out;
+  }
+  
+  @keyframes float-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .congrat-message {
+    background-color: #dcfce7;
+    border: 2px solid #22c55e;
+    color: #166534;
+    padding: 1.2rem 1.5rem;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  
+  .restart-btn {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .restart-btn:hover {
+    background-color: #2563eb;
+  }
+
+  
+  

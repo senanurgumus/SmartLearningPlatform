@@ -28,6 +28,12 @@ import MathDiceGamePage from './pages/MathDiceGamePage.js';
 import MathExercisesPage from './pages/MathExercisesPage.js';
 import BarGraphExercisePage from './pages/BarGraphExercisePage.js';
 import EvenOrOddPage from './pages/EvenOrOddPage.js';
+import ScienceExercisesPage from './pages/ScienceExercisesPage.js';
+import ScienceWeatherChallengePage from './pages/ScienceWeatherChallengePage.js'; 
+import ScienceFloatSinkGamePage from './pages/ScienceFloatSinkGamePage.js';
+import ScienceMagnetGamePage from './pages/ScienceMagnetGamePage.js';
+
+
 
 
 
@@ -72,9 +78,10 @@ function App() {
         <Route path="/math/exercises/dice" element={<MathDiceGamePage />} />
         <Route path="/math/exercises/bar-graph" element={<BarGraphExercisePage />} />
         <Route path="/math/exercises/even-or-odd" element={<EvenOrOddPage />} />
-
-
-
+        <Route path="/module/science/exercises" element={<ScienceExercisesPage />} />
+        <Route path="/science/exercises/weather-challenge" element={<ScienceWeatherChallengePage />} />
+        <Route path="/science/exercises/float-sink" element={<ScienceFloatSinkGamePage />} />
+        <Route path="/science/exercises/magnetic-or-not" element={<ScienceMagnetGamePage />} />
 
       </Routes>
     </div>
@@ -90,3 +97,4 @@ function RootApp() {
 }
 
 export default RootApp;
+

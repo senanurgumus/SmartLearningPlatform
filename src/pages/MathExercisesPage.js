@@ -8,7 +8,7 @@ const MathExercisesPage = () => {
 
   return (
     <div className="math-exercises-container">
-      <h2 className="math-exercises-title">🧮 Math Exercises</h2>
+      <h2 className="math-exercises-title">Math Exercises</h2>
 
       <div className="exercise-buttons">
         <button

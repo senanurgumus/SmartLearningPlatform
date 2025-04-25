@@ -1,7 +1,7 @@
 .exercises-page-container {
+    background-color: rgb(163, 173, 201);
     min-height: 100vh;
     padding: 2rem;
-    background: linear-gradient(to bottom right, #e0e7ff, #f5d0fe);
     font-family: 'Comic Sans MS', 'Poppins', sans-serif;
     text-align: center;
   }

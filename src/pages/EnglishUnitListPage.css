@@ -1,12 +1,13 @@
 /* Sayfa arka planı ve ortalama */
 body {
-    background-color: #f9fbfc;
+    background-color: rgb(163, 173, 201);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
   }
   
   .english-unit-container {
+    background-color: rgb(163, 173, 201);
     max-width: 900px;
     margin: 60px auto;
     padding: 20px;
