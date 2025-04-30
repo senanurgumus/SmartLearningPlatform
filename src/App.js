@@ -20,7 +20,7 @@ import GrowPlantActivity from './pages/GrowPlantActivity.js';
 import StatesOfMatterLab from './pages/StatesOfMatterLab.js';
 import WordPuzzleActivity from './pages/WordPuzzleActivity.js';
 import WordFreezeActivity from './pages/WordFreezeActivity.js';
-import PhonicPopActivity from './pages/PhonicPopActivity.js';
+import PhonicPopActivity from './pages/PhonicsPopActivity.js';
 import ScienceUnitListPage from "./pages/ScienceUnitListPage.js";
 import ScienceUnitQuizPage from "./pages/ScienceUnitQuizPage.js";
 import EnglishUnitListPage from "./pages/EnglishUnitListPage.js";
