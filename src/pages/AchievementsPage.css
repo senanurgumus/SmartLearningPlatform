@@ -3,8 +3,8 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #ffffff;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: rgb(231, 191, 114);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
@@ -25,7 +25,8 @@
   padding: 0.5rem;
   font-size: 1rem;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 3px solid #9c5f5f;
+  background-color: #da9733;
 }
 
 .history-buttons {
@@ -41,7 +42,7 @@
   font-size: 0.95rem;
   border-radius: 8px;
   border: none;
-  background: #e6e6e6;
+  background: #da9733;
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -51,7 +52,7 @@
 }
 
 .history-buttons .selected-week {
-  background: #2196F3;
+  background: #9c5f5f;
   color: #fff;
   font-weight: bold;
 }
@@ -77,7 +78,7 @@
 .week-text {
   text-align: left;
   padding: 1rem;
-  background: #f9f9f9;
+  background: #da9733;
   border-radius: 10px;
   font-size: 0.95rem;
   max-height: 300px;
@@ -108,7 +109,7 @@
 }
 
 .badge-list li {
-  background: #f1faff;
+  background: #da9733;
   padding: 0.6rem 1rem;
   margin-bottom: 0.6rem;
   border-radius: 6px;
@@ -176,17 +177,17 @@
 .level-name {
   padding: 8px 16px;
   cursor: pointer;
-  background-color: #2196F3;
+  background-color: #da9733;
   color: white;
   border-radius: 12px;
   margin: 5px;
 }
 
 .level-name:hover {
-  background-color: #1976D2;
+  background-color: #9c5f5f;
 }
 
-.selected-week {
+.selected-weeks {
   background-color: #4CAF50;
   color: white;
 }

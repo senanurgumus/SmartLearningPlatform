@@ -195,7 +195,7 @@ function AchievementsPage() {
       <div className="level-progress">
         <h3>Your Level</h3>
         <div className="level-bar">
-          <div className="level-progress-bar" style={{ width: `${levelProgress * 100}%`, backgroundColor: '#4CAF50' }} />
+          <div className="level-progress-bar" style={{ width: `${levelProgress * 100}%`, backgroundColor: '#9c5f5f' }} />
         </div>
         <div className="level-names">
           {["🌱 New Explorer", "🚀 Learning Hero", "⚡ Quiz Pro", "🧠 Knowledge Wizard", "🏆 Master of Modules"].map(levelName => (
