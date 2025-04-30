@@ -1,0 +1,90 @@
+
+.phonics-container {
+    text-align: center;
+    padding: 30px;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(to bottom, #e0f7fa, #b2ebf2);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .target-letter {
+    font-size: 48px;
+    font-weight: bold;
+    color: #0288d1;
+    margin: 10px 0 30px;
+  }
+  
+  .balloon-area {
+    position: relative;
+    height: 300px;
+  }
+  
+  .balloon {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffcc80;
+    border-radius: 50%;
+    padding: 20px;
+    min-width: 80px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: floatUp 4s ease-in-out forwards;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .balloon:hover {
+    transform: translateX(-50%) scale(1.05);
+  }
+  
+  .balloon .emoji {
+    font-size: 32px;
+    display: block;
+  }
+  
+  .balloon .label {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .balloon.popped {
+    visibility: hidden;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      bottom: -100px;
+      opacity: 0;
+    }
+    100% {
+      bottom: 100%;
+      opacity: 1;
+    }
+  }
+  
+  .score-box {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .next-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4fc3f7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .next-btn:hover {
+    background-color: #0288d1;
+  }
+  

@@ -8,19 +8,19 @@ function ActivitiesPage() {
 
   const activityOptions = {
     math: [
-      { name: '🧩 Puzzle', path: 'puzzle' },
-      { name: '📐 Şekil Sürükle', path: 'shape-drag' },
-      { name: '➕ Eşleştirme', path: 'match' }
+      { name: '🧩 Puzzle', path: 'activities/puzzle' },
+      { name: '📐 Shape Drag', path: 'activities/shape-drag' },
+      { name: '➕ Matching', path: 'activities/match' }
     ],
     science: [
-      { name: '🌋 Deney Simülasyonu', path: 'experiment' },
-      { name: '🌱 Bitki Gelişimi Oyunu', path: 'plant-growth' },
-      { name: '🔬 Mikroskop Kartları', path: 'microscope-cards' }
+      { name: '🌱 Plant Growth Game', path: 'activities/plant-growth' },
+      { name: '🎨 Color Mixing Lab', path: 'activities/color-mixing' },
+      { name: '🧪 States of Matter Lab', path: 'activities/matter-lab' }
     ],
     english: [
-      { name: '🔤 Harf Eşleştirme', path: 'letter-match' },
-      { name: '🎧 Dinle ve Bul', path: 'listen-find' },
-      { name: '📚 Kelime Kartları', path: 'word-cards' }
+      { name: '🔤 Word Puzzle', path: 'activities/word-puzzle' },
+      { name: '🧊 Word Freeze', path: 'activities/word-freeze' },
+      { name: '🎈 Phonic Pop!', path: 'activities/phonic-pop' }
     ]
   };
 
@@ -33,7 +33,7 @@ function ActivitiesPage() {
         {activities.map((activity, index) => (
           <Link
             key={index}
-            to={`/activities/${moduleId}/${activity.path}`}
+            to={`/module/${moduleId}/${activity.path}`}
             className="activity-card"
           >
             {activity.name}
