@@ -181,3 +181,16 @@ html, body {
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
+
+/* Modul özel arka plan renkleri */
+.english-background {
+  background-color: rgb(220, 240, 255); /* Açık mavi tonu */
+}
+
+.math-background {
+  background-color: rgb(252, 124, 149); /* Sıcak sarımsı tonu */
+}
+
+.science-background {
+  background-color: rgb(220, 255, 220); /* Açık yeşilimsi tonu */
+}

@@ -100,7 +100,7 @@ const Register = () => {
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <button className="submit-btn" onClick={handleRegister}>Register</button>
+      <button className="register-submit-btn" onClick={handleRegister}>Register</button>
     </div>
   );
 };

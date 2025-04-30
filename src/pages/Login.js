@@ -62,7 +62,7 @@ export default function Login() {
             />
           </div>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
-          <button type="submit" className="submit-btn">Log In</button>
+          <button type="submit" className="login-submit-btn">Log In</button>
         </form>
       </div>
     </div>

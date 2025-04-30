@@ -42,10 +42,10 @@ body {
     margin-bottom: 10px;
   }
   
-  .submit-btn {
+  .login-submit-btn {
     width: 100%;
     padding: 12px;
-    background-color: #4CAF50;
+    background-color: rgb(46, 76, 158);
     border: none;
     border-radius: 5px;
     font-size: 16px;

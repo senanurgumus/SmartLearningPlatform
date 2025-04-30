@@ -13,10 +13,10 @@ function ModulePage() {
 
   useEffect(() => {
     const allGuides = moduleGuides[moduleId] || [];
-    const shuffled = [...allGuides].sort(() => 0.5 - Math.random()).slice(0, 3); // sadece 3 tanesi
+    const shuffled = [...allGuides].sort(() => 0.5 - Math.random()).slice(0, 3);
     setGuides(shuffled);
   }, [moduleId]);
-  
+
   useEffect(() => {
     const fetchLessons = async () => {
       try {
@@ -35,9 +35,15 @@ function ModulePage() {
 
   if (loading) return <h2>Loading...</h2>;
 
-  return (
-    <div className="module-page-container">
+  // 🔥 Burada modüle göre özel bir className vereceğiz
+  const backgroundClass =
+    moduleId === 'english' ? 'english-background' :
+    moduleId === 'math' ? 'math-background' :
+    moduleId === 'science' ? 'science-background' :
+    '';
 
+  return (
+    <div className={`module-page-container ${backgroundClass}`}>
       <div className="module-layout">
 
         {/* Sol: Guide açıklamaları */}
@@ -53,7 +59,7 @@ function ModulePage() {
 
         {/* Orta: Butonlar */}
         <div className="center-column">
-        <h2 className="module-page-title">{moduleId.toUpperCase()} Lessons</h2>
+          <h2 className="module-page-title">{moduleId.toUpperCase()} Lessons</h2>
 
           <div className="module-card-links">
             <Link to={`/module/${moduleId}/exercises`} className="module-card">
