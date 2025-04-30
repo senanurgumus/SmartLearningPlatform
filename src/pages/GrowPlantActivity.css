@@ -1,0 +1,193 @@
+.grow-plant-container {
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  .plant-stage {
+    margin-top: 80px;
+    min-height: 300px;
+    position: relative;
+    transition: background-color 0.5s ease;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .stage0 {
+    background-color: #f0e4d7;
+  }
+  
+  .stage1 {
+    background-color: #e0f7e9;
+  }
+  
+  .stage2 {
+    background-color: #d4f1f9;
+  }
+  
+  .stage3 {
+    background-color: #fff8dc;
+  }
+  
+  .pot {
+    width: 100px;
+    height: 60px;
+    background-color: #8B4513;
+    border-radius: 0 0 50px 50px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .seed::after {
+    content: '🌰';
+    font-size: 30px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .sprout::after {
+    content: '🌱';
+    font-size: 40px;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: grow 1s ease forwards;
+  }
+  
+  .grown::after {
+    content: '🌻';
+    font-size: 60px;
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: grow 1s ease forwards;
+  }
+  
+  @keyframes grow {
+    0% { transform: translateX(-50%) scale(0); }
+    100% { transform: translateX(-50%) scale(1); }
+  }
+  
+  .action-button {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-button:hover {
+    background-color: #45a049;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+  }
+  
+  .info-card {
+    max-width: 220px;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #ffffffcc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    font-size: 15px;
+    font-weight: 500;
+    position: fixed;
+    top: 120px;
+    z-index: 10;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .info-card.left {
+    left: 30px;
+    text-align: left;
+  }
+  
+  .info-card.right {
+    right: 30px;
+    text-align: right;
+  }
+  
+  .info-card::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    border: 10px solid transparent;
+  }
+  
+  .info-card.left::before {
+    left: -20px;
+    border-right-color: #ffffffcc;
+  }
+  
+  .info-card.right::before {
+    right: -20px;
+    border-left-color: #ffffffcc;
+  }
+  
+  .mascot {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .speech-bubble {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-left: 70px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    max-width: 320px;
+  }
+  
+  .speech-bubble::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 30px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: white;
+  }
+  
+  .butterfly-wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+  
+  .butterfly-wrapper.left {
+    position: fixed;
+    top: 120px;
+    left: 30px;
+    z-index: 10;
+  }
+  
+  .butterfly-wrapper.right {
+    position: fixed;
+    top: 120px;
+    right: 30px;
+    z-index: 10;
+  }
+  
+  .speech-bubble p {
+    word-wrap: break-word;
+  }
+  

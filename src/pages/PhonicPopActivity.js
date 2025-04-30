@@ -22,7 +22,7 @@ const phonicsData = [
   }
 ];
 
-function PhonicPopActivity() {
+function PhonicsPopActivity() {
   const [round, setRound] = useState(0);
   const [score, setScore] = useState(0);
   const [popped, setPopped] = useState([]);

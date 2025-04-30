@@ -1,15 +1,22 @@
 
 import React, { useState, useEffect } from 'react';
 import './MatchSumActivity.css';
-import matchQuestions from '../../data/match_questions_full.json';
+import matchQuestions from '../data/match_questions_full.json';
+import { useParams } from 'react-router-dom';
 
 function MatchSumActivity() {
+  const { moduleId } = useParams(); // This will get the moduleId from the URL
+  const { activityId } = useParams(); // This will get the activityId from the URL
   const [operation, setOperation] = useState('+');
   const [level, setLevel] = useState('easy');
   const [pairs, setPairs] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [matches, setMatches] = useState({});
   const [draggedAnswer, setDraggedAnswer] = useState(null);
+
+  useEffect(() => {
+    // You can use the moduleId and activityId to fetch specific data related to the activity
+  }, [moduleId, activityId]);
 
   useEffect(() => {
     const questionPool = matchQuestions[operation][level];

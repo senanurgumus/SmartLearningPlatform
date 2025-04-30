@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { updateHighScore, fetchHighScore } from "../utils/highScore.js";
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size';
 import './ShapeDragActivity.css';
@@ -7,6 +8,8 @@ const levelShapes = {
   easy: ['square', 'circle', 'triangle'],
   medium: ['square', 'circle', 'triangle', 'rectangle', 'star'],
   hard: ['square', 'circle', 'triangle', 'rectangle', 'star', 'pentagon', 'hexagon'],
+  expert: ['square', 'circle', 'triangle', 'rectangle', 'star', 'pentagon', 'hexagon', 'heart'],
+  master: ['square', 'circle', 'triangle', 'rectangle', 'star', 'pentagon', 'hexagon', 'heart', 'cross'],
 };
 
 function ShapeDragActivity() {
@@ -22,6 +25,15 @@ function ShapeDragActivity() {
   const [time, setTime] = useState(0);
   const intervalRef = useRef(null);
   const [width, height] = useWindowSize();
+  const nextLevels = ['easy', 'medium', 'hard', 'expert', 'master'];
+  const [highScore, setHighScore] = useState(0);
+
+  const handleNextLevel = () => {
+    const currentIndex = nextLevels.indexOf(level);
+    if (currentIndex < nextLevels.length - 1) {
+      setLevel(nextLevels[currentIndex + 1]);
+    }
+  };
 
   const shuffle = (array) => [...array].sort(() => Math.random() - 0.5);
 
@@ -34,6 +46,7 @@ function ShapeDragActivity() {
     setGameCompleted(false);
     setIsTimeUp(false);
     setTime(0);
+    setScore(0);
 
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
@@ -62,6 +75,16 @@ function ShapeDragActivity() {
     }
   }, [completedShapes, targets]);
 
+  useEffect(() => {
+    fetchHighScore("shapeDrag").then(setHighScore);
+  }, []);
+
+  useEffect(() => {
+    if (gameCompleted) {
+      handleGameEnd(); // 🎯 Oyun bitince yüksek skoru kaydet
+    }
+  }, [gameCompleted]);
+
   const handleDragStart = (shape) => {
     setDraggedShape(shape);
   };
@@ -77,8 +100,13 @@ function ShapeDragActivity() {
     }));
 
     if (isCorrect) {
-      setScore((prev) => prev + 10);
-      setCompletedShapes((prev) => [...prev, targetShape]);
+      setCompletedShapes((prev) => {
+        if (!prev.includes(targetShape)) {
+          setScore((prevScore) => prevScore + 10);
+          return [...prev, targetShape];
+        }
+        return prev;
+      });
     } else {
       setScore((prev) => Math.max(0, prev - 5));
     }
@@ -88,7 +116,7 @@ function ShapeDragActivity() {
         ...prev,
         [targetShape]: '',
       }));
-    }, 300);
+    }, 400);
 
     setDraggedShape(null);
   };
@@ -99,23 +127,33 @@ function ShapeDragActivity() {
     startLevel();
   };
 
+  const handleGameEnd = () => {
+    updateHighScore("shapeDrag", score);
+    if (score > highScore) {
+      setHighScore(score);
+    }
+  };
+
   return (
     <div className="shape-drag-container">
-      <h2>🎯 Şekil Sürükle (Seviye: {level})</h2>
-      <p>Doğru şekli doğru kutuya sürükle!</p>
+      <h2>🎯 Drag the Shape (Level: {level})</h2>
+      <p>Match the shape to the correct target!</p>
 
       <div className="dropdown">
-        <label>Seviye: </label>
+        <label>Level: </label>
         <select value={level} onChange={(e) => setLevel(e.target.value)}>
-          <option value="easy">🟢 Kolay</option>
-          <option value="medium">🟠 Orta</option>
-          <option value="hard">🔴 Zor</option>
+          <option value="easy">🟢 Easy</option>
+          <option value="medium">🟠 Medium</option>
+          <option value="hard">🔴 Hard</option>
+          <option value="expert">⚫ Expert</option>
+          <option value="master">👑 Master</option>
         </select>
       </div>
 
       <div className="score-time-container">
-        <span>🧠 Skor: {score}</span>
-        <span>⏱️ Süre: {time} saniye</span>
+        <span>🧠 Score: {score}</span>
+        <span>⏱️ Time: {time} s</span>
+        <span>🏆 High Score: {highScore}</span>
       </div>
 
       <div className="shapes">
@@ -132,9 +170,9 @@ function ShapeDragActivity() {
       <div className="targets">
         {targets.map((targetShape, index) => (
           <div
-            key={`${targetShape}-${index}-${level}-${dropFeedback[targetShape] || 'none'}`}
+            key={`${targetShape}-${index}-${level}`}
             className={`drop-zone ${
-              dropFeedback[targetShape] === 'incorrect' ? 'shake incorrect' :
+              dropFeedback[targetShape] === 'incorrect' ? 'incorrect' :
               dropFeedback[targetShape] === 'correct' ? 'correct' : ''
             }`}
             onDrop={() => handleDrop(targetShape)}
@@ -145,26 +183,28 @@ function ShapeDragActivity() {
         ))}
       </div>
 
-      {gameCompleted && !isTimeUp && (
-        <>
-          <div className="congrats-message">🎉 Tebrikler! Tüm eşleşmeler doğru!</div>
-          <Confetti
-            width={width}
-            height={height}
-            numberOfPieces={200}
-            recycle={false}
-            initialVelocityY={10}
-            style={{ position: 'fixed', zIndex: 999, pointerEvents: 'none' }}
-          />
-          <button className="restart-button" onClick={handleRestart}>🔄 Tekrar Oyna</button>
-        </>
-      )}
-
-      {gameCompleted && isTimeUp && (
-        <>
-          <div className="time-up-message">⏳ Süre Doldu!</div>
-          <button className="restart-button" onClick={handleRestart}>🔄 Tekrar Oyna</button>
-        </>
+      {gameCompleted && (
+        <div className="message-button-wrapper">
+          {isTimeUp ? (
+            <div className="time-up-message">⏳ Time's Up!</div>
+          ) : (
+            <>
+              <div className="congrats-message">🎉 Congratulations! All matches are correct!</div>
+              <Confetti
+                width={width}
+                height={height}
+                numberOfPieces={200}
+                recycle={false}
+                initialVelocityY={10}
+                style={{ position: 'fixed', zIndex: 999, pointerEvents: 'none' }}
+              />
+              {level !== 'master' && (
+                <button className="next-button" onClick={handleNextLevel}>➡️ Next Level</button>
+              )}
+            </>
+          )}
+          <button className="restart-button" onClick={handleRestart}>🔁 Play Again</button>
+        </div>
       )}
     </div>
   );

@@ -12,10 +12,15 @@ import ActivitiesPage from './pages/ActivitiesPage.js';
 import AchievementsPage from './pages/AchievementsPage.js';
 import MathUnitListPage from './pages/MathUnitListPage.js';
 import MathUnitQuizPage from './pages/MathUnitQuizPage.js';
-import ShapeDragActivity from './pages/activities/ShapeDragActivity.js';
-import PuzzleActivity from './pages/activities/PuzzleActivity.js';
-import MatchSumActivity from './pages/activities/MatchSumActivity.js';
-import ShakeTest from './pages/ShakeTest.js';
+import ShapeDragActivity from './pages/ShapeDragActivity.js';
+import PuzzleActivity from './pages/PuzzleActivity.js';
+import MatchSumActivity from './pages/MatchSumActivity.js';
+import ColorMixingLab from "./pages/ColorMixingLab.js";
+import GrowPlantActivity from './pages/GrowPlantActivity.js';
+import StatesOfMatterLab from './pages/StatesOfMatterLab.js';
+import WordPuzzleActivity from './pages/WordPuzzleActivity.js';
+import WordFreezeActivity from './pages/WordFreezeActivity.js';
+import PhonicPopActivity from './pages/PhonicPopActivity.js';
 import ScienceUnitListPage from "./pages/ScienceUnitListPage.js";
 import ScienceUnitQuizPage from "./pages/ScienceUnitQuizPage.js";
 import EnglishUnitListPage from "./pages/EnglishUnitListPage.js";
@@ -61,10 +66,19 @@ function App() {
         <Route path="/achievements" element={<AchievementsPage />} />
         <Route path="/module/math/quiz" element={<MathUnitListPage />} />
         <Route path="/module/math/quiz/:unitId" element={<MathUnitQuizPage />} />
-        <Route path="/activities/math/shape-drag" element={<ShapeDragActivity />} />
-        <Route path="/activities/math/puzzle" element={<PuzzleActivity />} />
-        <Route path="/activities/math/match" element={<MatchSumActivity />} />
-        <Route path="/test-shake" element={<ShakeTest />} />
+        {/* Correct routes for activities */}
+        <Route path="/module/:moduleId/activities/puzzle" element={<PuzzleActivity />} />
+        <Route path="/module/:moduleId/activities/shape-drag" element={<ShapeDragActivity />} />
+        <Route path="/module/:moduleId/activities/match" element={<MatchSumActivity />} />
+        <Route path="/module/:moduleId/activities/color-mixing" element={<ColorMixingLab />} />
+        <Route path="/module/:moduleId/activities/plant-growth" element={<GrowPlantActivity />} />
+        <Route path="/module/:moduleId/activities/matter-lab" element={<StatesOfMatterLab />} />
+        <Route path="/module/:moduleId/activities/word-puzzle" element={<WordPuzzleActivity />} />
+        <Route path="/module/:moduleId/activities/word-freeze" element={<WordFreezeActivity />} />
+        <Route path="/module/:moduleId/activities/phonic-pop" element={<PhonicPopActivity />} />
+
+
+
         <Route path="/achievements/:moduleId" element={<AchievementsPage />} />
         <Route path="/module/science/quiz" element={<ScienceUnitListPage />} />
         <Route path="/module/science/quiz/:unitId" element={<ScienceUnitQuizPage />} />
