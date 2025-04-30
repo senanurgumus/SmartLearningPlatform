@@ -33,7 +33,7 @@ function ActivitiesPage() {
         {activities.map((activity, index) => (
           <Link
             key={index}
-            to={`/activities/${moduleId}/${activity.path}`}
+            to={`/module/${moduleId}/${activity.path}`}
             className="activity-card"
           >
             {activity.name}
