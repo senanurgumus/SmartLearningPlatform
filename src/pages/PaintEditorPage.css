@@ -1,0 +1,59 @@
+.paint-editor {
+    padding: 2rem;
+    background-color: #f7f9fc;
+    min-height: 100vh;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .paint-editor h2 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .toolbar {
+    margin-bottom: 1.5rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .toolbar label {
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+
+  
+  .btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: white;
+  }
+  
+  .btn.clear {
+    background-color: #ff6b6b;
+  }
+  .btn.clear:hover {
+    background-color: #d94d4d;
+  }
+  
+  .btn.save {
+    background-color: #6b5bff;
+  }
+  .btn.save:hover {
+    background-color: #4e3fd1;
+  }
+  

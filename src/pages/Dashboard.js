@@ -1,10 +1,13 @@
-// Dashboard.js (Kullanıcıya özel selamlama + görev listesi + eğlenceli bilgi + gece modu)
 import React, { useEffect, useState } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase.js';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
+import DashboardHighlights from './DashboardHighlights.js';
+
+
+
 
 
 const dayMessages = [
@@ -15,7 +18,7 @@ const dayMessages = [
   "Thriving Thursday, let's go! 🎯",
   "Finally Friday! 🎉",
   "Weekend vibes! Happy Saturday! 😎"
-]
+];
 
 const funFacts = [
   "Honey never spoils. Archaeologists found edible honey in ancient tombs!",
@@ -70,9 +73,7 @@ function Dashboard() {
     };
 
     fetchModules();
-
     const timer = setTimeout(() => setShowContent(true), 800);
-
     return () => {
       unsubscribe();
       clearTimeout(timer);
@@ -112,7 +113,6 @@ function Dashboard() {
         <span className="day-message">{dayMessage}</span>
       </h2>
 
-      {/* Eğlenceli Bilgi Kutusu */}
       <div className="fun-fact-box">
         <p className="fun-fact-title">🧠 Did You Know?</p>
         <p className="fun-fact-text">{randomFact}</p>
@@ -130,11 +130,23 @@ function Dashboard() {
             ))}
           </div>
 
+
+
           <div className="achievements-button-container">
             <Link to="/achievements" className="achievements-button">
               🏅 My Achievements
             </Link>
           </div>
+
+          <div className="drawing-buttons-container">
+            <Link to="/draw" className="drawing-button">✏️ Let's Draw</Link>
+            <Link to="/paint" className="drawing-button">🖌️ Let's Paint</Link>
+          </div>
+
+
+
+          <DashboardHighlights />
+
 
           <div className="mission-box">
             <h3 className="mission-title">🎯 Today’s Missions</h3>

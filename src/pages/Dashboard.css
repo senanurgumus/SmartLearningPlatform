@@ -12,7 +12,7 @@
 }
 
 .day-mode {
-  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+  background: linear-gradient(to bottom, rgb(115, 150, 245), #e0f7fa);
   color: #222;
 }
 
@@ -208,3 +208,26 @@
 .fun-fact-text {
   font-size: 1rem;
 }
+
+.drawing-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.drawing-button {
+  background-color: #6b5bff;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.drawing-button:hover {
+  background-color: #5847e0;
+}
+

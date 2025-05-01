@@ -1,0 +1,31 @@
+.paint-gallery {
+    padding: 2rem;
+    text-align: center;
+    background-color: #eef3fb;
+    min-height: 100vh;
+  }
+  
+  .paint-gallery-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .paint-gallery-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 200px;
+  }
+  .paint-gallery-card:hover {
+    transform: scale(1.05);
+  }
+  .paint-gallery-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  

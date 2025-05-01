@@ -1,53 +1,67 @@
-/* Sayfa arka planı ve ortalama */
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .science-unit-container {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 20px;
-    text-align: center;
-    background-color: rgb(163, 173, 201);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(163, 173, 201);
+}
 
-  }
+.science-unit-container {
+  max-width: 1000px;
+  margin: 60px auto;
+  text-align: center;
+}
 
-  
-  /* Başlık */
-  .science-unit-title {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 40px;
-  }
-  
-  /* Buton grid alanı */
-  .unit-buttons-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-  }
-  
-  /* Butonlar */
-  .unit-button {
-    padding: 12px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    min-width: 240px;
-    text-transform: capitalize;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  
-  .unit-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-  
+.science-unit-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2c2c2c;
+  margin-bottom: 0.5rem;
+}
+
+.science-unit-subtitle {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 2.5rem;
+}
+
+.unit-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 1rem;
+}
+
+.unit-card {
+  background: linear-gradient(135deg, #34d399, #059669);
+  color: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.unit-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+.unit-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.unit-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  text-transform: capitalize;
+}
+
+.unit-hint {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}

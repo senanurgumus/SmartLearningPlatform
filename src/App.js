@@ -37,6 +37,12 @@ import ScienceExercisesPage from './pages/ScienceExercisesPage.js';
 import ScienceWeatherChallengePage from './pages/ScienceWeatherChallengePage.js'; 
 import ScienceFloatSinkGamePage from './pages/ScienceFloatSinkGamePage.js';
 import ScienceMagnetGamePage from './pages/ScienceMagnetGamePage.js';
+import DrawPage from './pages/DrawPage.js';
+import PaintGalleryPage from './pages/PaintGalleryPage.js';
+import PaintEditorPage from './pages/PaintEditorPage.js';
+import AboutPage from './pages/AboutPage.js';
+
+
 
 
 
@@ -76,9 +82,6 @@ function App() {
         <Route path="/module/:moduleId/activities/word-puzzle" element={<WordPuzzleActivity />} />
         <Route path="/module/:moduleId/activities/word-freeze" element={<WordFreezeActivity />} />
         <Route path="/module/:moduleId/activities/phonic-pop" element={<PhonicPopActivity />} />
-
-
-
         <Route path="/achievements/:moduleId" element={<AchievementsPage />} />
         <Route path="/module/science/quiz" element={<ScienceUnitListPage />} />
         <Route path="/module/science/quiz/:unitId" element={<ScienceUnitQuizPage />} />
@@ -96,6 +99,13 @@ function App() {
         <Route path="/science/exercises/weather-challenge" element={<ScienceWeatherChallengePage />} />
         <Route path="/science/exercises/float-sink" element={<ScienceFloatSinkGamePage />} />
         <Route path="/science/exercises/magnetic-or-not" element={<ScienceMagnetGamePage />} />
+        <Route path="/draw" element={<DrawPage />} />
+        <Route path="/paint" element={<PaintGalleryPage />} />
+        <Route path="/paint/:id" element={<PaintEditorPage />} />
+        <Route path="/about" element={<AboutPage />} />
+
+
+
 
       </Routes>
     </div>
