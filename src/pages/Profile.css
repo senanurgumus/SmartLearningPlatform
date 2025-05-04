@@ -1,0 +1,110 @@
+.profile-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #dbeafe, #f0f8ff, #e0f2fe, #dbeafe);
+  background-size: 400% 400%;
+  animation: backgroundShift 15s ease infinite;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  padding: 20px;
+}
+
+@keyframes backgroundShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.profile-box {
+  background: white;
+  padding: 40px 32px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 540px;
+  animation: fadeIn 1.2s ease-out both;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.profile-title {
+  font-size: 30px;
+  color: #2e4c9e;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.profile-sub {
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+  margin-bottom: 26px;
+}
+
+.profile-info p {
+  font-size: 16px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.profile-info strong {
+  color: #2e4c9e;
+}
+
+.profile-edit label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #444;
+}
+
+.profile-edit input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.profile-edit input:focus {
+  border-color: #2e4c9e;
+  outline: none;
+}
+
+button {
+  all: unset;
+  background-color: #2e4c9e;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin-top: 18px;
+}
+
+button:hover {
+  background-color: #3f5bc3;
+}

@@ -1,108 +1,159 @@
-import React, { useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { app } from '../firebase.js'; // ✅ DOĞRU
-import { getAuth } from "firebase/auth";
-import { useNavigate } from "react-router-dom"; // Yönlendirme için ekleniyor
-import './Register.css';
+import React, { useState, useEffect } from 'react';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { app } from '../firebase.js';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { useNavigate, Link } from 'react-router-dom';
+import './Login.css';
 
-const Register = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [userType, setUserType] = useState("child");
-  const [errorMessage, setErrorMessage] = useState("");
-  
-  
-  const auth = getAuth(app);
-  const db = getFirestore(app);
-  const navigate = useNavigate(); // Yönlendirme için
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-  const handleRegister = async () => {
-    if (password !== confirmPassword) {
-      setErrorMessage("Passwords do not match");
-      return;
-    }
-    if (password.length < 6) {
-      setErrorMessage("Password must be at least 6 characters");
+export default function Register() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [guardianEmail, setGuardianEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const title = document.querySelector('.typing-title');
+    const subtitle = document.querySelector('.typing-subtitle');
+    const benefitItems = document.querySelectorAll('.benefits-list li');
+
+    const titleTimeout = setTimeout(() => title?.classList.add('done'), 3000);
+    const subtitleTimeout = setTimeout(() => subtitle?.classList.add('done'), 4000);
+
+    benefitItems.forEach((item, index) => {
+      const delay = 4500 + index * 1200;
+      setTimeout(() => {
+        item.classList.add('show');
+        item.classList.add('done');
+      }, delay);
+    });
+
+    return () => {
+      clearTimeout(titleTimeout);
+      clearTimeout(subtitleTimeout);
+    };
+  }, []);
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    if (!passwordRegex.test(password)) {
+      setErrorMessage("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.");
       return;
     }
 
     try {
-      // Kullanıcı kaydı işlemi
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const uid = userCredential.user.uid;
+      const user = userCredential.user;
 
-      // Firestore'a kullanıcı verisi ekleniyor
-      await setDoc(doc(db, "users", uid), {
+      await setDoc(doc(db, "users", user.uid), {
         email,
-        role: userType,
-        createdAt: new Date(),
+        username,
+        guardianEmail,
+        role: "child"
       });
 
-      // Kullanıcıyı login ediyoruz
-      await signInWithEmailAndPassword(auth, email, password);
-
-      // Kullanıcı kaydı başarılı, yönlendirme yapıyoruz
-      alert("Kayıt başarılı, giriş yapılıyor...");
-
-      // Kayıttan sonra, kullanıcı tipine göre yönlendirme yapıyoruz
-      if (userType === "child") {
-        navigate("/login"); // Çocuk Dashboard'a yönlendir
-      } else {
-        navigate("/login"); // Ebeveyn Dashboard'a yönlendir
-      }
+      navigate("/");
     } catch (error) {
-      setErrorMessage("Hata: " + error.message);
+      setErrorMessage(error.message);
     }
   };
 
   return (
-    <div className="register-container">
-      <h2>Register</h2>
-      <div className="input-group">
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          className="input-field"
-        />
-      </div>
-      <div className="input-group">
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          className="input-field"
-        />
-      </div>
-      <div className="input-group">
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          value={confirmPassword}
-          className="input-field"
-        />
-      </div>
-      <div className="input-group">
-        <select
-          onChange={(e) => setUserType(e.target.value)}
-          value={userType}
-          className="input-field"
-        >
-          <option value="child">Child</option>
-          <option value="parent">Parent</option>
-        </select>
+    <div className="login-page">
+      <div className="login-left">
+        <div className="illustration">
+          <video
+            src="/videos/school-graphic.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="intro-video"
+          />
+          <h1 className="typing-title">Join Smart Learning!</h1>
+          <p className="typing-subtitle">Create your account to unlock your learning adventure.</p>
+          <ul className="benefits-list">
+            <li><span className="emoji-spin">🎯</span> Interactive math, science & English lessons</li>
+            <li><span className="emoji-spin">🧩</span> Fun educational games and challenges</li>
+            <li><span className="emoji-spin">🏆</span> Track your progress & earn achievements</li>
+          </ul>
+        </div>
       </div>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <div className="login-right">
+        <div className="login-box">
+          <h2 className="login-title">Become a member</h2>
 
-      <button className="register-submit-btn" onClick={handleRegister}>Register</button>
+          <form onSubmit={handleRegister} className="login-form">
+            <p className="field-label">* indicates a required field.</p>
+
+            <label className="form-label">
+              Your email address *
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="input-field"
+                placeholder="your@email.com"
+              />
+            </label>
+
+            <label className="form-label">
+              Your guardian's email address *
+              <small>We are excited to have you join us, but we need to notify your guardian since you are opening an account.</small>
+              <input
+                type="email"
+                value={guardianEmail}
+                onChange={(e) => setGuardianEmail(e.target.value)}
+                required
+                className="input-field"
+                placeholder="example@email.com"
+              />
+            </label>
+
+            <label className="form-label">
+              Choose a username *
+              <small>Use only letters and numbers. For your safety, do not use your real name.</small>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                className="input-field"
+              />
+            </label>
+
+            <label className="form-label">
+              Create a password *
+              <small>Passwords must be at least 8 characters. It must contain 1 number, 1 uppercase letter and 1 lowercase letter.</small>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="input-field"
+              />
+            </label>
+
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+            <button type="submit" className="login-submit-btn">Sign up</button>
+
+            <p className="bottom-signup">
+              Already have an account?
+              <p><Link to="/login">Log in</Link></p>
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default Register;
+}

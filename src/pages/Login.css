@@ -1,67 +1,324 @@
-/* login.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+/* Login sayfası dış container'ı */
+.login-page {
+  display: flex;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+/* Sol taraf (tanıtım bölümü) */
+/* Sol taraf */
+.login-left {
+  flex: 1;
+  background-color: #1f4b3f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.login-left .illustration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+}
+
+.intro-video {
+  width: 300px;
+  max-width: 100%;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Yazı yazma efekti */
+.typing-title {
+  font-size: 48px; /* Eskiden 42px */
+  font-weight: 800;
+  color: #fff;
+  width: 30ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  animation: typing 3s steps(30) forwards;
+}
+
+.typing-subtitle {
+  font-size: 24px; /* Eskiden 20px */
+  color: #cbeade;
+  font-weight: 500;
+  width: 50ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #cbeade;
+  animation: typing-sub 4s steps(50) forwards;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 26ch }
+}
+
+@keyframes typing-sub {
+  from { width: 0 }
+  to { width: 45ch }
+}
+
+/* Çubukları animasyon bitince kaldırmak için */
+.typing-title.done,
+.typing-subtitle.done {
+  border-right: none !important;
+}
+
+
+
+/* Liste stili */
+/* Benefits list animasyon başlangıcı - typing + blink */
+
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  width: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  border-right: 2px solid #e7f5f0;
+  transition: all 0.5s ease;
+}
+
+.benefits-list li.show {
+  animation: typing-benefit 1.8s steps(60) forwards, blink-sub 0.8s step-end infinite;
+  opacity: 1;
+  transform: translateY(0);
+  width: 100%;
+}
+
+.benefits-list li.done {
+  border-right: none;
+}
+
+/* Keyframes */
+@keyframes typing-benefit {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-sub {
+  50% { border-color: transparent }
+}
+
+
+.benefits-list li .emoji-spin {
+  font-size: 24px;  /* Emoji boyutunu da büyüt */
+}
+
+/* Emoji spin */
+.emoji-spin {
+  display: inline-block;
+  animation: spin-emoji 5s linear infinite;
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+/* Keyframes */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 26ch }
+}
+
+@keyframes typing-sub {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+@keyframes blink-sub {
+  50% { border-color: transparent }
+}
+
+@keyframes spin-emoji {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.login-left h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.login-left .tagline {
+  font-size: 16px;
+  color: #d4e5df;
+  margin-bottom: 20px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #e7f5f0;
+  text-align: left;
+  font-size: 16px;  /* Eskiden 18px */
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.benefits-list li {
+  margin-bottom: 10px;
+}
+
+
+/* Sağ taraf (form kutusu) */
+.login-right {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Etiket & Gerekli alan bildirimi */
+.field-label {
+  font-size: 13px;
+  color: #555;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Giriş alanları */
+.input-field {
+  all: unset;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.input-field:focus {
+  border-color: #4e8df5;
+}
+
+/* Şifreyi unuttum */
+.forgot-password {
+  font-size: 14px;
+  color: #1a73e8;
+  text-decoration: none;
+  align-self: flex-end;
+  margin-top: -8px;
+}
+
+/* Hata mesajı */
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: -8px;
+}
+
+/* Giriş butonu (tamamen local tanımlı) */
+.login-submit-btn {
+  all: unset;
+  box-sizing: border-box;
+  background-color: #2e4c9e;
+  color: #ffffff;
+  padding: 14px 0;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-submit-btn:hover {
+  background-color: #3f5bc3;
+}
+
+/* Hesabın yoksa */
+.bottom-signup {
+  font-size: 14px;
+  text-align: center;
+}
+
+.bottom-signup a {
+  color: #6a1b9a;
+  text-decoration: underline;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
   }
-  
-  .login-container {
+
+  .login-left,
+  .login-right {
+    flex: unset;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    height: auto;
   }
-  
+
+  .login-left {
+    padding: 40px 20px;
+  }
+
+  .login-right {
+    padding: 40px 20px;
+  }
+
   .login-box {
-    background: #fff;
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    padding: 24px;
+    box-shadow: none;
   }
-  
-  h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .login-submit-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: rgb(46, 76, 158);
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-btn:hover {
-    background-color: #45a049;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
+}

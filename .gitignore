@@ -23,3 +23,39 @@ yarn-debug.log*
 yarn-error.log*
 
 src/PuzzleGenerator/serviceAccountKey.json
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Flask/Werkzeug instance folders
+instance/
+*.db
+*.sqlite3
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+
+# VSCode & other IDE settings
+.vscode/
+.idea/
+*.swp
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# MacOS system files
+.DS_Store

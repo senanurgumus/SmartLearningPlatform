@@ -77,9 +77,9 @@
 /* 🎯 Today’s Missions */
 .mission-box {
   position: absolute;
-  top: 100px;
-  right: 30px;
-  width: 280px;
+  top: 70px;
+  left: 30px;
+  width: unset;
   background: rgb(46, 76, 158);
   padding: 1.5rem;
   border-radius: 20px;
@@ -155,6 +155,7 @@
 
 .mission-input button {
   padding: 0.5rem 1rem;
+  margin-left: auto;
   border-radius: 10px;
   background-color:rgb(115, 150, 245);
   color: white;
@@ -183,13 +184,12 @@
   background: rgb(46, 76, 158);
   color: white;
   padding: 1rem 1.5rem;
-  border-radius: 12px;
+  border-radius: 20px;
   max-width: 320px;
   font-family: 'Comic Sans MS', 'Poppins', sans-serif;
-  margin-left: 1rem;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   position: absolute;
-  top: 100px;
+  top: 250px;
   left: 30px;
   width: 280px;
   backdrop-filter: blur(6px);

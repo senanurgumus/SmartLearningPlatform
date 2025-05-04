@@ -5,7 +5,7 @@ import { db } from '../firebase.js';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
 import DashboardHighlights from './DashboardHighlights.js';
-
+import Chatbot from '../components/Chatbot.js';  // Chatbot bileşenini import ediyoruz
 
 
 
@@ -112,6 +112,32 @@ function Dashboard() {
         <br />
         <span className="day-message">{dayMessage}</span>
       </h2>
+      <Chatbot />
+
+      <div className="mission-box">
+            <h3 className="mission-title">🎯 Today’s Missions</h3>
+            <div className="mission-input">
+              <input
+                type="text"
+                value={newMission}
+                onChange={(e) => setNewMission(e.target.value)}
+                placeholder="Add a new mission..."
+              />
+              <button onClick={handleAddMission}>➕ Add</button>
+            </div>
+
+            {missions.map((m, i) => (
+              <div key={i} className={`mission-item ${m.done ? 'completed' : ''}`}>
+                <div
+                  className={`mission-checkbox ${m.done ? 'checked' : ''}`}
+                  onClick={() => toggleMission(i)}
+                />
+                <span style={{ flex: 1, textAlign: 'left' }}>{m.task}</span>
+                <button className="mission-delete" onClick={() => handleDeleteMission(i)}>🗑</button>
+              </div>
+            ))}
+          </div>
+
 
       <div className="fun-fact-box">
         <p className="fun-fact-title">🧠 Did You Know?</p>
@@ -146,31 +172,11 @@ function Dashboard() {
 
 
           <DashboardHighlights />
+         
 
 
-          <div className="mission-box">
-            <h3 className="mission-title">🎯 Today’s Missions</h3>
-            <div className="mission-input">
-              <input
-                type="text"
-                value={newMission}
-                onChange={(e) => setNewMission(e.target.value)}
-                placeholder="Add a new mission..."
-              />
-              <button onClick={handleAddMission}>➕ Add</button>
-            </div>
 
-            {missions.map((m, i) => (
-              <div key={i} className={`mission-item ${m.done ? 'completed' : ''}`}>
-                <div
-                  className={`mission-checkbox ${m.done ? 'checked' : ''}`}
-                  onClick={() => toggleMission(i)}
-                />
-                <span style={{ flex: 1, textAlign: 'left' }}>{m.task}</span>
-                <button className="mission-delete" onClick={() => handleDeleteMission(i)}>🗑</button>
-              </div>
-            ))}
-          </div>
+          
         </>
       )}
     </div>

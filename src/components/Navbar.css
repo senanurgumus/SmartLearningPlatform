@@ -7,7 +7,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .navbar-left {
@@ -68,24 +68,30 @@
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  gap:1rem;
 }
 
 .navbar-right .navbar-btn {
+  all: unset;
   background-color: rgb(115, 150, 245);
   color: white;
   padding: 10px 20px;
   font-size: 1rem;
   border: none;
-  margin-right: 20px;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  text-decoration: none; /* ALT ÇİZGİYİ KALDIRIR */
+  text-decoration: none;
   font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  margin-right: 10px;
 }
 
 .navbar-right .navbar-btn:hover {
   background-color: #e57373;
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -120,6 +126,7 @@
   }
 
   .navbar-right {
+    all:unset;
     display: none;
   }
 

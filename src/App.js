@@ -41,12 +41,8 @@ import DrawPage from './pages/DrawPage.js';
 import PaintGalleryPage from './pages/PaintGalleryPage.js';
 import PaintEditorPage from './pages/PaintEditorPage.js';
 import AboutPage from './pages/AboutPage.js';
-
-
-
-
-
-
+import ResetPassword from './pages/ResetPassword.js';
+import Profile from './pages/Profile.js'; // dosya yolu doğruysa
 
 
 // Component for rendering Navbar conditionally
@@ -59,6 +55,8 @@ function App() {
   return (
     <div>
       {showNavbar && <Navbar />} {/* Only show the Navbar if we're not on /login or /register */}
+
+
 
       <Routes>
         <Route path="/login" element={<Login />} />
@@ -103,6 +101,10 @@ function App() {
         <Route path="/paint" element={<PaintGalleryPage />} />
         <Route path="/paint/:id" element={<PaintEditorPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/profile/:id" element={<Profile />} />
+
+
 
 
 
