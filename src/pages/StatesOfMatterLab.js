@@ -20,21 +20,16 @@ const STATES = [
 ];
 
 const QUESTIONS = [
-  {
-    question: 'What happens to ice when you heat it?',
-    options: ['It turns to gas', 'It melts into liquid', 'It freezes more'],
-    answer: 'It melts into liquid',
-  },
-  {
-    question: 'Which state of matter has no fixed shape or volume?',
-    options: ['Solid', 'Liquid', 'Gas'],
-    answer: 'Gas',
-  },
-  {
-    question: 'Cooling water turns it into:',
-    options: ['Ice', 'Steam', 'Cloud'],
-    answer: 'Ice',
-  }
+  { question: 'What happens to ice when you heat it?', options: ['It turns to gas', 'It melts into liquid', 'It freezes more'], answer: 'It melts into liquid' },
+  { question: 'Which state of matter has no fixed shape or volume?', options: ['Solid', 'Liquid', 'Gas'], answer: 'Gas' },
+  { question: 'Cooling water turns it into:', options: ['Ice', 'Steam', 'Cloud'], answer: 'Ice' },
+  { question: 'What is the boiling point of water?', options: ['100°C', '0°C', '50°C'], answer: '100°C' },
+  { question: 'Which state of matter has a definite volume but no definite shape?', options: ['Solid', 'Liquid', 'Gas'], answer: 'Liquid' },
+  { question: 'What happens to water when it freezes?', options: ['It turns to gas', 'It turns to liquid', 'It turns to solid'], answer: 'It turns to solid' },
+  { question: 'Which of these is an example of a gas?', options: ['Oxygen', 'Water', 'Ice'], answer: 'Oxygen' },
+  { question: 'What happens when a gas is cooled?', options: ['It turns into a solid', 'It turns into a liquid', 'It remains unchanged'], answer: 'It turns into a liquid' },
+  { question: 'What is the solid form of water called?', options: ['Ice', 'Water vapor', 'Steam'], answer: 'Ice' },
+  { question: 'Which of these states of matter can flow?', options: ['Solid', 'Liquid', 'Gas'], answer: 'Liquid' }
 ];
 
 function StatesOfMatterLab() {
@@ -46,6 +41,11 @@ function StatesOfMatterLab() {
   const [quizFinished, setQuizFinished] = useState(false);
   const [animating, setAnimating] = useState(false);
   const [width, height] = useWindowSize();
+  const [currentBatch, setCurrentBatch] = useState(0);
+
+  const BATCH_SIZE = 5;
+  const totalBatches = Math.ceil(QUESTIONS.length / BATCH_SIZE);
+  const currentQuestions = QUESTIONS.slice(currentBatch * BATCH_SIZE, currentBatch * BATCH_SIZE + BATCH_SIZE);
 
   useEffect(() => {
     if (quizFinished) {
@@ -82,12 +82,15 @@ function StatesOfMatterLab() {
   };
 
   const handleAnswer = (option) => {
-    const current = QUESTIONS[quizIndex];
+    const current = currentQuestions[quizIndex % BATCH_SIZE];
     if (option === current.answer) {
       setFeedback('✅ Great job!');
       setTimeout(() => {
         setFeedback('');
-        if (quizIndex + 1 < QUESTIONS.length) {
+        const isLastInBatch = (quizIndex % BATCH_SIZE) === BATCH_SIZE - 1;
+        const isLastQuestion = quizIndex + 1 === QUESTIONS.length;
+
+        if (!isLastInBatch && !isLastQuestion) {
           setQuizIndex(quizIndex + 1);
         } else {
           setQuizFinished(true);
@@ -99,83 +102,82 @@ function StatesOfMatterLab() {
     }
   };
 
+  const handleNextBatch = () => {
+    setShowQuiz(true);
+    setQuizFinished(false);
+    setQuizIndex((currentBatch + 1) * BATCH_SIZE);
+    setCurrentBatch(currentBatch + 1);
+  };
+
   return (
-    <div className="matter-lab-container">
+    <div className="som-container">
       {showIntro ? (
         <>
           <h1>States of Matter</h1>
-          <div className="states-grid">
+          <div className="som-states-grid">
             {STATES.map((state, index) => (
-              <div key={index} className="state-card">
-                <div className="emoji">{state.emoji}</div>
+              <div key={index} className="som-state-card">
+                <div className="som-emoji">{state.emoji}</div>
                 <h2>{state.type}</h2>
                 <p>{state.description}</p>
               </div>
             ))}
           </div>
-          <button className="start-button" onClick={() => setShowIntro(false)}>
+          <button className="som-start-button" onClick={() => setShowIntro(false)}>
             Start the Lab 🔬
           </button>
         </>
       ) : !showQuiz ? (
         <>
           <h1>Change of State</h1>
-
-          <div className="thermometer">
-            <p className="temp-label">
+          <div className="som-thermometer">
+            <p className="som-temp-label">
               {stateIndex === 0 ? 'Cold ❄️' : stateIndex === 1 ? 'Warm 💧' : 'Hot 🔥'}
             </p>
-            <div className={`thermo-indicator ${stateIndex === 0 ? 'cold' : stateIndex === 1 ? 'warm' : 'hot'}`}></div>
+            <div className={`som-thermo-indicator ${stateIndex === 0 ? 'cold' : stateIndex === 1 ? 'warm' : 'hot'}`}></div>
           </div>
-
-          <div className={`main-state-display ${animating ? 'shrink' : 'grow'}`} key={stateIndex}>
-            <div className="emoji big">{STATES[stateIndex].emoji}</div>
+          <div className={`som-main-state-display ${animating ? 'som-shrink' : 'som-grow'}`} key={stateIndex}>
+            <div className="som-emoji big">{STATES[stateIndex].emoji}</div>
             <h2>{STATES[stateIndex].type}</h2>
             <p>{STATES[stateIndex].description}</p>
           </div>
-
-          <div className="buttons-row">
+          <div className="som-buttons-row">
             <button onClick={handleCool} disabled={stateIndex === 0}>❄️ Cool</button>
             <button onClick={handleHeat} disabled={stateIndex === 2}>🔥 Heat</button>
           </div>
-
-          <button className="start-button" onClick={startQuiz} style={{ marginTop: '30px' }}>
+          <button className="som-start-button" onClick={startQuiz} style={{ marginTop: '30px' }}>
             Take Quiz 🧠
           </button>
         </>
       ) : !quizFinished ? (
         <>
-          <h1>Quiz Time!</h1>
-          <div className="quiz-card">
-            <p><strong>{QUESTIONS[quizIndex].question}</strong></p>
-            <div className="options">
-              {QUESTIONS[quizIndex].options.map((opt, i) => (
+          <h1>Quiz Time! (Set {currentBatch + 1})</h1>
+          <div className="som-quiz-card">
+            <p><strong>{currentQuestions[quizIndex % BATCH_SIZE].question}</strong></p>
+            <div className="som-options">
+              {currentQuestions[quizIndex % BATCH_SIZE].options.map((opt, i) => (
                 <button key={i} onClick={() => handleAnswer(opt)}>{opt}</button>
               ))}
             </div>
-            {feedback && <div className="feedback">{feedback}</div>}
+            {feedback && <div className="som-feedback">{feedback}</div>}
           </div>
         </>
       ) : (
         <>
-          <Confetti width={width} height={height} numberOfPieces={300} recycle={false} />
-          <div className="completion-message">
-            <h2>🎉 You finished the lab!</h2>
+          <div className="som-confetti-container">
+            <Confetti width={width} height={height} numberOfPieces={300} recycle={false} />
+          </div>
+          <div className="som-completion-message">
+            <h2>🎉 You finished the quiz set!</h2>
             <p>Great job exploring the states of matter!</p>
-
-            <div className="end-buttons">
-              <button className="end-button" onClick={() => {
-                setShowIntro(true);
-                setShowQuiz(false);
-                setQuizFinished(false);
-                setQuizIndex(0);
-                setStateIndex(0);
-              }}>
-                🔁 Play Again
-              </button>
-
-              <button className="end-button" onClick={() => window.location.href = "/dashboard"}>
-                🏠 Go to Home
+            <div className="som-end-buttons">
+              {currentBatch + 1 < totalBatches && (
+                <button className="som-end-button" onClick={handleNextBatch}>
+                  🔁 Another Quiz
+                </button>
+              )}
+              <button className="som-end-button" onClick={() => window.location.href = "/module/science/activities"}>
+                🏠 Go to Activities
               </button>
             </div>
           </div>

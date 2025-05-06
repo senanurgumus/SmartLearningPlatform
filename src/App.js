@@ -13,7 +13,6 @@ import AchievementsPage from './pages/AchievementsPage.js';
 import MathUnitListPage from './pages/MathUnitListPage.js';
 import MathUnitQuizPage from './pages/MathUnitQuizPage.js';
 import ShapeDragActivity from './pages/ShapeDragActivity.js';
-import PuzzleActivity from './pages/PuzzleActivity.js';
 import MatchSumActivity from './pages/MatchSumActivity.js';
 import ColorMixingLab from "./pages/ColorMixingLab.js";
 import GrowPlantActivity from './pages/GrowPlantActivity.js';
@@ -44,6 +43,8 @@ import AboutPage from './pages/AboutPage.js';
 import ResetPassword from './pages/ResetPassword.js';
 import Profile from './pages/Profile.js'; // dosya yolu doğruysa
 import BalloonGame from './pages/BalloonGame.js'
+import PuzzlePage from './pages/PuzzlePage.js';
+import PuzzleGalleryPage from './pages/PuzzleGalleryPage.js';
 
 // Component for rendering Navbar conditionally
 function App() {
@@ -70,8 +71,6 @@ function App() {
         <Route path="/achievements" element={<AchievementsPage />} />
         <Route path="/module/math/quiz" element={<MathUnitListPage />} />
         <Route path="/module/math/quiz/:unitId" element={<MathUnitQuizPage />} />
-        {/* Correct routes for activities */}
-        <Route path="/module/:moduleId/activities/puzzle" element={<PuzzleActivity />} />
         <Route path="/module/:moduleId/activities/shape-drag" element={<ShapeDragActivity />} />
         <Route path="/module/:moduleId/activities/match" element={<MatchSumActivity />} />
         <Route path="/module/:moduleId/activities/color-mixing" element={<ColorMixingLab />} />
@@ -104,6 +103,8 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/pop" element={<BalloonGame />} />
+        <Route path="/puzzles" element={<PuzzleGalleryPage />} />
+        <Route path="/puzzle/:type" element={<PuzzlePage />} />
 
 
 

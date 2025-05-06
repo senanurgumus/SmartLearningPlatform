@@ -14,17 +14,19 @@ function MatchSumActivity() {
   const [matches, setMatches] = useState({});
   const [draggedAnswer, setDraggedAnswer] = useState(null);
 
-  useEffect(() => {
-    // You can use the moduleId and activityId to fetch specific data related to the activity
-  }, [moduleId, activityId]);
-
-  useEffect(() => {
+  // Function to shuffle questions and answers
+  const shuffleQuestionsAndAnswers = () => {
     const questionPool = matchQuestions[operation][level];
     const newPairs = shuffle(JSON.parse(JSON.stringify(questionPool))).slice(0, 5);
     setPairs(newPairs);
     setAnswers(shuffle(newPairs.map(p => p.answer)));
     setMatches({});
-  }, [operation, level]);
+  };
+
+  // Only one useEffect hook to handle changes in operation or level
+  useEffect(() => {
+    shuffleQuestionsAndAnswers();
+  }, [operation, level]); // Dependency array contains only operation and level
 
   const shuffle = (array) => [...array].sort(() => Math.random() - 0.5);
 
@@ -35,7 +37,7 @@ function MatchSumActivity() {
   const handleDrop = (question) => {
     const correctAnswer = pairs.find(p => p.question === question)?.answer;
     if (draggedAnswer !== correctAnswer) {
-      alert('❌ Bu eşleştirme yanlış! Tekrar dene.');
+      alert('❌ This match is incorrect! Try again.');
       return;
     }
     setMatches(prev => ({ ...prev, [question]: draggedAnswer }));
@@ -47,23 +49,28 @@ function MatchSumActivity() {
 
   return (
     <div className="match-container">
-      <h2>{operation} İşlemi ({level.toUpperCase()})</h2>
-      <p>İşlemleri doğru sonuçlarla eşleştir!</p>
+      <h2>{operation} Operation ({level.toUpperCase()})</h2>
+      <p>Match the operations with the correct answers!</p>
 
       <div className="selectors">
         <select value={operation} onChange={(e) => setOperation(e.target.value)}>
-          <option value="+">➕ Toplama</option>
-          <option value="-">➖ Çıkarma</option>
-          <option value="×">✖️ Çarpma</option>
-          <option value="÷">➗ Bölme</option>
+          <option value="+">➕ Addition</option>
+          <option value="-">➖ Subtraction</option>
+          <option value="×">✖️ Multiplication</option>
+          <option value="÷">➗ Division</option>
         </select>
 
         <select value={level} onChange={(e) => setLevel(e.target.value)}>
-          <option value="easy">🟢 Kolay</option>
-          <option value="medium">🟠 Orta</option>
-          <option value="hard">🔴 Zor</option>
+          <option value="easy">🟢 Easy</option>
+          <option value="medium">🟠 Medium</option>
+          <option value="hard">🔴 Hard</option>
         </select>
       </div>
+
+      {/* Shuffle Button */}
+      <button className="shuffle-button" onClick={shuffleQuestionsAndAnswers}>
+        🔄 Shuffle Questions
+      </button>
 
       <div className="question-row">
         {pairs.map((pair, index) => (
@@ -78,7 +85,7 @@ function MatchSumActivity() {
               {matches[pair.question] ? (
                 <span className="matched">{matches[pair.question]}</span>
               ) : (
-                <span className="placeholder">Sürükle</span>
+                <span className="placeholder">Drag</span>
               )}
             </div>
           </div>
@@ -100,7 +107,7 @@ function MatchSumActivity() {
 
       {allCorrect && (
         <div className="success-message">
-          🎉 Tebrikler! Hepsini doğru eşleştirdin!
+          🎉 Congratulations! You matched everything correctly!
         </div>
       )}
     </div>

@@ -16,23 +16,33 @@ export default function BalloonGame() {
   const canvasRef = useRef(null);
   const balloonsRef = useRef([]);
   const scoreRef = useRef(0);
-  const popSoundRef = useRef(null);
+  const audioCtxRef = useRef(null);
+  const audioBufferRef = useRef(null);
 
-  // pop sesi preload edelim
-  useEffect(() => {
-    const audio = new Audio('/pop.mp3');
-    audio.preload = 'auto';
-    audio.load();
-    popSoundRef.current = audio;
-  }, []); // pop sesi için referans
   const [score, setScore] = useState(0);
-  const [topHigh, setTopHigh] = useState(null);
+  const [highestScoreRecord, setHighestScoreRecord] = useState(null);
   const [globalTop5, setGlobalTop5] = useState([]);
   const [isNewRecord, setIsNewRecord] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
   const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
 
-  // Yeni balon oluşturucu
+  // Preload and decode pop sound into AudioBuffer
+  useEffect(() => {
+    // Initialize AudioContext
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    const ctx = new AudioContext();
+    audioCtxRef.current = ctx;
+    // Fetch and decode
+    fetch('/pop.mp3')
+      .then(res => res.arrayBuffer())
+      .then(buf => ctx.decodeAudioData(buf))
+      .then(decoded => {
+        audioBufferRef.current = decoded;
+      })
+      .catch(console.error);
+  }, []);
+
+  // Create a new balloon
   const createBalloon = canvas => {
     const r = 20;
     return {
@@ -44,7 +54,7 @@ export default function BalloonGame() {
     };
   };
 
-  // Genel Top 5'i Firestore'dan çek
+  // Fetch Global Top 5
   useEffect(() => {
     (async () => {
       const q = query(
@@ -54,9 +64,9 @@ export default function BalloonGame() {
       );
       const snap = await getDocs(q);
       const all = snap.docs.map(d => d.data());
-      const byUser = all.reduce((map, e) => {
-        if (!map[e.name] || e.score > map[e.name].score) {
-          map[e.name] = e;
+      const byUser = all.reduce((map, entry) => {
+        if (!map[entry.name] || entry.score > map[entry.name].score) {
+          map[entry.name] = entry;
         }
         return map;
       }, {});
@@ -67,56 +77,78 @@ export default function BalloonGame() {
     })();
   }, []);
 
-  // Oyun bittiğinde kaydet ve güncelle
-  const gameOver = async () => {
+  // On game over
+  const handleGameOver = async () => {
     setIsGameOver(true);
     const auth = getAuth();
     const email = auth.currentUser?.email || '';
-    const localPart = email.split('@')[0] || 'Misafir';
-    const name = localPart.charAt(0).toUpperCase() + localPart.slice(1);
+    const username = email.split('@')[0] || 'Guest';
+    const displayName = username.charAt(0).toUpperCase() + username.slice(1);
     const finalScore = scoreRef.current;
 
-    // Firestore'a ekle
-    await addDoc(collection(db, 'scores'), { name, score: finalScore, createdAt: serverTimestamp() });
-    // Global Top 5'i yeniden çek
-    const q = query(collection(db, 'scores'), orderBy('score', 'desc'), limit(50));
+    // Save to Firestore
+    await addDoc(collection(db, 'scores'), {
+      name: displayName,
+      score: finalScore,
+      createdAt: serverTimestamp()
+    });
+
+    // Re-fetch Global Top 5
+    const q = query(
+      collection(db, 'scores'),
+      orderBy('score', 'desc'),
+      limit(50)
+    );
     const snap = await getDocs(q);
     const all = snap.docs.map(d => d.data());
-    const byUser = all.reduce((map, e) => {
-      if (!map[e.name] || e.score > map[e.name].score) map[e.name] = e;
+    const byUser = all.reduce((map, entry) => {
+      if (!map[entry.name] || entry.score > map[entry.name].score) {
+        map[entry.name] = entry;
+      }
       return map;
     }, {});
-    const unique = Object.values(byUser).sort((a, b) => b.score - a.score).slice(0, 5);
+    const unique = Object.values(byUser)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5);
     setGlobalTop5(unique);
 
-    // Kullanıcıya özel localStorage
-    const key = `balloonScores_${localPart}`;
+    // LocalStorage update
+    const key = `balloonScores_${username}`;
     const existing = JSON.parse(localStorage.getItem(key) || '[]');
-    const updated = [...existing, { name, score: finalScore, date: Date.now() }]
+    const updated = [...existing, { name: displayName, score: finalScore, date: Date.now() }]
       .sort((a, b) => b.score - a.score);
     localStorage.setItem(key, JSON.stringify(updated));
-    const highest = updated[0] || null;
-    setTopHigh(highest);
-    if (highest && highest.score === finalScore) setIsNewRecord(true);
+
+    // Highest local score
+    const highestLocal = updated[0] || null;
+    setHighestScoreRecord(highestLocal);
+    if (highestLocal && highestLocal.score === finalScore) {
+      setIsNewRecord(true);
+    }
   };
 
-  // Yeniden başlat
-  const restart = () => window.location.reload();
+  // Restart
+  const restartGame = () => window.location.reload();
 
-  // Farenin pozisyonunu takip et
+  // Track mouse
   const handleMouseMove = e => {
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
-  // Animasyon ve balon spawn
+  // Animation & spawn
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     canvas.width = 400;
     canvas.height = 600;
+
     balloonsRef.current.push(createBalloon(canvas));
-    const spawnInt = setInterval(() => balloonsRef.current.push(createBalloon(canvas)), 1000);
+    const spawnInterval = setInterval(
+      () => balloonsRef.current.push(createBalloon(canvas)),
+      1000
+    );
+
     let animId;
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -129,9 +161,9 @@ export default function BalloonGame() {
         ctx.fill();
         ctx.closePath();
         if (b.y - b.r <= 0) {
-          clearInterval(spawnInt);
+          clearInterval(spawnInterval);
           cancelAnimationFrame(animId);
-          gameOver();
+          handleGameOver();
           return;
         }
         next.push(b);
@@ -140,14 +172,15 @@ export default function BalloonGame() {
       animId = requestAnimationFrame(animate);
     };
     animate();
+
     return () => {
-      clearInterval(spawnInt);
+      clearInterval(spawnInterval);
       cancelAnimationFrame(animId);
     };
   }, []);
 
-  // Balon patlatma
-  const handleClick = e => {
+  // Click handler
+  const handleBalloonClick = e => {
     if (isGameOver) return;
     const rect = canvasRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -155,9 +188,14 @@ export default function BalloonGame() {
     let popped = false;
     balloonsRef.current = balloonsRef.current.filter(b => {
       if (!popped && Math.hypot(b.x - x, b.y - y) < b.r) {
-        // pop sesi çal
-        popSoundRef.current.currentTime = 0;
-        popSoundRef.current.play().catch(console.error);
+        // Play using AudioContext if ready
+        const buf = audioBufferRef.current;
+        if (buf && audioCtxRef.current) {
+          const source = audioCtxRef.current.createBufferSource();
+          source.buffer = buf;
+          source.connect(audioCtxRef.current.destination);
+          source.start(0);
+        }
         scoreRef.current++;
         setScore(scoreRef.current);
         popped = true;
@@ -170,7 +208,11 @@ export default function BalloonGame() {
   return (
     <div className="balloon-game-container">
       <div className="balloon-game-canvas-wrapper" onMouseMove={handleMouseMove}>
-        <canvas ref={canvasRef} className="balloon-game__canvas" onClick={handleClick} />
+        <canvas
+          ref={canvasRef}
+          className="balloon-game__canvas"
+          onClick={handleBalloonClick}
+        />
         <img
           src="/needle.png"
           alt="needle cursor"
@@ -185,23 +227,25 @@ export default function BalloonGame() {
             zIndex: 1000
           }}
         />
-        <div className="balloon-game__live-score">
-        Score: {score}
-        </div>
-        {isGameOver && topHigh && (
+        <div className="balloon-game__live-score">Score: {score}</div>
+
+        {isGameOver && highestScoreRecord && (
           <div className="balloon-game__game-over">
             <h2 className="balloon-game__title">Game Over!</h2>
             {isNewRecord && <p>🎉 New Record!</p>}
-            <p>Highest Score: <strong>{topHigh.name}</strong> — {topHigh.score} score</p>
-            <p>Your Score This Round: <strong>{score}</strong> score</p>
-            <button className="balloon-game__button" onClick={restart}>
-            Play Again
+            <p>
+              Highest Score: <strong>{highestScoreRecord.name}</strong> — {highestScoreRecord.score}
+            </p>
+            <p>Your Score This Round: <strong>{score}</strong></p>
+            <button className="balloon-game__button" onClick={restartGame}>
+              Play Again
             </button>
           </div>
         )}
       </div>
+
       <aside className="global-highscores">
-        <h3>Top 5</h3>
+        <h3>Global Top 5</h3>
         <ol>
           {globalTop5.map(u => (
             <li key={u.name}>{u.name}: {u.score}</li>

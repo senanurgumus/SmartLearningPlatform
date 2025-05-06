@@ -81,13 +81,19 @@ function GrowPlantActivity() {
         )}
         {step === 3 && (
           <div style={{ position: 'relative', zIndex: 2 }}>
-            <Confetti width={width} height={height + 200} recycle={false} numberOfPieces={400} style={{ position: 'fixed', top: 0, left: 0, zIndex: 1 }} />
-            <div className="pot grown"></div>
+            <Confetti 
+              width={width} 
+              height={height + 200} 
+              recycle={false} 
+              numberOfPieces={400} 
+              style={{ position: 'fixed', top: 0, left: 0, zIndex: 1 }} 
+            />
+
             <h2>Congratulations! Your plant has fully grown! 🌻</h2>
 
             <div className="end-buttons">
-              <button className="action-button" onClick={resetGame}>🔁 Try Again</button>
-              <button className="action-button" onClick={() => window.location.href = "/dashboard"}>🏠 Go to Home</button>
+              <button className="action-button" onClick={resetGame}>🔁 Play Again</button>
+              <button className="action-button" onClick={() => window.location.href = "/module/science/activities"}>🏠 Go to Activities</button>
             </div>
           </div>
         )}

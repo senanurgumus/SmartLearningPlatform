@@ -238,14 +238,16 @@ function ColorMixingLab() {
           )}
           {rewardType === "master" && (
             <div className="master-reward-box">
-                <Confetti width={width} height={height} />
+                <div className="confetti-container">
+                    <Confetti width={width} height={height} />
+                </div>
                 <div className="trophy-emoji">🏆</div>
                 <h1>You are a Color Master!</h1>
                 <h2>Congratulations!</h2>
                 <p>You have mastered the art of mixing colors! 🎨</p>
                 <div className="button-group">
                     <button className="action-button" onClick={playAgain}>Play Again</button>
-                    <button className="action-button" onClick={() => navigate('/dashboard')}>Go to Home</button>
+                    <button className="action-button" onClick={() => navigate('/module/science/activities')}>Go to Activities</button>
                 </div>
             </div>
           )}
@@ -257,4 +259,5 @@ function ColorMixingLab() {
 }
 
 export default ColorMixingLab;
+
 

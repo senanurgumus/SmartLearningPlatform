@@ -1,44 +1,68 @@
+/* ShapeDragActivity.css */
+
+/* Now your component-specific styles */
 .shape-drag-container {
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  justify-content: center; /* Center content */
+  align-items: center;
+  background-color: transparent; /* Define background for this component */
+  margin: 0;
+  padding: 0;
+  flex-direction: column; /* Ensure items are stacked vertically if needed */
+  position: relative;  /* Ensure proper stacking context */
+  z-index: 10;  /* Higher z-index to keep it above the confetti */
 }
 
-.dropdown {
-  margin-bottom: 20px;
+/* Shape container (shapes) */
+.shape-drag-container .shapes {
+  display: flex;
+  flex-wrap: nowrap;  /* Allow items to wrap if necessary */
+  justify-content: center; /* Center the shapes horizontally */
+  gap: 20px;  /* Add some space between the shapes */
+  margin-bottom: 20px; /* Space below the shapes */
 }
 
-.shapes {
+.shape-drag-container .targets {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin: 30px 0;
-  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.targets {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.shape {
+/* Shapes */
+.shape-drag-container .shape {
   width: 80px;
   height: 80px;
   cursor: grab;
+  display: inline-flex;  /* Ensure each shape is treated as a block */
+  justify-content: center;
+  align-items: center;
+  margin: 10px;  /* Add space between shapes */
+  font-weight: normal !important;
+  font-size: 16px;  /* Ensure a consistent font size */
+  text-align: center;  /* Center align the text */
+  line-height: 80px;  /* Vertically center the text within the shape */
+  margin: 10px;
 }
 
-/* Şekiller */
-.shape.square {
+/* Reset styling inside the shape labels */
+.shape-drag-container .shape strong {
+  font-weight: normal; /* Remove bold styling */
+  font-size: 16px; /* Ensure font size is consistent */
+  text-align: center; /* Center the text */
+  line-height: 80px; /* Vertically center the text */
+}
+
+.shape-drag-container .square {
   background-color: #f44336;
 }
 
-.shape.circle {
+.shape-drag-container .circle {
   background-color: #2196f3;
   border-radius: 50%;
 }
 
-.shape.triangle {
+.shape-drag-container .triangle {
   width: 0;
   height: 0;
   border-left: 40px solid transparent;
@@ -46,95 +70,72 @@
   border-bottom: 80px solid #4caf50;
 }
 
-.shape.rectangle {
+.shape-drag-container .rectangle {
   width: 100px;
   height: 50px;
   background-color: #ff9800;
 }
 
-.shape.star::before {
+.shape-drag-container .star::before {
   content: '⭐';
   font-size: 60px;
   display: block;
 }
 
-.shape.pentagon {
+.shape-drag-container .pentagon {
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
   background-color: #673ab7;
   width: 80px;
   height: 80px;
 }
 
-.shape.hexagon {
-  clip-path: polygon(
-    25% 0%, 75% 0%,
-    100% 50%,
-    75% 100%, 25% 100%,
-    0% 50%
-  );
+.shape-drag-container .hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   background-color: #009688;
   width: 80px;
   height: 80px;
 }
 
-.shape.heart::before {
+.shape-drag-container .heart::before {
   content: '❤️';
   font-size: 60px;
   display: block;
 }
 
-.shape.cross::before {
+.shape-drag-container .cross::before {
   content: '❌';
   font-size: 60px;
   display: block;
 }
 
-
 /* Drop zone */
-.drop-zone {
+.shape-drag-container .drop-zone {
   width: 100px;
   height: 100px;
   border: 2px dashed #999;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  transform: none !important;
+  font-weight: normal;
+  font-size: 16px;  /* Adjust font size for drop zones */
+  margin: 10px;
+  text-align: center;
 }
 
-.drop-zone.incorrect {
+.shape-drag-container .drop-zone.incorrect {
   border: 2px solid #f44336;
   background-color: #ffebee;
   animation: shake 0.4s ease-in-out;
 }
 
-.drop-zone.correct {
+.shape-drag-container .drop-zone.correct {
   border: 2px solid #4caf50;
   background-color: #e8f5e9;
   animation: pulse 0.4s ease-in-out;
 }
 
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}
-
-.shake {
-  animation: shake 0.3s ease-in-out;
-}
-
-/* Skor ve Süre */
-.score-time-container {
+/* Score and Time */
+.shape-drag-container .score-time-container {
   margin-bottom: 15px;
   font-size: 18px;
   display: flex;
@@ -143,17 +144,19 @@
   font-weight: bold;
 }
 
-.message-button-wrapper {
+/* Button container (message-button-wrapper) */
+.shape-drag-container .message-button-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: center;  /* Center buttons horizontally */
   align-items: center;
-  gap: 16px;
-  margin-top: 30px;
+  gap: 20px;  /* Add space between the buttons */
+  flex-direction: row; /* Ensure the message and buttons are aligned side by side */
+  margin-top: 20px;  /* Optional: add some space at the top */
 }
 
 
-/* Mesajlar */
-.congrats-message {
+/* Messages */
+.shape-drag-container .congrats-message {
   font-size: 18px;
   font-weight: bold;
   color: #2e7d32;
@@ -166,11 +169,11 @@
   justify-content: center;
   height: 48px;
   white-space: nowrap;
-  max-width: 400px; /* ✅ genişliği sınırlıyoruz */
+  max-width: 400px;
   box-sizing: border-box;
 }
 
-.time-up-message {
+.shape-drag-container .time-up-message {
   margin-top: 20px;
   font-size: 22px;
   font-weight: bold;
@@ -183,8 +186,8 @@
   animation: pop 0.4s ease-in-out;
 }
 
-/* Buton */
-.restart-button {
+/* Buttons */
+.shape-drag-container .restart-button {
   height: 48px;
   display: flex;
   align-items: center;
@@ -198,50 +201,48 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  white-space: nowrap;
 }
 
-.restart-button:hover {
+.shape-drag-container .restart-button:hover {
   background-color: #1976d2;
 }
 
-/* Animasyon */
-@keyframes pop {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Bu şekilde sadece html, body seviyesinde animasyonları kapatmış oluruz */
-html, body {
-  /* eğer sayfa genelinde konfeti gibi şeyler sarsıyorsa onları engeller ama kutu shake için gerek yok */
-  /* BUNLARI SİL veya YORUMA AL */
-  /* transform: none !important; */
-  /* animation: none !important; */
-}
-
-.next-button {
-  margin-top: 10px;
-  padding: 8px 16px;
-  font-size: 16px;
+.shape-drag-container .next-button {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  font-size: 18px;
   font-weight: bold;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  background-color: #2196f3;
+  color: white;
 }
 
-.next-button:hover {
-  background-color: #388e3c;
+.shape-drag-container .next-button:hover {
+  background-color: #1976d2;
 }
 
+/* Reset text styling inside pseudo-elements (star, heart, etc.) */
+.shape-drag-container .star::before,
+.shape-drag-container .heart::before,
+.shape-drag-container .cross::before {
+  font-weight: normal;  /* Reset font-weight */
+  font-size: 60px;  /* Ensure a consistent size for these icons */
+  display: block;  /* Ensure they are block elements */
+  text-align: center;  /* Center the text/icon */
+  line-height: 80px;  /* Vertically center the icon */
+}
+
+/* Confetti styling */
+.confetti-container {
+  position: fixed;  /* Fixed to the screen */
+  top: 0;
+  left: 0;
+  width: 100vw;  /* Full width of the viewport */
+  height: 100vh;  /* Full height of the viewport */
+  z-index: -1;  /* Set a lower z-index to place it behind the content */
+}

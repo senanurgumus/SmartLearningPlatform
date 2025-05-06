@@ -1,0 +1,55 @@
+.puzzle-page {
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:    auto;
+    gap:                  5px;
+    justify-content:      center;
+    margin-top:           1rem;
+    max-width: 600px;      /* or whatever total width makes sense */
+    margin: 1rem auto 0;   /* top margin, auto left/right, no bottom margin */
+    padding: 0 1rem;       /* small side padding if you like */
+    }
+  
+  .puzzle-cell {
+    border:         2px solid #ccc;
+    border-radius:  4px;
+    overflow:       hidden;
+    background:     white;
+    cursor:         grab;
+  }
+  
+  .puzzle-cell img {
+    display: block;     /* remove inline default spacing */
+    width: 100%;        /* fill the cell’s width */
+    height: auto;       /* keep natural aspect ratio */
+    object-fit: cover;  /* crop any overflow cleanly */
+  }
+  
+  
+  .puzzle-error {
+    color:      red;
+    text-align: center;
+  }
+  
+  .congrats-overlay {
+    position: absolute;
+    top: 40%;             /* move it down closer to the middle */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.95);
+    padding: 1rem 2rem;
+    border: 2px solid #4f46e5;
+    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4f46e5;
+    z-index: 10;
+  }
+
+  

@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { updateHighScore, fetchHighScore } from "../utils/highScore.js";
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size';
-import './ShapeDragActivity.css';
+import './ShapeDragActivity.css';  
 
 const levelShapes = {
   easy: ['square', 'circle', 'triangle'],
@@ -37,7 +37,7 @@ function ShapeDragActivity() {
 
   const shuffle = (array) => [...array].sort(() => Math.random() - 0.5);
 
-  const startLevel = () => {
+  const startLevel = useCallback(() => {
     const selected = levelShapes[level];
     setDraggables(shuffle(selected));
     setTargets(shuffle(selected));
@@ -52,12 +52,25 @@ function ShapeDragActivity() {
     intervalRef.current = setInterval(() => {
       setTime((prev) => prev + 1);
     }, 1000);
-  };
+  }, [level]);
 
   useEffect(() => {
     startLevel();
     return () => clearInterval(intervalRef.current);
-  }, [level]);
+  }, [level, startLevel]);
+
+  const handleGameEnd = useCallback(() => {
+    updateHighScore("shapeDrag", score);
+    if (score > highScore) {
+      setHighScore(score);
+    }
+  }, [score, highScore]);
+
+  useEffect(() => {
+    if (gameCompleted) {
+      handleGameEnd(); 
+    }
+  }, [gameCompleted, handleGameEnd]);
 
   useEffect(() => {
     if (time >= 60 && !gameCompleted) {
@@ -79,12 +92,7 @@ function ShapeDragActivity() {
     fetchHighScore("shapeDrag").then(setHighScore);
   }, []);
 
-  useEffect(() => {
-    if (gameCompleted) {
-      handleGameEnd(); // 🎯 Oyun bitince yüksek skoru kaydet
-    }
-  }, [gameCompleted]);
-
+  // Add the missing functions here
   const handleDragStart = (shape) => {
     setDraggedShape(shape);
   };
@@ -127,18 +135,10 @@ function ShapeDragActivity() {
     startLevel();
   };
 
-  const handleGameEnd = () => {
-    updateHighScore("shapeDrag", score);
-    if (score > highScore) {
-      setHighScore(score);
-    }
-  };
-
   return (
     <div className="shape-drag-container">
       <h2>🎯 Drag the Shape (Level: {level})</h2>
       <p>Match the shape to the correct target!</p>
-
       <div className="dropdown">
         <label>Level: </label>
         <select value={level} onChange={(e) => setLevel(e.target.value)}>
@@ -149,13 +149,11 @@ function ShapeDragActivity() {
           <option value="master">👑 Master</option>
         </select>
       </div>
-
       <div className="score-time-container">
         <span>🧠 Score: {score}</span>
         <span>⏱️ Time: {time} s</span>
         <span>🏆 High Score: {highScore}</span>
       </div>
-
       <div className="shapes">
         {draggables.map((shape, index) => (
           <div
@@ -166,15 +164,11 @@ function ShapeDragActivity() {
           />
         ))}
       </div>
-
       <div className="targets">
         {targets.map((targetShape, index) => (
           <div
             key={`${targetShape}-${index}-${level}`}
-            className={`drop-zone ${
-              dropFeedback[targetShape] === 'incorrect' ? 'incorrect' :
-              dropFeedback[targetShape] === 'correct' ? 'correct' : ''
-            }`}
+            className={`drop-zone ${dropFeedback[targetShape] === 'incorrect' ? 'incorrect' : dropFeedback[targetShape] === 'correct' ? 'correct' : ''}`}
             onDrop={() => handleDrop(targetShape)}
             onDragOver={handleDragOver}
           >
@@ -182,7 +176,6 @@ function ShapeDragActivity() {
           </div>
         ))}
       </div>
-
       {gameCompleted && (
         <div className="message-button-wrapper">
           {isTimeUp ? (
@@ -196,7 +189,7 @@ function ShapeDragActivity() {
                 numberOfPieces={200}
                 recycle={false}
                 initialVelocityY={10}
-                style={{ position: 'fixed', zIndex: 999, pointerEvents: 'none' }}
+                style={{ position: 'fixed', zIndex: -1, pointerEvents: 'none' }}
               />
               {level !== 'master' && (
                 <button className="next-button" onClick={handleNextLevel}>➡️ Next Level</button>
@@ -211,3 +204,5 @@ function ShapeDragActivity() {
 }
 
 export default ShapeDragActivity;
+
+

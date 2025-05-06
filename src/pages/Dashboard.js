@@ -168,6 +168,7 @@ function Dashboard() {
             <Link to="/draw" className="drawing-button">✏️ Let's Draw</Link>
             <Link to="/paint" className="drawing-button">🖌️ Let's Paint</Link>
             <Link to="/pop"   className="drawing-button">🎈 Let's Pop</Link>
+            <Link to="/puzzles" className="drawing-button">🧩 Puzzle Gallery</Link>
           </div>
 
 
