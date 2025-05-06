@@ -1,0 +1,80 @@
+.balloon-game-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 2rem;
+}
+.balloon-game-canvas-wrapper {
+  position: relative;
+}
+
+.balloon-game__live-score {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222;
+  z-index: 5;
+}
+
+.balloon-game__canvas {
+  width: 400px;
+  height: 600px;
+  border: 2px solid #333;
+  border-radius: 12px;
+  background: #e0f7fa;
+  cursor: none;
+}
+.balloon-game__scoreboard {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  text-align: left;
+}
+.balloon-game__score { font-weight: bold; }
+.balloon-game__game-over {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.95);
+  padding: 1.5rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+  width: 80%; max-width: 320px;
+  text-align: center;
+  z-index: 10;
+}
+.balloon-game__title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.balloon-game__button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.balloon-game__button:hover { background: #43a047; }
+.global-highscores {
+  width: 160px;
+  background: rgba(255,255,255,0.9);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.global-highscores h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  text-align: left;
+}
+.global-highscores ol {
+  padding-left: 1.2rem;
+  text-align: left;
+}
+.global-highscores li {
+  margin-bottom: 0.4rem;
+}

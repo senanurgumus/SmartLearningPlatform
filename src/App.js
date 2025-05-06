@@ -43,7 +43,7 @@ import PaintEditorPage from './pages/PaintEditorPage.js';
 import AboutPage from './pages/AboutPage.js';
 import ResetPassword from './pages/ResetPassword.js';
 import Profile from './pages/Profile.js'; // dosya yolu doğruysa
-
+import BalloonGame from './pages/BalloonGame.js'
 
 // Component for rendering Navbar conditionally
 function App() {
@@ -103,6 +103,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/pop" element={<BalloonGame />} />
 
 
 
