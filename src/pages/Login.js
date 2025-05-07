@@ -27,7 +27,6 @@ export default function Login() {
       subtitle?.classList.add('done');
     }, 4000);
 
-    // Her liste elemanına sırayla animasyon uygula
     benefitItems.forEach((item, index) => {
       const delay = 4500 + index * 1200;
       setTimeout(() => {
@@ -45,12 +44,17 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setErrorMessage('');
+
+    if (!email || !password) {
+      setErrorMessage("Please fill in all fields.");
+      return;
+    }
+
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
       const user = result.user;
 
       const userDoc = await getDoc(doc(db, "users", user.uid));
-
       if (!userDoc.exists()) {
         setErrorMessage("User data not found.");
         return;
@@ -125,10 +129,10 @@ export default function Login() {
 
             <button type="submit" className="login-submit-btn">Log in</button>
 
-            <p className="bottom-signup">
-              Don’t have a Smart Learning account?
-              <p><Link to="/register">Create an account</Link></p>
-            </p>
+            <div className="bottom-signup">
+              <span>Don’t have a Smart Learning account?</span>
+              <Link to="/register">Create an account</Link>
+            </div>
           </form>
         </div>
       </div>

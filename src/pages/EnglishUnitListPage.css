@@ -1,67 +1,83 @@
-body {
-  background-color: rgb(163, 173, 201);
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.english-unit-container {
-  max-width: 1000px;
-  margin: 60px auto;
+/* Sayfa genel kapsayıcı */
+.english-exercises-container {
+  background: linear-gradient(to bottom right, #cbd5e1, #a5b4fc);
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  font-family: 'Comic Sans MS', 'Poppins', sans-serif;
   text-align: center;
+  overflow-x: hidden;
 }
 
-.english-unit-title {
-  font-size: 2.8rem;
+/* Başlık */
+.english-title {
+  font-size: 3rem;
   font-weight: bold;
-  color: #2c2c2c;
-  margin-bottom: 0.5rem;
+  color: #1e3a8a;
+  margin-bottom: 2rem;
+  animation: fadeInDown 1.2s ease-out;
 }
 
-.english-unit-subtitle {
-  font-size: 1.2rem;
-  color: #444;
-  margin-bottom: 2.5rem;
-}
-
-.unit-buttons-grid {
+/* Buton grubu */
+.english-buttons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 0 1rem;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 1.5s ease-out;
 }
 
-.unit-card {
-  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+/* Buton stilleri */
+.english-button {
+  background-color: #3b82f6;
   color: white;
-  border-radius: 16px;
-  padding: 1.5rem;
-  text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.unit-card:hover {
-  transform: translateY(-5px) scale(1.03);
-  background: linear-gradient(135deg, #7c3aed, #5b21b6);
-}
-
-.unit-icon {
-  font-size: 2.2rem;
-  margin-bottom: 0.7rem;
-}
-
-.unit-name {
-  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0.3rem;
-  text-transform: capitalize;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  border: none;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-.unit-hint {
-  font-size: 0.9rem;
-  opacity: 0.85;
+.english-button:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Video alanı */
+.english-video-wrapper {
+  margin-top: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.english-bg-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border: none;
+}
+
+/* Animasyonlar */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

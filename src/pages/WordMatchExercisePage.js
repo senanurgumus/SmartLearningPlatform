@@ -1,4 +1,4 @@
-// WordMatchExercisePage.js (auth yavaş geldiğinde kilit bozulmasını önler)
+// WordMatchExercisePage.js
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
@@ -72,7 +72,16 @@ const WordMatchExercisePage = () => {
       setMatched(updatedMatched);
       const newScore = score + 1;
       setScore(newScore);
-      confetti({ particleCount: 50, spread: 70 });
+
+      // ✅ Transparan arka planlı konfeti
+      confetti.create(undefined, {
+        resize: true,
+        useWorker: true
+      })({
+        particleCount: 50,
+        spread: 70,
+        origin: { y: 0.7 }
+      });
 
       if (updatedMatched.length === pairs.length) {
         setShowCongrats(true);
@@ -82,7 +91,9 @@ const WordMatchExercisePage = () => {
           const snap = await getDoc(ref);
           const prevData = snap.exists() ? snap.data() : {};
           const newBest = newScore > (prevData.bestScore || 0) ? newScore : (prevData.bestScore || 0);
-          const newUnlocked = selectedLevel.id === (prevData.unlockedLevel || 1) ? selectedLevel.id + 1 : (prevData.unlockedLevel || 1);
+          const newUnlocked = selectedLevel.id === (prevData.unlockedLevel || 1)
+            ? selectedLevel.id + 1
+            : (prevData.unlockedLevel || 1);
 
           setUnlockedLevel(newUnlocked);
 

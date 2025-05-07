@@ -6,41 +6,37 @@ const EnglishExercisesPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="exercises-page-container">
-      <h2 className="exercises-title">English Exercises</h2>
+    <div className="english-exercises-container">
+      <h2 className="english-title">✨ English Exercises ✨</h2>
 
-      <div className="exercise-buttons-grid">
+      <div className="english-buttons">
         <button
           onClick={() => navigate('/english/exercises/audio')}
-          className="exercise-button"
+          className="english-button"
         >
           🎵 Audio Recognition
         </button>
 
-
         <button
           onClick={() => navigate('/english/exercises/word-match')}
-          className="exercise-button"
+          className="english-button"
         >
           🧠 Word Match
         </button>
 
         <button
           onClick={() => navigate('/english/exercises/word-sorting')}
-          className="exercise-button"
+          className="english-button"
         >
           🔤 Word Sorting Game
         </button>
+      </div>
 
-        {/* Yeni egzersiz eklemek istersen buraya */}
-        {/* 
-        <button
-          onClick={() => navigate('/english/exercises/word-match')}
-          className="exercise-button"
-        >
-          🧠 Word Match
-        </button>
-        */}
+      <div className="english-video-wrapper">
+        <video autoPlay muted loop className="english-bg-video">
+          <source src="/videos/englishexercise.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   );

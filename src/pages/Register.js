@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import {
+  getAuth,
+  createUserWithEmailAndPassword
+} from 'firebase/auth'; // ✅ sendEmailVerification kaldırıldı
 import { app } from '../firebase.js';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 import { useNavigate, Link } from 'react-router-dom';
@@ -42,6 +45,21 @@ export default function Register() {
     e.preventDefault();
     setErrorMessage('');
 
+    if (!email.includes("@") || !email.includes(".")) {
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
+
+    if (!guardianEmail.includes("@") || !guardianEmail.includes(".")) {
+      setErrorMessage("Please enter a valid guardian email address.");
+      return;
+    }
+
+    if (!username.trim()) {
+      setErrorMessage("Username cannot be empty.");
+      return;
+    }
+
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
     if (!passwordRegex.test(password)) {
       setErrorMessage("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.");
@@ -59,8 +77,10 @@ export default function Register() {
         role: "child"
       });
 
-      navigate("/");
+      alert("Account created! You can now log in.");
+      navigate("/login");
     } catch (error) {
+      console.error("Registration Error:", error.code, error.message);
       setErrorMessage(error.message);
     }
   };
@@ -147,10 +167,10 @@ export default function Register() {
 
             <button type="submit" className="login-submit-btn">Sign up</button>
 
-            <p className="bottom-signup">
-              Already have an account?
-              <p><Link to="/login">Log in</Link></p>
-            </p>
+            <div className="bottom-signup">
+              <p>Already have an account?</p>
+              <Link to="/login">Log in</Link>
+            </div>
           </form>
         </div>
       </div>

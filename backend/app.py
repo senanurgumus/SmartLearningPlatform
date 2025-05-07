@@ -103,6 +103,8 @@ def ask_bot():
         prompt = f"""
         You are a helpful assistant for a learning platform. Based on the following quiz results and the user's message, please suggest an activity, exercise, or quiz for further study. You can recommend an activity or exercise according to quiz results. The user's total correct answers are: {correctAnswers}. The total incorrect answers are: {incorrectAnswers}. The user's quiz results: {json.dumps(quizResults)}.
 
+        If the user asks for recommending exercises, quizzes, activities : {json.dumps(content)}.
+        
         Please suggest an area for the user to focus on based on their progress. The user’s question is: "{user_input}"
 
         Focus primarily on answering the user's question in a meaningful way. If the user asks questions unrelated to the site or learning progress, kindly provide a helpful answer while gently encouraging them to return to the platform to continue their educational journey. 
