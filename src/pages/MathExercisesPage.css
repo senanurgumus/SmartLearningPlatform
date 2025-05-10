@@ -1,43 +1,154 @@
-/* MathExercisesPage.css */
 .math-exercises-container {
-    min-height: 100vh;
-    background-color: rgb(163, 173, 201);
-    padding: 2rem;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    text-align: center;
-  }
-  
-  .exercises-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #4c1d95;
-    margin-bottom: 2rem;
-  }
-  
-  .exercise-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .exercise-button {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #e0f2f1, #c8e6c9);
+  padding: 2rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.math-exercises-container .math-exercises-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1b4332;
+  margin-bottom: 2rem;
+  animation: math-fadeInDown 1s ease-in-out;
+}
+
+.math-exercises-container .exercise-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  animation: math-fadeInUp 1.5s ease-in-out;
+}
+
+.math-exercises-container .exercise-button {
     background-color: #43aa8b;
     color: white;
-    font-size: 1.2rem;
     font-weight: bold;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 20px;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease;
-    min-width: 200px;
-  }
-  
-  .exercise-button:hover {
-    background-color: #2d6a4f;
-    transform: translateY(-3px);
-  }
-  
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    border: none;
+    transition: transform 0.3s, background-color 0.3s;
+
+}
+
+.math-exercises-container .exercise-button:hover {
+  background-color: #2d6a4f;
+  transform: translateY(-3px);
+}
+
+.math-exercises-container .math-did-you-know-bubble {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffd166;
+  color: #1e1e1e;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  animation: math-fadeSlideIn 0.5s ease, math-fadeSlideOut 0.5s ease 4.5s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.math-exercises-container .math-icons-floating {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.math-exercises-container .math-float-item {
+  position: absolute;
+  font-size: 1.8rem;
+  opacity: 0.6;
+  animation: mathFloatUp linear infinite;
+}
+
+.math-exercises-container .math-float-item:nth-child(1) { left: 5%; animation-duration: 12s; top: 80%; }
+.math-exercises-container .math-float-item:nth-child(2) { left: 25%; animation-duration: 10s; top: 90%; }
+.math-exercises-container .math-float-item:nth-child(3) { left: 45%; animation-duration: 14s; top: 85%; }
+.math-exercises-container .math-float-item:nth-child(4) { left: 65%; animation-duration: 11s; top: 95%; }
+.math-exercises-container .math-float-item:nth-child(5) { left: 85%; animation-duration: 13s; top: 88%; }
+
+.math-exercises-container .math-videos-section {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  animation: math-fadeInUp 1.5s ease-in-out;
+}
+
+.math-exercises-container .math-video-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: math-scaleIn 1.2s ease;
+}
+
+.math-exercises-container .math-video {
+  width: 280px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.math-exercises-container .math-video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.math-exercises-container .math-video-caption {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  color: #1f2937;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Animasyonlar */
+@keyframes math-fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes math-fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes math-fadeSlideIn {
+  0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes math-fadeSlideOut {
+  0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+}
+
+@keyframes mathFloatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+  100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes math-scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}

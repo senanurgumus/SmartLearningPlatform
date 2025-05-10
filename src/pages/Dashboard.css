@@ -1,5 +1,7 @@
 /* Dashboard.css */
 .dashboard-container {
+  position: relative;
+  overflow: hidden;
   min-height: 100vh;
   padding: 2rem;
   font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -8,8 +10,144 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  animation: fadeInZoom 1.5s ease;
+  z-index: 1;
 }
+
+/* Mikro Hover Animasyonlar */
+.module-card-dashboard:hover,
+.achievements-button:hover,
+.drawing-button:hover,
+.mission-item:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+/* Pet Companion Widget */
+.pet-widget {
+  position: absolute;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+  animation: floatY 4s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.pet-widget img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.pet-name {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-top: 0.3rem;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+
+.pet-hat {
+  position: absolute;
+  top: -40px;
+  left: 5px;
+  width: 45px;
+  pointer-events: none;
+  z-index: 200;
+}
+
+.dance {
+  animation: petDance 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes petDance {
+  0% { transform: rotate(-10deg) translateY(0); }
+  100% { transform: rotate(10deg) translateY(-3px); }
+}
+
+/* Motivational Message Bubble */
+.pet-message {
+  position: absolute;
+  top: 70px;
+  right: 100px;
+  background-color: #fffbe6;
+  color: #333;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  opacity: 0;
+  animation: fadeInOut 3s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Fortune Scroll */
+.fortune-scroll {
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff8e1;
+  color: #222;
+  padding: 0.8rem 1.2rem;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  z-index: 999;
+  animation: fadeInOut 5s ease forwards;
+}
+
+/* Pomodoro Timer */
+.pomodoro-widget {
+  position: absolute;
+  top: 430px;
+  left: 30px;
+  background-color: rgba(46, 76, 158, 0.95);
+  color: white;
+  padding: 0.9rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  z-index: 50;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 220px;
+}
+
+.pomodoro-widget button {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: white;
+  color: #2c3e50;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+/* Diğer mevcut CSS kodları aşağıda kalır... */
+
+
+
 
 .day-mode {
   background: linear-gradient(to bottom, rgb(115, 150, 245), #e0f7fa);
@@ -33,6 +171,7 @@
   gap: 2rem;
   flex-wrap: wrap;
   margin-top: 2rem;
+  animation: fadeInUp 1.2s ease;
 }
 
 .module-card-dashboard {
@@ -46,16 +185,19 @@
   color: white;
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
 .module-card-dashboard:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .achievements-button-container {
   margin-top: 2rem;
+  animation: fadeInUp 1.4s ease;
 }
 
 .achievements-button {
@@ -66,32 +208,33 @@
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s;
   text-decoration: none;
 }
 
 .achievements-button:hover {
   background-color: rgb(115, 150, 245);
+  transform: scale(1.05);
 }
 
-/* 🎯 Today’s Missions */
 .mission-box {
   position: absolute;
   top: 70px;
   left: 30px;
-  width: unset;
-  background: rgb(46, 76, 158);
+  background: rgba(46, 76, 158, 0.9);
   padding: 1.5rem;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(6px);
+  animation: fadeInRight 1.2s ease;
 }
 
 .mission-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: white;
   margin-bottom: 1rem;
+  animation: pulse 2s infinite;
 }
 
 .mission-item {
@@ -105,13 +248,14 @@
   background: #f3f4f6;
   padding: 0.5rem 0.75rem;
   border-radius: 10px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .mission-item.completed {
   text-decoration: line-through;
   background-color: #d1fae5;
   color: #065f46;
+  transform: scale(0.97);
 }
 
 .mission-checkbox {
@@ -139,28 +283,17 @@
   line-height: 1;
 }
 
-.mission-input {
-  width: 100%;
-  margin-bottom: 0.75rem;
-  display: flex;
-  gap: 0.5rem;
-}
-
-.mission-input input {
-  flex: 1;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
-
+.mission-input input,
 .mission-input button {
-  padding: 0.5rem 1rem;
-  margin-left: auto;
-  border-radius: 10px;
-  background-color:rgb(115, 150, 245);
-  color: white;
-  border: none;
-  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mission-input input:focus {
+  outline: 2px solid #60a5fa;
+}
+
+.mission-input button:hover {
+  transform: scale(1.05);
 }
 
 .welcome-text {
@@ -170,6 +303,7 @@
   margin-top: 2rem;
   font-family: 'Comic Sans MS', 'Poppins', sans-serif;
   color: white;
+  animation: fadeInDown 1s ease;
 }
 
 .day-message {
@@ -177,8 +311,8 @@
   margin-top: 0.5rem;
   font-size: 1.1rem;
   color: #ccc;
+  animation: fadeIn 2s ease-in;
 }
-
 
 .fun-fact-box {
   background: rgb(46, 76, 158);
@@ -193,20 +327,12 @@
   left: 30px;
   width: 280px;
   backdrop-filter: blur(6px);
+  animation: fadeInLeft 1.2s ease;
 }
 
 .fun-fact-box:hover {
   background-color: rgb(115, 150, 245);
-}
-
-.fun-fact-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-}
-
-.fun-fact-text {
-  font-size: 1rem;
+  transform: scale(1.02);
 }
 
 .drawing-buttons-container {
@@ -214,6 +340,7 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
+  animation: fadeInUp 1.5s ease;
 }
 
 .drawing-button {
@@ -224,10 +351,178 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s;
 }
 
 .drawing-button:hover {
   background-color: #5847e0;
+  transform: scale(1.05);
 }
 
+.background-animation-container {
+  position: fixed;
+  left: 50%;
+  bottom: -200px;
+  transform: translateX(-50%);
+  width: 50%;
+  height: auto;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+  animation: riseVertical 20s linear infinite;
+}
+
+.background-float-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes riseVertical {
+  0% {
+    transform: translateX(-50%) translateY(100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+
+
+/* Animasyonlar */
+@keyframes fadeInZoom {
+  0% { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+/* 🎁 Bonus Spinner */
+.spinner-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(5px);
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.spinner-modal .spin-box {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.spinner-modal .spin-button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #6BCB77;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.spinner-modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+}
+
+/* Spinner Button */
+.open-spinner-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0.7rem 1.5rem;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.open-spinner-btn:hover {
+  background-color: #43a047;
+  transform: scale(1.05);
+}
+
+/* Tip of the Day */
+.tip-of-day {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #fff8dc;
+  color: #333;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 90;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+@keyframes fadeInZoom {
+  0% { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

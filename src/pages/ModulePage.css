@@ -6,27 +6,24 @@ html, body {
   background-color: rgb(163, 173, 201);
 }
 
-/* Module sayfası konteyneri */
 .module-page-container {
-  min-height: 100vh; /* Tüm görünüm yüksekliğini kapsasın */
+  min-height: 100vh;
   padding: 2rem;
   text-align: center;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  background-color: rgb(163, 173, 201); /* Arka plan body'den alınacak */
+  background-color: rgb(163, 173, 201);
 }
 
-
-/* Sayfa başlığı */
 .module-page-title {
   font-size: 2.2rem;
   font-weight: bold;
   font-family: 'Comic Sans MS', cursive, sans-serif;
   color: #333;
-  margin: 1.5rem auto 1rem auto; /* Üst boşluk azaltıldı */
+  margin: 1.5rem auto 1rem auto;
   text-align: center;
+  animation: fadeInDown 1s ease-out;
 }
 
-/* Ders anlatım kartları */
 .lesson-grid {
   display: flex;
   flex-wrap: wrap;
@@ -54,7 +51,6 @@ html, body {
   font-size: 0.95rem;
 }
 
-/* Modül bağlantı kutuları */
 .module-card-links {
   display: flex;
   justify-content: center;
@@ -87,7 +83,6 @@ html, body {
   margin: 0;
 }
 
-
 .guide-card-container {
   display: flex;
   gap: 1.5rem;
@@ -99,20 +94,23 @@ html, body {
 .guide-card {
   background-color: #fff;
   border-radius: 12px;
-  padding: 1.2rem;
-  width: 280px;
+  padding: 1.5rem;
+  width: 340px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: left;
+  animation: fadeInUp 0.6s ease-in-out;
+  font-size: 1.05rem;
 }
 
 .guide-card h4 {
   color: #4CAF50;
   margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
 .guide-card p {
   color: #444;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .module-layout {
@@ -121,76 +119,173 @@ html, body {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin-top: 0; /* Eskiden: 2rem — boşluğu kaldır */
+  margin-top: 0;
 }
 
-/* Sol sütun (Topic Guides) */
 .guide-column {
   flex: 1;
-  min-width: 250px;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 0; /* hizalama için üst boşluk sıfırlandı */
+  margin-top: 0;
+  animation: fadeInLeft 0.8s ease-out;
+  gap: 2rem;
 }
 
 .section-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
   text-align: left;
+  animation: fadeInDown 1s ease-out;
 }
 
-.guide-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: left;
-}
-
-/* Orta sütun */
 .center-column {
   flex: 2;
   min-width: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
-.module-card-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-/* Sağ sütun (Görseller) */
 .image-column {
   flex: 1;
-  min-width: 220px;
+  min-width: 260px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 0; /* hizalama için üst boşluk sıfırlandı */
+  margin-top: 0;
+  animation: fadeInRight 0.8s ease-out;
 }
 
 .image-column img {
   width: 100%;
-  max-width: 200px;
+  max-width: 240px;
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
-/* Modul özel arka plan renkleri */
 .english-background {
-  background-color: rgb(220, 240, 255); /* Açık mavi tonu */
+  background-color: rgb(220, 240, 255);
 }
 
 .math-background {
-  background-color: rgb(252, 124, 149); /* Sıcak sarımsı tonu */
+  background-color: rgb(252, 124, 149);
 }
 
 .science-background {
-  background-color: rgb(220, 255, 220); /* Açık yeşilimsi tonu */
+  background-color: rgb(220, 255, 220);
+}
+
+.guide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.speak-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.story-header {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+.story-carousel {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.story-step {
+  width: 200px;
+  height: 140px;
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.2;
+  transform: scale(0.95);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.story-step.revealed {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.story-step:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transform: scale(1.05);
+}
+
+.story-emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.story-text {
+  font-size: 1rem;
+  color: #334155;
+  text-align: center;
+}
+
+.module-video-wrapper {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(97, 214, 209, 0.804);
+  background-color: transparent;
+}
+
+.module-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+  background-color: transparent;
+}
+
+
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
 }

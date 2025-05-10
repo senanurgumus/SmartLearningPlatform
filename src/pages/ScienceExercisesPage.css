@@ -1,39 +1,205 @@
-.exercises-page-container {
-    padding: 2rem;
-    text-align: center;
-    min-height: 100vh;
-    background-color: rgb(163, 173, 201);
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-  }
-  
-  .exercises-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: #0f172a;
-  }
+.science-exercises-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #e0f7fa, #d1faff);
+  padding: 2rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
 
-  
-  .exercise-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
+.science-exercises-container .science-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #0f172a;
+  margin-bottom: 2rem;
+  animation: sci-fadeInDown 1s ease-in-out;
+}
 
-  .exercise-button {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    background-color: #0ea5e9;
-    color: white;
-    transition: background-color 0.3s ease;
+.science-exercises-container .flicker-glow {
+  color: #0ea5e9;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  animation: flickerGlow 1.5s infinite alternate;
+}
+
+@keyframes flickerGlow {
+  0% {
+    text-shadow: 0 0 4px #0ea5e9, 0 0 8px #38bdf8;
   }
-  
-  .exercise-button:hover {
-    background-color: #0369a1;
+  100% {
+    text-shadow: 0 0 12px #0ea5e9, 0 0 24px #38bdf8;
   }
-  
+}
+
+.science-exercises-container .bounce-glow-title {
+  display: inline-block;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #0ea5e9;
+}
+
+.science-exercises-container .bounce-glow-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: bounceInLetter 0.5s ease forwards,
+             flickerGlow 1.5s infinite alternate;
+}
+
+@keyframes bounceInLetter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flickerGlow {
+  0% {
+    text-shadow: 0 0 4px #0ea5e9, 0 0 8px #38bdf8;
+  }
+  100% {
+    text-shadow: 0 0 12px #0ea5e9, 0 0 24px #38bdf8;
+  }
+}
+
+
+.science-exercises-container .science-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  animation: sci-fadeInUp 1.2s ease-in-out;
+}
+
+.science-exercises-container .science-button {
+  background-color: #0284c7;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 220px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.science-exercises-container .science-button:hover {
+  background-color: #0369a1;
+}
+
+/* Video kutuları */
+.science-exercises-container .science-videos-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  animation: sci-fadeInUp 1.5s ease-in-out;
+}
+
+.science-exercises-container .science-video-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: sci-scaleIn 1s ease;
+}
+
+.science-exercises-container .science-video {
+  width: 280px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.science-exercises-container .science-video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+}
+
+.science-exercises-container .science-video-caption {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Bilgi Balonu */
+.science-exercises-container .science-did-you-know-bubble {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fcd34d;
+  color: #1e293b;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  animation: sci-fadeSlideIn 0.5s ease, sci-fadeSlideOut 0.5s ease 4.5s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+/* Yüzen ikonlar */
+.science-exercises-container .science-icons-floating {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.science-exercises-container .science-float-item {
+  position: absolute;
+  font-size: 1.8rem;
+  opacity: 0.6;
+  animation: sciFloatUp linear infinite;
+}
+
+.science-float-item:nth-child(1) { left: 5%; animation-duration: 12s; top: 80%; }
+.science-float-item:nth-child(2) { left: 25%; animation-duration: 10s; top: 90%; }
+.science-float-item:nth-child(3) { left: 45%; animation-duration: 14s; top: 85%; }
+.science-float-item:nth-child(4) { left: 65%; animation-duration: 11s; top: 95%; }
+.science-float-item:nth-child(5) { left: 85%; animation-duration: 13s; top: 88%; }
+
+/* Animasyonlar */
+@keyframes sci-fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sci-fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sci-fadeSlideIn {
+  0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes sci-fadeSlideOut {
+  0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+}
+
+@keyframes sciFloatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+  100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes sci-scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}

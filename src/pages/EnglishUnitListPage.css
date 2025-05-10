@@ -1,83 +1,126 @@
-/* Sayfa genel kapsayıcı */
-.english-exercises-container {
-  background: linear-gradient(to bottom right, #cbd5e1, #a5b4fc);
+.english-glass-container {
   min-height: 100vh;
-  padding: 3rem 2rem;
-  font-family: 'Comic Sans MS', 'Poppins', sans-serif;
-  text-align: center;
-  overflow-x: hidden;
+  background: linear-gradient(to bottom right, #e0f2fe, #c7d2fe);
+  padding: 4rem 2rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Başlık */
-.english-title {
+.english-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.glass-title {
   font-size: 3rem;
   font-weight: bold;
   color: #1e3a8a;
-  margin-bottom: 2rem;
-  animation: fadeInDown 1.2s ease-out;
+  animation: fadeInDown 1s ease-out;
 }
 
-/* Buton grubu */
-.english-buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  max-width: 800px;
-  margin: 0 auto;
-  animation: fadeInUp 1.5s ease-out;
-}
-
-/* Buton stilleri */
-.english-button {
-  background-color: #3b82f6;
-  color: white;
-  font-weight: bold;
-  padding: 1rem;
-  border-radius: 1.5rem;
+.glass-subtitle {
   font-size: 1.1rem;
-  cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  border: none;
-  transition: transform 0.3s, background-color 0.3s;
+  color: #334155;
+  margin-top: 0.5rem;
+  animation: fadeInUp 1.2s ease-out;
 }
 
-.english-button:hover {
-  background-color: #2563eb;
-  transform: scale(1.05);
-}
-
-/* Video alanı */
-.english-video-wrapper {
-  margin-top: 3rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  animation: fadeIn 2s ease-in-out;
-}
-
-.english-bg-video {
+.unit-search-input {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.2rem;
+  border: 2px solid #94a3b8;
+  border-radius: 12px;
+  font-size: 1rem;
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border: none;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+  outline: none;
 }
 
-/* Animasyonlar */
+.unit-search-input:focus {
+  border-color: #3b82f6;
+}
+
+.no-results {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #64748b;
+  text-align: center;
+  font-style: italic;
+}
+
+.glass-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.glass-card {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #1e293b;
+  transform: translateX(-20px);
+  opacity: 0;
+  animation: fadeSlideIn 0.6s ease-out forwards;
+}
+
+.glass-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 20px rgba(100, 116, 139, 0.3);
+}
+
+.glass-card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.7rem;
+}
+
+.glass-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.glass-card-sub {
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+  color: #0f172a;
+}
+
+/* Kart animasyonu */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px); }
+  from { opacity: 0; transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }

@@ -10,11 +10,38 @@ function ModulePage() {
   const [lessons, setLessons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [guides, setGuides] = useState([]);
+  const [storySteps, setStorySteps] = useState([]);
+  const [revealedSteps, setRevealedSteps] = useState(1);
+
+  const allStories = [
+    [
+      { emoji: '👧', text: 'Ayşe woke up early.' },
+      { emoji: '☀️', text: 'She brushed her teeth.' },
+      { emoji: '🍽️', text: 'She had breakfast.' },
+      { emoji: '🏫', text: 'She went to school.' }
+    ],
+    [
+      { emoji: '🦁', text: 'The lion roared loudly.' },
+      { emoji: '🏞️', text: 'It ran through the jungle.' },
+      { emoji: '🌳', text: 'Birds flew away.' },
+      { emoji: '🌙', text: 'Then night fell.' }
+    ],
+    [
+      { emoji: '👦', text: 'Ali packed his bag.' },
+      { emoji: '🚌', text: 'He took the bus.' },
+      { emoji: '🎒', text: 'He entered the classroom.' },
+      { emoji: '📚', text: 'He started learning.' }
+    ]
+  ];
 
   useEffect(() => {
     const allGuides = moduleGuides[moduleId] || [];
     const shuffled = [...allGuides].sort(() => 0.5 - Math.random()).slice(0, 3);
     setGuides(shuffled);
+
+    const randomStory = allStories[Math.floor(Math.random() * allStories.length)];
+    setStorySteps(randomStory);
+    setRevealedSteps(1);
   }, [moduleId]);
 
   useEffect(() => {
@@ -33,9 +60,20 @@ function ModulePage() {
     fetchLessons();
   }, [moduleId]);
 
+  const speak = (text) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    speechSynthesis.speak(utterance);
+  };
+
+  const handleStepClick = (index) => {
+    if (index === revealedSteps - 1 && revealedSteps < storySteps.length) {
+      setRevealedSteps(revealedSteps + 1);
+    }
+  };
+
   if (loading) return <h2>Loading...</h2>;
 
-  // 🔥 Burada modüle göre özel bir className vereceğiz
   const backgroundClass =
     moduleId === 'english' ? 'english-background' :
     moduleId === 'math' ? 'math-background' :
@@ -51,15 +89,18 @@ function ModulePage() {
           <h3 className="section-title">📘 Topic Guides</h3>
           {guides.map((guide, i) => (
             <div key={i} className="guide-card">
-              <h4>{guide.title}</h4>
+              <div className="guide-header">
+                <h4>{guide.title}</h4>
+                <button className="speak-button" onClick={() => speak(`${guide.title}. ${guide.content}`)}>🔊</button>
+              </div>
               <p>{guide.content}</p>
             </div>
           ))}
         </div>
 
-        {/* Orta: Butonlar */}
+        {/* Orta: Butonlar + Hikaye */}
         <div className="center-column">
-          <h2 className="module-page-title">{moduleId.toUpperCase()} Lessons</h2>
+          <h2 className="module-page-title">{moduleId.toUpperCase()} Mastery</h2>
 
           <div className="module-card-links">
             <Link to={`/module/${moduleId}/exercises`} className="module-card">
@@ -78,6 +119,30 @@ function ModulePage() {
               <p>Explore fun learning games and tasks.</p>
             </Link>
           </div>
+
+          <div className="story-header">📖 Story Time</div>
+
+          <div className="story-carousel">
+            {storySteps.map((step, index) => (
+              <div
+                key={index}
+                className={`story-step ${index < revealedSteps ? 'revealed' : ''}`}
+                onClick={() => handleStepClick(index)}
+              >
+                <span className="story-emoji">{step.emoji}</span>
+                <p className="story-text">{step.text}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Alt video ekleniyor */}
+          
+          <div className="module-video-wrapper">
+            <video autoPlay muted loop className="module-video">
+              <source src="/videos/module.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
 
         {/* Sağ: Resimler */}
@@ -88,10 +153,8 @@ function ModulePage() {
             </div>
           ))}
         </div>
-
       </div>
 
-      {/* Alt: Firebase'den gelen lesson kartları */}
       <div className="lesson-grid">
         {lessons.map((lesson, index) => (
           <div key={index} className="lesson-card">
@@ -100,7 +163,6 @@ function ModulePage() {
           </div>
         ))}
       </div>
-
     </div>
   );
 }
