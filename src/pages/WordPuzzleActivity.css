@@ -48,6 +48,12 @@
   position: relative;
 }
 
+.wp-word-image {
+  font-size: 64px;
+  margin: 8px 0;
+  text-align: center;
+}
+
 .wp-word-box {
   font-size: 36px;
   display: flex;

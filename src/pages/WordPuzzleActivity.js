@@ -279,6 +279,14 @@ function WordPuzzleActivity() {
 
         <p>Score: {score} / {shuffledWordList.length}</p>
         <p>⏳ Time Left: {timeLeft} seconds</p>
+
+        {/* 🐄 Show the emoji for current word */}
+        {currentWord.emoji && (
+          <div className="wp-word-image" aria-label={currentWord.word}>
+            {currentWord.emoji}
+          </div>
+        )}     
+        
         {bestScore !== null && (
           <p>⭐ Best Score: {bestScore} / {currentWordList.length}</p>
         )}
