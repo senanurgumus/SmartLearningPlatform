@@ -1,31 +1,78 @@
-.activities-container {
+/* Sadece ActivitiesPage içindeki her şeyi kapsayan wrapper */
+/* Sadece ActivitiesPage içi */
+.activities-wrapper {
+  position: relative;
+  overflow: visible;
+}
+.activities-wrapper .activities-container {
   padding: 2rem;
+  padding-bottom: 300px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
-.activity-list {
+/* Float animasyonu */
+@keyframes float {
+  0%, 100%   { transform: translateY(0); }
+  50%        { transform: translateY(-10px); }
+}
+
+/* Dinamik dekorlar */
+.activities-wrapper .decor {
+  position: absolute;
+  width: 80px;
+  opacity: 0.7;
+  animation: float 4s ease-in-out infinite;
+  z-index: 0;
+  /* isterseniz fade için: transition: opacity .8s ease-in-out; */
+}
+
+/* Harf harf fade-in başlık */
+.activities-wrapper .fadein-title {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #000080;
+  text-shadow: 0 0 4px rgba(0, 0, 128, 0.5);
+  border-right: 2px solid #000080;
+  animation:
+    typing 2s steps(30, end),
+    blink-caret 0.7s step-end infinite;
+}
+.activities-wrapper .fadein-title span {
+  opacity: 0;
+  display: inline-block;
+  animation: letter-fade 0.5s forwards;
+}
+@keyframes letter-fade { to { opacity: 1; } }
+@keyframes typing   { from { width: 0 } to { width: 100% } }
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50%      { border-color: #000080; }
+}
+
+/* Aktivite kartları */
+.activities-wrapper .activity-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   margin-top: 1.5rem;
 }
-
-.activity-card {
+.activities-wrapper .activity-card {
   background-color: #ffecb3;
   border-radius: 12px;
   padding: 20px;
-  margin: 10px;
   font-size: 18px;
-  text-align: center;
-  cursor: pointer;
   text-decoration: none;
   color: black;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-  transition: 0.2s ease-in-out;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  transition: transform .2s, background-color .2s;
 }
-
-.activity-card:hover {
+.activities-wrapper .activity-card:hover {
   transform: scale(1.05);
   background-color: #ffe082;
 }
