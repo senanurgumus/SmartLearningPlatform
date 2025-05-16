@@ -4,9 +4,6 @@ import './ColorMixingLab.css';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size';
 
-
-
-
 const baseColors = ["red", "yellow", "blue"];
 const level2Colors = [...baseColors, "orange", "green", "purple", "black", "white"];
 
@@ -88,7 +85,6 @@ function ColorMixingLab() {
   const [width, height] = useWindowSize();
   const navigate = useNavigate();
 
-
   function startLevelTargets() {
     if (currentLevel === 1) {
       setRemainingTargets(shuffle([...level1Targets]));
@@ -122,9 +118,8 @@ function ColorMixingLab() {
 
   function handleColorClick(color) {
     if (selectedColors.length === 1) {
-      const firstColor = selectedColors[0];
-      const secondColor = color;
-      const mixed = mixColors(firstColor, secondColor);
+      const [firstColor] = selectedColors;
+      const mixed = mixColors(firstColor, color);
 
       if (mixed === targetColor) {
         setSuccessfulMixes(prev => prev + 1);
@@ -157,8 +152,7 @@ function ColorMixingLab() {
   }
 
   function triggerReward() {
-    if (currentLevel === 1) setRewardType("rainbow");
-    else if (currentLevel === 2) setRewardType("master");
+    setRewardType(currentLevel === 1 ? "rainbow" : "master");
     setShowReward(true);
   }
 
@@ -184,7 +178,7 @@ function ColorMixingLab() {
   }
 
   return (
-    <div className="lab-container">
+    <div className="cml-lab-container">
       {!showReward ? (
         <>
           <header>
@@ -194,64 +188,80 @@ function ColorMixingLab() {
           </header>
 
           {targetColor && (
-            <div className="target-color-box">
+            <div className="cml-target-color-box">
               🎯 Goal: Create <b>{capitalize(targetColor)}</b>
             </div>
           )}
 
-          <div className="colors-container">
+          <div className="cml-colors-container">
             {(currentLevel === 1 ? baseColors : level2Colors).map(color => (
               <div
                 key={color}
-                className="color-circle"
+                className="cml-color-circle"
                 style={{ backgroundColor: color }}
                 onClick={() => handleColorClick(color)}
-              ></div>
+              />
             ))}
           </div>
 
           {selectedColors.length === 1 && (
-            <div className="selected-color-info">
+            <div className="cml-selected-color-info">
               Selected: {capitalize(selectedColors[0])}
             </div>
           )}
 
           {mixResultMessage && (
-            <div className="mix-message">
+            <div className="cml-mix-message">
               <p>{mixResultMessage}</p>
               {resultColor && (
                 <div
-                  className="result-color-circle"
+                  className="cml-result-color-circle"
                   style={{ backgroundColor: colorHexMap[resultColor] || resultColor }}
-                ></div>
+                />
               )}
             </div>
           )}
         </>
       ) : (
-        <div className="reward-screen">
+        <div className="cml-reward-screen">
           {rewardType === "rainbow" && (
             <>
-              <img src="/rainbow.gif" alt="Rainbow Celebration" className="reward-image" />
+              <img
+                src="/rainbow.gif"
+                alt="Rainbow Celebration"
+                className="cml-reward-image"
+              />
               <h2>Rainbow Celebration!</h2>
             </>
           )}
           {rewardType === "master" && (
-            <div className="master-reward-box">
-                <div className="confetti-container">
-                    <Confetti width={width} height={height} />
-                </div>
-                <div className="trophy-emoji">🏆</div>
+            <>
+              <div className="cml-confetti-container">
+                <Confetti
+                  width={width}
+                  height={height}
+                  recycle={false}
+                />
+              </div>
+              <div className="cml-master-reward-box">
+                <div className="cml-trophy-emoji">🏆</div>
                 <h1>You are a Color Master!</h1>
                 <h2>Congratulations!</h2>
                 <p>You have mastered the art of mixing colors! 🎨</p>
-                <div className="button-group">
-                    <button className="action-button" onClick={playAgain}>Play Again</button>
-                    <button className="action-button" onClick={() => navigate('/module/science/activities')}>Go to Activities</button>
+                <div className="cml-button-group">
+                  <button className="cml-action-button" onClick={playAgain}>
+                    Play Again
+                  </button>
+                  <button
+                    className="cml-action-button"
+                    onClick={() => navigate('/module/science/activities')}
+                  >
+                    Go to Activities
+                  </button>
                 </div>
-            </div>
+              </div>
+            </>
           )}
-
         </div>
       )}
     </div>
@@ -259,5 +269,6 @@ function ColorMixingLab() {
 }
 
 export default ColorMixingLab;
+
 
 

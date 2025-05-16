@@ -1,96 +1,137 @@
-
-
-.match-container {
+.match-sum-activity {
   text-align: center;
   padding: 30px;
   font-family: sans-serif;
-  height: 100vh;
+  min-height: 100vh;
+  background: #e3e8f5;
+  box-sizing: border-box;
 }
 
-select {
-  margin: 20px;
+/* selectors */
+.match-sum-activity__selectors {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.match-sum-activity__selector {
   padding: 8px 12px;
   font-size: 16px;
+  border: 2px solid #567ace;
+  border-radius: 6px;
+  background: #fff;
+  color: #567ace;
 }
 
-.question-row {
+/* shuffle */
+.match-sum-activity__shuffle-button {
+  padding: 10px 20px;
+  margin: 1rem 0;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 6px;
+}
+.match-sum-activity__shuffle-button:hover {
+  background-color: #45a049;
+}
+
+/* questions */
+.match-sum-activity__question-row {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
   margin-bottom: 30px;
 }
-
-.answers-row {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.question-box {
+.match-sum-activity__question-box {
   padding: 15px;
   background-color: #ffe0b2;
   border: 2px solid #f57c00;
   border-radius: 8px;
   width: 120px;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.drop-target {
+/* drop target */
+.match-sum-activity__drop-target {
   margin-top: 10px;
   height: 30px;
   background-color: #fff3e0;
   border: 1px dashed #f57c00;
   border-radius: 4px;
   line-height: 30px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.match-sum-activity__drop-target--hovered,
+.match-sum-activity__drop-target--matched {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
 }
 
-.placeholder {
+/* placeholder */
+.match-sum-activity__placeholder {
   color: #999;
 }
 
-.answer-box {
-  padding: 10px 20px;
-  background-color: #64b5f6;
-  color: white;
-  border-radius: 8px;
-  cursor: grab;
-  font-weight: bold;
-  user-select: none;
-  -webkit-user-select: none; /* For Safari */
-  -moz-user-select: none;    /* For Firefox */
-  -ms-user-select: none;     /* For older versions of IE */
-}
-
-.matched {
-  font-weight: bold;
-  color: #4caf50;
-}
-
-.success-message {
-  margin-top: 20px;
-  color: green;
-  font-size: 18px;
-}
-
-.selectors {
+/* answers */
+.match-sum-activity__answers-row {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
-
-.shuffle-button {
+.match-sum-activity__answer-box {
   padding: 10px 20px;
-  margin-top: auto; 
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
+  background-color: #64b5f6;
+  color: #fff;
+  border-radius: 8px;
+  cursor: grab;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.shuffle-button:hover {
-  background-color: #45a049;
+/* success + confetti sonrası butonlar */
+.match-sum-activity__success-message {
+  margin-top: 20px;
+  color: #4caf50;
+  font-size: 18px;
+  animation: pop-in 0.4s ease-out;
+}
+@keyframes pop-in {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.match-sum-activity__button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.match-sum-activity__btn {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.match-sum-activity__btn--primary {
+  background: #4caf50;
+  color: #fff;
+}
+.match-sum-activity__btn--primary:hover {
+  background: #43a047;
+}
+.match-sum-activity__btn--secondary {
+  background: #2196f3;
+  color: #fff;
+}
+.match-sum-activity__btn--secondary:hover {
+  background: #1e88e5;
 }

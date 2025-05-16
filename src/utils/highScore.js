@@ -1,38 +1,26 @@
-import { doc, setDoc, getDoc } from "firebase/firestore";
-import { db } from "../firebase.js";
-import { getAuth } from "firebase/auth";
+// src/utils/highScore.js
 
-// Skoru güncelle (kullanıcı altı + global koleksiyon)
-export async function updateHighScore(gameId, score) {
-  const user = getAuth().currentUser;
-  if (!user) return;
+/**
+ * Kullanıcının o ana kadar kaydettiği en yüksek skoru getirir.
+ * @param {string} key – oyunun benzersiz ID'si, örn. "shapeDrag"
+ * @returns {Promise<number>}
+ */
+export async function fetchHighScore(key) {
+  const stored = localStorage.getItem(key);
+  return stored ? parseInt(stored, 10) : 0;
+}
 
-  const userRef = doc(db, "users", user.uid, "highScores", gameId);
-  const globalRef = doc(db, `${gameId}Scores`, user.uid);
-
-  const snapshot = await getDoc(userRef);
-  const prevScore = snapshot.exists() ? snapshot.data().score : 0;
-
-  if (score > prevScore) {
-    // Kullanıcının kendi koleksiyonu altına yaz
-    await setDoc(userRef, { score });
-
-    // Global skor koleksiyonuna da yaz (sıralama için)
-    await setDoc(globalRef, {
-      score,
-      email: user.email,
-      updatedAt: new Date()
-    });
+/**
+ * Yeni skoru kaydeder (sadece eğer mevcut yüksek skordan yüksekse)
+ * @param {string} key – oyunun ID'si
+ * @param {number} newScore – şu anki skor
+ * @returns {Promise<number>} – kaydedilen (güncellenmiş veya mevcut) yüksek skor
+ */
+export async function updateHighScore(key, newScore) {
+  const current = parseInt(localStorage.getItem(key), 10) || 0;
+  if (newScore > current) {
+    localStorage.setItem(key, newScore);
+    return newScore;
   }
+  return current;
 }
-
-// Mevcut kullanıcıya ait skorları getir
-export async function fetchHighScore(gameId) {
-  const user = getAuth().currentUser;
-  if (!user) return 0;
-
-  const ref = doc(db, "users", user.uid, "highScores", gameId);
-  const snapshot = await getDoc(ref);
-  return snapshot.exists() ? snapshot.data().score : 0;
-}
-

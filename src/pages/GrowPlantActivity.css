@@ -1,40 +1,109 @@
-.grow-plant-container {
+/* Container and overall layout */
+.gp-container {
   text-align: center;
-  margin-top: 0;
   position: relative;
-  z-index: 10; /* Bu konteyner confetti'nin önünde olacak */
+  z-index: 10;
   padding-top: 64px;
-  height: 100vh; /* Sayfanın tamamını kaplaması için */
-  overflow: hidden; /* Konfeti'nin dışına taşmaması için */
+  height: 100vh;
+  overflow: visible;
 }
 
-.plant-stage {
-  margin-top: 80px;
-  min-height: 300px;
+/* Title */
+.gp-title {
+  margin-bottom: 20px;
+}
+
+/* Progress Stepper */
+.gp-stepper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.gp-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gp-step-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  margin-bottom: 4px;
+  transition: background 0.3s;
+}
+.gp-step.active .gp-step-dot {
+  background: #4CAF50;
+}
+.gp-step-label {
+  font-size: 0.75rem;
+  color: #666;
+  text-transform: uppercase;
+}
+.gp-step.active .gp-step-label {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Stage container wrapper */
+.gp-stage-container {
   position: relative;
-  transition: background-color 0.5s ease;
+}
+
+/* Butterfly & speech bubble */
+.gp-butterfly-wrapper {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+  top: 120px;
+}
+.gp-left { left: 30px; }
+.gp-right { right: 30px; }
+.gp-mascot {
+  font-size: 32px;
+  margin-right: 10px;
+}
+.gp-speech-bubble {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 320px;
+}
+.gp-speech-bubble::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 30px;
+  border: 10px solid transparent;
+  border-right-color: white;
+}
+.gp-speech-bubble p {
+  margin: 0;
+  word-wrap: break-word;
+}
+
+/* Plant stage area */
+.gp-plant-stage {
+  margin-top: 2rem;
   padding: 20px;
   border-radius: 20px;
-  z-index: 3; /* Konfeti'nin ve diğer öğelerin üstünde */
+  transition: background-color 0.5s ease;
+  min-height: 300px;
+  position: relative;
+  z-index: 2;
 }
+.gp-stage0 { background-color: #f0e4d7; }
+.gp-stage1 { background-color: #e0f7e9; }
+.gp-stage2 { background-color: #d4f1f9; }
+.gp-stage3,
+.gp-stage4 { background-color: #fff8dc; }
 
-.stage0 {
-  background-color: #f0e4d7;
-}
-
-.stage1 {
-  background-color: #e0f7e9;
-}
-
-.stage2 {
-  background-color: #d4f1f9;
-}
-
-.stage3 {
-  background-color: #fff8dc;
-}
-
-.pot {
+/* Pot and emoji overlays */
+.gp-pot {
   width: 100px;
   height: 60px;
   background-color: #8B4513;
@@ -42,47 +111,42 @@
   margin: 0 auto;
   position: relative;
 }
-
-.seed::after {
+.gp-pot.gp-seed::after {
   content: '🌰';
   font-size: 30px;
   position: absolute;
-  top: -30px;
+  top: -35px;
   left: 50%;
   transform: translateX(-50%);
 }
-
-.sprout::after {
+.gp-pot.gp-sprout::after {
   content: '🌱';
   font-size: 40px;
   position: absolute;
-  top: -50px;
+  top: -45px;
   left: 50%;
   transform: translateX(-50%);
-  animation: grow 1s ease forwards;
 }
-
-.grown::after {
+.gp-pot.gp-grown::after {
   content: '🌻';
   font-size: 60px;
   position: absolute;
-  top: -90px;
+  top: -65px;
   left: 50%;
   transform: translateX(-50%);
-  animation: grow 1s ease forwards;
 }
-
 @keyframes grow {
-  0% {
-    transform: translateX(-50%) scale(0);
-  }
-  100% {
-    transform: translateX(-50%) scale(1);
-  }
+  0%   { transform: translateX(-50%) scale(0); }
+  80%  { transform: translateX(-50%) scale(1.2); }
+  100% { transform: translateX(-50%) scale(1); }
 }
 
-.action-button {
-  margin-top: 30px;
+/* Buttons */
+.gp-button-wrapper {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.gp-action-button {
   padding: 12px 24px;
   font-size: 18px;
   background-color: #4CAF50;
@@ -90,151 +154,48 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
-
-.action-button:hover {
+.gp-action-button:hover {
   background-color: #45a049;
 }
 
-h1 {
-  margin-bottom: 30px;
-}
-
-.info-card {
-  max-width: 220px;
-  padding: 16px;
-  border-radius: 12px;
-  background-color: #ffffffcc;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  font-size: 15px;
-  font-weight: 500;
-  position: fixed;
-  top: 120px;
-  z-index: 10;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.info-card.left {
-  left: 30px;
-  text-align: left;
-}
-
-.info-card.right {
-  right: 30px;
-  text-align: right;
-}
-
-.info-card::before {
-  content: '';
-  position: absolute;
-  top: 30px;
-  border: 10px solid transparent;
-}
-
-.info-card.left::before {
-  left: -20px;
-  border-right-color: #ffffffcc;
-}
-
-.info-card.right::before {
-  right: -20px;
-  border-left-color: #ffffffcc;
-}
-
-.mascot {
-  font-size: 32px;
-  flex-shrink: 0;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.speech-bubble {
-  position: relative;
-  background: white;
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  margin-left: 70px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: fit-content;
-  max-width: 320px;
-}
-
-.speech-bubble::before {
-  content: '';
-  position: absolute;
-  left: -20px;
-  top: 30px;
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-right-color: white;
-}
-
-.butterfly-wrapper {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 2rem;
-  margin-left: 2rem;
-}
-
-.butterfly-wrapper.left {
-  position: fixed;
-  top: 120px;
-  left: 30px;
-  z-index: 10;
-}
-
-.butterfly-wrapper.right {
-  position: fixed;
-  top: 120px;
-  right: 30px;
-  z-index: 10;
-}
-
-.speech-bubble p {
-  word-wrap: break-word;
-}
-
-/* Confetti Component */
-.confetti {
+/* Confetti layer */
+.gp-confetti {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 0; /* Confetti arka planda kalacak */
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Konfeti animasyonu diğer öğelerle etkileşime girmez */
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* Congratulations Message and Buttons */
-.grow-plant-container .end-buttons {
-  position: relative;
-  z-index: 2; /* Butonlar ve mesaj konfeti'nin üstünde olacak */
-  margin-top: 20px;
-}
-
-.grow-plant-container h2 {
-  position: relative;
-  z-index: 2; /* Mesaj konfeti'nin üstünde olacak */
+/* Final congratulations */
+.gp-congrats {
   font-size: 24px;
   font-weight: bold;
   color: #333;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 3;
 }
 
-.grow-plant-container .end-buttons button {
-  z-index: 2; /* Butonlar konfeti'nin üstünde olacak */
+/* End buttons row */
+.gp-end-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 3;
 }
 
-  
+/* Transparent plate for bloom & confetti stages */
+.gp-stage3 .gp-plant-stage,
+.gp-stage4 .gp-plant-stage {
+  box-shadow: none;
+  border: none;
+  background-color: #fff8dc;
+}
+
