@@ -1,4 +1,5 @@
-// Dashboard.js (entegre edilmiş tüm ödüllerle)
+// 🎯 Düzenlenmiş Dashboard.js (triggerReward fixli, ESLint hatasız + 🧃 Juice Bar Break eklendi)
+
 import React, { useEffect, useState, useRef } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { collection, getDocs } from 'firebase/firestore';
@@ -9,6 +10,8 @@ import DashboardHighlights from './DashboardHighlights.js';
 import Chatbot from '../components/Chatbot.js';
 import { Wheel } from 'react-custom-roulette';
 import Confetti from 'react-confetti';
+import JuiceBar from '../components/JuiceBar.js';
+
 
 const dayMessages = [
   "Rest and recharge. Happy Sunday! ☕",
@@ -47,7 +50,7 @@ const tips = [
 ];
 
 const rouletteData = [
-  { option: '🎊 Confetti Rain' },
+  { option: '🧃 Juice Bar Break' },
   { option: '🐾 Pet Dance Mode' },
   { option: '📜 Fortune Scroll' },
   { option: '🎵 Sound Surprise' },
@@ -55,12 +58,6 @@ const rouletteData = [
   { option: '🐕‍🦺 Rename Your Pet' },
   { option: '🔢 Math Trick' },
   { option: '🎵 Background Music Pack' }
-];
-
-const mathTricks = [
-  "Multiply by 9 using your fingers!",
-  "11 trick: 45x11 = 4 (4+5) 5 → 495",
-  "Square ending in 5: 25² = 625 (2x3=6 then add 25)"
 ];
 
 function Dashboard() {
@@ -82,126 +79,169 @@ function Dashboard() {
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [mustSpin, setMustSpin] = useState(false);
   const [dailyTip, setDailyTip] = useState("");
-
-  const [confetti, setConfetti] = useState(false);
+  const [juiceBarVisible, setJuiceBarVisible] = useState(false);
+  const [juiceMessage, setJuiceMessage] = useState('');
   const [fortune, setFortune] = useState('');
   const [showHat, setShowHat] = useState(false);
   const [petName, setPetName] = useState('Buddy');
   const [musicPlaying, setMusicPlaying] = useState(false);
   const musicRef = useRef(null);
+  const [showMusicControl, setShowMusicControl] = useState(false);
+  const [soundSurpriseSrc, setSoundSurpriseSrc] = useState(null);
+  const [rewardResult, setRewardResult] = useState('');
+  
+
 
   const triggerReward = (option) => {
+        setRewardResult(`✨ You won: ${option}`); // 🎁 Ödül bildirimi kutusu
+
     switch (option) {
-            case '🐾 Pet Dance Mode':
+      case '🐾 Pet Dance Mode': {
         document.querySelector('.pet-widget')?.classList.add('dance');
         setTimeout(() => document.querySelector('.pet-widget')?.classList.remove('dance'), 5000);
         break;
-      case '🎊 Confetti Rain':
-        setConfetti(true);
-        setTimeout(() => setConfetti(false), 10000);
+      }
+      case '🧃 Juice Bar Break': {
+        const juices = ['🍓 Strawberry Splash!', '🍊 Orange Blast!', '🍍 Pineapple Power!'];
+        const randomJuice = juices[Math.floor(Math.random() * juices.length)];
+        setJuiceMessage(randomJuice);
+        setJuiceBarVisible(true);
+        setTimeout(() => setJuiceBarVisible(false), 5000);
         break;
-      case '📜 Fortune Scroll':
-        setFortune('You\'ll achieve great things today!');
+      }
+      case '📜 Fortune Scroll': {
+        setFortune("You'll achieve great things today!");
         setTimeout(() => setFortune(''), 5000);
         break;
+      }
       case '🎵 Sound Surprise': {
         const sounds = ['/sounds/clap.mp3', '/sounds/laugh.mp3'];
-        const random = new Audio(sounds[Math.floor(Math.random() * sounds.length)]);
-        random.play();
+        const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+        setSoundSurpriseSrc(randomSound);
         break;
       }
-      case '🧢 Pet Hat Unlock':
+      case '🧢 Pet Hat Unlock': {
         setShowHat(true);
         break;
-      case '🐕‍🦺 Rename Your Pet': {
-        const newName = prompt('Enter a new name for your pet:');
-        if (newName) setPetName(newName);
-        break;
       }
-      case '🔢 Math Trick':
+
+      case '🐕‍🦺 Rename Your Pet': {
+  const newName = prompt('Enter a new name for your pet:');
+  if (newName) {
+    setPetName(newName);
+    const today = new Date().toISOString().split('T')[0];
+    localStorage.setItem(`petName_${user.uid}`, newName);
+    localStorage.setItem(`petNameDate_${user.uid}`, today);
+  }
+  break;
+}
+
+      case '🔢 Math Trick': {
         alert('🧠 Math Trick: Multiply any number by 11 by adding its digits in between!');
         break;
-      case '🎵 Background Music Pack':
+      }
+      case '🎵 Background Music Pack': {
         if (!musicRef.current) {
           musicRef.current = new Audio('/sounds/lofi.mp3');
           musicRef.current.loop = true;
         }
-        if (musicPlaying) {
-          musicRef.current.pause();
-          setMusicPlaying(false);
-        } else {
-          musicRef.current.play();
-          setMusicPlaying(true);
-        }
+        setShowMusicControl(true);
         break;
-    }
-  };
-
-  useEffect(() => {
-    const hour = new Date().getHours();
-    setIsNight(hour < 6 || hour >= 18);
-    const day = new Date().getDay();
-    setDayMessage(dayMessages[day]);
-    const randomIndex = Math.floor(Math.random() * funFacts.length);
-    setRandomFact(funFacts[randomIndex]);
-    const tipIndex = new Date().getDate() % tips.length;
-    setDailyTip(tips[tipIndex]);
-
-    const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-        const name = currentUser.email.split('@')[0];
-        setUserName(name.charAt(0).toUpperCase() + name.slice(1));
-        const localMissions = localStorage.getItem(`missions_${currentUser.uid}`);
-        if (localMissions) {
-          setMissions(JSON.parse(localMissions));
-        }
-        const today = new Date().toISOString().split('T')[0];
-        const seenSpinner = localStorage.getItem(`spinnerShown_${currentUser.uid}`);
-        if (seenSpinner !== today) {
-          setShowSpinner(true);
-          localStorage.setItem(`spinnerShown_${currentUser.uid}`, today);
-        }
-      } else {
-        setUser(null);
       }
-    });
+      default:
+        console.warn('Unknown reward:', option);
+    }
+  };
+useEffect(() => {
+  const hour = new Date().getHours();
+  setIsNight(hour < 6 || hour >= 18);
+  const day = new Date().getDay();
+  setDayMessage(dayMessages[day]);
+  const randomIndex = Math.floor(Math.random() * funFacts.length);
+  setRandomFact(funFacts[randomIndex]);
+  const tipIndex = new Date().getDate() % tips.length;
+  setDailyTip(tips[tipIndex]);
 
-    const fetchModules = async () => {
-      const snapshot = await getDocs(collection(db, 'modules'));
-      const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setModules(data);
-    };
-    fetchModules();
-    const timer = setTimeout(() => setShowContent(true), 800);
-    return () => {
-      unsubscribe();
-      clearTimeout(timer);
-    };
-  }, []);
+  const auth = getAuth();
+  const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    if (currentUser) {
+      setUser(currentUser);
+      const name = currentUser.email.split('@')[0];
+      setUserName(name.charAt(0).toUpperCase() + name.slice(1));
+
+      const localMissions = localStorage.getItem(`missions_${currentUser.uid}`);
+      if (localMissions) {
+        setMissions(JSON.parse(localMissions));
+      }
+
+      const today = new Date().toISOString().split('T')[0];
+      const seenDate = localStorage.getItem(`spinnerDate_${currentUser.uid}`);
+      const storedReward = localStorage.getItem(`spinnerReward_${currentUser.uid}`);
+        const savedPetName = localStorage.getItem(`petName_${currentUser.uid}`);
+  const savedNameDate = localStorage.getItem(`petNameDate_${currentUser.uid}`);
+
+    // Pet adını gün içindeyse yükle
+  if (savedPetName && savedNameDate === today) {
+    setPetName(savedPetName);
+  } else {
+    localStorage.removeItem(`petName_${currentUser.uid}`);
+    localStorage.removeItem(`petNameDate_${currentUser.uid}`);
+  }
+
+      if (seenDate !== today) {
+    setShowSpinner(true);
+  } else if (storedReward) {
+    // Girişte otomatik göstermiyoruz, sadece "Show Today’s Spin Gift" butonuna basınca gösterilecek
+    }
+  }
+  });
+
+  const fetchModules = async () => {
+    const snapshot = await getDocs(collection(db, 'modules'));
+    const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    setModules(data);
+  };
+  fetchModules();
+
+  const timer = setTimeout(() => setShowContent(true), 800);
+  return () => {
+    unsubscribe();
+    clearTimeout(timer);
+  };
+}, []);
+
 
   useEffect(() => {
-    let interval;
-    if (isRunning) {
-      interval = setInterval(() => {
-        setTimer((prev) => {
-          if (prev <= 1) {
-            playEndSound();
-            setIsRunning(false);
-            return 0;
-          }
-          return prev - 1;
-        });
-      }, 1000);
-    }
-    return () => clearInterval(interval);
-  }, [isRunning]);
+  let interval;
 
-  const playEndSound = () => {
-    const audio = new Audio('/sounds/ding.mp3');
-    audio.play();
-  };
+  if (isRunning && timer > 0) {
+    interval = setInterval(() => {
+      setTimer((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          playEndSound();
+          setIsRunning(false);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  }
+
+  return () => clearInterval(interval);
+}, [isRunning, timer]);
+
+
+
+ const playEndSound = () => {
+  const audio = new Audio('/sounds/ding.mp3');
+  audio.play().catch((err) => {
+    console.error("Sound failed:", err);
+  });
+};
+
+
+  
 
   const toggleTimer = () => setIsRunning(!isRunning);
 
@@ -237,21 +277,29 @@ function Dashboard() {
     updateMissions(updated);
   };
 
-  const handleSpin = () => {
-    const prize = Math.floor(Math.random() * rouletteData.length);
-    setPrizeNumber(prize);
-    setMustSpin(true);
-  };
+const handleSpin = () => {
+  const today = new Date().toISOString().split('T')[0];
+  const spinKey = `spinnerDate_${user.uid}`;
+
+  if (localStorage.getItem(spinKey) === today) {
+    alert("🎯 You already spun today! Come back tomorrow!");
+    return;
+  }
+
+  const prize = Math.floor(Math.random() * rouletteData.length);
+  setPrizeNumber(prize);
+  setMustSpin(true);
+};
+
 
   const dismissSpinner = () => {
     setShowSpinner(false);
     setSpinnerDismissed(true);
   };
 
-  return (
-    <div className={`dashboard-container ${isNight ? 'night-mode' : 'day-mode'}`}>
-      {confetti && <Confetti numberOfPieces={300} recycle={false} />}
 
+  return (
+  <div className="dashboard-container">
       <h2 className="welcome-text">
         👋 Welcome to Smart Learning, <strong>{userName}</strong>!
         <br />
@@ -260,16 +308,7 @@ function Dashboard() {
 
       <Chatbot />
 
-      <div className="background-animation-container">
-        <video
-          className="background-float-video"
-          src="/videos/dashboard1.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-      </div>
+  
 
       <div className="pet-widget" onClick={handlePetClick}>
         <img src="/images/petdog.png" alt="Pet Companion" />
@@ -280,35 +319,167 @@ function Dashboard() {
 
       {showPetMessage && <div className="pet-message">{petMessage}</div>}
 
-      <div className="pomodoro-widget">
-        <p>Focus Timer</p>
-        <p>{Math.floor(timer / 60)}:{String(timer % 60).padStart(2, '0')}</p>
-        <button onClick={toggleTimer}>{isRunning ? 'Pause' : 'Start'}</button>
-      </div>
+     
+{user && localStorage.getItem(`spinnerDate_${user.uid}`) === new Date().toISOString().split('T')[0] && (
+  <div style={{ textAlign: 'center', margin: '1.5rem 0' }}>
+    <button
+      className="dashboard-show-gift-button"
+      onClick={() => {
+        const reward = localStorage.getItem(`spinnerReward_${user.uid}`);
+        if (reward) {
+          triggerReward(reward);
+        }
+      }}
+    >
+      🎁 Show Today’s Spin Gift
+    </button>
+  </div>
+)}
+
+
+      
+        {showMusicControl && (
+          <div className="music-control-bar">
+            🎵 You unlocked Lofi music!
+            <button onClick={() => {
+              if (musicRef.current) {
+                if (musicPlaying) {
+                  musicRef.current.pause();
+                  setMusicPlaying(false);
+                } else {
+                  musicRef.current.play().catch(err => {
+                    console.warn("Autoplay failed. User interaction required.");
+                  });
+                  setMusicPlaying(true);
+                }
+              }
+            }}>
+      {musicPlaying ? '⏸ Pause' : '▶️ Play'}
+    </button>
+    <button onClick={() => {
+      if (musicRef.current) {
+        musicRef.current.pause();
+        musicRef.current.currentTime = 0;
+        setMusicPlaying(false);
+        setShowMusicControl(false);
+      }
+    }}>
+      ❌ Stop Music
+    </button>
+  </div>
+)}
+
+
+{soundSurpriseSrc && (
+  <div className="sound-surprise-box">
+    🎉 You won a Sound Surprise!
+    <button onClick={() => {
+      const audio = new Audio(soundSurpriseSrc);
+      audio.play().catch(() => {
+        alert("⚠️ Your browser blocked the sound. Click again to retry.");
+      });
+      setSoundSurpriseSrc(null); // tekrar tetiklenmesin
+    }}>
+      ▶️ Play Sound
+    </button>
+  </div>
+)}
 
       {showSpinner && (
-        <div className="spinner-modal">
-          <div className="spinner-box">
-            <button className="spinner-close" onClick={dismissSpinner}>✖</button>
-            <h3>🎁 Daily Bonus Spinner</h3>
-            <Wheel
-              mustStartSpinning={mustSpin}
-              prizeNumber={prizeNumber}
-              data={rouletteData}
-              backgroundColors={["#FFE066", "#6BCB77"]}
-              textColors={["#000"]}
-              onStopSpinning={() => {
-                const reward = rouletteData[prizeNumber].option;
-                triggerReward(reward);
-                setMustSpin(false);
-              }}
-            />
-            <button className="spin-button" onClick={handleSpin}>Spin</button>
-          </div>
-        </div>
-      )}
+  <div className="dashboard-spinner">
+    <div className="spin-box">
+      {/* Çarpı butonu en üste gelsin */}
+         <button className="close-btn" onClick={dismissSpinner}>✖</button>
+
+
+      <h3 className="spinner-title">
+        🎁 <span className="glow-text">Daily Bonus Spinner</span>
+      </h3>
+
+      {rewardResult && <div className="reward-result-box">{rewardResult}</div>}
+
+      <Wheel
+        mustStartSpinning={mustSpin}
+        prizeNumber={prizeNumber}
+        data={rouletteData}
+        backgroundColors={["#ffd6ec", "#d6fce5", "#d6eaff", "#fff9d6"]}
+        textColors={["#000"]}
+        outerBorderColor="transparent"
+        innerBorderColor="transparent"
+        radiusLineColor="#00000015"
+        fontSize={13}
+        textDistance={55}
+        onStopSpinning={() => {
+          const reward = rouletteData[prizeNumber].option;
+          triggerReward(reward);
+          setMustSpin(false); // ❗ çark durunca butonu göster
+
+          const today = new Date().toISOString().split('T')[0];
+          localStorage.setItem(`spinnerDate_${user.uid}`, today);
+          localStorage.setItem(`spinnerReward_${user.uid}`, reward);
+        }}
+      />
+
+      <button className="spin-button" onClick={handleSpin}>Spin</button>
+    </div>
+  </div>
+)}
+
+
 
       <div className="tip-of-day">{dailyTip}</div>
+      
+
+      {juiceBarVisible && <JuiceBar message={juiceMessage} />}
+
+<div className="left-panel">
+<div className="pomodoro-widget">
+  <p>Focus Timer</p>
+
+  {/* Süre Ayarı */}
+  {!isRunning && (
+    <div style={{ marginBottom: '0.5rem' }}>
+      <label style={{ fontSize: '0.9rem' }}>Minutes:</label>
+      <input
+        type="number"
+        min="1"
+        max="120"
+        value={Math.floor(timer / 60)}
+        onChange={(e) => setTimer(Number(e.target.value) * 60)}
+        style={{ width: '60px', marginLeft: '0.5rem' }}
+      />
+    </div>
+  )}
+
+  {/* Kalan Süre */}
+  <p style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
+    {String(Math.floor(timer / 60)).padStart(2, '0')}:
+    {String(timer % 60).padStart(2, '0')}
+  </p>
+
+  {/* Kontrol Butonları */}
+  <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
+    <button onClick={toggleTimer}>
+      {isRunning ? 'Pause' : 'Start'}
+    </button>
+
+    {/* Reset sadece duraklamışken gösterilsin */}
+    {!isRunning && timer !== 1500 && (
+      <button
+        onClick={() => setTimer(1500)}
+      >
+        Reset
+      </button>
+    )}
+  </div>
+</div>
+
+
+
+      <div className="fun-fact-box">
+        <p className="fun-fact-title">🧠 Did You Know?</p>
+        <p className="fun-fact-text">{randomFact}</p>
+      </div>
 
       <div className="mission-box">
         <h3 className="mission-title">🎯 Today’s Missions</h3>
@@ -319,7 +490,7 @@ function Dashboard() {
             onChange={(e) => setNewMission(e.target.value)}
             placeholder="Add a new mission..."
           />
-          <button onClick={handleAddMission}>➕ Add</button>
+          <button onClick={handleAddMission}> Add</button>
         </div>
 
         {missions.map((m, i) => (
@@ -333,40 +504,58 @@ function Dashboard() {
           </div>
         ))}
       </div>
-
-      <div className="fun-fact-box">
-        <p className="fun-fact-title">🧠 Did You Know?</p>
-        <p className="fun-fact-text">{randomFact}</p>
-      </div>
+      
+</div>
 
       {showContent && (
-        <>
-          <div className="module-grid">
-            {modules.map((mod) => (
-              <Link to={`/module/${mod.id}`} key={mod.id} style={{ textDecoration: 'none' }}>
-                <div className="module-card-dashboard" style={{ backgroundColor: mod.color }}>
-                  {mod.name}
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="achievements-button-container">
-            <Link to="/achievements" className="achievements-button">
-              🏅 My Achievements
+  <>
+    <div className="module-section-with-bg" style={{ position: 'relative', padding: '8rem 8rem', overflow: 'hidden' }}>
+      <div
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/dashboardnew.png)`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover', // <-- önemli: görsel tüm alanı kaplar
+          opacity: 0.40, // daha yumuşak bir görünüm için düşürüldü
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 0,
+          pointerEvents: 'none'
+        }}
+      />
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <div className="module-grid">
+          {modules.map((mod) => (
+            <Link to={`/module/${mod.id}`} key={mod.id} style={{ textDecoration: 'none' }}>
+              <div className="module-card-dashboard" style={{ backgroundColor: mod.color }}>
+                {mod.name}
+              </div>
             </Link>
-          </div>
+          ))}
+        </div>
 
-          <div className="drawing-buttons-container">
-            <Link to="/draw" className="drawing-button">✏️ Let's Draw</Link>
-            <Link to="/paint" className="drawing-button">🖌️ Let's Paint</Link>
-            <Link to="/pop" className="drawing-button">🎈 Let's Pop</Link>
-            <Link to="/puzzles" className="drawing-button">🧩 Let's Puzzle</Link>
-          </div>
+        <div className="achievements-button-container">
+          <Link to="/achievements" className="achievements-button">
+            🏅 My Achievements
+          </Link>
+        </div>
 
-          <DashboardHighlights />
-        </>
-      )}
+        <div className="drawing-buttons-container">
+          <Link to="/draw" className="drawing-button">✏️ Let's Draw</Link>
+          <Link to="/paint" className="drawing-button">🖌️ Let's Paint</Link>
+          <Link to="/pop" className="drawing-button">🎈 Let's Pop</Link>
+          <Link to="/puzzles" className="drawing-button">🧩 Let's Puzzle</Link>
+        </div>
+      </div>
+    </div>
+
+    <DashboardHighlights />
+  </>
+)}
+
     </div>
   );
 }

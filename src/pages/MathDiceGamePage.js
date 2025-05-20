@@ -1,4 +1,3 @@
-// MathDiceGamePage.js (popup ekranda görünür, oyun dursun, çarpı ile kapat)
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './MathDiceGamePage.css';
@@ -8,20 +7,29 @@ import { db } from '../firebase.js';
 
 const getRandomDice = () => Math.floor(Math.random() * 6) + 1;
 const getRandomOperator = () => ['+', '-', '×', '÷'][Math.floor(Math.random() * 4)];
+
 const calculateAnswer = (a, b, op) => {
   switch (op) {
     case '+': return a + b;
     case '-': return a - b;
     case '×': return a * b;
-    case '÷': return b !== 0 ? Math.floor(a / b) : 0;
+    case '÷':
+      return b === 0 ? 0 : a % b === 0 ? a / b : `${a}/${b}`;
     default: return a + b;
   }
 };
-const getOptions = (correct) => {
+
+const getOptions = (correct, op) => {
   const options = new Set([correct]);
   while (options.size < 3) {
-    const rand = correct + Math.floor(Math.random() * 5) - 2;
-    options.add(rand);
+    if (op === '÷' && typeof correct === 'string') {
+      const randNum = Math.floor(Math.random() * 6) + 1;
+      const wrong = `${randNum}/${Math.floor(Math.random() * 5) + 1}`;
+      if (wrong !== correct) options.add(wrong);
+    } else {
+      const rand = parseInt(correct) + Math.floor(Math.random() * 5) - 2;
+      options.add(rand);
+    }
   }
   return [...options].sort(() => 0.5 - Math.random());
 };
@@ -42,10 +50,11 @@ const MathDiceGamePage = () => {
   const [options, setOptions] = useState([]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const [feedback, setFeedback] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
-  const [popupMessage, setPopupMessage] = useState("");
+  const [feedback, setFeedback] = useState('');
+  const [showPopup, setShowPopup] = useState(true);
+  const [popupMessage, setPopupMessage] = useState('');
   const [user, setUser] = useState(null);
+  const [showInstruction, setShowInstruction] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -65,26 +74,29 @@ const MathDiceGamePage = () => {
 
   const rollDice = () => {
     setRolling(true);
-    setFeedback("");
+    setFeedback('');
     setTimeout(() => {
       const d1 = getRandomDice();
       const d2 = getRandomDice();
       const op = getRandomOperator();
+      const answer = calculateAnswer(d1, d2, op);
       setDice1(d1);
       setDice2(d2);
       setOperator(op);
-      setOptions(getOptions(calculateAnswer(d1, d2, op)));
+      setOptions(getOptions(answer, op));
       setRolling(false);
     }, 1000);
   };
 
   const handleAnswer = async (choice) => {
-    if (showPopup) return; // Popup açıkken tıklanmasın
+    if (showPopup || showInstruction) return;
     const correct = calculateAnswer(dice1, dice2, operator);
-    if (choice === correct) {
+    const isCorrect = choice === correct || choice.toString() === correct.toString();
+
+    if (isCorrect) {
       const newScore = score + 1;
       setScore(newScore);
-      setFeedback("✅ Correct!");
+      setFeedback('✅ Correct!');
       if (newScore > bestScore && user) {
         setBestScore(newScore);
         await setDoc(doc(db, 'mathDiceProgress', user.uid), {
@@ -95,7 +107,7 @@ const MathDiceGamePage = () => {
       if (newScore % 10 === 0) {
         setPopupMessage(messages[Math.floor(Math.random() * messages.length)]);
         setShowPopup(true);
-        return; // animasyon gösterilsin, oyun durdurulsun
+        return;
       }
     } else {
       setScore(0);
@@ -105,11 +117,14 @@ const MathDiceGamePage = () => {
   };
 
   useEffect(() => {
-    rollDice();
-  }, []);
+    if (!showInstruction) {
+      rollDice();
+    }
+  }, [showInstruction]);
 
   const closePopup = () => {
     setShowPopup(false);
+    setShowInstruction(false);
     rollDice();
   };
 
@@ -133,11 +148,11 @@ const MathDiceGamePage = () => {
         )}
       </div>
 
-      {!rolling && !showPopup && (
+      {!rolling && !showPopup && !showInstruction && (
         <div className="options">
-          {options.map((num, idx) => (
-            <button key={idx} onClick={() => handleAnswer(num)} className="option-button">
-              {num}
+          {options.map((opt, idx) => (
+            <button key={idx} onClick={() => handleAnswer(opt)} className="option-button">
+              {opt}
             </button>
           ))}
         </div>
@@ -160,6 +175,19 @@ const MathDiceGamePage = () => {
           <div className="popup-content">
             <button className="close-button" onClick={closePopup}>✖</button>
             <p className="popup-message">{popupMessage}</p>
+          </div>
+        </div>
+      )}
+
+      {showInstruction && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <button className="close-button" onClick={closePopup}>✖</button>
+            <h3>How to Play</h3>
+            <p>🎲 Roll the dice and solve the math problem using the shown operator.</p>
+            <p>➕ ➖ ✖️ ➗ — Watch out for division! If the result is not a whole number, the correct answer will be shown as a fraction (e.g., <strong>5/2</strong>).</p>
+            <p>💡 Every 10 points, a surprise motivational message will appear!</p>
+            <p>Can you beat your best score?</p>
           </div>
         </div>
       )}

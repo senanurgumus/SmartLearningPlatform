@@ -22,6 +22,7 @@ function ScienceMagnetGamePage() {
   const [feedback, setFeedback] = useState('');
   const [popupVisible, setPopupVisible] = useState(true);
   const [fridgeOpen, setFridgeOpen] = useState(false);
+  const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
     const shuffled = [...allItems].sort(() => 0.5 - Math.random()).slice(0, 5);
@@ -36,12 +37,14 @@ function ScienceMagnetGamePage() {
       const allCorrect = [...fridgeItems, ...basketItems].every(i =>
         (i.magnetic && i.zone === 'fridge') || (!i.magnetic && i.zone === 'basket')
       );
+
       if (allCorrect) {
         setFridgeOpen(true);
       }
+
+      setShowResult(true); // ✅ Her durumda sonucu göster
     }
   }, [fridgeItems, basketItems, items]);
-  
 
   const handleDragStart = (item) => {
     setDraggedItem(item);
@@ -114,12 +117,11 @@ function ScienceMagnetGamePage() {
           onDragOver={(e) => e.preventDefault()}
           onDrop={() => handleDrop('fridge')}
         >
-        <img
-        src={fridgeOpen ? '/images/fridge-open.png' : '/images/fridge-closed.png'}
-        alt="Fridge"
-        className="fridge-image"
-        />
-
+          <img
+            src={fridgeOpen ? '/images/fridge-open.png' : '/images/fridge-closed.png'}
+            alt="Fridge"
+            className="fridge-image"
+          />
           <div className="attached-items">
             {fridgeItems.map((i, idx) => (
               <span key={idx} className="attached-object">{i.emoji}</span>
@@ -142,6 +144,29 @@ function ScienceMagnetGamePage() {
       </div>
 
       {feedback && <p className="feedback">{feedback}</p>}
+
+      {/* ✅ Sonuç kutusu her durumda */}
+      {showResult && (
+        <div className="result-box">
+          {fridgeOpen ? (
+            <>
+              <h3>🎉 Congratulations!</h3>
+              <p>You correctly sorted all items!</p>
+            </>
+          ) : (
+            <>
+              <h3>🚧 Oops!</h3>
+              <p>Some items were placed incorrectly. Try again!</p>
+            </>
+          )}
+
+       
+
+          <button onClick={() => window.location.reload()} className="try-again-btn">
+            🔄 Try Again
+          </button>
+        </div>
+      )}
     </div>
   );
 }

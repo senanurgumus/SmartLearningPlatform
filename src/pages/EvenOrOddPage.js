@@ -117,7 +117,7 @@ const EvenOrOddPage = () => {
 
       <div className="back-button-fixed">
         <button className="result-button" onClick={() => navigate('/module/math/exercises')}>
-          🔙 Back to Exercises
+          🔙 Back to Math Exercises
         </button>
       </div>
     </div>

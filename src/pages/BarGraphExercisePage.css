@@ -141,10 +141,10 @@
   .popup-message {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #4caf50;
+    color:#4c6caf;
     text-align: center;
   }
-  
+   
   .close-button {
     position: absolute;
     top: 10px;

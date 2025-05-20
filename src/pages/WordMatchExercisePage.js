@@ -187,7 +187,7 @@ const WordMatchExercisePage = () => {
 
           <div className="button-group">
             <button className="result-button" onClick={handleRestart}>🔁 Play Again</button>
-            <button className="result-button" onClick={() => navigate('/module/english/exercises')}>🔙 Back to Exercises</button>
+            <button className="result-button" onClick={() => navigate('/module/english/exercises')}>🔙 Back to English Exercises</button>
           </div>
         </>
       )}

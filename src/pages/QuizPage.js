@@ -111,6 +111,7 @@ function QuizPage() {
   if (loading) return <p>Loading...</p>;
 
   return (
+
     <div className="quiz-container">
       {submitted && (
         <div className="fixed-score">Score: {score} / {questions.length}</div>
@@ -178,6 +179,7 @@ function QuizPage() {
         </div>
       )}
     </div>
+
   );
 }
 

@@ -110,6 +110,39 @@ function AchievementsPage() {
     return () => unsubAuth();
   }, []);
 
+
+  useEffect(() => {
+  const container = document.getElementById("floating-icons-container");
+  if (!container) return;
+
+  const icons = [
+    "🏅", "🎓", "🔥", "💯", "🚀", "⭐", "✨", "📈", "🥇", "🌟",
+    "📚", "🎯", "🏆", "🧠", "🔓", "✅", "🥳"
+  ];
+  const totalIcons = 25;
+
+  for (let i = 0; i < totalIcons; i++) {
+    const span = document.createElement("span");
+    span.classList.add("floating-icon");
+    span.innerText = icons[Math.floor(Math.random() * icons.length)];
+
+    span.style.left = `${Math.random() * 100}vw`;
+    span.style.animationDuration = `${12 + Math.random() * 6}s`; // 12–18s
+    span.style.fontSize = `${18 + Math.random() * 22}px`;
+    span.style.animationDelay = `${Math.random() * 5}s`;
+
+    container.appendChild(span);
+  }
+
+  return () => {
+    container.innerHTML = "";
+  };
+}, []);
+
+
+
+
+
   useEffect(() => {
     if (!userId) return;
 
@@ -179,8 +212,12 @@ function AchievementsPage() {
   };
 
   return (
+        <div className="achievements-page">
+
     <div className="achievements-container">
-      <h2>🎓 Your Achievements</h2>
+      <div id="floating-icons-container"></div>
+
+<h2 className="pop-heading">🎓 Your Achievements</h2>
 
       <div className="module-filter">
         <label>Select Module:</label>
@@ -297,6 +334,8 @@ function AchievementsPage() {
         </div>
       )}
     </div>
+        </div>
+
   );
 }
 
