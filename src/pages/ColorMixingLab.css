@@ -1,166 +1,214 @@
-.lab-container {
+/* ColorMixingLab.css */
+
+/* Import a friendly webfont */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Page background gradient */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8eef4 100%);
+}
+
+/* Centered card container */
+.cml-lab-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
-  background-color: #f0f4f8;
-  min-height: 100vh;
-  padding: 20px;
-  position: relative; /* Ensure proper stacking context */
+  position: relative;
 }
 
-.colors-container {
-  margin-top: 30px;
+/* Header styles */
+.cml-lab-container header h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #333;
+}
+.cml-lab-container header div {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Goal pill with hover lift */
+.cml-target-color-box {
+  margin-top: 1rem;
+  display: inline-block;
+  background-color: #ffe680;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  border: 1px solid #ffd700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cml-target-color-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Progress bar */
+.cml-progress {
+  margin: 1rem 0;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cml-progress progress {
+  flex-grow: 1;
+  height: 8px;
+  border: none;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.cml-progress span {
+  font-size: 0.9rem;
+  color: #555;
 }
 
-.color-circle {
+/* Centered flex layout for color circles */
+.cml-colors-container {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cml-color-circle {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-
-.color-circle:hover {
+.cml-color-circle:hover {
   transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+.cml-color-circle:active {
+  transform: scale(0.95);
 }
 
-.selected-color-info {
-  margin-top: 20px;
-  font-size: 20px;
+/* Selected info */
+.cml-selected-color-info {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #444;
 }
 
-.target-color-box {
-  margin-top: 20px;
-  background-color: #ffe680;
+/* Feedback messages with color-coded border */
+.cml-mix-message {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  background-color: #fff7cc;  /* pale yellow background so the box stands out */
+  border-left: 4px solid #ffd700;
+  border-radius: 8px;
   display: inline-block;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  border: 2px solid #ffd700;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  animation: cml-popIn 0.3s ease-out;
 }
-
-.mix-message {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #fff7cc;
-  border: 2px solid #ffd700;
-  border-radius: 12px;
-  display: inline-block;
-  font-size: 18px;
-  font-weight: bold;
-  animation: popIn 0.3s ease-out;
-}
-
-@keyframes popIn {
+.cml-mix-message.success { border-color: #28a745; }
+.cml-mix-message.error   { border-color: #dc3545; }
+@keyframes cml-popIn {
   0% { transform: scale(0.5); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 }
 
-.result-color-circle {
+/* Result preview circle */
+.cml-result-color-circle {
   width: 60px;
   height: 60px;
-  margin: 10px auto 0;
+  margin: 0.75rem auto 0;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  /* add a subtle border so white circles are visible */
+}
+/* Reward screen layering */
+.cml-confetti-container,
+.cml-reward-screen canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.reward-screen {
-  margin-top: 50px;
+/* Reward image */
+.cml-reward-image {
+  max-width: 280px;
+  margin-bottom: 1rem;
 }
 
-.reward-image {
-  width: 300px;
-}
-
-.free-play-results {
-  margin-top: 40px;
-}
-
-.free-play-results h2 {
-  margin-bottom: 20px;
-}
-
-.free-play-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.free-play-card {
-  background: white;
-  border-radius: 12px;
-  padding: 10px;
-  width: 140px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.free-play-card-color {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-}
-
-.master-reward-box {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+/* Master reward modal */
+.cml-master-reward-box {
+  background-color: rgba(255,255,255,0.95);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   text-align: center;
-  max-width: 500px;
-  margin: 100px auto;
+  max-width: 360px;
+  margin: 6rem auto;
+  position: relative;
+  z-index: 2;
 }
-
-.trophy-emoji {
-  font-size: 80px;
-  margin-bottom: 20px;
+.cml-trophy-emoji {
+  font-size: 4rem;
+  margin-bottom: 1rem;
 }
-
-.master-reward-box h1 {
-  font-size: 32px;
+.cml-master-reward-box h1 {
+  font-size: 1.8rem;
   color: #333;
 }
-
-.master-reward-box h2 {
-  font-size: 24px;
-  color: #666;
-  margin-top: 10px;
+.cml-master-reward-box p {
+  font-size: 1rem;
+  color: #555;
+  margin: 1rem 0;
 }
 
-.master-reward-box p {
-  font-size: 18px;
-  color: #888;
-  margin-top: 20px;
-}
-
-.button-group {
-  margin-top: 30px;
+/* Action buttons */
+.cml-button-group {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
-
-.action-button {
+.cml-action-button {
   background-color: #4CAF50;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 0.8rem 1.6rem;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.cml-action-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+.cml-action-button:active {
+  transform: translateY(0);
 }
 
-.action-button:hover {
-  background-color: #45a049;
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .cml-lab-container { margin: 1rem; padding: 1rem; }
+  .cml-color-circle { width: 60px; height: 60px; }
+  .cml-target-color-box { font-size: 0.9rem; padding: 0.5rem 1rem; }
 }

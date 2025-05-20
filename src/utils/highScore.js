@@ -1,38 +1,30 @@
-import { doc, setDoc, getDoc } from "firebase/firestore";
-import { db } from "../firebase.js";
-import { getAuth } from "firebase/auth";
+// src/utils/highScore.js
+import { getAuth } from 'firebase/auth';
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import { app } from '../firebase.js';
 
-// Skoru güncelle (kullanıcı altı + global koleksiyon)
-export async function updateHighScore(gameId, score) {
-  const user = getAuth().currentUser;
-  if (!user) return;
+const db = getFirestore(app);
 
-  const userRef = doc(db, "users", user.uid, "highScores", gameId);
-  const globalRef = doc(db, `${gameId}Scores`, user.uid);
-
-  const snapshot = await getDoc(userRef);
-  const prevScore = snapshot.exists() ? snapshot.data().score : 0;
-
-  if (score > prevScore) {
-    // Kullanıcının kendi koleksiyonu altına yaz
-    await setDoc(userRef, { score });
-
-    // Global skor koleksiyonuna da yaz (sıralama için)
-    await setDoc(globalRef, {
-      score,
-      email: user.email,
-      updatedAt: new Date()
-    });
-  }
+export async function fetchHighScore(activity) {
+  const auth = getAuth();
+  const user = auth.currentUser;
+  if (!user) return 0;  // oturum yoksa 0
+  const ref = doc(db, 'users', user.uid, 'highScores', activity);
+  const snap = await getDoc(ref);
+  return snap.exists() ? snap.data().score : 0;
 }
 
-// Mevcut kullanıcıya ait skorları getir
-export async function fetchHighScore(gameId) {
-  const user = getAuth().currentUser;
+export async function updateHighScore(activity, score) {
+  const auth = getAuth();
+  const user = auth.currentUser;
   if (!user) return 0;
+  const ref = doc(db, 'users', user.uid, 'highScores', activity);
+  const snap = await getDoc(ref);
 
-  const ref = doc(db, "users", user.uid, "highScores", gameId);
-  const snapshot = await getDoc(ref);
-  return snapshot.exists() ? snapshot.data().score : 0;
+  // eğer yoksa ya da yeni score daha yüksekse yaz
+  if (!snap.exists() || score > snap.data().score) {
+    await setDoc(ref, { score }, { merge: true });
+    return score;
+  }
+  return snap.data().score;
 }
-

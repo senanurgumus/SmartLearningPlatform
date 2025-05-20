@@ -17,7 +17,9 @@ export default function BalloonGame() {
   const balloonsRef = useRef([]);
   const scoreRef = useRef(0);
   const audioCtxRef = useRef(null);
-  const audioBufferRef = useRef(null);
+  const popBufferRef = useRef(null);
+  const wrongBufferRef = useRef(null);
+  const successBufferRef = useRef(null);
 
   const [score, setScore] = useState(0);
   const [highestScoreRecord, setHighestScoreRecord] = useState(null);
@@ -26,121 +28,126 @@ export default function BalloonGame() {
   const [isGameOver, setIsGameOver] = useState(false);
   const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
 
-  // Preload and decode pop sound into AudioBuffer
+  // Sesleri preload et
   useEffect(() => {
-    // Initialize AudioContext
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     const ctx = new AudioContext();
     audioCtxRef.current = ctx;
-    // Fetch and decode
-    fetch('/pop.mp3')
-      .then(res => res.arrayBuffer())
-      .then(buf => ctx.decodeAudioData(buf))
-      .then(decoded => {
-        audioBufferRef.current = decoded;
-      })
-      .catch(console.error);
+
+    const loadSound = url =>
+      fetch(url)
+        .then(r => r.arrayBuffer())
+        .then(buf => ctx.decodeAudioData(buf))
+        .catch(console.error);
+
+    loadSound('/pop.mp3').then(decoded => (popBufferRef.current = decoded));
+    loadSound('/sounds/wrong.mp3').then(decoded => (wrongBufferRef.current = decoded));
+    loadSound('/audios/success.mp3').then(decoded => (successBufferRef.current = decoded));
   }, []);
 
-  // Create a new balloon
+  // Yeni balon oluştur
   const createBalloon = canvas => {
     const r = 20;
+    const baseX = Math.random() * (canvas.width - 2 * r) + r;
     return {
-      x: Math.random() * (canvas.width - 2 * r) + r,
+      baseX,
+      x: baseX,
       y: canvas.height + r,
       r,
       speed: Math.random() * 2 + 2,
-      color: `hsl(${Math.random() * 360}, 70%, 60%)`
+      color: `hsl(${Math.random() * 360}, 70%, 60%)`,
+      angle: Math.random() * Math.PI * 2,
+      amp: 30 + Math.random() * 20,       // 30–50px genlik
+      freq: 0.02 + Math.random() * 0.02,  // 0.02–0.04 rad/adım frekans
     };
   };
-
-  // Fetch Global Top 5
+  // Global Top5 çek
   useEffect(() => {
     (async () => {
-      const q = query(
-        collection(db, 'scores'),
-        orderBy('score', 'desc'),
-        limit(50)
-      );
+      const q = query(collection(db, 'scores'), orderBy('score', 'desc'), limit(50));
       const snap = await getDocs(q);
       const all = snap.docs.map(d => d.data());
-      const byUser = all.reduce((map, entry) => {
-        if (!map[entry.name] || entry.score > map[entry.name].score) {
-          map[entry.name] = entry;
-        }
-        return map;
+      const byUser = all.reduce((m, e) => {
+        if (!m[e.name] || e.score > m[e.name].score) m[e.name] = e;
+        return m;
       }, {});
-      const unique = Object.values(byUser)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 5);
-      setGlobalTop5(unique);
+      setGlobalTop5(
+        Object.values(byUser)
+          .sort((a, b) => b.score - a.score)
+          .slice(0, 5)
+      );
     })();
   }, []);
 
-  // On game over
+  // Oyun bittiğinde
   const handleGameOver = async () => {
     setIsGameOver(true);
+
+    if (wrongBufferRef.current && audioCtxRef.current) {
+      const s = audioCtxRef.current.createBufferSource();
+      s.buffer = wrongBufferRef.current;
+      s.connect(audioCtxRef.current.destination);
+      s.start(0);
+    }
+
     const auth = getAuth();
     const email = auth.currentUser?.email || '';
     const username = email.split('@')[0] || 'Guest';
-    const displayName = username.charAt(0).toUpperCase() + username.slice(1);
+    const displayName = username[0].toUpperCase() + username.slice(1);
     const finalScore = scoreRef.current;
 
-    // Save to Firestore
     await addDoc(collection(db, 'scores'), {
       name: displayName,
       score: finalScore,
       createdAt: serverTimestamp()
     });
 
-    // Re-fetch Global Top 5
-    const q = query(
-      collection(db, 'scores'),
-      orderBy('score', 'desc'),
-      limit(50)
-    );
+    const q = query(collection(db, 'scores'), orderBy('score', 'desc'), limit(50));
     const snap = await getDocs(q);
     const all = snap.docs.map(d => d.data());
-    const byUser = all.reduce((map, entry) => {
-      if (!map[entry.name] || entry.score > map[entry.name].score) {
-        map[entry.name] = entry;
-      }
-      return map;
+    const byUser = all.reduce((m, e) => {
+      if (!m[e.name] || e.score > m[e.name].score) m[e.name] = e;
+      return m;
     }, {});
-    const unique = Object.values(byUser)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 5);
-    setGlobalTop5(unique);
+    setGlobalTop5(
+      Object.values(byUser)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 5)
+    );
 
-    // LocalStorage update
     const key = `balloonScores_${username}`;
     const existing = JSON.parse(localStorage.getItem(key) || '[]');
     const updated = [...existing, { name: displayName, score: finalScore, date: Date.now() }]
       .sort((a, b) => b.score - a.score);
     localStorage.setItem(key, JSON.stringify(updated));
 
-    // Highest local score
     const highestLocal = updated[0] || null;
     setHighestScoreRecord(highestLocal);
+
     if (highestLocal && highestLocal.score === finalScore) {
       setIsNewRecord(true);
+      if (successBufferRef.current && audioCtxRef.current) {
+        const s2 = audioCtxRef.current.createBufferSource();
+        s2.buffer = successBufferRef.current;
+        s2.connect(audioCtxRef.current.destination);
+        s2.start(0);
+      }
     }
   };
 
-  // Restart
+  // Yeniden başlat
   const restartGame = () => window.location.reload();
 
-  // Track mouse
+  // Fare pozisyonu
   const handleMouseMove = e => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    setMousePos({ x: e.clientX, y: e.clientY });
   };
 
-  // Animation & spawn
+  // Animasyon & spawn
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    canvas.width = 400;
+    canvas.width = 500;
     canvas.height = 600;
 
     balloonsRef.current.push(createBalloon(canvas));
@@ -150,28 +157,40 @@ export default function BalloonGame() {
     );
 
     let animId;
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const next = [];
-      for (let b of balloonsRef.current) {
-        b.y -= b.speed;
-        ctx.beginPath();
-        ctx.arc(b.x, b.y, b.r, 0, 2 * Math.PI);
-        ctx.fillStyle = b.color;
-        ctx.fill();
-        ctx.closePath();
-        if (b.y - b.r <= 0) {
-          clearInterval(spawnInterval);
-          cancelAnimationFrame(animId);
-          handleGameOver();
-          return;
-        }
-        next.push(b);
+  const animate = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const next = [];
+    for (let b of balloonsRef.current) {
+      b.y -= b.speed;
+      b.angle += b.freq;
+      // hesaplanan yeni x
+      const newX = b.baseX + Math.sin(b.angle) * b.amp;
+      // clamp: en az r, en fazla (canvas.width - r)
+      b.x = Math.min(
+        Math.max(newX, b.r),
+        canvas.width - b.r
+      );
+
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, 2 * Math.PI);
+      ctx.fillStyle = b.color;
+      ctx.fill();
+      ctx.closePath();
+
+      if (b.y - b.r <= 0) {
+        clearInterval(spawnInterval);
+        cancelAnimationFrame(animId);
+        handleGameOver();
+        return;
       }
-      balloonsRef.current = next;
-      animId = requestAnimationFrame(animate);
-    };
-    animate();
+      next.push(b);
+    }
+    balloonsRef.current = next;
+    animId = requestAnimationFrame(animate);
+  };
+
+  animate();
+
 
     return () => {
       clearInterval(spawnInterval);
@@ -179,7 +198,7 @@ export default function BalloonGame() {
     };
   }, []);
 
-  // Click handler
+  // Balon tıklama
   const handleBalloonClick = e => {
     if (isGameOver) return;
     const rect = canvasRef.current.getBoundingClientRect();
@@ -188,13 +207,11 @@ export default function BalloonGame() {
     let popped = false;
     balloonsRef.current = balloonsRef.current.filter(b => {
       if (!popped && Math.hypot(b.x - x, b.y - y) < b.r) {
-        // Play using AudioContext if ready
-        const buf = audioBufferRef.current;
-        if (buf && audioCtxRef.current) {
-          const source = audioCtxRef.current.createBufferSource();
-          source.buffer = buf;
-          source.connect(audioCtxRef.current.destination);
-          source.start(0);
+        if (popBufferRef.current && audioCtxRef.current) {
+          const s = audioCtxRef.current.createBufferSource();
+          s.buffer = popBufferRef.current;
+          s.connect(audioCtxRef.current.destination);
+          s.start(0);
         }
         scoreRef.current++;
         setScore(scoreRef.current);
@@ -207,51 +224,62 @@ export default function BalloonGame() {
 
   return (
     <div className="balloon-game-container">
-      <div className="balloon-game-canvas-wrapper" onMouseMove={handleMouseMove}>
-        <canvas
-          ref={canvasRef}
-          className="balloon-game__canvas"
+      {/* Header */}
+      <header className="balloon-game__header">
+        <h1>🎈 Balloon Pop Challenge</h1>
+        <p>Move your cursor, pop the balloons, and beat your high score!</p>
+      </header>
+
+      {/* Content Row: Oyun + Skor Listesi */}
+      <div className="balloon-game-content" onMouseMove={handleMouseMove}>
+        {/* Oyun Alanı */}
+        <div
+          className="balloon-game-canvas-wrapper"
           onClick={handleBalloonClick}
-        />
-        <img
-          src="/needle.png"
-          alt="needle cursor"
-          style={{
-            position: 'absolute',
-            left: mousePos.x,
-            top: mousePos.y,
-            width: 32,
-            height: 32,
-            pointerEvents: 'none',
-            transform: 'translate(-16px, -16px)',
-            zIndex: 1000
-          }}
-        />
-        <div className="balloon-game__live-score">Score: {score}</div>
+        >
+          <canvas
+            ref={canvasRef}
+            className="balloon-game__canvas"
+          />
+          <img
+            src="/needle.png"
+            alt="needle cursor"
+            className="balloon-game__cursor"
+            style={{
+              left: mousePos.x + 'px',
+              top: mousePos.y + 'px'
+            }}
+          />
+          <div className="balloon-game__live-score">Score: {score}</div>
 
-        {isGameOver && highestScoreRecord && (
-          <div className="balloon-game__game-over">
-            <h2 className="balloon-game__title">Game Over!</h2>
-            {isNewRecord && <p>🎉 New Record!</p>}
-            <p>
-              Highest Score: <strong>{highestScoreRecord.name}</strong> — {highestScoreRecord.score}
-            </p>
-            <p>Your Score This Round: <strong>{score}</strong></p>
-            <button className="balloon-game__button" onClick={restartGame}>
-              Play Again
-            </button>
-          </div>
-        )}
+          {isGameOver && highestScoreRecord && (
+            <div className="balloon-game__game-over">
+              <h2 className="balloon-game__title">Game Over!</h2>
+              {isNewRecord && <p>🎉 New Record!</p>}
+              <p>
+                Highest Score: <strong>{highestScoreRecord.name}</strong> —{' '}
+                {highestScoreRecord.score}
+              </p>
+              <p>Your Score This Round: <strong>{score}</strong></p>
+              <button className="balloon-game__button" onClick={restartGame}>
+                Play Again
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Sağdaki Global Top 5 */}
+        <aside className="global-highscores">
+          <h3>Global Top 5</h3>
+          <ol>
+            {globalTop5.map((u) => (
+              <li key={u.name}>
+                {u.name}: {u.score}
+              </li>
+            ))}
+          </ol>
+        </aside>
       </div>
-
-      <aside className="global-highscores">
-        <h3>Global Top 5</h3>
-        <ol>
-          {globalTop5.map(u => (
-            <li key={u.name}>{u.name}: {u.score}</li>
-          ))}
-        </ol>
-      </aside>
     </div>
   );
 }

@@ -2,13 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ActivitiesPage.css';
 
+// Fisher–Yates ile dizi karıştırma
+function shuffleArray(array) {
+  const a = [...array];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 function ActivitiesPage() {
   const { moduleId } = useParams();
 
   // 1) Modüle özel aktiviteler
   const activityOptions = {
     math: [
-      { name: '🧩 Puzzle', path: 'activities/puzzle' },
+      { name: '🧠 Math Adventure', path: 'activities/adventure' },
       { name: '📐 Shape Drag', path: 'activities/shape-drag' },
       { name: '➕ Matching', path: 'activities/match' }
     ],
@@ -25,7 +35,7 @@ function ActivitiesPage() {
   };
   const activities = activityOptions[moduleId] || [];
 
-  // 2) Her modül için geniş liste
+  // 2) Her modül için geniş dekor havuzu (14 resim)
   const allDecorOptions = {
     math: [
       '/decor/math/abacus.png',
@@ -37,6 +47,10 @@ function ActivitiesPage() {
       '/decor/math/shapes.png',
       '/decor/math/think.png',
       '/decor/math/tools.png',
+      '/decor/math/sample (1).png',
+      '/decor/math/shape-toy.png',
+      '/decor/math/shape.png',
+      '/decor/math/shapes-and-symbols.png',
       '/decor/math/treasure-chest.png'
     ],
     science: [
@@ -49,6 +63,10 @@ function ActivitiesPage() {
       '/decor/science/science.png',
       '/decor/science/scientist.png',
       '/decor/science/scientist1.png',
+      '/decor/science/chemical.png',
+      '/decor/science/color-palette (1).png',
+      '/decor/science/science-book.png',
+      '/decor/science/splash.png',
       '/decor/science/seedling.png'
     ],
     english: [
@@ -61,82 +79,104 @@ function ActivitiesPage() {
       '/decor/english/letter.png',
       '/decor/english/reading-book.png',
       '/decor/english/storytelling.png',
-      '/decor/english/writing.png'
+      '/decor/english/writing.png',
+      '/decor/english/habitat.png',
+      '/decor/english/exam-time.png',
+      '/decor/english/book (6).png',
+      '/decor/english/alphabet (2).png'
     ]
   };
 
-  // 3) Pozisyonlar (3 adet)
-  const decorPositions = [
-       // Üstte 5 resim
-      { top: '28%',  left: '5%' },
-      { top: '8%',  left: '25%' },
-      { top: '48%',  left: '50%', transform: 'translateX(-50%)' },
-      { top: '8%',  left: '75%' },
-      { top: '28%',  right: '5%' },
-    
-       // Altta 5 resim
-      { bottom: '5%', left: '5%' },
-      { bottom: '18%', left: '25%' },
-      { bottom: '0%', left: '50%', transform: 'translateX(-50%)' },
-      { bottom: '18%', left: '75%' },
-      { bottom: '5%', right: '5%' }
-    ];
+  // 3) Tam 14 pozisyon
+  const positions = [
+    // Üst sıra (4)
+    { top: '5%',  left: '5%' },
+    { top: '5%',  left: '25%' },
+  
+    { top: '5%',  left: '70%' },
+    { top: '5%',  right: '5%' },
 
-  // 4) State: o anki 3 resim
+    // Orta üst (3)
+    { top: '45%',  left: '30%', transform: 'translateX(-50%)' },
+    { top: '50%',  left: '48%', transform: 'translateX(-50%)' },
+    { top: '45%',  left: '65%', transform: 'translateX(-50%)' },
+
+    // Kenar ortalar (2)
+    { top: '40%',  left: '5%' },
+    { top: '40%',  right: '5%' },
+
+    // Orta alt (2)
+    { top: '75%',  left: '30%', transform: 'translateX(-50%)' },
+    { top: '75%',  left: '70%', transform: 'translateX(-50%)' },
+
+    // Alt sıra (3)
+    { bottom: '22%', left: '5%' },
+    { bottom: '22%', left: '48%', transform: 'translateX(-50%)' },
+    { bottom: '22%', right: '5%' },
+  ];
+
+  const decorCount = positions.length; // 14
+
+  // 4) Başlangıçta benzersiz resimleri seç
   const [decorImages, setDecorImages] = useState([]);
-
-  // 5) Rastgele seçme fonksiyonu
-  const pickRandom = (arr, count) => {
-    const shuffled = [...arr].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
-  };
-
-  // 6) Her mount ve moduleId değişiminde, + 10s'de bir yenile
   useEffect(() => {
-    const updateDecor = () => {
-      const options = allDecorOptions[moduleId] || [];
-      setDecorImages(pickRandom(options, decorPositions.length));
-    };
-    updateDecor();
-    const interval = setInterval(updateDecor, 10_000);
-    return () => clearInterval(interval);
+    const opts = allDecorOptions[moduleId] || [];
+    setDecorImages(shuffleArray(opts).slice(0, decorCount));
   }, [moduleId]);
 
-  // 7) Başlık metni
+  // 5) Pozisyonları 10s’de bir karıştır
+  const [decorPos, setDecorPos] = useState(positions);
+  useEffect(() => {
+    const iv = setInterval(() => {
+      setDecorPos(shuffleArray(positions));
+    }, 10000);
+    return () => clearInterval(iv);
+  }, []);
+
+  // 6) Başlık
   const titleText = `${moduleId.toUpperCase()} Activities`;
 
   return (
     <div className="activities-wrapper">
-      {/* 8) Dinamik dekorlar */}
       {decorImages.map((src, i) => (
         <img
           key={i}
           src={src}
           alt=""
           className="decor"
-          style={decorPositions[i]}
+          style={decorPos[i]}
         />
       ))}
 
       <div className="activities-container">
         <h2 className="fadein-title">
-          {titleText.split('').map((char, i) => (
+          {titleText.split('').map((c, i) => (
             <span key={i} style={{ animationDelay: `${i * 0.08}s` }}>
-              {char === ' ' ? '\u00A0' : char}
+              {c === ' ' ? '\u00A0' : c}
             </span>
           ))}
         </h2>
 
         <div className="activity-list">
-          {activities.map((activity, idx) => (
+          {activities.map((activity, idx) => {
+            // activity.name: "🧩 Puzzle" veya "📐 Shape Drag" vb.
+            // split ile ilk boşluktan önceki emoji'yi alıyoruz:
+            const [icon, ...rest] = activity.name.split(' ');
+            const label = rest.join(' ');
+            return (
+
             <Link
               key={idx}
               to={`/module/${moduleId}/${activity.path}`}
-              className="activity-card"
+              className="activity-card card-lg"
+              style={{ animationDelay: `${idx * 0.15}s` }}
             >
-              {activity.name}
+              <div className="card-icon">{icon}</div>
+              <div className="card-label">{label}</div>
+
             </Link>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

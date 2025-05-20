@@ -12,6 +12,7 @@ import ActivitiesPage from './pages/ActivitiesPage.js';
 import AchievementsPage from './pages/AchievementsPage.js';
 import MathUnitListPage from './pages/MathUnitListPage.js';
 import MathUnitQuizPage from './pages/MathUnitQuizPage.js';
+import MathAdventure from './pages/MathAdventure.js';
 import ShapeDragActivity from './pages/ShapeDragActivity.js';
 import MatchSumActivity from './pages/MatchSumActivity.js';
 import ColorMixingLab from "./pages/ColorMixingLab.js";
@@ -71,6 +72,7 @@ function App() {
         <Route path="/achievements" element={<AchievementsPage />} />
         <Route path="/module/math/quiz" element={<MathUnitListPage />} />
         <Route path="/module/math/quiz/:unitId" element={<MathUnitQuizPage />} />
+        <Route path="/module/:moduleId/activities/adventure" element={<MathAdventure />} />
         <Route path="/module/:moduleId/activities/shape-drag" element={<ShapeDragActivity />} />
         <Route path="/module/:moduleId/activities/match" element={<MatchSumActivity />} />
         <Route path="/module/:moduleId/activities/color-mixing" element={<ColorMixingLab />} />

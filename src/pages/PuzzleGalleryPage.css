@@ -1,34 +1,90 @@
+/* PuzzleGalleryPage.css */
+
+/* 1. Konteyner ve Başlık */
 .gallery-container {
-    text-align: center;
-    padding: 1rem;
-  }
-  
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff; /* sayfa arka planı */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.gallery-container h1 {
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+/* 2. Responsive Grid */
+.gallery-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+/* 3. Kart Temel Stili */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 4. Kart Hover Efekti */
+.gallery-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.gallery-card {
+  overflow: hidden;
+}
+.gallery-card img {
+  transition: transform 0.4s ease;
+}
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+
+/* 5. Resim Stili */
+.thumbnail-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+/* 6. Overlay Başlık */
+.thumbnail-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.75rem 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.6) 10%,
+    rgba(0,0,0,0.2) 50%,
+    transparent
+  );
+  color: #fff;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
   .gallery-list {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
-  
-  .gallery-card {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-  flex-direction: column;
-  align-items: center;
-  }
-  
-  .thumbnail-image {
-    width: 200px;
-    height: 150px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    object-fit: cover;
-  }
-  
-  .thumbnail-label {
-    margin-top: 0.5rem;
-    font-weight: bold;
-    text-transform: capitalize;
-  }
-  
+}

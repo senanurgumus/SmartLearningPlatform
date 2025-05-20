@@ -1,14 +1,75 @@
 .balloon-game-container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
-  margin: 2rem;
-}
-.balloon-game-canvas-wrapper {
-  position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 0 1rem;
+  gap: 1.5rem;
 }
 
+/* Header */
+.balloon-game__header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.balloon-game__header h1 {
+  font-size: 2.4rem;
+  color: #1976d2;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.balloon-game__header p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0.3rem 0 0;
+  font-style: italic;
+}
+
+/* Content Row */
+.balloon-game-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Canvas wrapper */
+.balloon-game-canvas-wrapper {
+  position: relative;
+  flex: 0 0 500px;
+  cursor: none;
+}
+
+/* Canvas */
+.balloon-game__canvas {
+  width: 100%;
+  aspect-ratio: 500 / 600;
+  border: 2px solid #333;
+  border-radius: 12px;
+  background: #e0f7fa;
+  display: block;
+}
+
+/* Custom cursor */
+.balloon-game__cursor {
+  position: fixed;
+  pointer-events: none;
+  width: 32px;
+  height: 32px;
+  transform: translate(-16px, -16px);
+  z-index: 9999;
+}
+
+/* Live score */
 .balloon-game__live-score {
   position: absolute;
   bottom: 8px;
@@ -16,23 +77,9 @@
   font-size: 1rem;
   font-weight: bold;
   color: #222;
-  z-index: 5;
 }
 
-.balloon-game__canvas {
-  width: 400px;
-  height: 600px;
-  border: 2px solid #333;
-  border-radius: 12px;
-  background: #e0f7fa;
-  cursor: none;
-}
-.balloon-game__scoreboard {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-  text-align: left;
-}
-.balloon-game__score { font-weight: bold; }
+/* Game Over panel */
 .balloon-game__game-over {
   position: absolute;
   top: 50%; left: 50%;
@@ -43,28 +90,17 @@
   border-radius: 8px;
   width: 80%; max-width: 320px;
   text-align: center;
-  z-index: 10;
+  z-index: 3;
 }
-.balloon-game__title {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-.balloon-game__button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.balloon-game__button:hover { background: #43a047; }
+
+/* Global Top 5 */
 .global-highscores {
-  width: 160px;
+  flex: 0 0 200px;
   background: rgba(255,255,255,0.9);
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 16px;
 }
 .global-highscores h3 {
   margin: 0 0 0.5rem;
