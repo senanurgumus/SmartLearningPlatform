@@ -1,4 +1,6 @@
 /* Dashboard.css */
+/* 🌈 Unified Gradient Theme – Day/Night Mode Removed */
+
 .dashboard-container {
   position: relative;
   overflow: hidden;
@@ -6,13 +8,35 @@
   padding: 2rem;
   font-family: 'Comic Sans MS', cursive, sans-serif;
   text-align: center;
-  transition: background-color 0.5s ease, color 0.5s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   animation: fadeInZoom 1.5s ease;
   z-index: 1;
+
+  background: linear-gradient(
+    135deg,
+    #2baadc,   /* açık cam mavisi */
+    #4b8dc3,   /* tatlı açık mavi */
+    #1e88e5,   /* canlı mavi */
+    #0d47a1    /* lacivertimsi koyu mavi */
+  );
+  background-size: 400% 400%;
+  animation: flowingGradient 20s ease infinite;
 }
+
+@keyframes flowingGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Removed night-mode and day-mode class styles completely */
+
+/* 💡 All other styles remain the same */
+
+
 
 /* Mikro Hover Animasyonlar */
 .module-card-dashboard:hover,
@@ -111,33 +135,8 @@
   animation: fadeInOut 5s ease forwards;
 }
 
-/* Pomodoro Timer */
-.pomodoro-widget {
-  position: absolute;
-  top: 430px;
-  left: 30px;
-  background-color: rgba(46, 76, 158, 0.95);
-  color: white;
-  padding: 0.9rem;
-  border-radius: 15px;
-  font-size: 0.9rem;
-  z-index: 50;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  width: 220px;
-}
 
-.pomodoro-widget button {
-  margin-top: 8px;
-  padding: 6px 12px;
-  background: white;
-  color: #2c3e50;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 0.85rem;
-}
+
 
 @keyframes floatY {
   0% { transform: translateY(0); }
@@ -146,18 +145,6 @@
 }
 /* Diğer mevcut CSS kodları aşağıda kalır... */
 
-
-
-
-.day-mode {
-  background: linear-gradient(to bottom, rgb(115, 150, 245), #e0f7fa);
-  color: #222;
-}
-
-.night-mode {
-  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-  color: #f1f1f1;
-}
 
 .dashboard-title {
   font-size: 2.5rem;
@@ -217,91 +204,12 @@
   transform: scale(1.05);
 }
 
-.mission-box {
-  position: absolute;
-  top: 70px;
-  left: 30px;
-  background: rgba(46, 76, 158, 0.9);
-  padding: 1.5rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(6px);
-  animation: fadeInRight 1.2s ease;
-}
-
-.mission-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 1rem;
-  animation: pulse 2s infinite;
-}
-
-.mission-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  color: #333;
-  background: #f3f4f6;
-  padding: 0.5rem 0.75rem;
-  border-radius: 10px;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.mission-item.completed {
-  text-decoration: line-through;
-  background-color: #d1fae5;
-  color: #065f46;
-  transform: scale(0.97);
-}
-
-.mission-checkbox {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #4b5563;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.mission-checkbox.checked {
-  background-color: #10b981;
-  border-color: #10b981;
-}
-
-.mission-delete {
-  background: transparent;
-  border: none;
-  color: #dc2626;
-  font-size: 1.1rem;
-  cursor: pointer;
-  margin-left: 8px;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.mission-input input,
-.mission-input button {
-  transition: all 0.3s ease;
-}
-
-.mission-input input:focus {
-  outline: 2px solid #60a5fa;
-}
-
-.mission-input button:hover {
-  transform: scale(1.05);
-}
-
 .welcome-text {
   font-size: 2.2rem;
   text-align: center;
   font-weight: bold;
   margin-top: 2rem;
-  font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: white;
   animation: fadeInDown 1s ease;
 }
@@ -314,26 +222,7 @@
   animation: fadeIn 2s ease-in;
 }
 
-.fun-fact-box {
-  background: rgb(46, 76, 158);
-  color: white;
-  padding: 1rem 1.5rem;
-  border-radius: 20px;
-  max-width: 320px;
-  font-family: 'Comic Sans MS', 'Poppins', sans-serif;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  position: absolute;
-  top: 250px;
-  left: 30px;
-  width: 280px;
-  backdrop-filter: blur(6px);
-  animation: fadeInLeft 1.2s ease;
-}
 
-.fun-fact-box:hover {
-  background-color: rgb(115, 150, 245);
-  transform: scale(1.02);
-}
 
 .drawing-buttons-container {
   display: flex;
@@ -430,75 +319,110 @@
 }
 
 
-/* 🎁 Bonus Spinner */
-.spinner-modal {
+/* 🎁 Bonus Spinner - Dashboard’a özel */
+/* 🎡 Soft Candy Theme - Spinner Styles */
+.dashboard-spinner {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(255, 182, 193, 0.4); /* pastel pembe overlay */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
   flex-direction: column;
   padding: 2rem;
+  font-family: 'Fredoka', 'Comic Neue', sans-serif;
 }
 
-.spinner-modal .spin-box {
-  background-color: #fff;
-  border-radius: 20px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
+.dashboard-spinner .spin-box {
+    position: relative; /* ✨ Buton bu kutuya göre hizalanacak */
 
-.spinner-modal .spin-button {
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #6BCB77;
-  border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.spinner-modal .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 14px;
   background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #888;
-  cursor: pointer;
+  backdrop-filter: none;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  gap: 1.5rem;
 }
 
-/* Spinner Button */
-.open-spinner-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 0.7rem 1.5rem;
-  background-color: #4caf50;
+.dashboard-spinner .spin-button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #FF6B81; /* mint yeşili */
+  border: none;
   color: white;
   font-weight: bold;
-  border: none;
-  border-radius: 12px;
   font-size: 1rem;
+  border-radius: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
 }
 
-.open-spinner-btn:hover {
-  background-color: #43a047;
+.dashboard-spinner .spin-button:hover {
+  background-color:  #ff4d6d;
   transform: scale(1.05);
+}
+
+.dashboard-spinner .close-btn {
+    position: absolute;
+  top: -20px;
+  right: -20px;
+  background-color: #ff6b81;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 1001;
+}
+
+.dashboard-spinner .close-btn:hover {
+  background-color: #ff3b5c;
+  transform: scale(1.05);
+}
+
+
+.dashboard-spinner canvas {
+  background-color: transparent !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+  max-width: 420px !important;
+  max-height: 420px !important;
+  aspect-ratio: 1 / 1;
+}
+
+.reward-result-box {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.9rem 1.7rem;
+  border-radius: 20px;
+  color: #222;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.2);
+  font-family: 'Fredoka', sans-serif;
+}
+
+.glow-text {
+  color: #FF6B81;
+  text-shadow: 0 0 5px #ffc1cc, 0 0 10px #ffddee;
+  font-weight: bold;
+  font-size: 1.6rem;
+  font-family: 'Comic Neue', cursive;
 }
 
 /* Tip of the Day */
@@ -525,4 +449,221 @@
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.music-control-bar {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 10px auto;
+  width: fit-content;
+}
+.music-control-bar button {
+  margin: 0 5px;
+  padding: 5px 10px;
+}
+
+.sound-surprise-box {
+  background: #2c5364;
+  border: 5px solid #1534fa;
+  padding: 0px;
+  border-radius: 40px;
+  margin: 10px auto;
+  text-align: center;
+}
+.sound-surprise-box button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.left-panel {
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 50;
+  width: 280px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 0.95rem;
+  animation: fadeInLeft 1.2s ease-in-out;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+/* Ortak stil */
+.left-panel .mission-box,
+.left-panel .fun-fact-box,
+.left-panel .pomodoro-widget {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  font-size: inherit;
+  font-family: inherit;
+  background: linear-gradient(145deg, #2e4c9e, #5d7be0);
+  color: white;
+  padding: 1.2rem 1.5rem;
+}
+
+/* 🎯 MISSION BOX */
+.left-panel .mission-box .mission-title {
+  font-size: 0.95rem;
+  font-weight:normal;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+}
+
+.left-panel .mission-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.left-panel .mission-input input {
+  flex: 1;
+  padding: 8px 10px;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  margin-right: auto;
+  border-radius: 20px;
+}
+
+.left-panel .mission-input button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: beige;
+  color: #2e4c9e;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s, transform 0.2s;
+  margin-bottom: auto;
+
+}
+
+.left-panel .mission-input button:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+
+.left-panel .mission-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: #f3f4f6;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.left-panel .mission-item.completed {
+  text-decoration: line-through;
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.left-panel .mission-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4b5563;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.left-panel .mission-checkbox.checked {
+  background-color: #10b981;
+  border-color: #10b981;
+}
+
+.left-panel .mission-delete {
+  background: transparent;
+  border: none;
+  color: #dc2626;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.left-panel .mission-box:hover {
+  background-color: rgb(115, 150, 245);
+  transform: scale(1.02);
+}
+
+/* 🧠 FUN FACT BOX */
+.left-panel .fun-fact-box {
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.left-panel .fun-fact-box:hover {
+  background-color: rgb(115, 150, 245);
+  transform: scale(1.02);
+}
+
+/* ⏱️ POMODORO TIMER */
+.left-panel .pomodoro-widget {
+  text-align: center;
+}
+
+.left-panel .pomodoro-widget p {
+  margin: 0.4rem 0;
+}
+
+.left-panel .pomodoro-widget button {
+  background-color:beige;
+  color: #2e4c9e;
+  font-weight: bold;
+  border: none;
+  padding: 6px 14px;
+  margin-top: 0.7rem;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  transition: transform 0.2s ease;
+}
+
+.left-panel .pomodoro-widget button:hover {
+  transform: scale(1.05);
+}
+
+.left-panel .pomodoro-widget:hover {
+  background-color: rgb(115, 150, 245);
+  transform: scale(1.02);
+}
+
+.dashboard-show-gift-button {
+  background-color: #b3cfff;
+  color: #1f2a44;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif
+}
+
+.dashboard-show-gift-button:hover {
+  background-color: #d0e3ff;
+  transform: scale(1.05);
 }

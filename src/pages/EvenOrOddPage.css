@@ -65,7 +65,7 @@
   
   .choice-btn {
     font-size: 1.5rem;
-    background-color: #06d6a0;
+    background-color: #d64c06;
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -75,14 +75,14 @@
   }
   
   .choice-btn:hover {
-    background-color: #118ab2;
+    background-color: #d77a10;
   }
   
   .feedback {
     font-size: 1.3rem;
     font-weight: bold;
     margin-top: 1rem;
-    color: #555;
+    color: #333;
   }
   
   .score {

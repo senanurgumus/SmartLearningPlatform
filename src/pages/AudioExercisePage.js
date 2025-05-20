@@ -147,7 +147,7 @@ const AudioExercisePage = () => {
           <p>Your Score: <b>{score}</b></p>
           <p>Best Score: <b>{bestScore}</b></p>
           <button className="result-button" onClick={restartGame}>🔁 Play Again</button>
-          <button className="result-button" onClick={() => navigate('/module/english/exercises')}>🔙 Back to Exercises</button>
+          <button className="result-button" onClick={() => navigate('/module/english/exercises')}>🔙 Back to English Exercises</button>
         </div>
       )}
     </div>

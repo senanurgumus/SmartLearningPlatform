@@ -1,54 +1,68 @@
 .highlights-section {
-    margin: 3rem auto;
-    text-align: center;
-    padding: 1rem;
-    background: #f5f7fb;
-    border-radius: 20px;
-    background-color: beige;
-  }
-  
-  .highlights-title {
-    font-size: 2rem;
-    color: #2d2d2d;
-    margin-bottom: 2rem;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  .highlight-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  
-  .highlight-card {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    width: 230px;
-    padding: 1.5rem;
-    transition: transform 0.3s ease;
-    background-color: floralwhite;
-  }
-  
-  .highlight-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .highlight-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .highlight-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #4c1d95;
-    margin-bottom: 0.5rem;
-  }
-  
-  .highlight-description {
-    font-size: 0.95rem;
-    color: #555;
-  }
-  
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #6796ef, #2a5298, #1c2b5a);
+  background-size: 300% 300%;
+  animation: darkGradientShift 20s ease infinite;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  margin-left: 320px;
+}
+
+@keyframes darkGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.highlights-title {
+  font-size: 2.3rem;
+  color: #e3f2fd;
+  margin-bottom: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.highlight-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.highlight-card {
+  background: linear-gradient(145deg, #243b55, #1a2a4f);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 240px;
+  padding: 2rem 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #e0e7ff;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.highlight-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 30px rgba(100, 149, 237, 0.4);
+}
+
+.highlight-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.highlight-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #bbdefb;
+  margin-bottom: 0.6rem;
+  font-family: 'Segoe UI Semibold', sans-serif;
+}
+
+.highlight-description {
+  font-size: 0.95rem;
+  color: #cfd8dc;
+  line-height: 1.5;
+}

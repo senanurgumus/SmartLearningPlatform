@@ -74,23 +74,29 @@ function Chatbot() {
   };
 
   return (
-    <div className="chatbot">
-      <div className="chat-history">
-        {messages.map((msg, idx) => (
-          <div key={idx} className={msg.role}>
-            <span>{msg.message}</span>
-          </div>
-        ))}
-        {loading && <div>Bot is typing...</div>}  {/* Eğer bot yazıyorsa, bunu göster */}
+    <div className="chatbot-box">
+  <div className="chat-history">
+    {messages.map((msg, idx) => (
+      <div key={idx} className={msg.role}>
+        {msg.role === 'bot' && <div className="message-avatar"></div>}
+        <div className="message">{msg.message}</div>
+        {msg.role === 'user' && <div className="message-avatar"></div>}
       </div>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}  // Inputu değiştiriyoruz
-        placeholder="Ask something..."  // Placeholder yazısı
-      />
-      <button className='send' onClick={handleSendMessage}>Send</button>  {/* Butona tıklandığında mesaj gönder */}
-    </div>
+    ))}
+    {loading && <div className="bot typing">🤖 <span className="typing-indicator">...</span></div>}
+  </div>
+
+  <div className="input-container">
+    <input
+      type="text"
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+      placeholder="Ask me anything..."
+    />
+    <button onClick={handleSendMessage}>Send</button>
+  </div>
+</div>
+
   );
 }
 

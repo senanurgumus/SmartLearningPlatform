@@ -3,10 +3,10 @@
     margin: 60px auto;
     padding: 2rem;
     font-family: 'Segoe UI', sans-serif;
-    background: #f4f7fb;
     border-radius: 20px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     color: #333;
+    background: linear-gradient(white, rgb(157, 157, 234));
   }
   
   .about-page h2 {

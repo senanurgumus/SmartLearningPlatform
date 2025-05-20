@@ -17,9 +17,9 @@ function ScienceUnitQuizPage() {
   const [popupMessage, setPopupMessage] = useState('');
   const [popupEmoji, setPopupEmoji] = useState('');
   const [showWarningPopup, setShowWarningPopup] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const emojis = ['🎉', '🌟', '👏', '😊', '🍭', '🧁', '🐞'];
-
   const messages = [
     'Great job!',
     'You are a star!',
@@ -33,7 +33,6 @@ function ScienceUnitQuizPage() {
   useEffect(() => {
     if (!unit) return;
     const data = scienceQuiz[unit];
-
     if (Array.isArray(data)) {
       const shuffled = [...data].sort(() => 0.5 - Math.random());
       setQuestions(shuffled.slice(0, 10));
@@ -50,15 +49,14 @@ function ScienceUnitQuizPage() {
     return () => unsubscribe();
   }, []);
 
-  const handleOptionClick = (i, option) => {
+  const handleOptionClick = (option) => {
     if (!submitted) {
-      setAnswers({ ...answers, [i]: option });
+      setAnswers({ ...answers, [currentIndex]: option });
     }
   };
 
   const handleSubmit = async () => {
-    const unanswered = questions.findIndex((_, i) => answers[i] === undefined);
-    if (unanswered !== -1) {
+    if (Object.keys(answers).length < questions.length) {
       setShowWarningPopup(true);
       return;
     }
@@ -97,9 +95,13 @@ function ScienceUnitQuizPage() {
     setSubmitted(false);
     setScore(0);
     setShowPopup(false);
+    setCurrentIndex(0);
   };
 
   if (!questions.length) return <p>Loading questions...</p>;
+
+  const currentQ = questions[currentIndex];
+  const selected = answers[currentIndex];
 
   return (
     <div className="quiz-container">
@@ -109,41 +111,55 @@ function ScienceUnitQuizPage() {
 
       <h2>{unit.replace(/_/g, ' ').toUpperCase()}</h2>
 
-      {questions.map((q, i) => {
-        const isCorrect = answers[i] === q.answer;
-        const isAnswered = answers[i] !== undefined;
-        let questionClass = '';
-
-        if (submitted && isAnswered) {
-          questionClass = isCorrect ? 'correct' : 'incorrect';
-        }
-
-        return (
-          <div key={i} className={`question-block ${questionClass}`}>
-            <h4>{i + 1}. {q.question}</h4>
-            {q.options.map((opt, j) => {
-              const isSelected = answers[i] === opt;
-              return (
-                <div
-                  key={j}
-                  className={`option ${isSelected ? 'selected' : ''}`}
-                  onClick={() => handleOptionClick(i, opt)}
-                >
-                  {opt}
-                </div>
-              );
-            })}
-            {submitted && !isCorrect && (
-              <p className="correct-answer">✅ Correct answer: {q.answer}</p>
-            )}
+      {!submitted && (
+        <>
+          <div className="question-block">
+            <h4>{currentIndex + 1}. {currentQ.question}</h4>
+            {currentQ.options.map((opt, j) => (
+              <div
+                key={j}
+                className={`option ${selected === opt ? 'selected' : ''}`}
+                onClick={() => handleOptionClick(opt)}
+              >
+                {opt}
+              </div>
+            ))}
           </div>
-        );
-      })}
 
-      {!submitted ? (
-        <button className="submit-btn" onClick={handleSubmit}>Submit Quiz</button>
-      ) : (
-        <button className="submit-btn" onClick={restartQuiz}>Try Again</button>
+          <div className="navigation-buttons">
+  <button
+    className="nav-btn"
+    onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
+    disabled={currentIndex === 0}
+  >
+    ← Previous
+  </button>
+
+  {currentIndex < questions.length - 1 ? (
+    <button
+      className="nav-btn"
+      onClick={() => setCurrentIndex((prev) => prev + 1)}
+    >
+      Next →
+    </button>
+  ) : (
+    <button className="submit-btn" onClick={handleSubmit}>
+      Submit Quiz
+    </button>
+  )}
+</div>
+
+        </>
+      )}
+
+      {submitted && (
+        <>
+          <div className="score-block">
+            <div className="popup-emoji">{popupEmoji}</div>
+            <p className="popup-message">{popupMessage}</p>
+            <button className="submit-btn" onClick={restartQuiz}>Try Again</button>
+          </div>
+        </>
       )}
 
       {showPopup && (
@@ -161,8 +177,7 @@ function ScienceUnitQuizPage() {
         <div className="popup warning-popup">
           <div className="popup-inner">
             <span className="close-btn" onClick={() => setShowWarningPopup(false)}>×</span>
-            <h3>Please complete all questions!</h3>
-            <p>You must answer every question before submitting the quiz.</p>
+            <h3>Please answer all questions before submitting!</h3>
           </div>
         </div>
       )}
