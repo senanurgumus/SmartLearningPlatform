@@ -18,7 +18,7 @@ function ActivitiesPage() {
   // 1) Modüle özel aktiviteler
   const activityOptions = {
     math: [
-      { name: '🧩 Puzzle', path: 'activities/puzzle' },
+      { name: '🧠 Math Adventure', path: 'activities/adventure' },
       { name: '📐 Shape Drag', path: 'activities/shape-drag' },
       { name: '➕ Matching', path: 'activities/match' }
     ],

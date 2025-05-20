@@ -1,96 +1,135 @@
-/* src/pages/WordFreezeActivity.css */
+/* -------------------------------------------------
+  WordFreezeActivity.css  –  “Gök Mavisi / Frost” tema
+   ------------------------------------------------- */
 
+/* ----------- Global renk değişkenleri ----------- */
+:root {
+  --wf-primary:  #37b9ff;                /* başlık & kilit vurgu */
+  --wf-dark:     #075b8c;                /* ana metin koyu tonu */
+  --wf-card-bg:  rgba(255,255,255,0.80); /* cam efekti */
+  --wf-border:   rgba(55,185,255,0.35);  /* kart/buton kenar */
+  --wf-btn-bg:   #c4e7ff;                /* buton normal */
+  --wf-btn-hov:  #e7f6ff;                /* buton hover */
+  --wf-error:    #d32f2f;                /* hata mesajı kırmızı */
+}
+
+/* ----------- Sayfa yapısı & arka plan maskesi ----------- */
 .wf-freeze-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Nunito', sans-serif;
   position: relative;
 }
 
-.wf-level-select {
-  margin-bottom: 20px;
-  font-weight: bold;
+.wf-freeze-container::before {           /* kontrast yükselten degrade */
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+              rgba(1,30,60,0.45) 0%,
+              rgba(1,30,60,0) 40%);
+  z-index: 0;
 }
 
-.wf-level-select label {
-  margin-right: 10px;
+/* ----------- Başlık ----------- */
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+.wf-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 2.2rem 0 1rem;
+  color: var(--wf-primary);
+  text-shadow: 0 0 6px rgba(255,255,255,0.9);
+  animation: dropIn 0.6s ease-out;
+}
+
+/* ----------- Seviye seçimi (label + select) ----------- */
+.wf-level-select {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: var(--wf-dark);
+}
+.wf-level-select label { margin-right: 10px; }
 
 .wf-level-select select {
   padding: 6px 12px;
   font-size: 16px;
   border-radius: 6px;
-  border: none;
-  background-color: #90caf9;
-  color: #fff;
+  border: 1px solid var(--wf-border);
+  background: var(--wf-btn-bg);
+  color: var(--wf-dark);
 }
 
+/* ----------- Yönerge bandı ----------- */
 .wf-mode-info {
-  margin: 0 0 10px;
-  background-color: #e3f2fd;
+  margin-bottom: 10px;
+  background: var(--wf-card-bg);
   padding: 10px 20px;
   border-radius: 12px;
   width: 90%;
   max-width: 600px;
   text-align: center;
-  color: #0d47a1;
+  color: var(--wf-dark);
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 800;
+  border: 2px solid var(--wf-border);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
 }
 
+/* ----------- Kart (oyun & sonuç) ----------- */
 .wf-freeze-card,
 .wf-result-section {
   position: relative;
   z-index: 1;
   text-align: center;
-  background-color: rgba(255,255,255,0.8);
+  background: var(--wf-card-bg);
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  -webkit-backdrop-filter: blur(4px);
+  border: 2px solid var(--wf-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15),
+              inset 0 0 10px rgba(0,0,0,0.08);
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   margin-top: 20px;
   max-width: 400px;
 }
 
+/* ----------- Buzlu kelime ----------- */
 .wf-ice-word {
   width: 220px;
   height: 100px;
   background-size: cover;
   background-position: center;
   font-size: 32px;
-  font-weight: bold;
-  color: #e3f2fd;
-  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+  font-weight: 700;
+  color: #5fd0ff; 
+  text-shadow: 0 0 8px rgba(255,255,255,0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  box-shadow: 0 0 12px #66aaff;
+  box-shadow: 0 0 12px var(--wf-border);
   transition: transform 0.4s ease, filter 0.4s ease;
   margin: 0 auto;
 }
-
 .wf-ice-word.wf-unfrozen {
   animation: melt 1s ease forwards;
   color: #e3f2fd;
   text-shadow: none;
   box-shadow: 0 0 10px #a5d6a7;
 }
-
 @keyframes melt {
-  0% {
-    filter: brightness(1.1) grayscale(0.4) blur(0);
-    transform: scale(1);
-  }
-  100% {
-    filter: brightness(1.3) grayscale(0) blur(1px);
-    transform: scale(1.05);
-  }
+  0%   { filter: brightness(1.1) grayscale(0.4) blur(0);   transform: scale(1);   }
+  100% { filter: brightness(1.3) grayscale(0)   blur(1px); transform: scale(1.05);}
 }
 
+/* ----------- Seçenek butonları ----------- */
 .wf-choices {
   display: flex;
   justify-content: center;
@@ -98,61 +137,70 @@
   flex-wrap: wrap;
   margin-top: 20px;
 }
-
 .wf-choice-btn {
   padding: 12px 20px;
   font-size: 18px;
-  border: none;
-  background-color: #b3e5fc;
+  border: 2px solid var(--wf-border);
+  background: var(--wf-btn-bg);
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background 0.2s ease, transform 0.15s, box-shadow 0.15s;
+  color: var(--wf-dark);
 }
-
 .wf-choice-btn:hover {
-  background-color: #4fc3f7;
-  color: #fff;
+  background: var(--wf-btn-hov);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
+/* ----------- Skor & hata ----------- */
 .wf-score {
   margin-top: 20px;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
+  color: var(--wf-dark);
 }
-
 .wf-wrong-msg {
-  color: #d32f2f;
+  color: var(--wf-error);
   font-size: 18px;
   margin-top: 12px;
   animation: shake 0.3s ease;
 }
-
 @keyframes shake {
-  0%   { transform: translateX(0); }
-  25%  { transform: translateX(-4px); }
-  50%  { transform: translateX(4px); }
-  75%  { transform: translateX(-4px); }
-  100% { transform: translateX(0); }
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-4px); }
+  50%     { transform: translateX(4px); }
+  75%     { transform: translateX(-4px); }
 }
 
+/* ----------- Yeniden başlat / sonraki seviye butonları ----------- */
 .wf-button-group {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
 }
-
 .wf-restart-btn {
   padding: 12px 24px;
   font-size: 18px;
-  background-color: #aed581;
-  border: none;
+  background: #aed581;
+  border: 2px solid rgba(110,150,60,0.4);
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease, transform 0.15s, box-shadow 0.15s;
+  color: #2e4600;
+}
+.wf-restart-btn:hover {
+  background: #7cb342;
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-.wf-restart-btn:hover {
-  background-color: #7cb342;
-  color: #fff;
+/* ----------- Z-index hiyerarşisi ----------- */
+.wf-freeze-container,
+.wf-freeze-card,
+.wf-result-section {
+  position: relative;
+  z-index: 2;              /* konfeti (z-index:1) arkasında kalır */
 }

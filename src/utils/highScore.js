@@ -1,26 +1,30 @@
 // src/utils/highScore.js
+import { getAuth } from 'firebase/auth';
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import { app } from '../firebase.js';
 
-/**
- * Kullanıcının o ana kadar kaydettiği en yüksek skoru getirir.
- * @param {string} key – oyunun benzersiz ID'si, örn. "shapeDrag"
- * @returns {Promise<number>}
- */
-export async function fetchHighScore(key) {
-  const stored = localStorage.getItem(key);
-  return stored ? parseInt(stored, 10) : 0;
+const db = getFirestore(app);
+
+export async function fetchHighScore(activity) {
+  const auth = getAuth();
+  const user = auth.currentUser;
+  if (!user) return 0;  // oturum yoksa 0
+  const ref = doc(db, 'users', user.uid, 'highScores', activity);
+  const snap = await getDoc(ref);
+  return snap.exists() ? snap.data().score : 0;
 }
 
-/**
- * Yeni skoru kaydeder (sadece eğer mevcut yüksek skordan yüksekse)
- * @param {string} key – oyunun ID'si
- * @param {number} newScore – şu anki skor
- * @returns {Promise<number>} – kaydedilen (güncellenmiş veya mevcut) yüksek skor
- */
-export async function updateHighScore(key, newScore) {
-  const current = parseInt(localStorage.getItem(key), 10) || 0;
-  if (newScore > current) {
-    localStorage.setItem(key, newScore);
-    return newScore;
+export async function updateHighScore(activity, score) {
+  const auth = getAuth();
+  const user = auth.currentUser;
+  if (!user) return 0;
+  const ref = doc(db, 'users', user.uid, 'highScores', activity);
+  const snap = await getDoc(ref);
+
+  // eğer yoksa ya da yeni score daha yüksekse yaz
+  if (!snap.exists() || score > snap.data().score) {
+    await setDoc(ref, { score }, { merge: true });
+    return score;
   }
-  return current;
+  return snap.data().score;
 }

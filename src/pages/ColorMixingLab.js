@@ -1,186 +1,166 @@
-import React, { useState, useEffect } from 'react';
+// src/pages/ColorMixingLab.jsx
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ColorMixingLab.css';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size';
 
+// Base primary colors and extended palette for level 2
 const baseColors = ["red", "yellow", "blue"];
 const level2Colors = [...baseColors, "orange", "green", "purple", "black", "white"];
 
+// All possible mixes
 const colorMixes = {
-  "red+yellow": "orange",
-  "yellow+red": "orange",
-  "red+blue": "purple",
-  "blue+red": "purple",
-  "yellow+blue": "green",
-  "blue+yellow": "green",
-  "black+white": "gray",
-  "white+black": "gray",
-  "orange+white": "light orange",
-  "orange+black": "dark orange",
-  "green+white": "light green",
-  "green+black": "dark green",
-  "purple+white": "light purple",
-  "purple+black": "dark purple",
-  "red+white": "pink",
-  "red+black": "dark red",
-  "yellow+white": "light yellow",
-  "yellow+black": "dark yellow",
-  "blue+white": "light blue",
-  "blue+black": "dark blue",
+  "red+yellow": "orange", "yellow+red": "orange",
+  "red+blue": "purple",  "blue+red": "purple",
+  "yellow+blue": "green","blue+yellow": "green",
+  "black+white": "gray", "white+black": "gray",
+  "orange+white": "light orange","white+orange": "light orange",
+  "orange+black": "dark orange","black+orange": "dark orange",
+  "green+white": "light green","white+green": "light green",
+  "green+black": "dark green","black+green": "dark green",
+  "purple+white": "light purple","white+purple": "light purple",
+  "purple+black": "dark purple","black+purple": "dark purple",
+  "red+white": "pink",   "white+red": "pink",
+  "red+black": "dark red","black+red": "dark red",
+  "yellow+white": "light yellow","white+yellow": "light yellow",
+  "yellow+black": "dark yellow","black+yellow": "dark yellow",
+  "blue+white": "light blue","white+blue": "light blue",
+  "blue+black": "dark blue","black+blue": "dark blue",
 };
 
+// Color-to-hex for result preview
 const colorHexMap = {
-  orange: "#ffa500",
-  green: "#008000",
-  purple: "#800080",
-  red: "#ff0000",
-  yellow: "#ffff00",
-  blue: "#0000ff",
-  gray: "#808080",
-  "light orange": "#ffcc99",
-  "dark orange": "#ff8c00",
-  "light green": "#90ee90",
-  "dark green": "#006400",
-  "light purple": "#dda0dd",
-  "dark purple": "#4b0082",
-  pink: "#ffc0cb",
-  "dark red": "#8b0000",
-  "light yellow": "#ffffe0",
-  "dark yellow": "#9b870c",
-  "light blue": "#add8e6",
+  orange: "#ffa500", green: "#008000", purple: "#800080",
+  red: "#ff0000", yellow: "#ffff00", blue: "#0000ff",
+  gray: "#808080", "light orange": "#ffcc99", "dark orange": "#ff8c00",
+  "light green": "#90ee90", "dark green": "#006400", "light purple": "#dda0dd",
+  "dark purple": "#4b0082", pink: "#ffc0cb", "dark red": "#8b0000",
+  "light yellow": "#ffffe0", "dark yellow": "#9b870c", "light blue": "#add8e6",
   "dark blue": "#00008b",
 };
 
+// Target lists
 const level1Targets = ["orange", "green", "purple"];
 const level2Targets = [
-  "gray", "pink", "dark red",
-  "light yellow", "dark yellow",
-  "light blue", "dark blue",
-  "light orange", "dark orange",
-  "light green", "dark green",
-  "light purple", "dark purple"
+  "gray", "pink", "dark red", "light yellow", "dark yellow",
+  "light blue", "dark blue", "light orange", "dark orange",
+  "light green", "dark green", "light purple", "dark purple"
 ];
 
-function shuffle(array) {
-  const newArray = [...array];
-  for (let i = newArray.length - 1; i > 0; i--) {
+// Utility: shuffle array
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    [a[i], a[j]] = [a[j], a[i]];
   }
-  return newArray;
+  return a;
 }
 
-function ColorMixingLab() {
+export default function ColorMixingLab() {
   const [currentLevel, setCurrentLevel] = useState(1);
+  const [targets, setTargets] = useState([]);           // full shuffled list
+  const [targetIndex, setTargetIndex] = useState(0);    // current question index
+  const [targetColor, setTargetColor] = useState(""); // current goal
+
   const [selectedColors, setSelectedColors] = useState([]);
   const [successfulMixes, setSuccessfulMixes] = useState(0);
-  const [showReward, setShowReward] = useState(false);
-  const [rewardType, setRewardType] = useState("");
   const [mixResultMessage, setMixResultMessage] = useState("");
   const [resultColor, setResultColor] = useState("");
-  const [targetColor, setTargetColor] = useState("");
-  const [remainingTargets, setRemainingTargets] = useState([]);
+
+  const [showReward, setShowReward] = useState(false);
+  const [rewardType, setRewardType] = useState("");
 
   const [width, height] = useWindowSize();
   const navigate = useNavigate();
 
-  function startLevelTargets() {
-    if (currentLevel === 1) {
-      setRemainingTargets(shuffle([...level1Targets]));
-    } else if (currentLevel === 2) {
-      setRemainingTargets(shuffle([...level2Targets]));
-    } else {
-      setRemainingTargets([]);
-    }
-  }
+  // Preload sounds once
+  const correctSound = useRef(new Audio('/sounds/correct.mp3')).current;
+  const wrongSound   = useRef(new Audio('/sounds/wrong.mp3')).current;
+  const successSound = useRef(new Audio('/sounds/success.mp3')).current;
 
+  // When level or reward resets: shuffle appropriate targets and reset state
   useEffect(() => {
-    if (!showReward) {
-      startLevelTargets();
-    }
+    if (showReward) return;
+    const list = currentLevel === 1 ? shuffle(level1Targets) : shuffle(level2Targets);
+    setTargets(list);
+    setTargetIndex(0);
+    setSuccessfulMixes(0);
+    setMixResultMessage("");
+    setResultColor("");
   }, [currentLevel, showReward]);
 
-  function generateTargetColor() {
-    if (remainingTargets.length > 0) {
-      setTargetColor(remainingTargets[0]);
-      setRemainingTargets(prev => prev.slice(1));
-    } else {
-      setTargetColor("");
-    }
-  }
-
+  // Update current goal whenever targets or index change
   useEffect(() => {
-    if (!showReward && targetColor === "") {
-      generateTargetColor();
+    if (!showReward && targets.length > 0 && targetIndex < targets.length) {
+      setTargetColor(targets[targetIndex]);
     }
-  }, [remainingTargets, showReward, targetColor]);
+  }, [targets, targetIndex, showReward]);
 
+  // Handle a color click
   function handleColorClick(color) {
     if (selectedColors.length === 1) {
-      const [firstColor] = selectedColors;
-      const mixed = mixColors(firstColor, color);
-
-      if (mixed === targetColor) {
-        setSuccessfulMixes(prev => prev + 1);
-        setMixResultMessage(`✅ Great! You created ${capitalize(mixed)}!`);
-        setResultColor(mixed);
-
+      const [first] = selectedColors;
+      const mixKey = `${first}+${color}`;
+      const mix = colorMixes[mixKey] || colorMixes[`${color}+${first}`] || "";
+      if (mix === targetColor) {
+        correctSound.play();
+        setSuccessfulMixes(s => s + 1);
+        setMixResultMessage(`✅ Great! You created ${capitalize(mix)}!`);
+        setResultColor(mix);
+        // advance to next
+        const next = targetIndex + 1;
         setTimeout(() => {
           setMixResultMessage("");
           setResultColor("");
-          if (remainingTargets.length > 0) {
-            generateTargetColor();
+          if (next < targets.length) {
+            setTargetIndex(next);
           } else {
             triggerReward();
           }
-        }, 3000);
+        }, 1500);
       } else {
-        setMixResultMessage(`❌ That's not ${capitalize(targetColor)}. Try again!`);
-        setResultColor("");
-        setTimeout(() => setMixResultMessage(""), 3000);
+        wrongSound.play();
+        setMixResultMessage(`❌ That's not ${capitalize(targetColor)}.`);
+        setTimeout(() => setMixResultMessage(""), 1500);
       }
-
       setSelectedColors([]);
     } else {
       setSelectedColors([color]);
     }
   }
 
-  function mixColors(color1, color2) {
-    return colorMixes[`${color1}+${color2}`] || colorMixes[`${color2}+${color1}`] || "";
-  }
-
   function triggerReward() {
-    setRewardType(currentLevel === 1 ? "rainbow" : "master");
+    setRewardType(currentLevel === 1 ? 'rainbow' : 'master');
     setShowReward(true);
   }
 
   function playAgain() {
-    setCurrentLevel(1);
-    setSuccessfulMixes(0);
     setShowReward(false);
+    setCurrentLevel(1);
   }
 
+  // After rainbow, auto-advance to level2
   useEffect(() => {
-    if (showReward && rewardType === "rainbow") {
-      const timeout = setTimeout(() => {
+    if (showReward && rewardType === 'rainbow') {
+      successSound.play();
+      const t = setTimeout(() => {
         setShowReward(false);
         setCurrentLevel(2);
-        setSuccessfulMixes(0);
-      }, 4000);
-      return () => clearTimeout(timeout);
+      }, 3000);
+      return () => clearTimeout(t);
     }
   }, [showReward, rewardType]);
 
-  function capitalize(text) {
-    return text.charAt(0).toUpperCase() + text.slice(1);
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
   return (
     <div className="cml-lab-container">
       {!showReward ? (
-        <>
+        <> {/* Main UI */}
           <header>
             <h1>Color Mixing Lab</h1>
             <div>Level: {currentLevel}/2</div>
@@ -194,12 +174,12 @@ function ColorMixingLab() {
           )}
 
           <div className="cml-colors-container">
-            {(currentLevel === 1 ? baseColors : level2Colors).map(color => (
+            {(currentLevel === 1 ? baseColors : level2Colors).map(c => (
               <div
-                key={color}
+                key={c}
                 className="cml-color-circle"
-                style={{ backgroundColor: color }}
-                onClick={() => handleColorClick(color)}
+                style={{ backgroundColor: c }}
+                onClick={() => handleColorClick(c)}
               />
             ))}
           </div>
@@ -216,7 +196,7 @@ function ColorMixingLab() {
               {resultColor && (
                 <div
                   className="cml-result-color-circle"
-                  style={{ backgroundColor: colorHexMap[resultColor] || resultColor }}
+                  style={{ backgroundColor: colorHexMap[resultColor] }}
                 />
               )}
             </div>
@@ -224,51 +204,45 @@ function ColorMixingLab() {
         </>
       ) : (
         <div className="cml-reward-screen">
-          {rewardType === "rainbow" && (
+          <Confetti
+            width={width} height={height}
+            recycle={false}
+            style={{ position: 'fixed', top:0, left:0, zIndex:0 }}
+          />
+
+          {rewardType === 'rainbow' && (
             <>
               <img
                 src="/rainbow.gif"
                 alt="Rainbow Celebration"
                 className="cml-reward-image"
               />
-              <h2>Rainbow Celebration!</h2>
+              <h2 style={{ color:'#fff', textShadow:'0 0 5px #000' }}>
+                🌈 Rainbow Celebration!
+              </h2>
             </>
           )}
-          {rewardType === "master" && (
-            <>
-              <div className="cml-confetti-container">
-                <Confetti
-                  width={width}
-                  height={height}
-                  recycle={false}
-                />
+
+          {rewardType === 'master' && (
+            <div className="cml-master-reward-box">
+              <div className="cml-trophy-emoji">🏆</div>
+              <h1>You're a Color Master!</h1>
+              <p>All mixes complete! 🎨</p>
+              <div className="cml-button-group">
+                <button className="cml-action-button" onClick={playAgain}>
+                  Restart
+                </button>
+                <button
+                  className="cml-action-button"
+                  onClick={() => navigate('/module/science/activities')}
+                >
+                  Back to Activities
+                </button>
               </div>
-              <div className="cml-master-reward-box">
-                <div className="cml-trophy-emoji">🏆</div>
-                <h1>You are a Color Master!</h1>
-                <h2>Congratulations!</h2>
-                <p>You have mastered the art of mixing colors! 🎨</p>
-                <div className="cml-button-group">
-                  <button className="cml-action-button" onClick={playAgain}>
-                    Play Again
-                  </button>
-                  <button
-                    className="cml-action-button"
-                    onClick={() => navigate('/module/science/activities')}
-                  >
-                    Go to Activities
-                  </button>
-                </div>
-              </div>
-            </>
+            </div>
           )}
         </div>
       )}
     </div>
   );
 }
-
-export default ColorMixingLab;
-
-
-

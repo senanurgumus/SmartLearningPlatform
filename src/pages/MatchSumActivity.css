@@ -54,6 +54,13 @@
   width: 120px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.match-sum-activity__answer-box:hover,
+.match-sum-activity__question-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
 /* drop target */
@@ -93,6 +100,8 @@
   cursor: grab;
   font-weight: bold;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: linear-gradient(135deg, #64b5f6, #42a5f5);
 }
 
 /* success + confetti sonrası butonlar */
@@ -129,9 +138,75 @@
   background: #43a047;
 }
 .match-sum-activity__btn--secondary {
-  background: #2196f3;
+  background: linear-gradient(135deg, #29b6f6, #0288d1);
   color: #fff;
 }
 .match-sum-activity__btn--secondary:hover {
   background: #1e88e5;
+}
+
+/* başlık stili */
+.match-sum-activity__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #42a5f5, #478ed1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* alt başlık stili */
+.match-sum-activity__subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.match-sum-activity__drop-target--matched {
+  animation: pop 0.3s ease-out;
+}
+
+.match-sum-activity__controls-card {
+  background: #fff;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  width: fit-content;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.match-sum-activity__questions-card {
+  background: #fff;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  width: fit-content;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.match-sum-activity__card {
+  background: #fff;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  width: fit-content;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }

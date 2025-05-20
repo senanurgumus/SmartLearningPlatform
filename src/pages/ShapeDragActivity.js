@@ -1,9 +1,13 @@
-// ShapeDragActivity.jsx
+// src/pages/ShapeDragActivity.jsx
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { fetchHighScore, updateHighScore } from '../utils/highScore.js';
 import './ShapeDragActivity.css';
+
+/* ───────────── SES KANCASI ───────────── */
+const useSound = path => useRef(new Audio(path));
 
 const levelShapes = {
   easy:    ['square','circle','triangle'],
@@ -14,6 +18,12 @@ const levelShapes = {
 };
 
 export default function ShapeDragActivity() {
+  /* ───────────── SES REFERANSLARI ───────────── */
+  const correctSfx = useSound('/sounds/correct.mp3');
+  const wrongSfx   = useSound('/sounds/wrong.mp3');
+  const successSfx = useSound('/sounds/success.mp3');
+
+  /* ───────────── STATE ───────────── */
   const [level, setLevel]               = useState('easy');
   const [draggables, setDraggables]     = useState([]);
   const [targets, setTargets]           = useState([]);
@@ -28,9 +38,11 @@ export default function ShapeDragActivity() {
   const intervalRef = useRef(null);
   const [width, height] = useWindowSize();
   const levelsOrder = ['easy','medium','hard','expert','master'];
-
   const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
 
+  const auth = getAuth();
+
+  /* ───────────── OYUNU BAŞLAT ───────────── */
   const startLevel = useCallback(() => {
     const shapes = levelShapes[level];
     setDraggables(shuffle(shapes));
@@ -46,27 +58,43 @@ export default function ShapeDragActivity() {
     intervalRef.current = setInterval(() => setTime(t => t + 1), 1000);
   }, [level]);
 
+  /* ───────────── HIGH SCORE ÇEKME ───────────── */
   useEffect(() => {
-    fetchHighScore('shapeDrag').then(setHighScore);
-  }, []);
+    // Auth durumunu dinle, user hazır olunca skor çek
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      if (user) {
+        fetchHighScore('shapeDrag')
+          .then(setHighScore)
+          .catch(console.error);
+      }
+    });
+    return unsubscribe;
+  }, [auth]);
 
+  /* ───────────── LEVEL / ZAMAN AYARI ───────────── */
   useEffect(() => {
     startLevel();
     return () => clearInterval(intervalRef.current);
   }, [level, startLevel]);
 
   const handleGameEnd = useCallback(() => {
-    updateHighScore('shapeDrag', score).then(setHighScore);
+    updateHighScore('shapeDrag', score)
+      .then(setHighScore)
+      .catch(console.error);
   }, [score]);
 
+  /* ───────────── BAŞARIYI TESPİT ───────────── */
   useEffect(() => {
     if (targets.length && completedShapes.length === targets.length) {
       clearInterval(intervalRef.current);
       setGameCompleted(true);
       handleGameEnd();
+      successSfx.current.currentTime = 0;
+      successSfx.current.play();
     }
   }, [completedShapes, targets, handleGameEnd]);
 
+  /* ───────────── SÜRE DOLDU MU? ───────────── */
   useEffect(() => {
     if (time >= 60 && !gameCompleted) {
       clearInterval(intervalRef.current);
@@ -76,16 +104,21 @@ export default function ShapeDragActivity() {
     }
   }, [time, gameCompleted, handleGameEnd]);
 
+  /* ───────────── DRAG & DROP ───────────── */
   const [dragged, setDragged] = useState(null);
   const handleDragStart = shape => setDragged(shape);
   const handleDragOver  = e => e.preventDefault();
 
   const handleDrop = target => {
     if (gameCompleted) return;
+
     const correct = dragged === target;
     setDropFeedback(fb => ({ ...fb, [target]: correct ? 'correct' : 'incorrect' }));
 
     if (correct) {
+      correctSfx.current.currentTime = 0;
+      correctSfx.current.play();
+
       setCompleted(prev => {
         if (!prev.includes(target)) {
           setScore(s => s + 10);
@@ -94,6 +127,8 @@ export default function ShapeDragActivity() {
         return prev;
       });
     } else {
+      wrongSfx.current.currentTime = 0;
+      wrongSfx.current.play();
       setScore(s => Math.max(0, s - 5));
     }
 
@@ -101,17 +136,22 @@ export default function ShapeDragActivity() {
     setDragged(null);
   };
 
+  /* ───────────── BUTON YARDIMCILAR ───────────── */
   const nextLevel = () => {
     const idx = levelsOrder.indexOf(level);
     if (idx < levelsOrder.length - 1) setLevel(levelsOrder[idx + 1]);
   };
   const restart = () => startLevel();
 
+  /* ───────────── RENDER ───────────── */
   return (
     <div className="sda-container">
+      <h1 className="sda-page-header">🎯 Drag the Shape</h1>
+
       <div className="sda-card">
-        <h2 className="sda-title">🎯 Drag the Shape (Level: {level})</h2>
-        <p className="sda-instructions">Match the shape to the correct target!</p>
+        <p className="sda-instructions">
+          Match the shape to the correct target!
+        </p>
 
         <div className="sda-dropdown">
           <label>Level:</label>
@@ -160,7 +200,9 @@ export default function ShapeDragActivity() {
               <div className="sda-time-up-message">⏳ Time's Up!</div>
             ) : (
               <>
-                <div className="sda-congrats-message">🎉 Congrats! All matched!</div>
+                <div className="sda-congrats-message">
+                  🎉 Congrats! All matched!
+                </div>
                 <Confetti
                   width={width}
                   height={height}
@@ -174,12 +216,19 @@ export default function ShapeDragActivity() {
                     zIndex: 0
                   }}
                 />
-                {level !== 'master' && (
-                  <button className="sda-next-button" onClick={nextLevel}>Next Level ➡️</button>
-                )}
               </>
             )}
-            <button className="sda-restart-button" onClick={restart}>🔁 Play Again</button>
+
+            <div className="sda-buttons">
+              {!isTimeUp && level !== 'master' && (
+                <button className="sda-next-button" onClick={nextLevel}>
+                  Next Level ➡️
+                </button>
+              )}
+              <button className="sda-restart-button" onClick={restart}>
+                🔁 Play Again
+              </button>
+            </div>
           </div>
         )}
       </div>

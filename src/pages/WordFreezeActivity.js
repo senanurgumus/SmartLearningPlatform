@@ -4,10 +4,17 @@ import './WordFreezeActivity.css';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size';
 
-// Shuffle helper
+/* ---------- helpers ---------- */
 const shuffleArray = arr => [...arr].sort(() => Math.random() - 0.5);
 
-// Define word lists for each mode (30 items each, age-8 appropriate)
+/** Builds a 10‑question session where both the question order
+ *  and the options inside each question are shuffled. */
+const buildSession = level =>
+  shuffleArray(wordLevels[level])
+    .slice(0, 10)
+    .map(q => ({ ...q, options: shuffleArray(q.options) }));
+
+/* ---------- word pools ---------- */
 const wordLevels = {
   level1: [
     { target: 'Big', options: ['Huge', 'Tiny', 'Fast'], correct: 'Huge' },
@@ -73,15 +80,12 @@ const wordLevels = {
   ]
 };
 
-// Map mode keys to labels
 const levelLabels = { level1: 'Same', level2: 'Opposite' };
 
+/* ---------- component ---------- */
 export default function WordFreezeActivity() {
   const [currentLevel, setCurrentLevel] = useState('level1');
-  // generate random 10-question session
-  const [questions, setQuestions] = useState(
-    () => shuffleArray(wordLevels[currentLevel]).slice(0, 10)
-  );
+  const [questions, setQuestions] = useState(() => buildSession('level1'));
   const [currentIndex, setCurrentIndex] = useState(0);
   const [unfrozen, setUnfrozen] = useState(false);
   const [firstTry, setFirstTry] = useState(true);
@@ -93,15 +97,18 @@ export default function WordFreezeActivity() {
   const current = questions[currentIndex];
   const total = questions.length;
 
+  /* ---------- core handlers ---------- */
   const playSound = src => new Audio(src).play();
 
   const handleChoice = choice => {
     if (unfrozen) return;
+
     if (choice === current.correct) {
       playSound('/sounds/ice-break.mp3');
       setUnfrozen(true);
       if (firstTry) setScore(prev => prev + 1);
       setShowWrong(false);
+
       setTimeout(() => {
         if (currentIndex + 1 < total) {
           setCurrentIndex(prev => prev + 1);
@@ -119,7 +126,7 @@ export default function WordFreezeActivity() {
   };
 
   const resetSession = level => {
-    setQuestions(shuffleArray(wordLevels[level]).slice(0, 10));
+    setQuestions(buildSession(level));
     setCurrentIndex(0);
     setScore(0);
     setUnfrozen(false);
@@ -129,11 +136,13 @@ export default function WordFreezeActivity() {
   };
 
   const handleRestart = () => resetSession(currentLevel);
+
   const handleLevelChange = e => {
     const lvl = e.target.value;
     setCurrentLevel(lvl);
     resetSession(lvl);
   };
+
   const handleNextLevel = () => {
     const keys = Object.keys(wordLevels);
     const idx = keys.indexOf(currentLevel);
@@ -144,36 +153,104 @@ export default function WordFreezeActivity() {
     }
   };
 
+  /* ---------- render ---------- */
   return (
-    <div className="wf-freeze-container" style={{ position: 'relative', backgroundImage: 'url("/images/bg-ice-page.png")', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', backgroundPosition: 'center', minHeight: '100vh' }}>
-      {showResult && score === total && <Confetti width={width} height={height} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none', backgroundColor: 'transparent' }} />}
+    <div
+      className="wf-freeze-container"
+      style={{
+        position: 'relative',
+        backgroundImage: 'url("/images/bg-ice-page.png")',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'scroll',   // 'fixed' → 'scroll' beyaz blok sorununu önler
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        zIndex: 2                         // kartlar konfetiden önde
+      }}
+    >
+      {showResult && (
+        <Confetti
+          width={width}
+          height={height}
+          numberOfPieces={300}
+          recycle={false}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            pointerEvents: 'none',
+            backgroundColor: 'transparent',
+            zIndex: 1                      // içerikten geride
+          }}
+        />
+      )}
 
+      <h1 className="wf-title">Word Freeze</h1>
+
+      {/* ----- seviye seçimi ----- */}
       <div className="wf-level-select">
         <label>Choose Category: </label>
         <select value={currentLevel} onChange={handleLevelChange}>
-          {Object.keys(wordLevels).map(lvl => <option key={lvl} value={lvl}>{levelLabels[lvl]}</option>)}
+          {Object.keys(wordLevels).map(lvl => (
+            <option key={lvl} value={lvl}>
+              {levelLabels[lvl]}
+            </option>
+          ))}
         </select>
       </div>
 
-      <h3 className="wf-mode-info">{currentLevel === 'level1' ? 'Which word means the same?' : 'Which word means the opposite?'}</h3>
+      {/* ----- yönerge ----- */}
+      <h3 className="wf-mode-info">
+        {currentLevel === 'level1'
+          ? 'Which word means the same?'
+          : 'Which word means the opposite?'}
+      </h3>
 
+      {/* ----- oyun alanı veya sonuç ekranı ----- */}
       {!showResult ? (
         <div className="wf-freeze-card">
-          <div className={`wf-ice-word ${unfrozen ? 'wf-unfrozen' : ''}`} style={!unfrozen ? { backgroundImage: 'url("/images/ice-bg.png")' } : {}}>{current.target}</div>
-          <div className="wf-choices">{current.options.map((opt, i) => <button key={i} className="wf-choice-btn" onClick={() => handleChoice(opt)}>{opt}</button>)}</div>
-          {showWrong && <p className="wf-wrong-msg">❌ Try again!</p>}
-          <div className="wf-score">Score: {score} / {total}</div>
+          <div
+            className={`wf-ice-word ${unfrozen ? 'wf-unfrozen' : ''}`}
+            style={!unfrozen ? { backgroundImage: 'url("/images/ice-bg.png")' } : {}}
+          >
+            {current.target}
+          </div>
+
+          <div className="wf-choices">
+            {current.options.map((opt, i) => (
+              <button
+                key={i}
+                className="wf-choice-btn"
+                onClick={() => handleChoice(opt)}
+              >
+                {opt}
+              </button>
+            ))}
+          </div>
+
+          {showWrong && <p className="wf-wrong-msg">❌ Try again!</p>}
+          <div className="wf-score">
+            Score: {score} / {total}
+          </div>
         </div>
       ) : (
         <div className="wf-result-section">
-          <h2>❄️ You unfroze all the words!</h2>
-          <p>Your final score: {score} / {total}</p>
+          <h2>❄️ You unfroze all the words!</h2>
+          <p>Your final score: {score} / {total}</p>
+
           <div className="wf-button-group">
-            <button className="wf-restart-btn" onClick={handleRestart}>🔁 Play Again</button>
-            {currentLevel !== 'level2' && <button className="wf-restart-btn" onClick={handleNextLevel}>➡️ Next Level</button>}
+            <button className="wf-restart-btn" onClick={handleRestart}>
+              🔁 Play Again
+            </button>
+            {currentLevel !== 'level2' && (
+              <button className="wf-restart-btn" onClick={handleNextLevel}>
+                ➡️ Next Level
+              </button>
+            )}
           </div>
         </div>
       )}
     </div>
   );
 }
+

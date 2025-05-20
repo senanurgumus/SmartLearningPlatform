@@ -1,201 +1,145 @@
-/* Container and overall layout */
+/* —— Container & Layout —— */
 .gp-container {
-  text-align: center;
   position: relative;
-  z-index: 10;
+  text-align: center;
   padding-top: 64px;
   height: 100vh;
   overflow: visible;
+  transition: background-image 0.8s ease, background-color 0.8s ease;
 }
 
-/* Title */
-.gp-title {
-  margin-bottom: 20px;
-}
-
-/* Progress Stepper */
-.gp-stepper {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 1rem;
-}
-.gp-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.gp-step-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #ccc;
-  margin-bottom: 4px;
-  transition: background 0.3s;
-}
-.gp-step.active .gp-step-dot {
-  background: #4CAF50;
-}
-.gp-step-label {
-  font-size: 0.75rem;
-  color: #666;
-  text-transform: uppercase;
-}
-.gp-step.active .gp-step-label {
-  color: #333;
-  font-weight: bold;
-}
-
-/* Stage container wrapper */
-.gp-stage-container {
-  position: relative;
-}
-
-/* Butterfly & speech bubble */
-.gp-butterfly-wrapper {
+/* —— Noise Overlay (using CSS var from inline style) —— */
+/* —— Noise Overlay —— */
+.gp-container::before {
+  content: "";
   position: absolute;
-  z-index: 5;
-  display: flex;
-  align-items: flex-start;
-  top: 120px;
-}
-.gp-left { left: 30px; }
-.gp-right { right: 30px; }
-.gp-mascot {
-  font-size: 32px;
-  margin-right: 10px;
-}
-.gp-speech-bubble {
-  position: relative;
-  background: white;
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  max-width: 320px;
-}
-.gp-speech-bubble::before {
-  content: '';
-  position: absolute;
-  left: -20px;
-  top: 30px;
-  border: 10px solid transparent;
-  border-right-color: white;
-}
-.gp-speech-bubble p {
-  margin: 0;
-  word-wrap: break-word;
-}
-
-/* Plant stage area */
-.gp-plant-stage {
-  margin-top: 2rem;
-  padding: 20px;
-  border-radius: 20px;
-  transition: background-color 0.5s ease;
-  min-height: 300px;
-  position: relative;
-  z-index: 2;
-}
-.gp-stage0 { background-color: #f0e4d7; }
-.gp-stage1 { background-color: #e0f7e9; }
-.gp-stage2 { background-color: #d4f1f9; }
-.gp-stage3,
-.gp-stage4 { background-color: #fff8dc; }
-
-/* Pot and emoji overlays */
-.gp-pot {
-  width: 100px;
-  height: 60px;
-  background-color: #8B4513;
-  border-radius: 0 0 50px 50px;
-  margin: 0 auto;
-  position: relative;
-}
-.gp-pot.gp-seed::after {
-  content: '🌰';
-  font-size: 30px;
-  position: absolute;
-  top: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.gp-pot.gp-sprout::after {
-  content: '🌱';
-  font-size: 40px;
-  position: absolute;
-  top: -45px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.gp-pot.gp-grown::after {
-  content: '🌻';
-  font-size: 60px;
-  position: absolute;
-  top: -65px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-@keyframes grow {
-  0%   { transform: translateX(-50%) scale(0); }
-  80%  { transform: translateX(-50%) scale(1.2); }
-  100% { transform: translateX(-50%) scale(1); }
-}
-
-/* Buttons */
-.gp-button-wrapper {
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-.gp-action-button {
-  padding: 12px 24px;
-  font-size: 18px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.gp-action-button:hover {
-  background-color: #45a049;
-}
-
-/* Confetti layer */
-.gp-confetti {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  display: block;
+  background: var(--noise-url) repeat;
+  opacity: 0.5;        /* hafif noise */
   pointer-events: none;
+  z-index: 0;           /* en alta yerleşsin */
+}
+
+/* —— İçeriği noise’un üstüne çıkar —— */
+.gp-container > * {
+  position: relative;
   z-index: 1;
 }
 
-/* Final congratulations */
-.gp-congrats {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin-top: 2rem;
-  position: relative;
-  z-index: 3;
+/* —— Title —— */
+.gp-title { margin-bottom: 20px; }
+
+/* —— Progress Stepper —— */
+.gp-stepper {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 auto 1rem;
+  z-index: 5;
+}
+.gp-step { display: flex; flex-direction: column; align-items: center; }
+.gp-step-dot {
+  width: 12px; height: 12px; border-radius: 50%; background: #ccc;
+  margin-bottom: 4px; transition: background-color 0.3s;
+}
+.gp-step.active .gp-step-dot { background: #4CAF50; }
+.gp-step-label {
+  font-size: 0.75rem; color: #666; text-transform: uppercase;
+  transition: color 0.3s;
+}
+.gp-step.active .gp-step-label { color: #333; font-weight: bold; }
+.gp-step-bar {
+  flex: none; width: 80px; height: 4px; background: #ccc;
+  margin: 0 8px; transition: background-color 0.3s;
+}
+.gp-step-bar.active { background: #4CAF50; }
+
+/* —— Stage Container —— */
+.gp-stage-container { position: relative; }
+
+/* —— Butterfly & Speech Bubble —— */
+.gp-butterfly-wrapper {
+  position: absolute; top: 80px; z-index: 5; display: flex; align-items: flex-start;
+}
+.gp-left { left: 30px; } .gp-right { right: 30px; }
+.gp-mascot { font-size: 48px; margin-right: 12px; }
+.gp-speech-bubble {
+  background: #fff; padding: 1.25rem 1.75rem; border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 320px; position: relative;
+}
+.gp-speech-bubble::before {
+  content: ''; position: absolute; left: -20px; top: 30px;
+  border: 10px solid transparent; border-right-color: #fff;
+}
+.gp-speech-bubble p { margin: 0; font-size: 1rem; }
+
+/* —— Plant Stage & Backgrounds —— */
+.gp-plant-stage {
+  margin-top: 2rem; padding: 20px; border-radius: 20px;
+  min-height: 300px; position: relative; z-index: 2;
+}
+.gp-stage0 {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.4), transparent 70%),
+    linear-gradient(135deg, #f0e4d7 0%, #e9d8c7 100%);
+}
+.gp-stage1 {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.3), transparent 70%),
+    linear-gradient(135deg, #e0f7e9 0%, #bfeadb 100%);
+}
+.gp-stage2 {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.3), transparent 70%),
+    linear-gradient(135deg, #d4f1f9 0%, #b0dff3 100%);
+}
+.gp-stage3 {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,0.3), transparent 70%),
+    linear-gradient(135deg, #fff8dc 0%, #fde3a7 100%);
 }
 
-/* End buttons row */
-.gp-end-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 20px;
-  position: relative;
-  z-index: 3;
+/* —— Growth Animation —— */
+@keyframes grow {
+  0% { transform: translateX(-50%) scale(0); }
+  80% { transform: translateX(-50%) scale(1.2); }
+  100% { transform: translateX(-50%) scale(1); }
 }
 
-/* Transparent plate for bloom & confetti stages */
-.gp-stage3 .gp-plant-stage,
-.gp-stage4 .gp-plant-stage {
-  box-shadow: none;
-  border: none;
-  background-color: #fff8dc;
+/* —— Pot & Overlay Emojis —— */
+.gp-pot { width: 100px; height: 60px; background: #8B4513;
+  border-radius: 0 0 50px 50px; margin: 0 auto;
+  position: relative; z-index: 10;
 }
+.gp-pot.gp-seed::after,
+.gp-pot.gp-sprout::after,
+.gp-pot.gp-grown::after {
+  position: absolute; left: 50%; transform: translateX(-50%) scale(0);
+  animation: grow 0.6s ease-out forwards; z-index: 20;
+  pointer-events: none;
+}
+.gp-pot.gp-seed::after { content: '🌰'; font-size:30px; top:-35px; }
+.gp-pot.gp-sprout::after { content: '🌱'; font-size:40px; top:-45px; }
+.gp-pot.gp-grown::after { content: '🌻'; font-size:60px; top:-65px; }
 
+/* —— Buttons —— */
+.gp-button-wrapper { margin:20px 0 40px; }
+.gp-action-button { padding:12px 24px; font-size:18px;
+  background:#4CAF50; color:#fff; border:none; border-radius:8px;
+  cursor:pointer; transition:opacity 0.3s;
+}
+.gp-action-button:hover { opacity:0.9; }
+
+/* —— Confetti Canvas —— */
+.gp-confetti { z-index:1 !important; }
+.gp-confetti, .gp-confetti canvas { background:transparent !important; }
+
+/* —— Final Screen —— */
+.gp-stage3 .gp-congrats { position:absolute;
+  top:50%; left:50%; transform:translate(-50%, -50%);
+  font-size:20px; z-index:5;
+}
+.gp-stage3 .gp-end-buttons { position:absolute;
+  top:calc(50% + 40px); left:50%; transform:translateX(-50%);
+  display:flex; gap:12px; z-index:5;
+}

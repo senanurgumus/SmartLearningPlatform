@@ -24,11 +24,11 @@ function WordPuzzleActivity() {
   const [timerActive, setTimerActive] = useState(true);
   const [timeRecords, setTimeRecords] = useState([]);
   const [badges, setBadges] = useState([]);
+  const [wasTimeout, setWasTimeout] = useState(false);
 
   const currentLevelData = wordPuzzleLevels[currentLevel];
   const currentWordList = currentLevelData.words;
   const levelTitle = currentLevelData.title;
-
   const currentWord = shuffledWordList[currentIndex];
   const isLastWord = currentIndex === shuffledWordList.length - 1;
 
@@ -36,16 +36,31 @@ function WordPuzzleActivity() {
   const currentLevelIndex = levelKeys.indexOf(currentLevel);
   const nextLevelKey = levelKeys[currentLevelIndex + 1];
 
+  const levelClassMap = {
+    Animals: 'wp-theme-animals',
+    Nature: 'wp-theme-nature',
+    Food: 'wp-theme-food',
+    Transport: 'wp-theme-transport',
+  };
+
+  const themeClass = levelClassMap[levelTitle] || 'wp-theme-default';
+
   const playSound = (src) => {
     const audio = new Audio(src);
     audio.play();
   };
 
-  const shuffleAndPickAll = (levelKey) => {
-    const list = wordPuzzleLevels[levelKey].words;
-    const shuffled = [...list].sort(() => Math.random() - 0.5);
-    setShuffledWordList(shuffled);
-  };
+const shuffleArray = (arr) => [...arr].sort(() => Math.random() - 0.5);
+
+const shuffleAndPickAll = (levelKey) => {
+  const list = wordPuzzleLevels[levelKey].words.map(wordObj => ({
+    ...wordObj,
+    options: shuffleArray(wordObj.options)
+  }));
+  const shuffled = shuffleArray(list);
+  setShuffledWordList(shuffled);
+};
+
 
   const handleDragStart = (letter) => {
     setDraggedLetter(letter);
@@ -58,15 +73,16 @@ function WordPuzzleActivity() {
     if (draggedLetter === currentWord.word[currentWord.missingIndex]) {
       const timeUsed = TIME_LIMIT - timeLeft;
       setTimeRecords(prev => [...prev, timeUsed]);
-
       if (!completed && isCorrect !== true) setScore((prev) => prev + 1);
       playSound('/sounds/correct.mp3');
       setIsCorrect(true);
       setCompleted(true);
       setTimerActive(false);
+      setWasTimeout(false);
 
       if (isLastWord) {
         setShowConfetti(true);
+        playSound('/audios/success.mp3'); // ✅ başarı sesi
         setTimeout(() => setShowConfetti(false), 8000);
       } else {
         setTimeout(() => {
@@ -76,18 +92,18 @@ function WordPuzzleActivity() {
           setDraggedLetter(null);
           setTimeLeft(TIME_LIMIT);
           setTimerActive(true);
+          setWasTimeout(false);
         }, 2000);
       }
     } else {
       playSound('/sounds/wrong.mp3');
       setIsCorrect(false);
       setScore((prev) => (prev > 0 ? prev - 1 : 0));
+      setWasTimeout(false);
     }
   };
 
-  const handleDragOver = (e) => {
-    e.preventDefault();
-  };
+  const handleDragOver = (e) => e.preventDefault();
 
   const handleRestart = () => {
     shuffleAndPickAll(currentLevel);
@@ -101,6 +117,7 @@ function WordPuzzleActivity() {
     setTimerActive(true);
     setTimeRecords([]);
     setBadges([]);
+    setWasTimeout(false);
   };
 
   const handleNextLevel = () => {
@@ -116,6 +133,7 @@ function WordPuzzleActivity() {
     setTimeLeft(TIME_LIMIT);
     setTimerActive(true);
     fetchBestScore(nextLevelKey);
+    setWasTimeout(false);
   };
 
   const handleLevelChange = (e) => {
@@ -133,6 +151,7 @@ function WordPuzzleActivity() {
     fetchBestScore(level);
     setTimeRecords([]);
     setBadges([]);
+    setWasTimeout(false);
   };
 
   const saveScoreToFirebase = async (level, score) => {
@@ -224,24 +243,27 @@ function WordPuzzleActivity() {
 
   useEffect(() => {
     if (!completed && timerActive && timeLeft > 0) {
-      const timer = setTimeout(() => setTimeLeft((prev) => prev - 1), 1000);
+      const timer = setTimeout(() => setTimeLeft(prev => prev - 1), 1000);
       return () => clearTimeout(timer);
     }
 
     if (timeLeft === 0 && !completed) {
+      playSound('/sounds/wrong.mp3');
       setIsCorrect(false);
       setCompleted(true);
-      setScore((prev) => (prev > 0 ? prev - 1 : 0));
+      setWasTimeout(true);
+      setScore(prev => (prev > 0 ? prev - 1 : 0));
       setTimerActive(false);
 
       if (!isLastWord) {
         setTimeout(() => {
-          setCurrentIndex((prev) => prev + 1);
+          setCurrentIndex(prev => prev + 1);
           setIsCorrect(null);
           setCompleted(false);
           setDraggedLetter(null);
           setTimeLeft(TIME_LIMIT);
           setTimerActive(true);
+          setWasTimeout(false);
         }, 2000);
       }
     }
@@ -250,22 +272,24 @@ function WordPuzzleActivity() {
   if (!currentWord) return null;
 
   return (
-    <div className="wp-container">
+    <div className={`wp-page ${themeClass}`}>
       {showConfetti && (
         <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1, pointerEvents: 'none' }}>
           <Confetti width={width} height={height} opacity={0.6} recycle={false} numberOfPieces={300} />
         </div>
       )}
 
-      <div className="wp-options">
-        {currentWord.options.map((letter, idx) => (
-          <div key={idx} className="wp-letter-card" draggable onDragStart={() => handleDragStart(letter)}>
-            {letter}
-          </div>
-        ))}
-      </div>
+      <h1 className="wp-title">🧩 Word Puzzle</h1>
 
       <div className="wp-game-area">
+        <div className="wp-options-row">
+          {currentWord.options.map((letter, idx) => (
+            <div key={idx} className="wp-letter-card" draggable onDragStart={() => handleDragStart(letter)}>
+              {letter}
+            </div>
+          ))}
+        </div>
+
         <h2>{levelTitle}</h2>
 
         <div className="wp-level-select">
@@ -280,13 +304,12 @@ function WordPuzzleActivity() {
         <p>Score: {score} / {shuffledWordList.length}</p>
         <p>⏳ Time Left: {timeLeft} seconds</p>
 
-        {/* 🐄 Show the emoji for current word */}
         {currentWord.emoji && (
           <div className="wp-word-image" aria-label={currentWord.word}>
             {currentWord.emoji}
           </div>
-        )}     
-        
+        )}
+
         {bestScore !== null && (
           <p>⭐ Best Score: {bestScore} / {currentWordList.length}</p>
         )}
@@ -304,10 +327,16 @@ function WordPuzzleActivity() {
         </div>
 
         {isCorrect === true && <p className="wp-correct-msg">✅ Correct!</p>}
-        {isCorrect === false && <p className="wp-wrong-msg">❌ Try again!</p>}
+        {isCorrect === false && (
+          <p className="wp-wrong-msg">
+            {wasTimeout ? '⏰ Time’s up!' : '❌ Try again!'}
+          </p>
+        )}
+      </div>
 
-        {isLastWord && completed && (
-          <div className="wp-result-section">
+      {isLastWord && completed && (
+        <div className="wp-popup-overlay">
+          <div className="wp-result-section popup">
             <h3>🎉 Great job!</h3>
             <p>Your final score: {score} / {shuffledWordList.length}</p>
 
@@ -329,8 +358,8 @@ function WordPuzzleActivity() {
               <button className="wp-next-btn" onClick={handleNextLevel}>⏭️ Next Level</button>
             )}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
